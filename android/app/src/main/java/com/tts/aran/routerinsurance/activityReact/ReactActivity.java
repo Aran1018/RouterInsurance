@@ -1,4 +1,4 @@
-package com.tts.aran.routerinsurance;
+package com.tts.aran.routerinsurance.activityReact;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
+import com.tts.aran.routerinsurance.BuildConfig;
+import com.tts.aran.routerinsurance.utilsReact.AransPackage;
 
 /**
  * Created by Aran on 2018/7/16.
@@ -23,6 +25,8 @@ public class ReactActivity extends Activity implements DefaultHardwareBackBtnHan
 
     private ReactRootView mReactRootView;
     private ReactInstanceManager mReactInstanceManager;
+    private static final int OVERLAY_PERMISSION_REQ_CODE = 0x01;
+
 
 
     @Override
@@ -34,10 +38,11 @@ public class ReactActivity extends Activity implements DefaultHardwareBackBtnHan
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
                 .addPackage(new MainReactPackage())
+                .addPackage(new AransPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "App", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "RouterInsurance", null);
         setContentView(mReactRootView);
     }
 
@@ -69,6 +74,6 @@ public class ReactActivity extends Activity implements DefaultHardwareBackBtnHan
 
     @Override
     public void invokeDefaultOnBackPressed() {
-
+        super.onBackPressed();
     }
 }
