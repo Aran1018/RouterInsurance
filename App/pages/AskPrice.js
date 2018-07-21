@@ -6,28 +6,134 @@
  *我觉得这世间再没有别的东西比它值得被如此依靠。
  */
 import React, {Component} from 'react';
-import {Dimensions, Image, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
-
+import {BackHandler,Platform,Dimensions, Image, Modal, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
+import MyPolicy from "./MyPolicy";
 
 let MARGIN_TWO_SIDES = 13;
 let widthOfWindow = Dimensions.get('window').width;
 
+
 export default class AskPrice extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            animationType: 'none',
+            modalVisible: false,
+            transparent: true,
+        };
+    }
 
 
+        componentWillMount() {
+            if (Platform.OS === 'android') {
+                BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
+            }
+        }
+        componentWillUnmount() {
+            if (Platform.OS === 'android') {
+                BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
+            }
+        }
+        onBackAndroid = () => {
+            const{navigator} = this.props;
+            /*that存储了上一个this*/
+            let that = this;
+            if(navigator){
+                navigator.push({
+                    name : "MyPolicy",
+                    component : MyPolicy,
+                    /*params :{
+                        title:this.state.title,
+                        id:123,
+                        getUser:function(user){
+                            that.setState({
+                                user:user
+                            })
+                        }
+                    }*/
+                })
+            }
+        };
 
-     showAlter(text) {
+
+    jump(){
+            const{navigator} = this.props;
+        /*that存储了上一个this*/
+        let that = this;
+        if(navigator){
+            navigator.push({
+                name : "MyPolicy",
+                component : MyPolicy,
+                /*params :{
+                    title:this.state.title,
+                    id:123,
+                    getUser:function(user){
+                        that.setState({
+                            user:user
+                        })
+                    }
+                }*/
+            })
+        }
+    }
+
+
+    showAlter(text) {
         alert(text);
     }
     render() {
+        let modalBackgroundStyle = {
+            backgroundColor: this.state.transparent ? 'rgba(0, 0, 0, 0.5)' : 'red',
+        };
+        let innerContainerTransparentStyle = this.state.transparent
+            ? { backgroundColor: '#fff' ,
+                justifyContent:"flex-end",}
+            : null;
+
+
         return (
             <View style={styles.container}>
-                <Image source={require('./image/459361238862144447.png')}
+                <Modal
+                    animationType={this.state.animationType}
+                    transparent={this.state.transparent}
+                    visible={this.state.modalVisible}
+                    onRequestClose={() => { this._setModalVisible(false) } }
+                >
+                    <View style={[styles.aacontainer, modalBackgroundStyle]}>
+                        <View style={[styles.innerContainer, innerContainerTransparentStyle]}>
+                            <View style={{width:500,height:240,backgroundColor:"#ffffff",
+                                alignItems:"center",
+                                justifyContent:"flex-end",}}>
+                                <Image style={{resizeMode:'stretch',marginTop:20,width:100,height:100}} source={require('../img/imgaskprice/dialogimg.png')}/>
+                                <Text style={{marginTop:10,fontSize:20,fontWeight:"bold"}}>提交成功</Text>
+                                <Text style={{marginTop:10,fontSize:15}}>保险专员会尽快与您联系</Text>
+
+                                <View>
+                                    <TouchableHighlight onPress={this.jump.bind(this)}
+                                        style={{
+                                        width:300,
+                                        height:40,
+                                        backgroundColor:"#000",
+                                        alignItems:"center",
+                                        justifyContent:"center",
+                                        marginTop:10
+                                    }}>
+                                        <Text style={{color:"#fff"}}>OK</Text>
+                                    </TouchableHighlight>
+                                </View>
+                            </View>
+
+                        </View>
+                    </View>
+                </Modal>
+
+
+                <Image source={require('../img/imgaskprice/ad.png')}
                        style={styles.TitleImg}
                 />
 
                 <View style={styles.InputViewStyle}>
-                    <Image source={require('./image/phone.png')}
+                    <Image source={require('../img/imgaskprice/phone.png')}
                            style={styles.InputImageStyle}
                     />
                     <Text style={styles.IconText}>
@@ -43,20 +149,23 @@ export default class AskPrice extends Component{
                 <View style={styles.Underline}/>
 
                 <View style={styles.InputViewStyle}>
-                    <Image source={require('./image/card.png')}
+                    <Image source={require('../img/imgaskprice/idCard.png')}
                            style={styles.InputImageStyle}
                     />
                     <Text style={styles.IconText}>
                         行驶证
                     </Text>
 
-                    <TouchableHighlight style={{underlayColor: '#ffffff'}}
-                                        onPress={this.showAlter.bind('aaa')}>
+                    <TouchableHighlight
+                        onPress={this.showAlter.bind('aaa')}>
 
-                        <Image source={require('./image/4862144447.png')}
+                        {/*<Image source={require('../img/4862144447.png')}
                                style={styles.TakePhoto}
-                        />
 
+                               拍照上传
+                        />*/}
+
+                        <Text>拍照上传</Text>
                     </TouchableHighlight>
 
 
@@ -74,7 +183,7 @@ export default class AskPrice extends Component{
                 }
 
                 <View>
-                    <CirclePicture/>
+                    {/*<CirclePicture/>*/}
                 </View>
                 {
                     /*===组件复用部分===*/
@@ -82,19 +191,26 @@ export default class AskPrice extends Component{
 
 
                 <View style={styles.InputViewStyle}>
-                    <Image source={require('./image/card.png')}
+                    <Image source={require('../img/imgaskprice/idCard.png')}
                            style={styles.InputImageStyle}
                     />
                     <Text style={styles.IconText}>
                         身份证
                     </Text>
 
-                    <TouchableHighlight style={{underlayColor: '#ffffff'}}
-                                        onPress={this.show.bind(this, 'aaa')}>
+                    <TouchableHighlight>
 
-                        <Image source={require('./image/4862144447.png')}
-                               style={styles.TakePhoto}
-                        />
+                        {/*<Image
+
+                        //TODO==拍照上传
+
+
+                        source={require('./image/4862144447.png')}*/}
+                        {/*style={styles.TakePhoto}*/}
+
+
+                        {/*/>*/}
+                        <Text>拍照上传</Text>
 
                     </TouchableHighlight>
 
@@ -103,7 +219,7 @@ export default class AskPrice extends Component{
                 <View style={styles.Underline}/>
 
                 <View style={styles.InputViewStyle}>
-                    <Image source={require('./image/list.png')}
+                    <Image source={require('../img/imgaskprice/list.png')}
                            style={styles.InputImageStyle}
                     />
                     <Text style={styles.XianZhongXuanZe}>
@@ -114,18 +230,32 @@ export default class AskPrice extends Component{
                 <View style={styles.Underline}/>
                 {/*===跳转按钮===*/}
                 <TouchableHighlight
-                    style={styles.JumpOutButton}
-                    onPress={this.show.bind(this, '跳转下一页面')}>
+                    onPress={this._setModalVisible.bind(this,true) }
+                    style={styles.JumpOutButton}>
                     <View>
                         <Text style={styles.TextJumpOutButton}>一键询价</Text>
                     </View>
                 </TouchableHighlight>
             </View>
+
         );
     }
+
+    _setModalVisible = (visible) => {
+        this.setState({ modalVisible: visible });
+    };
 }
 let styles = StyleSheet.create({
 
+    aacontainer: {
+        flex: 1,
+        justifyContent: 'center',
+        padding: 40,
+    },
+    innerContainer: {
+        borderRadius: 10,
+        alignItems: 'center',
+    },
 
     PictureDescriptionView: {
         marginTop: MARGIN_TWO_SIDES,
@@ -140,8 +270,6 @@ let styles = StyleSheet.create({
     },
     JumpOutButton:{
 
-        resizeMode: 'contain',
-        textAlignVertical: 'center',
         height:50,
         marginTop:20,
         marginLeft:30,
@@ -180,9 +308,7 @@ let styles = StyleSheet.create({
     },
 
     InputImageStyle: {
-        textAlignVertical: 'center',
         marginTop: 9,
-        textAlign: 'center',
         width: 20,
         height: 20,
 
@@ -192,7 +318,6 @@ let styles = StyleSheet.create({
         color: '#b6b6b6',
         width: 130,
         height:40,
-        textAlignVertical: 'center',
         alignItems: 'center',
         fontSize: 13
 
@@ -210,9 +335,10 @@ let styles = StyleSheet.create({
     InputViewStyle: {
         marginLeft: MARGIN_TWO_SIDES,
         marginTop: 0,
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     container: {
+        height:Dimensions.get('window').height,
         backgroundColor: '#f4f4f4',
     },
     textInputStyle: {

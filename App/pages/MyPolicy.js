@@ -8,6 +8,8 @@
 import React,{Component} from "react";
 import {Image, TouchableHighlight, View, StyleSheet, Text, Dimensions} from "react-native";
 import Test from "../Test";
+import MyPolicyItem from "../modules/MyPolicyItem";
+import AskPrice from "./AskPrice";
 
 
 
@@ -20,10 +22,9 @@ export default class MyPolicy extends Component{
         /*that存储了上一个this*/
         let that = this;
         if(navigator){
-            /*push主要掌管页面跳转 返回的component属性决定了呈现哪一个class*/
             navigator.push({
                 name : "AskPrice",
-                component : Test,
+                component : AskPrice,
                 /*params :{
                     title:this.state.title,
                     id:123,
@@ -42,34 +43,33 @@ export default class MyPolicy extends Component{
         return(
 
             <View>
-                <View>
-                    <Image source={require('../img/MyPolicy/logo.png')}
-                           style={styles.imgCss}>
+                <MyPolicyItem/>
 
-                    </Image>
-                </View>
-                <View>
-                    {/*===跳转按钮===*/}
+                <View style={{position: "absolute",
+                    margin:20,
+                    marginTop:Dimensions.get('window').height*0.85,
+                    flexDirection:"column",
+                    alignItems:"flex-end",
+                    justifyContent:"center"}}>
                     <TouchableHighlight
-                        style={styles.JumpOutButton}
                         onPress={this.jump.bind(this)}
                     >
-                        <View>
-                            <Text style={styles.TextJumpOutButton}>一键询价</Text>
+                        <View style={{backgroundColor:"#000",width:Dimensions.get('window').width-40,height:50,
+                            alignItems:"center",
+                            justifyContent:"center"}}>
+                            <Text style={{fontSize:15,color:"#fff"}}>一键询价</Text>
                         </View>
                     </TouchableHighlight>
+
                 </View>
+
             </View>
-
-
         )
 
     }
 
 }
 let styles = StyleSheet.create({
-
-
     imgCss:{
         resizeMode: 'contain',
         width:widthOfWindow,
@@ -82,23 +82,19 @@ let styles = StyleSheet.create({
         backgroundColor: '#bebebe'
     },
     JumpOutButton:{
-
         resizeMode: 'contain',
+        position: "absolute",
         textAlignVertical: 'center',
         height:50,
         marginTop:20,
         marginLeft:30,
         marginRight:30,
         backgroundColor:'#000000',
-
     },
     TextJumpOutButton:{
-
         marginLeft:widthOfWindow/3,
         marginTop:15,
         color:'#FFFFFF',
         fontSize:15
     },
-
-
 });

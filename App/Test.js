@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {NativeModules,Platform, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import AransModules from "./utils/AransModules";
 
 export default class Test extends Component{
 
@@ -21,8 +22,10 @@ export default class Test extends Component{
     render(){
         return(
             <View>
-                <TouchableHighlight onPress={()=>{NativeModules.AransModules.TakeToast();
+                <TouchableHighlight onPress={()=>{AransModules.TakeToast();
                 }}>
+                    <Text style={{fontSize:20}}>aaa</Text>
+                    <Text style={{fontSize:20}}>aaa</Text>
                     <Text style={{fontSize:20}}>aaa</Text>
                 </TouchableHighlight>
 

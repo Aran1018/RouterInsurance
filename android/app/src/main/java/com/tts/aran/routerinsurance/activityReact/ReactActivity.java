@@ -3,6 +3,8 @@ package com.tts.aran.routerinsurance.activityReact;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactRootView;
@@ -32,6 +34,9 @@ public class ReactActivity extends Activity implements DefaultHardwareBackBtnHan
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+        WindowManager.LayoutParams.FLAG_FULLSCREEN);    //设置全屏
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
