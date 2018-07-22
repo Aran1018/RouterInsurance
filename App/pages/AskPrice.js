@@ -23,39 +23,6 @@ export default class AskPrice extends Component{
         };
     }
 
-
-        componentWillMount() {
-            if (Platform.OS === 'android') {
-                BackHandler.addEventListener('hardwareBackPress', this.onBackAndroid);
-            }
-        }
-        componentWillUnmount() {
-            if (Platform.OS === 'android') {
-                BackHandler.removeEventListener('hardwareBackPress', this.onBackAndroid);
-            }
-        }
-        onBackAndroid = () => {
-            const{navigator} = this.props;
-            /*that存储了上一个this*/
-            let that = this;
-            if(navigator){
-                navigator.push({
-                    name : "MyPolicy",
-                    component : MyPolicy,
-                    /*params :{
-                        title:this.state.title,
-                        id:123,
-                        getUser:function(user){
-                            that.setState({
-                                user:user
-                            })
-                        }
-                    }*/
-                })
-            }
-        };
-
-
     jump(){
             const{navigator} = this.props;
         /*that存储了上一个this*/

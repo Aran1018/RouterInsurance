@@ -43,7 +43,7 @@ export default class MyPolicy extends Component{
         return(
 
             <View>
-                <MyPolicyItem/>
+                <MyPolicyItem routeName={this.props}/>
 
                 <View style={{position: "absolute",
                     margin:20,

@@ -7,10 +7,16 @@
  */
 
 import React, {Component} from 'react';
-import {Dimensions, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import TheSingleStateItem from "./TheSingleStateItem";
 let json=require('../data/mypolicy');
 export default class MyPolicyItem extends Component{
+
+
+
+    continueDoc(){
+        alert("续保")
+    }
 
     setTheStateItem(json){
 
@@ -47,6 +53,7 @@ export default class MyPolicyItem extends Component{
                                     <Text style={{marginLeft:30,fontSize:10}}>保险到期日期：{json[i].Data}</Text>
                                 </View>
                                 <View  style={styles.buttonAndCallUsView}>
+                                    <TouchableHighlight onPress={this.continueDoc.bind(this)}>
                                     <View style={{flexDirection:"column",
                                         alignItems:"center",
                                         marginTop:10,
@@ -54,6 +61,7 @@ export default class MyPolicyItem extends Component{
                                         <Image style={{resizeMode:'stretch',width:80,height:25}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
                                         <Text style={{color:"#fff",position: "absolute",fontSize:10}}>续保</Text>
                                     </View>
+                                    </TouchableHighlight>
                                     <Text style={{marginTop:10,fontSize:10}}>联系我们</Text>
                                 </View>
                             </View>
@@ -62,17 +70,17 @@ export default class MyPolicyItem extends Component{
                     break;
                 case 606:
                     arr.push(
-                        <TheSingleStateItem key={i} carId={json[i].CarId} name={map["606"]}/>
+                        <TheSingleStateItem routeName={this.props.routeName} jumpState={606} key={i} carId={json[i].CarId} name={map["606"]}/>
                     );
                     break;
                 case 707:
                     arr.push(
-                        <TheSingleStateItem key={i} carId={json[i].CarId} name={map["707"]}/>
+                        <TheSingleStateItem routeName={this.props.routeName} jumpState={707} key={i} carId={json[i].CarId} name={map["707"]}/>
                     );
                     break;
                 case 808:
                     arr.push(
-                        <TheSingleStateItem key={i} carId={json[i].CarId} name={map["808"]}/>
+                        <TheSingleStateItem routeName={this.props.routeName} jumpState={808} key={i} carId={json[i].CarId} name={map["808"]}/>
                     );
                     break;
             }
@@ -86,7 +94,7 @@ export default class MyPolicyItem extends Component{
             <ScrollView>
                 {this.setTheStateItem(json)}
                 <View style={{marginTop:100}}>
-                    
+
                 </View>
             </ScrollView>
         )
