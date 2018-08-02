@@ -8,6 +8,7 @@
 import React, {Component} from 'react';
 import {BackHandler,Platform,Dimensions, Image, Modal, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
 import MyPolicy from "./MyPolicy";
+import ImageRadioGroup from "../modules/ImageRadioGroup";
 
 let MARGIN_TWO_SIDES = 13;
 let widthOfWindow = Dimensions.get('window').width;
@@ -20,6 +21,30 @@ export default class AskPrice extends Component{
             animationType: 'none',
             modalVisible: false,
             transparent: true,
+            sexArray: [
+
+                {
+                    title: '中国平安',
+                    imgBrand: require("../img/ImageRadios/brand.png"),
+                    image:  require('../img/ImageRadios/noselected.png'),
+                    image2:require('../img/ImageRadios/selected.png'),
+                },
+
+                {
+                    title: '中国人寿',
+                    imgBrand: require("../img/ImageRadios/brand.png"),
+
+                    image:  require('../img/ImageRadios/noselected.png'),
+                    image2:require('../img/ImageRadios/selected.png'),
+                },
+                {
+                    title: '太平洋保险',
+                    imgBrand: require("../img/ImageRadios/brand.png"),
+                    image:  require('../img/ImageRadios/noselected.png'),
+                    image2:require('../img/ImageRadios/selected.png'),
+                },
+
+            ],
         };
     }
 
@@ -38,6 +63,7 @@ export default class AskPrice extends Component{
                         that.setState({
                             user:user
                         })
+
                     }
                 }*/
             })
@@ -48,6 +74,8 @@ export default class AskPrice extends Component{
     showAlter(text) {
         alert(text);
     }
+
+
     render() {
         let modalBackgroundStyle = {
             backgroundColor: this.state.transparent ? 'rgba(0, 0, 0, 0.5)' : 'red',
@@ -150,7 +178,17 @@ export default class AskPrice extends Component{
                 }
 
                 <View>
-                    {/*<CirclePicture/>*/}
+                    <ImageRadioGroup
+                        style={{flexDirection: 'row'}}
+                        conTainStyle={{height: 44, width: 60}}
+                        imageStyle={{width: 25, height: 25}}
+                        selectIndex={'1'}
+                        data={this.state.sexArray}
+                        onPress={(index, item)=> {
+                            console.warn(item.title);
+                            console.warn(index)
+                        }}
+                    />
                 </View>
                 {
                     /*===组件复用部分===*/

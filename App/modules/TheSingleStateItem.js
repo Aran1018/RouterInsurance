@@ -29,7 +29,6 @@ export default class TheSingleStateItem extends Component{
                 break;
             case 808:
                 this.setState({theJumpState: ChangeDate});
-
                 break;
         }
     }

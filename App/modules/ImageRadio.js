@@ -66,6 +66,7 @@ export default class ImageRadio extends Component{
                 <View style={styles.PictureDescriptionView}>
 
                     <Text style={styles.PictureDescription}>
+
                         请选择投保公司：
                     </Text>
                 </View>
