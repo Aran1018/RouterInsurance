@@ -12,14 +12,47 @@ import {Dimensions} from 'react-native';
 
 var {height, width} = Dimensions.get('window');
 
-import RadioModal from 'react-native-radio-master';
+import ImageRadioGroup from "../modules/ImageRadioGroup";
 
 type Props = {};
+
 export default class App extends Component<Props> {
+
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            animationType: 'none',
+            modalVisible: false,
+            transparent: true,
+            sexArray: [
+
+                {
+                    title: '微信支付',
+                    imgBrand: require("../imgs/wechatpay.png"),
+                    image: require('../img/ImageRadios/noselected.png'),
+                    image2: require('../img/ImageRadios/selected.png'),
+                },
+
+                {
+                    title: '支付宝支付',
+                    imgBrand: require("../imgs/alipay.png"),
+
+                    image: require('../img/ImageRadios/noselected.png'),
+                    image2: require('../img/ImageRadios/selected.png'),
+                },
+
+            ],
+        };
+    }
 
     state = {
         visible: false,
         transparent: true,
+    }
+
+    showAlter(text) {
+        alert(text);
     }
 
     render() {
@@ -297,39 +330,19 @@ export default class App extends Component<Props> {
 
                         {/*支付方式*/}
 
-                        <View style={{
-                            marginTop: 5,
-                            width: width,
-                            height: 20,
-                            flexDirection: 'row',
-                        }}
-
-                              visible={this.state.visible}
-                              transparent={this.state.transparent}>
-                            <RadioModal
-                                onValueChange={(id, item) => this.setState({initId: id, initItem: item})}
-                                style={{
-                                    marginLeft: 15,
-                                    flexDirection: 'row',
-                                    width: width,
-                                    height: 100,
+                        <View>
+                            <ImageRadioGroup
+                                style={{flexDirection: 'row'}}
+                                conTainStyle={{height: 44, width: 60}}
+                                imageStyle={{width: 25, height: 25}}
+                                selectIndex={'1'}
+                                data={this.state.sexArray}
+                                onPress={(index, item) => {
+                                    console.warn(item.title);
+                                    console.warn(index)
                                 }}
-                            >
-                                <Text value="1">
-                                    <Text>
-                                        aliPay
-                                    </Text>
-                                </Text>
-
-                                <Text value="2">
-                                    <Text>
-                                        WeChatPay
-                                    </Text>
-                                </Text>
-
-                            </RadioModal>
+                            />
                         </View>
-
                         {/*确定购买*/}
                         <TouchableOpacity>
                             <View style={{
