@@ -17,8 +17,6 @@ let {height, width} = Dimensions.get('window');
 
 export default class ChangeDate extends Component{
 
-
-
     render() {
         return (
             <View style={{backgroundColor: 'white'}}>

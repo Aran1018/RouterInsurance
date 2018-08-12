@@ -7,7 +7,16 @@
  */
 
 import React, {Component} from 'react';
-import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {
+    Dimensions,
+    Image,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableHighlight,
+    TouchableOpacity,
+    View
+} from 'react-native';
 import TheSingleStateItem from "./TheSingleStateItem";
 let json=require('../data/mypolicy');
 export default class MyPolicyItem extends Component{
@@ -54,13 +63,13 @@ export default class MyPolicyItem extends Component{
                                 </View>
                                 <View  style={styles.buttonAndCallUsView}>
                                     <TouchableHighlight onPress={this.continueDoc.bind(this)}>
-                                    <View style={{flexDirection:"column",
-                                        alignItems:"center",
-                                        marginTop:10,
-                                        justifyContent:"center",}}>
-                                        <Image style={{resizeMode:'stretch',width:80,height:25}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
-                                        <Text style={{color:"#fff",position: "absolute",fontSize:10}}>续保</Text>
-                                    </View>
+                                        <View style={{flexDirection:"column",
+                                            alignItems:"center",
+                                            marginTop:10,
+                                            justifyContent:"center",}}>
+                                            <Image style={{resizeMode:'stretch',width:80,height:25}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
+                                            <Text style={{color:"#fff",position: "absolute",fontSize:10}}>续保</Text>
+                                        </View>
                                     </TouchableHighlight>
                                     <Text style={{marginTop:10,fontSize:10}}>联系我们</Text>
                                 </View>
@@ -92,6 +101,43 @@ export default class MyPolicyItem extends Component{
     render(){
         return(
             <ScrollView>
+
+                {/*导航栏*/}
+                <View style={{height: 50, backgroundColor: '#FFFFFF'}}>
+                    <View style={{flex: 1, justifyContent: 'center'}}>
+                        <TouchableOpacity>
+                            <View style={{marginTop: 8}}>
+                                <Image source={require('../imgs/back.png')}
+                                       style={{
+                                           width: 35, height: 30, alignItems: 'center',
+                                           marginTop: 32
+                                       }}/>
+                            </View>
+                        </TouchableOpacity>
+
+                    </View>
+
+                    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                        <Text
+                            style={{color: '#3f3f3f', fontSize: 20, marginLeft: 3, marginTop: 20}}>我的保险</Text>
+
+                    </View>
+
+                    <View style={{
+                        marginRight: 8,
+                        justifyContent: 'flex-end',
+                        alignItems: 'center',
+                        flex: 1,
+                        flexDirection: 'row',
+                        marginBottom: 20
+                    }}>
+                        <TouchableOpacity>
+                            <Image source={require('../imgs/phone.png')}
+                                   style={{width: 21, height: 18, marginRight: 8, alignItems: 'center'}}/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+
                 {this.setTheStateItem(json)}
                 <View style={{marginTop:100}}>
 
