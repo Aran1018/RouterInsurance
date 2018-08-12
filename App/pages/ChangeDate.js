@@ -14,47 +14,10 @@ import {Dimensions} from 'react-native';
 
 let {height, width} = Dimensions.get('window');
 
-type Props = {};
-
-
-let datas = [
-    {
-        "selecteId": 13,
-        "content": "Apple",
-        "selected": false
-    },
-    {
-        "selecteId": 14,
-        "content": "Banana",
-        "selected": false
-    },
-    {
-        "selecteId": 15,
-        "content": "Orange",
-        "selected": false
-    },
-    {
-        "selecteId": 16,
-        "content": "Watermelon",
-        "selected": true
-    },
-    {
-        "selecteId": 17,
-        "content": "Grape",
-        "selected": false
-    }
-];
 
 export default class ChangeDate extends Component{
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            language: datas[3].selecteId,
-            item: datas[3].content,
-            initId: '0'
-        };
-    }
+
 
     render() {
         return (
