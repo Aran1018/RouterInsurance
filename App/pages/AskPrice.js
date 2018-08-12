@@ -6,7 +6,19 @@
  *我觉得这世间再没有别的东西比它值得被如此依靠。
  */
 import React, {Component} from 'react';
-import {BackHandler,Platform,Dimensions, Image, Modal, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
+import {
+    BackHandler,
+    Platform,
+    Dimensions,
+    Image,
+    Modal,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableHighlight,
+    View,
+    TouchableOpacity
+} from 'react-native';
 import MyPolicy from "./MyPolicy";
 import ImageRadioGroup from "../modules/ImageRadioGroup";
 
@@ -110,7 +122,6 @@ export default class AskPrice extends Component{
                                         height:40,
                                         backgroundColor:"#000",
                                         alignItems:"center",
-                                        justifyContent:"center",
                                         marginTop:10
                                     }}>
                                         <Text style={{color:"#fff"}}>OK</Text>
@@ -151,17 +162,24 @@ export default class AskPrice extends Component{
                         行驶证
                     </Text>
 
-                    <TouchableHighlight
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor:'#00b4f5',
+                            borderRadius:15,
+                            marginLeft:Dimensions.get("window").width/2,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginRight:20,
+                            height:25,
+                        }}
                         onPress={this.showAlter.bind('aaa')}>
 
-                        {/*<Image source={require('../img/4862144447.png')}
-                               style={styles.TakePhoto}
-
-                               拍照上传
-                        />*/}
-
-                        <Text>拍照上传</Text>
-                    </TouchableHighlight>
+                        <Text style={{
+                            fontSize: 13,
+                            color:"#fff",
+                            margin:5
+                        }}>拍照上传</Text>
+                    </TouchableOpacity>
 
 
                 </View>
@@ -203,21 +221,23 @@ export default class AskPrice extends Component{
                         身份证
                     </Text>
 
-                    <TouchableHighlight>
-
-                        {/*<Image
-
-                        //TODO==拍照上传
-
-
-                        source={require('./image/4862144447.png')}*/}
-                        {/*style={styles.TakePhoto}*/}
-
-
-                        {/*/>*/}
-                        <Text>拍照上传</Text>
-
-                    </TouchableHighlight>
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor:'#00b4f5',
+                            borderRadius:15,
+                            marginLeft:Dimensions.get("window").width/2,
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginRight:20,
+                            height:25,
+                        }}
+                        onPress={this.showAlter.bind('aaa')}>
+                        <Text style={{
+                            fontSize: 13,
+                            color:"#fff",
+                            margin:5
+                        }}>拍照上传</Text>
+                    </TouchableOpacity>
 
 
                 </View>
@@ -340,6 +360,8 @@ let styles = StyleSheet.create({
     InputViewStyle: {
         marginLeft: MARGIN_TWO_SIDES,
         marginTop: 0,
+        justifyContent:"space-between",
+        alignItems: 'center',
         flexDirection: 'row',
     },
     container: {

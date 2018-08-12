@@ -53,7 +53,6 @@ export default class RadioGroup extends Component {
 
     renderRadioButton(array, item, onPress, index, sexIndex) {
 
-        let backgroundColor = 'red';
         let image = item.image;
         let imgBrand = item.imgBrand;
         if (item.select === true) {

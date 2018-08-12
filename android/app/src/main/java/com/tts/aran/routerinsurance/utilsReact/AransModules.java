@@ -1,6 +1,8 @@
 package com.tts.aran.routerinsurance.utilsReact;
 
 import android.content.Context;
+import android.content.Intent;
+import android.provider.MediaStore;
 import android.widget.Toast;
 
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -33,10 +35,14 @@ public class AransModules extends ReactContextBaseJavaModule {
 
 
 
+
     @ReactMethod
     public void TakeToast(){
         Toast.makeText(mContext, "eee", Toast.LENGTH_SHORT).show();
     }
 
+    public void TakePhoto(){
+
+    }
 
 }

@@ -31,13 +31,12 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,ReactActivity.class);
                 startActivity(intent);
-
             }
         });
 
         native_camera = findViewById(R.id.native_Camera);
         native_camera.setOnClickListener(new View.OnClickListener() {
-        static final int REQUEST_IMAGE_CAPTURE = 1;
+            static final int REQUEST_IMAGE_CAPTURE = 1;
             @Override
             public void onClick(View view) {
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
