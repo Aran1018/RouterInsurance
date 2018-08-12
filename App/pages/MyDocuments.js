@@ -1,17 +1,18 @@
-/**
- *那当自己都萎靡到
- *无法被依靠的时候该如何振作？
- *Creat by Aran  at  2018/7/19
- *除过自己心中笃信的那一点不灭的光亮
- *我觉得这世间再没有别的东西比它值得被如此依靠。
- */
-import React,{Component} from "react"
-import {StyleSheet,Dimensions,Image, ScrollView, Text, TouchableOpacity, View} from "react-native";
+import React, {Component} from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    Image,
+    TouchableOpacity,
+    ScrollView,
+} from 'react-native';
 
-let {height, width} = Dimensions.get('window');
+import {Dimensions} from 'react-native';
 
+var {height, width} = Dimensions.get('window');
 
-export default class MyDocuments extends Component{
+export default class NavBarAndroidColored extends Component {
 
     constructor(props) {
         super(props);
@@ -23,6 +24,12 @@ export default class MyDocuments extends Component{
         };
     }
 
+    componentDidMount() {
+        Image.getSize(this.props.image, (width, height) => {
+            height = screenWidth * height / width;
+            this.setState({screenWidth, height});
+        });
+    }
 
     render() {
         return (
@@ -65,14 +72,14 @@ export default class MyDocuments extends Component{
                                 marginBottom: 20
                             }}>
                                 <TouchableOpacity>
-                                    <Image source={require('../img/imgMyDocuments/phone.png')}
+                                    <Image source={require('./imgs/phone.png')}
                                            style={{width: 24, height: 24, marginRight: 8, alignItems: 'center'}}/>
                                 </TouchableOpacity>
                             </View>
                         </View>
                         {/*大图片*/}
                         <View style={{marginTop: 15, alignItems: 'center', flex: 1}}>
-                            <Image source={require('../img/imgMyDocuments/qqq.png')}
+                            <Image source={require('./imgs/qqq.png')}
                                    style={[styles.imageStyle = {
                                        width: this.state.width,
                                        height: this.state.height,
@@ -83,6 +90,7 @@ export default class MyDocuments extends Component{
                         {/*保险栏*/}
                         <View>
                             <View style={{
+                                numberOfLines: 1,
                                 backgroundColor: 'white',
                                 marginTop: 20,
                                 marginRight: 20,
@@ -127,6 +135,8 @@ export default class MyDocuments extends Component{
                             </View>
 
                             <View style={{
+                                numberOfLines: 1,
+
                                 backgroundColor: 'white',
                                 marginTop: 3,
                                 marginRight: 20,
@@ -186,102 +196,104 @@ export default class MyDocuments extends Component{
 
 
                         {/*下面图片*/}
-                        <View style={{
-                            marginLeft: 20,
-                            marginRight: 20,
-                            marginTop: 20,
-                            alignItems: 'center',
-                            flexDirection: 'row'
-                        }}>
-                            <Image source={require('../img/imgMyDocuments/aaa.png')}
-                                   style={[styles.backgroundImage = {
-                                       flex: 1,
-                                       alignItems: 'center',
-                                       justifyContent: 'center',
-                                       width: 290,
-                                       height: 70,
-                                       resizeMode: Image.resizeMode.stretch,
-                                       backgroundColor: 'rgba(0,0,0,0)'
-                                   }]}/>
-                            <View style={{backgroundColor: '#dadada', height: 70}}>
-                                <View style={{width: 170, height: 50, margin: 5}}>
-                                    <View
-                                        style={{width: 20, height: 50, flexDirection: 'row'}}>
-                                        <Text style={{
-                                            fontSize: 37,
-                                            color: '#fe2b00',
-                                            width: 75,
-                                            height: 50,
-                                            marginLeft: 20,
-                                            marginBottom: 10
-                                        }}>获得</Text>
+                        <TouchableOpacity>
+                            <View style={{
+                                marginLeft: 20,
+                                marginRight: 20,
+                                marginTop: 20,
+                                alignItems: 'center',
+                                flexDirection: 'row'
+                            }}>
+                                <Image source={require('./imgs/aaa.png')}
+                                       style={[styles.backgroundImage = {
+                                           flex: 1,
+                                           alignItems: 'center',
+                                           justifyContent: 'center',
+                                           width: 290,
+                                           height: 70,
+                                           resizeMode: Image.resizeMode.stretch,
+                                           backgroundColor: 'rgba(0,0,0,0)'
+                                       }]}/>
+                                <View style={{backgroundColor: '#dadada', height: 70}}>
+                                    <View style={{width: 170, height: 50,  marginTop: 5}}>
 
-                                        <View>
-                                            {/*竖线*/}
-                                            <View style={{
-                                                marginBottom: 10,
-                                                height: height * 15.5/ 200,
-                                                marginLeft:2,
-                                                width: 1,
-                                                backgroundColor: '#000',
-                                                position: 'absolute',
-                                            }}>
-                                            </View>
-
-                                            {/*垂直布局*/}
-                                            <View style={{flexDirection: 'column', marginTop: 5,marginLeft:1}}>
-
-                                                <View>
-                                                    <Text style={{
-                                                        fontSize: 15,
-                                                        color: '#fe2b00',
-                                                        width: 90,
-                                                        height: 20,
-                                                        marginLeft:4,
-
-                                                    }}>￥860.00</Text>
-                                                </View>
-
-                                                <View style={{marginBottom: 15}}>
-                                                    <Text style={{
-                                                        fontSize: 15,
-                                                        color: '#fe2b00',
-                                                        width: 90,
-                                                        marginLeft:5,
-                                                        height: 30,
-                                                    }}>维修基金</Text>
-                                                </View>
-                                            </View>
-
-                                        </View>
-
-                                    </View>
-                                    <TouchableOpacity>
-                                        <View style={{marginBottom: 15}}>
+                                        {/*了解详情*/}
+                                        <View style={{marginBottom: 0}}>
                                             <Text style={{
                                                 fontSize: 10,
                                                 width: 90,
-                                                height: 30,
-                                                marginLeft:120,
+                                                height: 13,
+                                                marginLeft: 120,
                                                 color: 'black',
                                             }}>了解详情</Text>
                                         </View>
-                                    </TouchableOpacity>
+
+                                        <View
+                                            style={{
+                                                width: 20,
+                                                height: 50,
+                                                backgroundColor: 'grew',
+                                                flexDirection: 'row'
+                                            }}>
+                                            <Text style={{
+                                                fontSize: 37,
+                                                color: '#fe2b00',
+                                                width: 75,
+                                                height: 50,
+                                                marginLeft: 20,
+                                                marginBottom: 10
+                                            }}>获得</Text>
+
+                                            <View>
+
+                                                {/*竖线*/}
+                                                <View style={{
+                                                    marginTop: 10,
+                                                    height: 33,
+                                                    marginLeft: 2,
+                                                    width: 0.7,
+                                                    backgroundColor: '#000',
+                                                    position: 'absolute',
+                                                }}>
+                                                </View>
+
+                                                {/*垂直布局*/}
+                                                <View style={{flexDirection: 'column', marginTop: 5, marginLeft: 1}}>
+
+                                                    <View>
+                                                        <Text style={{
+                                                            fontSize: 15,
+                                                            color: '#fe2b00',
+                                                            width: 90,
+                                                            height: 20,
+                                                            marginLeft: 4,
+
+                                                        }}>￥860.00</Text>
+                                                    </View>
+
+                                                    <View style={{marginBottom: 15}}>
+                                                        <Text style={{
+                                                            fontSize: 15,
+                                                            color: '#fe2b00',
+                                                            width: 90,
+                                                            marginLeft: 5,
+                                                            height: 30,
+                                                        }}>维修基金</Text>
+                                                    </View>
+                                                </View>
+
+                                            </View>
+
+                                        </View>
+
+
+                                    </View>
                                 </View>
+
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     </View>
-                    <View>
-                        <Text style={[styles.imgStyle = {
-                            marginTop: 15,
-                            fontSize: 20,
-                            position: 'absolute',
-                            color: 'white',
-                            width: width,
-                            height: 70,
-                            backgroundColor: 'blue',
-                        }]}>111111</Text>
-                    </View>
+
                     {/*ButtonTabBar*/}
                     <View style={{backgroundColor: 'white', marginTop: 15, flexDirection: 'row'}}>
                         <View style={{
