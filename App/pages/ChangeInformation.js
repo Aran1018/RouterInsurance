@@ -12,12 +12,11 @@ import {Dimensions} from 'react-native';
 
 var {height, width} = Dimensions.get('window');
 
-import ImageRadioGroup from "../modules/ImageRadioGroup";
+import ImageRadioGroup from "../modules/ImageRadioInformation";
 
 type Props = {};
 
 export default class App extends Component<Props> {
-
 
     constructor(props) {
         super(props);

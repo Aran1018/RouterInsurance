@@ -105,15 +105,16 @@ export default class MyPolicyItem extends Component{
                 {/*导航栏*/}
                 <View style={{height: 50, backgroundColor: '#FFFFFF'}}>
                     <View style={{flex: 1, justifyContent: 'center'}}>
-                        <TouchableOpacity>
-                            <View style={{marginTop: 8}}>
+                        <View style={{marginTop: 8}}>
+                            <TouchableOpacity>
                                 <Image source={require('../imgs/back.png')}
                                        style={{
                                            width: 35, height: 30, alignItems: 'center',
                                            marginTop: 32
                                        }}/>
-                            </View>
-                        </TouchableOpacity>
+                            </TouchableOpacity>
+                        </View>
+
 
                     </View>
 
@@ -122,24 +123,23 @@ export default class MyPolicyItem extends Component{
                             style={{color: '#3f3f3f', fontSize: 20, marginLeft: 3, marginTop: 20}}>我的保险</Text>
 
                     </View>
-
                     <View style={{
-                        marginRight: 8,
-                        justifyContent: 'flex-end',
                         alignItems: 'center',
                         flex: 1,
                         flexDirection: 'row',
-                        marginBottom: 20
+                        marginBottom: 20,
+                        marginLeft: 340
                     }}>
                         <TouchableOpacity>
-                            <Image source={require('../imgs/phone.png')}
-                                   style={{width: 21, height: 18, marginRight: 8, alignItems: 'center'}}/>
+                            <Text style={{width: 60, height: 18, marginRight: 8}}>
+                                历史保单
+                            </Text>
                         </TouchableOpacity>
                     </View>
                 </View>
 
                 {this.setTheStateItem(json)}
-                <View style={{marginTop:100}}>
+                <View style={{marginTop: 100}}>
 
                 </View>
             </ScrollView>

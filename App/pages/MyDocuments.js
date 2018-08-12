@@ -72,14 +72,14 @@ export default class NavBarAndroidColored extends Component {
                                 marginBottom: 20
                             }}>
                                 <TouchableOpacity>
-                                    <Image source={require('./imgs/phone.png')}
+                                    <Image source={require('../imgs/phone.png')}
                                            style={{width: 24, height: 24, marginRight: 8, alignItems: 'center'}}/>
                                 </TouchableOpacity>
                             </View>
                         </View>
                         {/*大图片*/}
                         <View style={{marginTop: 15, alignItems: 'center', flex: 1}}>
-                            <Image source={require('./imgs/qqq.png')}
+                            <Image source={require('../imgs/qqq.png')}
                                    style={[styles.imageStyle = {
                                        width: this.state.width,
                                        height: this.state.height,
@@ -204,7 +204,7 @@ export default class NavBarAndroidColored extends Component {
                                 alignItems: 'center',
                                 flexDirection: 'row'
                             }}>
-                                <Image source={require('./imgs/aaa.png')}
+                                <Image source={require('../imgs/aaa.png')}
                                        style={[styles.backgroundImage = {
                                            flex: 1,
                                            alignItems: 'center',
@@ -215,7 +215,7 @@ export default class NavBarAndroidColored extends Component {
                                            backgroundColor: 'rgba(0,0,0,0)'
                                        }]}/>
                                 <View style={{backgroundColor: '#dadada', height: 70}}>
-                                    <View style={{width: 170, height: 50,  marginTop: 5}}>
+                                    <View style={{width: 170, height: 50, marginTop: 5}}>
 
                                         {/*了解详情*/}
                                         <View style={{marginBottom: 0}}>
