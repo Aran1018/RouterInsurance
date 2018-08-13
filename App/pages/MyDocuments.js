@@ -10,7 +10,6 @@ import {
 
 import {Dimensions} from 'react-native';
 
-
 var {height, width} = Dimensions.get('window');
 
 export default class NavBarAndroidColored extends Component {
@@ -19,9 +18,8 @@ export default class NavBarAndroidColored extends Component {
         super(props);
         // 初始状态
         this.state = {
-            width: 400,
-            height: 260,
-            padding: 30,
+            width: 325,
+            height: 220,
         };
     }
 
@@ -35,7 +33,6 @@ export default class NavBarAndroidColored extends Component {
     render() {
         return (
             <View style={{flexDirection: 'column'}}>
-
                 <ScrollView contentContainerStyle={styles.contentContainer}>
                     <View style={{backgroundColor: '#eeeeee'}}>
                         {/*导航栏*/}
@@ -78,33 +75,57 @@ export default class NavBarAndroidColored extends Component {
                                 </TouchableOpacity>
                             </View>
                         </View>
+
+                        {/*分割线*/}
+                        <View style={{
+                            height: 0.2,
+                            width: width,
+                            backgroundColor: '#000',
+                        }}>
+                        </View>
+
                         {/*大图片*/}
-                        <View style={{marginTop: 15, alignItems: 'center', flex: 1}}>
+                        <View style={{marginTop: 10, alignItems: 'center', flex: 1}}>
                             <Image source={require('../img/imgMyDocuments/qqq.png')}
                                    style={[styles.imageStyle = {
                                        width: this.state.width,
                                        height: this.state.height,
-                                       padding: this.state.padding
+                                       resizeMode: Image.resizeMode.stretch,
                                    }]}/>
+                        </View>
+
+                        {/*分割线*/}
+                        <View style={{
+                            height: 0.2,
+                            width: 370,
+                            backgroundColor: '#000',
+                            marginTop: 10,
+                            marginRight: 20,
+                            marginLeft: 20,
+                        }}>
                         </View>
 
                         {/*保险栏*/}
                         <View>
                             <View style={{
-
                                 backgroundColor: 'white',
-                                marginTop: 20,
                                 marginRight: 20,
                                 marginLeft: 20,
                                 flexDirection: 'row'
                             }}>
                                 <View
-                                    style={{width: 60, height: 40, margin: 5, backgroundColor: 'white'}}>
+                                    style={{
+                                        marginLeft: 12,
+                                        width: 60,
+                                        height: 40,
+                                        margin: 5,
+                                        backgroundColor: 'white'
+                                    }}>
                                     <Text
                                         style={{marginTop: 8, fontSize: 15, color: 'black', marginRight: 10}}>交强险</Text>
                                 </View>
                                 <View style={{
-
+                                    marginRight: 12,
                                     flex: 1,
                                     width: 60,
                                     height: 40,
@@ -116,7 +137,7 @@ export default class NavBarAndroidColored extends Component {
                                         fontSize: 15,
                                         color: 'black',
                                         alignSelf: 'flex-end',
-                                    }}>￥980</Text>
+                                    }}>￥980.00</Text>
                                 </View>
                             </View>
 
@@ -127,7 +148,7 @@ export default class NavBarAndroidColored extends Component {
                                 marginRight: 20,
                                 marginLeft: 20
                             }}>
-                                <View style={{width: 40, height: 40, margin: 5, marginLeft: 8}}>
+                                <View style={{width: 40, height: 40, margin: 5, marginLeft: 12}}>
                                     <Text style={{marginTop: 8, fontSize: 16, color: 'black'}}>税费</Text>
                                 </View>
                                 <View style={{
@@ -142,8 +163,9 @@ export default class NavBarAndroidColored extends Component {
                                         marginTop: 8,
                                         fontSize: 15,
                                         alignSelf: 'flex-end',
-                                        color: 'black'
-                                    }}>￥980</Text>
+                                        color: 'black',
+                                        marginRight: 7
+                                    }}>￥980.00</Text>
                                 </View>
                             </View>
 
@@ -154,7 +176,7 @@ export default class NavBarAndroidColored extends Component {
                                 marginLeft: 20,
                                 flexDirection: 'row'
                             }}>
-                                <View style={{width: 60, height: 40, margin: 5, marginLeft: 8}}>
+                                <View style={{width: 60, height: 40, margin: 5, marginLeft: 12}}>
                                     <Text style={{marginTop: 8, fontSize: 16, color: 'black'}}>商业险</Text>
                                 </View>
                                 <View style={{
@@ -170,14 +192,29 @@ export default class NavBarAndroidColored extends Component {
                                         fontSize: 15,
                                         color: 'black',
                                         alignSelf: 'flex-end',
-                                    }}>￥3980</Text>
+                                        marginRight: 7
+                                    }}>￥3980.00</Text>
                                 </View>
                             </View>
-
+                            {/*保费合计*/}
                             <View style={{backgroundColor: 'black', marginTop: 3, marginRight: 20, marginLeft: 20}}>
-                                <View style={{width: 200, height: 40, margin: 5, marginLeft: 165, flex: 1,}}>
-                                    <Text style={{marginTop: 8, fontSize: 16, color: 'white', alignSelf: 'flex-end'}}>合计保费:
-                                        ￥5940.00</Text>
+                                <View style={{
+                                    width: 200,
+                                    height: 32,
+                                    margin: 5,
+                                    marginLeft: 170,
+                                    flexDirection: 'row',
+                                    flex: 1
+                                }}>
+                                    <View style={{marginLeft: 23}}>
+                                        <Text style={{marginTop: 6, fontSize: 16, color: 'white'}}>保费合计:
+                                        </Text>
+                                    </View>
+                                    <View style={{}}>
+                                        <Text
+                                            style={{marginTop: 2.6, fontSize: 20, color: 'white',}}> ￥5940.00
+                                        </Text>
+                                    </View>
                                 </View>
                             </View>
                         </View>
@@ -190,8 +227,14 @@ export default class NavBarAndroidColored extends Component {
                                 marginLeft: 20,
                                 flexDirection: 'row'
                             }}>
-                                <View style={{width: 150, height: 40, margin: 5, backgroundColor: 'white'}}>
-                                    <Text style={{marginTop: 8, fontSize: 18, color: '#fe2b00'}}>油卡/路由侠补贴</Text>
+                                <View style={{
+                                    width: 150,
+                                    height: 40,
+                                    margin: 5,
+                                    backgroundColor: 'white',
+                                    marginLeft: 12
+                                }}>
+                                    <Text style={{marginTop: 8, fontSize: 18, color: '#fe2b00'}}>油卡/路游侠补贴</Text>
                                 </View>
                                 <View style={{
                                     width: 60,
@@ -205,156 +248,171 @@ export default class NavBarAndroidColored extends Component {
                                         marginTop: 8,
                                         fontSize: 18,
                                         color: '#fe2b00',
-                                        alignSelf: 'flex-end'
-                                    }}>￥1000</Text>
+                                        alignSelf: 'flex-end',
+                                        marginRight: 7
+                                    }}>￥1000.00</Text>
                                 </View>
                             </View>
 
 
                             <View style={{backgroundColor: '#fe2b00', marginTop: 3, marginRight: 20, marginLeft: 20}}>
-                                <View style={{flex: 1, width: 200, height: 40, margin: 5, marginLeft: 160}}>
-                                    <Text style={{marginTop: 8, fontSize: 16, color: 'white', alignSelf: 'flex-end'}}>保费合计:
-                                        ￥4940.00</Text>
+                                <View style={{
+                                    width: 200,
+                                    height: 32,
+                                    margin: 5,
+                                    marginLeft: 170,
+                                    flexDirection: 'row',
+                                    flex: 1
+                                }}>
+                                    <View style={{marginLeft: 23}}>
+                                        <Text style={{marginTop: 6, fontSize: 16, color: 'white'}}>保费合计:
+                                        </Text>
+                                    </View>
+                                    <View stylr={{}}>
+                                        <Text
+                                            style={{marginTop: 2.6, fontSize: 20, color: 'white',}}> ￥4940.00
+                                        </Text>
+                                    </View>
                                 </View>
                             </View>
                         </View>
 
 
                         {/*下面图片*/}
-                        <TouchableOpacity>
-                            <View style={{
-                                marginLeft: 20,
-                                marginRight: 20,
-                                marginTop: 20,
-                                alignItems: 'center',
-                                flexDirection: 'row'
-                            }}>
-                                <Image source={require('../img/imgMyDocuments/aaa.png')}
-                                       style={[styles.backgroundImage = {
-                                           flex: 1,
-                                           alignItems: 'center',
-                                           justifyContent: 'center',
-                                           width: 290,
-                                           height: 70,
-                                           resizeMode: Image.resizeMode.stretch,
-                                           backgroundColor: 'rgba(0,0,0,0)'
-                                       }]}/>
-                                <View style={{backgroundColor: '#dadada', height: 70}}>
-                                    <View style={{width: 170, height: 50, marginTop: 5}}>
+                        <View>
+                            <TouchableOpacity>
+                                <View style={{
+                                    marginLeft: 20,
+                                    marginRight: 20,
+                                    marginTop: 20,
+                                    flexDirection: 'row',
+                                    marginBottom: 15
+                                }}>
+                                    <Image source={require('../img/imgMyDocuments/aaa.png')}
+                                           style={[styles.backgroundImage = {
+                                               flex: 1,
+                                               alignItems: 'center',
+                                               justifyContent: 'center',
+                                               width: (width - 20) / 2,
+                                               height: 90,
+                                           }]}/>
+                                    <View style={{backgroundColor: '#dadada', height: 90, width: (width - 20) / 2}}>
+                                        <View style={{width: (width - 20) / 2, height: 50}}>
 
-                                        {/*了解详情*/}
-                                        <View style={{marginBottom: 0}}>
-                                            <Text style={{
-                                                fontSize: 10,
-                                                width: 90,
-                                                height: 13,
-                                                marginLeft: 120,
-                                                color: 'black',
-                                            }}>了解详情</Text>
-                                        </View>
-
-                                        <View
-                                            style={{
-                                                width: 20,
-                                                height: 50,
-                                                backgroundColor: 'grew',
-                                                flexDirection: 'row'
-                                            }}>
-                                            <Text style={{
-                                                fontSize: 37,
-                                                color: '#fe2b00',
-                                                width: 75,
-                                                height: 50,
-                                                marginLeft: 20,
-                                                marginBottom: 10
-                                            }}>获得</Text>
-
-                                            <View>
-
-                                                {/*竖线*/}
-                                                <View style={{
-                                                    marginTop: 10,
-                                                    height: 33,
-                                                    marginLeft: 2,
-                                                    width: 0.7,
-                                                    backgroundColor: '#000',
-                                                    position: 'absolute',
-                                                }}>
-                                                </View>
-
-                                                {/*垂直布局*/}
-                                                <View style={{flexDirection: 'column', marginTop: 5, marginLeft: 1}}>
-
-                                                    <View>
-                                                        <Text style={{
-                                                            fontSize: 15,
-                                                            color: '#fe2b00',
-                                                            width: 90,
-                                                            height: 20,
-                                                            marginLeft: 4,
-
-                                                        }}>￥860.00</Text>
-                                                    </View>
-
-                                                    <View style={{marginBottom: 15}}>
-                                                        <Text style={{
-                                                            fontSize: 15,
-                                                            color: '#fe2b00',
-                                                            width: 90,
-                                                            marginLeft: 5,
-                                                            height: 30,
-                                                        }}>维修基金</Text>
-                                                    </View>
-                                                </View>
-
+                                            {/*了解详情*/}
+                                            <View style={{marginTop: 10}}>
+                                                <Text style={{
+                                                    fontSize: 10,
+                                                    width: 90,
+                                                    height: 13,
+                                                    marginLeft: 145,
+                                                    color: '#414141',
+                                                    fontWeight:'bold',
+                                                }}>了解详情</Text>
                                             </View>
 
+                                            <View
+                                                style={{
+                                                    width: 20,
+                                                    height: 50,
+                                                    flexDirection: 'row',
+                                                    marginTop: 2,
+                                                    marginLeft: 20,
+
+                                                }}>
+                                                <Text style={{
+                                                    fontSize: 37,
+                                                    color: '#fe2b00',
+                                                    width: 75,
+                                                    height: 50,
+                                                    marginLeft: 18,
+                                                    marginBottom: 10,
+                                                    fontWeight:'bold',
+                                                }}>获得</Text>
+
+                                                <View>
+                                                    {/*竖线*/}
+                                                    <View style={{
+                                                        marginTop: 10,
+                                                        height: 33,
+                                                        marginLeft:4,
+                                                        width: 0.5,
+                                                        backgroundColor: '#1d0075',
+                                                        position: 'absolute',
+                                                    }}>
+                                                    </View>
+                                                    {/*垂直布局*/}
+                                                    <View
+                                                        style={{flexDirection: 'column', marginTop: 5, marginLeft: 1}}>
+                                                        <View>
+                                                            <Text style={{
+                                                                fontSize: 15,
+                                                                color: '#fe2b00',
+                                                                width: 90,
+                                                                height: 20,
+                                                                marginLeft: 6,
+                                                                fontWeight:'bold',
+                                                            }}>￥860.00</Text>
+                                                        </View>
+
+                                                        <View style={{marginBottom: 15}}>
+                                                            <Text style={{
+                                                                fontSize: 15,
+                                                                color: '#fe2b00',
+                                                                width: 90,
+                                                                marginLeft: 7,
+                                                                height: 30,
+                                                                fontWeight:'bold',
+                                                            }}>维修基金</Text>
+                                                        </View>
+                                                    </View>
+                                                </View>
+                                            </View>
                                         </View>
-
-
                                     </View>
                                 </View>
-
-                            </View>
-                        </TouchableOpacity>
+                            </TouchableOpacity>
+                        </View>
                     </View>
 
                     {/*ButtonTabBar*/}
-                    <View style={{backgroundColor: 'white', marginTop: 15, flexDirection: 'row', width: width}}>
+                    <View style={{
+                        flexDirection: 'row',
+                        width: width,
+                        height: 60
+                    }}>
                         <View style={{width: width * 0.67, flexDirection: 'row'}}>
                             <View style={{
                                 width: 73,
                                 height: 40,
                                 margin: 5,
-                                backgroundColor: 'white',
                                 marginTop: 11,
-                                marginLeft: 8
+                                marginLeft: 18
                             }}>
                                 <Text style={{marginTop: 8, fontSize: 16, color: 'black'}}>保费合计:</Text>
                             </View>
                             <View style={{
                                 width: 160,
                                 height: 50,
-                                backgroundColor: 'white',
-                                marginTop: 6,
+                                marginTop: 4,
                                 marginBottom: 9
                             }}>
                                 <Text style={{marginTop: 7, fontSize: 25, color: 'black'}}>￥4940.00</Text>
                             </View>
                         </View>
                         <TouchableOpacity>
-                            <View style={{width: width * 0.33, height: 70, backgroundColor: '#fe2b00', flex: 1}}>
+                            <View style={{width: width * 0.33, height: 40, backgroundColor: '#fe2b00', flex: 1}}>
                                 <Text style={{
                                     alignSelf: 'center',
-                                    marginTop: 23,
-                                    fontSize: 18,
+                                    marginTop: 16,
+                                    fontSize: 21,
                                     color: 'white',
+                                    marginLeft: 2
                                 }}>立即购买</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
                 </ScrollView>
-
             </View>
 
         )
