@@ -10,6 +10,7 @@ import {
 
 import {Dimensions} from 'react-native';
 
+
 var {height, width} = Dimensions.get('window');
 
 export default class NavBarAndroidColored extends Component {
@@ -72,14 +73,14 @@ export default class NavBarAndroidColored extends Component {
                                 marginBottom: 20
                             }}>
                                 <TouchableOpacity>
-                                    <Image source={require('../imgs/phone.png')}
+                                    <Image source={require('./imgs/phone.png')}
                                            style={{width: 24, height: 24, marginRight: 8, alignItems: 'center'}}/>
                                 </TouchableOpacity>
                             </View>
                         </View>
                         {/*大图片*/}
                         <View style={{marginTop: 15, alignItems: 'center', flex: 1}}>
-                            <Image source={require('../imgs/qqq.png')}
+                            <Image source={require('./imgs/qqq.png')}
                                    style={[styles.imageStyle = {
                                        width: this.state.width,
                                        height: this.state.height,
@@ -90,7 +91,7 @@ export default class NavBarAndroidColored extends Component {
                         {/*保险栏*/}
                         <View>
                             <View style={{
-                                numberOfLines: 1,
+
                                 backgroundColor: 'white',
                                 marginTop: 20,
                                 marginRight: 20,
@@ -103,13 +104,19 @@ export default class NavBarAndroidColored extends Component {
                                         style={{marginTop: 8, fontSize: 15, color: 'black', marginRight: 10}}>交强险</Text>
                                 </View>
                                 <View style={{
+
+                                    flex: 1,
                                     width: 60,
                                     height: 40,
                                     margin: 5,
                                     backgroundColor: 'white',
-                                    marginLeft: 200
                                 }}>
-                                    <Text style={{marginTop: 8, fontSize: 15, color: 'black'}}>￥980</Text>
+                                    <Text style={{
+                                        marginTop: 8,
+                                        fontSize: 15,
+                                        color: 'black',
+                                        alignSelf: 'flex-end',
+                                    }}>￥980</Text>
                                 </View>
                             </View>
 
@@ -124,19 +131,23 @@ export default class NavBarAndroidColored extends Component {
                                     <Text style={{marginTop: 8, fontSize: 16, color: 'black'}}>税费</Text>
                                 </View>
                                 <View style={{
+                                    flex: 1,
                                     width: 60,
                                     height: 40,
                                     margin: 5,
                                     backgroundColor: 'white',
                                     marginLeft: 220
                                 }}>
-                                    <Text style={{marginTop: 8, fontSize: 15, color: 'black'}}>￥980</Text>
+                                    <Text style={{
+                                        marginTop: 8,
+                                        fontSize: 15,
+                                        alignSelf: 'flex-end',
+                                        color: 'black'
+                                    }}>￥980</Text>
                                 </View>
                             </View>
 
                             <View style={{
-                                numberOfLines: 1,
-
                                 backgroundColor: 'white',
                                 marginTop: 3,
                                 marginRight: 20,
@@ -149,17 +160,24 @@ export default class NavBarAndroidColored extends Component {
                                 <View style={{
                                     width: 60,
                                     height: 40,
+                                    flex: 1,
                                     margin: 5,
                                     backgroundColor: 'white',
                                     marginLeft: 190
                                 }}>
-                                    <Text style={{marginTop: 8, fontSize: 15, color: 'black'}}>￥3980</Text>
+                                    <Text style={{
+                                        marginTop: 8,
+                                        fontSize: 15,
+                                        color: 'black',
+                                        alignSelf: 'flex-end',
+                                    }}>￥3980</Text>
                                 </View>
                             </View>
 
                             <View style={{backgroundColor: 'black', marginTop: 3, marginRight: 20, marginLeft: 20}}>
-                                <View style={{width: 200, height: 40, margin: 5, marginLeft: 165}}>
-                                    <Text style={{marginTop: 8, fontSize: 16, color: 'white'}}>合计保费: ￥5940.00</Text>
+                                <View style={{width: 200, height: 40, margin: 5, marginLeft: 165, flex: 1,}}>
+                                    <Text style={{marginTop: 8, fontSize: 16, color: 'white', alignSelf: 'flex-end'}}>合计保费:
+                                        ￥5940.00</Text>
                                 </View>
                             </View>
                         </View>
@@ -177,19 +195,26 @@ export default class NavBarAndroidColored extends Component {
                                 </View>
                                 <View style={{
                                     width: 60,
+                                    flex: 1,
                                     height: 40,
                                     margin: 5,
                                     backgroundColor: 'white',
                                     marginLeft: 91
                                 }}>
-                                    <Text style={{marginTop: 8, fontSize: 18, color: '#fe2b00'}}>￥1000</Text>
+                                    <Text style={{
+                                        marginTop: 8,
+                                        fontSize: 18,
+                                        color: '#fe2b00',
+                                        alignSelf: 'flex-end'
+                                    }}>￥1000</Text>
                                 </View>
                             </View>
 
 
                             <View style={{backgroundColor: '#fe2b00', marginTop: 3, marginRight: 20, marginLeft: 20}}>
-                                <View style={{width: 200, height: 40, margin: 5, marginLeft: 160}}>
-                                    <Text style={{marginTop: 8, fontSize: 16, color: 'white'}}>保费合计: ￥4940.00</Text>
+                                <View style={{flex: 1, width: 200, height: 40, margin: 5, marginLeft: 160}}>
+                                    <Text style={{marginTop: 8, fontSize: 16, color: 'white', alignSelf: 'flex-end'}}>保费合计:
+                                        ￥4940.00</Text>
                                 </View>
                             </View>
                         </View>
@@ -204,7 +229,7 @@ export default class NavBarAndroidColored extends Component {
                                 alignItems: 'center',
                                 flexDirection: 'row'
                             }}>
-                                <Image source={require('../imgs/aaa.png')}
+                                <Image source={require('./imgs/aaa.png')}
                                        style={[styles.backgroundImage = {
                                            flex: 1,
                                            alignItems: 'center',
@@ -295,23 +320,36 @@ export default class NavBarAndroidColored extends Component {
                     </View>
 
                     {/*ButtonTabBar*/}
-                    <View style={{backgroundColor: 'white', marginTop: 15, flexDirection: 'row'}}>
-                        <View style={{
-                            width: 73,
-                            height: 40,
-                            margin: 5,
-                            backgroundColor: 'white',
-                            marginTop: 11,
-                            marginLeft: 8
-                        }}>
-                            <Text style={{marginTop: 8, fontSize: 16, color: 'black'}}>保费合计:</Text>
-                        </View>
-                        <View style={{width: 160, height: 50, backgroundColor: 'white', marginTop: 6, marginBottom: 9}}>
-                            <Text style={{marginTop: 7, fontSize: 25, color: 'black'}}>￥4940.00</Text>
+                    <View style={{backgroundColor: 'white', marginTop: 15, flexDirection: 'row', width: width}}>
+                        <View style={{width: width * 0.67, flexDirection: 'row'}}>
+                            <View style={{
+                                width: 73,
+                                height: 40,
+                                margin: 5,
+                                backgroundColor: 'white',
+                                marginTop: 11,
+                                marginLeft: 8
+                            }}>
+                                <Text style={{marginTop: 8, fontSize: 16, color: 'black'}}>保费合计:</Text>
+                            </View>
+                            <View style={{
+                                width: 160,
+                                height: 50,
+                                backgroundColor: 'white',
+                                marginTop: 6,
+                                marginBottom: 9
+                            }}>
+                                <Text style={{marginTop: 7, fontSize: 25, color: 'black'}}>￥4940.00</Text>
+                            </View>
                         </View>
                         <TouchableOpacity>
-                            <View style={{width: 250, height: 70, backgroundColor: '#fe2b00'}}>
-                                <Text style={{marginLeft: 22, marginTop: 23, fontSize: 18, color: 'white'}}>立即购买</Text>
+                            <View style={{width: width * 0.33, height: 70, backgroundColor: '#fe2b00', flex: 1}}>
+                                <Text style={{
+                                    alignSelf: 'center',
+                                    marginTop: 23,
+                                    fontSize: 18,
+                                    color: 'white',
+                                }}>立即购买</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
