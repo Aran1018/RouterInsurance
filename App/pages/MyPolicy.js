@@ -11,8 +11,6 @@ import Test from "../Test";
 import MyPolicyItem from "../modules/MyPolicyItem";
 import AskPrice from "./AskPrice";
 
-
-
 let widthOfWindow = Dimensions.get('window').width;
 
 export default class MyPolicy extends Component{

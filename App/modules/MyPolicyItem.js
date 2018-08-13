@@ -107,7 +107,7 @@ export default class MyPolicyItem extends Component{
                     <View style={{flex: 1, justifyContent: 'center'}}>
                         <View style={{marginTop: 8}}>
                             <TouchableOpacity>
-                                <Image source={require('../imgs/back.png')}
+                                <Image source={require('../img/imgMypolicy/back.png')}
                                        style={{
                                            width: 35, height: 30, alignItems: 'center',
                                            marginTop: 32

@@ -44,14 +44,14 @@ export default class AskPrice extends Component {
 
                 {
                     title: '中国人寿',
-                    imgBrand: require("../img/ImageRadios/brand.png"),
+                    imgBrand: require("../img/ImageRadios/pingan.png"),
 
                     image: require('../img/ImageRadios/noselected.png'),
                     image2: require('../img/ImageRadios/selected.png'),
                 },
                 {
                     title: '太平洋保险',
-                    imgBrand: require("../img/ImageRadios/brand.png"),
+                    imgBrand: require("../img/ImageRadios/PICC.png"),
                     image: require('../img/ImageRadios/noselected.png'),
                     image2: require('../img/ImageRadios/selected.png'),
                 },
@@ -108,7 +108,7 @@ export default class AskPrice extends Component {
                             <View style={{flex: 1, justifyContent: 'center'}}>
                                 <TouchableOpacity>
                                     <View style={{marginTop: 8}}>
-                                        <Image source={require('../imgs/back.png')}
+                                        <Image source={require('../img/imgaskprice/back.png')}
                                                style={{
                                                    width: 35, height: 30, alignItems: 'center',
                                                    marginTop: 32
@@ -134,7 +134,7 @@ export default class AskPrice extends Component {
                                 marginBottom: 20
                             }}>
                                 <TouchableOpacity>
-                                    <Image source={require('../imgs/phone.png')}
+                                    <Image source={require('../img/imgaskprice/phone.png')}
                                            style={{width: 21, height: 18, marginRight: 8, alignItems: 'center'}}/>
                                 </TouchableOpacity>
                             </View>
@@ -196,7 +196,7 @@ export default class AskPrice extends Component {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../imgs/mobilephone.png')}
+                                    < Image source={require('../img/imgaskprice/mobilephone.png')}
                                             style={[styles.imgStyle = {
                                                 width: 25,
                                                 height: 25,
@@ -224,7 +224,7 @@ export default class AskPrice extends Component {
                             <View>
                                 <View
                                     style={{flexDirection: 'row', width: Dimensions.get('window').width, marginTop: 5}}>
-                                    < Image source={require('../imgs/IDcard.png')}
+                                    < Image source={require('../img/imgaskprice/idCard.png')}
                                             style={[styles.imgStyle = {
                                                 width: 25,
                                                 height: 25,
@@ -266,7 +266,7 @@ export default class AskPrice extends Component {
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../imgs/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: 21,
                                                            height: 14,
@@ -301,7 +301,7 @@ export default class AskPrice extends Component {
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../imgs/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: 21,
                                                            height: 14,
@@ -364,7 +364,7 @@ export default class AskPrice extends Component {
                             <View>
                                 <View
                                     style={{flexDirection: 'row', width: Dimensions.get('window').width, marginTop: 5}}>
-                                    < Image source={require('../imgs/IDcard.png')}
+                                    < Image source={require('../img/imgaskprice/idCard.png')}
                                             style={[styles.imgStyle = {
                                                 width: 25,
                                                 height: 25,
@@ -406,7 +406,7 @@ export default class AskPrice extends Component {
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../imgs/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: 21,
                                                            height: 14,
@@ -441,7 +441,7 @@ export default class AskPrice extends Component {
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../imgs/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: 21,
                                                            height: 14,
@@ -475,7 +475,7 @@ export default class AskPrice extends Component {
                             <View>
                                 <View
                                     style={{flexDirection: 'row', width: Dimensions.get('window').width, marginTop: 5}}>
-                                    < Image source={require('../imgs/list.png')}
+                                    < Image source={require('../img/imgaskprice/list.png')}
                                             style={[styles.imgStyle = {
                                                 width: 25,
                                                 height: 25,
@@ -486,7 +486,7 @@ export default class AskPrice extends Component {
                                         险选种类(建议填写)
                                     </Text>
                                     <TouchableOpacity>
-                                        < Image source={require('../imgs/pull-down.png')}
+                                        < Image source={require('../img/imgaskprice/pull-down.png')}
                                                 style={[styles.imgStyle = {
                                                     width: 18,
                                                     height: 18,

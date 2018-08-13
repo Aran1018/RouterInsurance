@@ -73,14 +73,14 @@ export default class NavBarAndroidColored extends Component {
                                 marginBottom: 20
                             }}>
                                 <TouchableOpacity>
-                                    <Image source={require('./imgs/phone.png')}
+                                    <Image source={require('../img/imgMyDocuments/phone.png')}
                                            style={{width: 24, height: 24, marginRight: 8, alignItems: 'center'}}/>
                                 </TouchableOpacity>
                             </View>
                         </View>
                         {/*大图片*/}
                         <View style={{marginTop: 15, alignItems: 'center', flex: 1}}>
-                            <Image source={require('./imgs/qqq.png')}
+                            <Image source={require('../img/imgMyDocuments/qqq.png')}
                                    style={[styles.imageStyle = {
                                        width: this.state.width,
                                        height: this.state.height,
@@ -229,7 +229,7 @@ export default class NavBarAndroidColored extends Component {
                                 alignItems: 'center',
                                 flexDirection: 'row'
                             }}>
-                                <Image source={require('./imgs/aaa.png')}
+                                <Image source={require('../img/imgMyDocuments/aaa.png')}
                                        style={[styles.backgroundImage = {
                                            flex: 1,
                                            alignItems: 'center',
