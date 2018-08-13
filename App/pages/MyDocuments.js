@@ -210,7 +210,7 @@ export default class NavBarAndroidColored extends Component {
                                         <Text style={{marginTop: 6, fontSize: 16, color: 'white'}}>保费合计:
                                         </Text>
                                     </View>
-                                    <View style={{}}>
+                                    <View >
                                         <Text
                                             style={{marginTop: 2.6, fontSize: 20, color: 'white',}}> ￥5940.00
                                         </Text>
