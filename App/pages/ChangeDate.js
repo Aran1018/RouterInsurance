@@ -13,49 +13,16 @@ import {
     PixelRatio, View
 } from 'react-native';
 
-var content = '';
+let content = '';
 import ImageRadioGroup from "../modules/ImageRadioGroup";
 
-var {height, width} = Dimensions.get('window');
+let {height, width} = Dimensions.get('window');
 
 type Props = {};
 
 
-var datas = [
-    {
-        "selecteId": 13,
-        "content": "Apple",
-        "selected": false
-    },
-    {
-        "selecteId": 14,
-        "content": "Banana",
-        "selected": false
-    },
-    {
-        "selecteId": 15,
-        "content": "Orange",
-        "selected": false
-    },
-    {
-        "selecteId": 16,
-        "content": "Watermelon",
-        "selected": true
-    },
-    {
-        "selecteId": 17,
-        "content": "Grape",
-        "selected": false
-    }
-]
 
-let pixelRatio = PixelRatio.get();
 
-export function scaleSize(size: number) {
-
-    size = Math.round(size * scale + 0.5);
-    return size / defaultPixel;
-}
 
 
 /**

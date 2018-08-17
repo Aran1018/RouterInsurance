@@ -25,7 +25,7 @@ import ImageRadioGroup from "../modules/ImageRadioGroup";
 let MARGIN_TWO_SIDES = 13;
 let widthOfWindow = Dimensions.get('window').width;
 
-var {height, width} = Dimensions.get('window');
+let {height, width} = Dimensions.get('window');
 export default class AskPrice extends Component {
     constructor(props) {
         super(props);
@@ -83,7 +83,7 @@ export default class AskPrice extends Component {
     }
 
 
-    showAlter(text) {
+    static showAlter(text) {
         alert(text);
     }
 

@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {Dimensions} from 'react-native';
 
-var {height, width} = Dimensions.get('window');
+let {height, width} = Dimensions.get('window');
 
 import ImageRadioGroup from "../modules/ImageRadioInformation";
 
@@ -48,9 +48,9 @@ export default class App extends Component<Props> {
     state = {
         visible: false,
         transparent: true,
-    }
+    };
 
-    showAlter(text) {
+    static showAlter(text) {
         alert(text);
     }
 

@@ -10,24 +10,15 @@ import {
 
 import {Dimensions} from 'react-native';
 
-var {height, width} = Dimensions.get('window');
-
+let {height, width} = Dimensions.get('window');
+let chuanwidth = 325;
+let chuanheight = 220;
 export default class NavBarAndroidColored extends Component {
 
     constructor(props) {
         super(props);
         // 初始状态
-        this.state = {
-            width: 325,
-            height: 220,
-        };
-    }
-
-    componentDidMount() {
-        Image.getSize(this.props.image, (width, height) => {
-            height = screenWidth * height / width;
-            this.setState({screenWidth, height});
-        });
+        
     }
 
     render() {
@@ -88,8 +79,8 @@ export default class NavBarAndroidColored extends Component {
                         <View style={{marginTop: 10, alignItems: 'center', flex: 1}}>
                             <Image source={require('../img/imgMyDocuments/qqq.png')}
                                    style={[styles.imageStyle = {
-                                       width: this.state.width,
-                                       height: this.state.height,
+                                       width: chuanwidth,
+                                       height: chuanheight,
                                        resizeMode: Image.resizeMode.stretch,
                                    }]}/>
                         </View>
