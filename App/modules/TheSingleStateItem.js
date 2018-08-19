@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MyDocuments from "../pages/MyDocuments";
 import ChangeDate from "../pages/ChangeDate";
 export default class TheSingleStateItem extends Component{
@@ -25,10 +25,10 @@ export default class TheSingleStateItem extends Component{
             case 606:
                 break;
             case 707:
-                this.setState({theJumpState: MyDocuments});
+                this.setState({theJumpState: 'MyDoc'});
                 break;
             case 808:
-                this.setState({theJumpState: ChangeDate});
+                this.setState({theJumpState: 'ChangeDate'});
                 break;
         }
     }
@@ -45,13 +45,14 @@ export default class TheSingleStateItem extends Component{
 
 
         }else {
-            const{navigator} = this.props.routeName;
-            if(navigator){
-                navigator.push({
-                    component : this.state.theJumpState,
-
-                })
-            }
+            // const{navigator} = this.props.routeName;
+            // if(navigator){
+            //     navigator.push({
+            //         component : this.state.theJumpState,
+            //
+            //     })
+            // }
+            this.props.routeName.navigation.navigate(this.state.theJumpState)
         }
 
     }
@@ -69,7 +70,7 @@ export default class TheSingleStateItem extends Component{
                 <View style={styles.singleStateItem}>
                     <View style={styles.brandAndDataView}>
                         <Image style={{resizeMode:'stretch',width:100,height:50}} source={require('../img/imgMypolicy/brand.png')}/>
-                        <TouchableHighlight onPress={this.selectableJump.bind(this)}>
+                        <TouchableOpacity onPress={this.selectableJump.bind(this)}>
                         <View style={{flexDirection:"column",
                             alignItems:"center",
                             marginTop:10,
@@ -77,13 +78,13 @@ export default class TheSingleStateItem extends Component{
                             <Image style={{resizeMode:'stretch',width:80,height:25}} source={this.props.name.imgUrl}/>
                             <Text style={{color:"#fff",position: "absolute",fontSize:10}}>{this.props.name.text}</Text>
                         </View>
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                     </View>
                     <View  style={styles.buttonAndCallUsView}>
 
-                        <TouchableHighlight onPress={this.cancelDoc.bind(this)}>
+                        <TouchableOpacity onPress={this.cancelDoc.bind(this)}>
                         <Text style={{marginTop:10,fontSize:10}}>撤销保单</Text>
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>

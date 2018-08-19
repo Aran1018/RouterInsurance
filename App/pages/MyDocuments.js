@@ -26,54 +26,6 @@ export default class MyDocuments extends Component {
             <View style={{flexDirection: 'column'}}>
                 <ScrollView contentContainerStyle={styles.contentContainer}>
                     <View style={{backgroundColor: '#eeeeee'}}>
-                        {/*导航栏*/}
-                        <View style={{height: 50, backgroundColor: '#FFFFFF'}}>
-                            <View style={{flex: 1, justifyContent: 'center'}}>
-                                <TouchableOpacity>
-                                    <View style={{
-                                        justifyContent: 'flex-start',
-                                        flexDirection: 'row',
-                                        alignItems: 'center',
-                                        marginTop: 30
-                                    }}>
-                                        <Text style={{
-                                            color: '#707070',
-                                            fontSize: 13,
-                                            marginLeft: 10,
-                                            marginTop: 10
-                                        }}>撤销保单</Text>
-                                    </View>
-                                </TouchableOpacity>
-                            </View>
-
-                            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                                <Text
-                                    style={{color: '#3f3f3f', fontSize: 20, marginLeft: 3, marginTop: 20}}>我的报价单</Text>
-
-                            </View>
-
-                            <View style={{
-                                marginRight: 8,
-                                justifyContent: 'flex-end',
-                                alignItems: 'center',
-                                flex: 1,
-                                flexDirection: 'row',
-                                marginBottom: 20
-                            }}>
-                                <TouchableOpacity>
-                                    <Image source={require('../img/titlebar/phone.png')}
-                                           style={{width: 24, height: 24, marginRight: 8, alignItems: 'center'}}/>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-
-                        {/*分割线*/}
-                        <View style={{
-                            height: 0.2,
-                            width: width,
-                            backgroundColor: '#000',
-                        }}>
-                        </View>
 
                         {/*大图片*/}
                         <View style={{marginTop: 10, alignItems: 'center', flex: 1}}>

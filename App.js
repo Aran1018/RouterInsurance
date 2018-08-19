@@ -83,7 +83,7 @@ export default Stack = StackNavigator({
     ChangeDate:{
         screen:ChangeDate,
         navigationOptions: {
-            headerTitle: '首页',
+            headerTitle: '修改资料',
 
             headerTitleStyle: {
                 flex: 1, textAlign: 'center'
