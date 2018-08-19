@@ -16,7 +16,7 @@ import ImageRadioGroup from "../modules/ImageRadioInformation";
 
 type Props = {};
 
-export default class App extends Component<Props> {
+export default class ChangeInformation extends Component<Props> {
 
     constructor(props) {
         super(props);

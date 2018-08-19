@@ -13,7 +13,7 @@ import {Dimensions} from 'react-native';
 let {height, width} = Dimensions.get('window');
 let chuanwidth = 325;
 let chuanheight = 220;
-export default class NavBarAndroidColored extends Component {
+export default class MyDocuments extends Component {
 
     constructor(props) {
         super(props);
@@ -61,7 +61,7 @@ export default class NavBarAndroidColored extends Component {
                                 marginBottom: 20
                             }}>
                                 <TouchableOpacity>
-                                    <Image source={require('../img/imgMyDocuments/phone.png')}
+                                    <Image source={require('../img/titlebar/phone.png')}
                                            style={{width: 24, height: 24, marginRight: 8, alignItems: 'center'}}/>
                                 </TouchableOpacity>
                             </View>
@@ -420,5 +420,4 @@ let styles = StyleSheet.create({
         width: 10,
         height: 15,
     },
-    contentContainer: {},
 });

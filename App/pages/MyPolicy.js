@@ -45,12 +45,13 @@ export default class MyPolicy extends Component{
 
                 <View style={{position: "absolute",
                     margin:20,
-                    marginTop:Dimensions.get('window').height*0.85,
+                    marginTop:Dimensions.get('window').height*0.75,
                     flexDirection:"column",
                     alignItems:"flex-end",
                     justifyContent:"center"}}>
                     <TouchableHighlight
-                        onPress={this.jump.bind(this)}
+                        onPress={()=>{this.props.navigation.navigate('Inquiry')
+                        }}
                     >
                         <View style={{backgroundColor:"#000",width:Dimensions.get('window').width-40,height:50,
                             alignItems:"center",

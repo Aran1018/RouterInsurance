@@ -104,43 +104,6 @@ export default class AskPrice extends Component {
             <View>
                 <View style={{flexDirection: 'column'}}>
                     <ScrollView>
-                        <View style={{height: 50, backgroundColor: '#FFFFFF'}}>
-                            <View style={{flex: 1, justifyContent: 'center'}}>
-                                <TouchableOpacity>
-                                    <View style={{marginTop: 8}}>
-                                        <Image source={require('../img/imgaskprice/back.png')}
-                                               style={{
-                                                   width: 35, height: 30, alignItems: 'center',
-                                                   marginTop: 32
-                                               }}/>
-                                    </View>
-                                </TouchableOpacity>
-
-                            </View>
-
-                            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                                <Text
-                                    style={{color: '#3f3f3f', fontSize: 20, marginLeft: 3, marginTop: 20}}>一键询价
-                                </Text>
-
-                            </View>
-
-                            <View style={{
-                                marginRight: 8,
-                                justifyContent: 'flex-end',
-                                alignItems: 'center',
-                                flex: 1,
-                                flexDirection: 'row',
-                                marginBottom: 20
-                            }}>
-                                <TouchableOpacity>
-                                    <Image source={require('../img/imgaskprice/phone.png')}
-                                           style={{width: 21, height: 18, marginRight: 8, alignItems: 'center'}}/>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-
-
                         <Modal
                             animationType={this.state.animationType}
                             transparent={this.state.transparent}

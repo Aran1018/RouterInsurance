@@ -31,7 +31,7 @@ type Props = {};
  * return number dp
  */
 
-export default class App extends Component<Props> {
+export default class ChangeDate extends Component<Props> {
 
     constructor(props) {
         super(props);

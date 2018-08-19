@@ -1,8 +1,8 @@
 
 import {AppRegistry} from 'react-native';
-import Test from "./App/Test";
-//import * as AppRegistry from "react-native/Libraries/ReactNative/AppRegistry";
-import MyPolicy from "./App/pages/MyPolicy";
-import NavigatorManager from "./App/navigator/NavigatorManager";
+import App from "./App";
 
-AppRegistry.registerComponent('RouterInsurance',()=>NavigatorManager);
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+
+AppRegistry.registerComponent('RouterInsurance',()=>App);
