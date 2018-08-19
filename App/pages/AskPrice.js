@@ -87,6 +87,12 @@ export default class AskPrice extends Component {
         alert(text);
     }
 
+     finalSubmit(){
+
+        this._setModalVisible(!this.state.modalVisible);
+        this.props.navigation.navigate('MyPolicy')
+
+    }
 
     render() {
         let modalBackgroundStyle = {
@@ -125,7 +131,9 @@ export default class AskPrice extends Component {
                                         <Text style={{marginTop: 10, fontSize: 15}}>保险专员会尽快与您联系</Text>
 
                                         <View>
-                                            <TouchableHighlight onPress={this.jump.bind(this)}
+                                            <TouchableHighlight onPress={
+                                                ()=>{this.finalSubmit()}
+                                            }
                                                                 style={{
                                                                     width: 300,
                                                                     height: 40,
