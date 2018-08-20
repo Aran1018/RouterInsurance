@@ -28,14 +28,14 @@ export default class ChangeInformation extends Component<Props> {
 
                 {
                     title: '微信支付',
-                    imgBrand: require("../imgs/wechatpay.png"),
+                    imgBrand: require("../img/changeInformation/wechatpay.png"),
                     image: require('../img/ImageRadios/noselected.png'),
                     image2: require('../img/ImageRadios/selected.png'),
                 },
 
                 {
                     title: '支付宝支付',
-                    imgBrand: require("../imgs/alipay.png"),
+                    imgBrand: require("../img/changeInformation/alipay.png"),
 
                     image: require('../img/ImageRadios/noselected.png'),
                     image2: require('../img/ImageRadios/selected.png'),
@@ -59,42 +59,6 @@ export default class ChangeInformation extends Component<Props> {
             <View style={{backgroundColor: 'white'}}>
                 <View style={{flexDirection: 'column'}}>
                     <ScrollView>
-                        {/*导航栏*/}
-                        <View style={{height: 50, backgroundColor: '#FFFFFF'}}>
-                            <View style={{flex: 1, justifyContent: 'center'}}>
-                                <TouchableOpacity>
-                                    <View style={{marginTop: 8}}>
-                                        <Image source={require('../imgs/back.png')}
-                                               style={{
-                                                   width: 35, height: 30, alignItems: 'center',
-                                                   marginTop: 32
-                                               }}/>
-                                    </View>
-                                </TouchableOpacity>
-
-                            </View>
-
-                            <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                                <Text
-                                    style={{color: '#3f3f3f', fontSize: 20, marginLeft: 3, marginTop: 20}}>资料填写
-                                </Text>
-
-                            </View>
-
-                            <View style={{
-                                marginRight: 8,
-                                justifyContent: 'flex-end',
-                                alignItems: 'center',
-                                flex: 1,
-                                flexDirection: 'row',
-                                marginBottom: 20
-                            }}>
-                                <TouchableOpacity>
-                                    <Image source={require('../imgs/phone.png')}
-                                           style={{width: 21, height: 18, marginRight: 8, alignItems: 'center'}}/>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
 
                         {/*保费合计*/}
                         <View style={{
@@ -128,7 +92,7 @@ export default class ChangeInformation extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../imgs/name.png')}
+                                    < Image source={require('../img/changeInformation/name.png')}
                                             style={[styles.imgStyle = {
                                                 width: 25,
                                                 height: 25,
@@ -176,7 +140,7 @@ export default class ChangeInformation extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../imgs/address.png')}
+                                    < Image source={require('../img/changeInformation/address.png')}
                                             style={[styles.imgStyle = {
                                                 width: 25,
                                                 height: 25,
@@ -224,7 +188,7 @@ export default class ChangeInformation extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../imgs/IDcard.png')}
+                                    < Image source={require('../img/changeInformation/idcard.png')}
                                             style={[styles.imgStyle = {
                                                 width: 25,
                                                 height: 25,
@@ -249,7 +213,7 @@ export default class ChangeInformation extends Component<Props> {
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../imgs/camera.png')}
+                                                <Image source={require('../img/changeInformation/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: 21,
                                                            height: 14,
@@ -284,7 +248,7 @@ export default class ChangeInformation extends Component<Props> {
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../imgs/camera.png')}
+                                                <Image source={require('../img/changeInformation/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: 21,
                                                            height: 14,
@@ -343,7 +307,9 @@ export default class ChangeInformation extends Component<Props> {
                             />
                         </View>
                         {/*确定购买*/}
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{
+                            this.props.navigation.navigate('MyPolicy')
+                        }}>
                             <View style={{
                                 width: width - 25,
                                 height: 55,

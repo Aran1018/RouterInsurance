@@ -62,7 +62,7 @@ export default class MyPolicyItem extends Component{
                                     <Text style={{marginLeft:30,fontSize:10}}>保险到期日期：{json[i].Data}</Text>
                                 </View>
                                 <View  style={styles.buttonAndCallUsView}>
-                                    <TouchableHighlight onPress={this.continueDoc.bind(this)}>
+                                    <TouchableOpacity onPress={this.continueDoc.bind(this)}>
                                         <View style={{flexDirection:"column",
                                             alignItems:"center",
                                             marginTop:10,
@@ -70,7 +70,7 @@ export default class MyPolicyItem extends Component{
                                             <Image style={{resizeMode:'stretch',width:80,height:25}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
                                             <Text style={{color:"#fff",position: "absolute",fontSize:10}}>续保</Text>
                                         </View>
-                                    </TouchableHighlight>
+                                    </TouchableOpacity>
                                     <Text style={{marginTop:10,fontSize:10}}>联系我们</Text>
                                 </View>
                             </View>

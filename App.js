@@ -10,6 +10,7 @@ import AskPrice from "./App/pages/AskPrice";
 import ChangeDate from "./App/pages/ChangeDate";
 import MyDocuments from "./App/pages/MyDocuments";
 import {Image, Text, TouchableOpacity} from "react-native";
+import ChangeInformation from "./App/pages/ChangeInformation";
 
 export default Stack = StackNavigator({
     MyPolicy:{
@@ -101,6 +102,28 @@ export default Stack = StackNavigator({
                 </TouchableOpacity>
             )
         }
-    }
+    },
+    ChangeInformation:{
+        screen:ChangeInformation,
+        navigationOptions: {
+            headerTitle: '资料填写',
+
+            headerTitleStyle: {
+                flex: 1, textAlign: 'center'
+            },
+            headerLeft: (
+                <TouchableOpacity>
+                    <Image style={{width:50,height:50,margin:10,
+                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
+                </TouchableOpacity>
+            ),
+            headerRight: (
+                <TouchableOpacity>
+                    <Image style={{width:50,height:50,margin:10,
+                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
+                </TouchableOpacity>
+            )
+        }
+    },
 
 })
