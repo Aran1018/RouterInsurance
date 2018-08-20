@@ -188,46 +188,61 @@ export default class ChangeInformation extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/changeInformation/idcard.png')}
+                                    < Image source={require('../img/imgaskprice/idCard.png')}
                                             style={[styles.imgStyle = {
-                                                width: 25,
-                                                height: 25,
+                                                width: 20,
+                                                height: 20,
                                                 marginLeft: 15,
-                                                marginTop: 12
+                                                marginTop: 14
                                             }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 16}}>
+                                    <Text style={{marginLeft: 5, marginTop: 14, fontSize: 15}}>
                                         身份证
                                     </Text>
 
+                                    <Text
+                                        style={{
+                                            marginLeft: 5,
+                                            marginRight: 5,
+                                            fontSize: 16,
+                                            textAlign: 'right',
+                                            flex: 1,
+                                            color: '#fe2b00',
+                                        }}
+                                        underlineColorAndroid='transparent'
+                                        numberOfLines={1}
+                                        ref={'content'}
+                                        multiline={true}
+                                        autoFocus={true}
+                                        onChangeText={(text) => {
+                                            content = text;
+                                        }}/>
 
                                     {/*拍摄身份证正面*/}
-
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 70,
-                                                width: 110,
+                                                height: 65,
+                                                width: 100,
                                                 marginTop: 15,
-                                                marginLeft: 50,
-                                                marginRight: 15,
+                                                marginLeft: 35,
                                             }}>
 
-                                                <Image source={require('../img/changeInformation/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 21,
-                                                           height: 14,
-                                                           marginLeft: 45,
-                                                           marginTop: 20,
+                                                           width: 18,
+                                                           height: 12,
+                                                           marginLeft: 43,
+                                                           marginTop: 18,
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
                                                     width: 75,
                                                     height: 18,
-                                                    marginLeft: 20,
-                                                    marginTop: 45,
+                                                    marginLeft: 24,
+                                                    marginTop: 41,
                                                     position: 'absolute',
-                                                    fontSize: 10,
+                                                    fontSize: 8,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证正面
@@ -238,31 +253,33 @@ export default class ChangeInformation extends Component<Props> {
 
 
                                     {/*拍摄身份证背面*/}
+
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 70,
-                                                width: 110,
+                                                height: 65,
+                                                width: 100,
                                                 marginTop: 15,
+                                                marginLeft: 20,
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../img/changeInformation/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 21,
-                                                           height: 14,
-                                                           marginLeft: 45,
-                                                           marginTop: 20,
+                                                           width: 18,
+                                                           height: 12,
+                                                           marginLeft: 43,
+                                                           marginTop: 18,
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
                                                     width: 75,
                                                     height: 18,
-                                                    marginLeft: 20,
-                                                    marginTop: 45,
+                                                    marginLeft: 24,
+                                                    marginTop: 41,
                                                     position: 'absolute',
-                                                    fontSize: 10,
+                                                    fontSize: 8,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证背面
@@ -319,7 +336,7 @@ export default class ChangeInformation extends Component<Props> {
                                 marginBottom: 5,
                                 marginTop: 15
                             }}>
-                                <Text style={{marginLeft: 162, marginTop: 15, fontSize: 18, color: 'white'}}>确定购买</Text>
+                                <Text style={{  alignSelf: 'center', marginTop: 15, fontSize: 18, color: 'white'}}>确定购买</Text>
                             </View>
                         </TouchableOpacity>
 

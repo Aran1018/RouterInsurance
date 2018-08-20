@@ -86,27 +86,27 @@ export default class ChangeDate extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/changedate/mobilephone.png')}
+                                    < Image source={require('../img/imgaskprice/mobilephone.png')}
                                             style={[styles.imgStyle = {
-                                                width: 25,
-                                                height: 25,
+                                                width: 19,
+                                                height: 19,
                                                 marginLeft: 15,
-                                                marginTop: 10
+                                                marginTop: 14
                                             }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 16}}>
+                                    <Text style={{marginLeft: 5, marginTop: 13, fontSize: 15}}>
                                         电话
                                     </Text>
 
                                     <TextInput
                                         style={{
-                                            marginLeft: 5,
-                                            marginRight: 5,
-                                            fontSize: 16,
+                                            marginLeft: 2,
+                                            marginRight: 15,
+                                            fontSize: 14,
                                             textAlign: 'right',
                                             flex: 1,
                                             color: '#fe2b00',
                                         }}
-                                        placeholder="12345678912(请重新编写)"
+                                        placeholder="12345678912  (请重新编写)"
                                         placeholderTextColor="#fe2b00"
                                         numberOfLines={1}
                                         ref={'content'}
@@ -135,14 +135,14 @@ export default class ChangeDate extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/changedate/IDcard.png')}
+                                    < Image source={require('../img/imgaskprice/idCard.png')}
                                             style={[styles.imgStyle = {
-                                                width: 25,
-                                                height: 25,
+                                                width: 20,
+                                                height: 20,
                                                 marginLeft: 15,
-                                                marginTop: 10
+                                                marginTop: 14
                                             }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 16}}>
+                                    <Text style={{marginLeft: 5, marginTop: 14, fontSize: 15}}>
                                         行驶证
                                     </Text>
 
@@ -165,33 +165,31 @@ export default class ChangeDate extends Component<Props> {
                                         }}/>
 
                                     {/*拍摄行驶证正本*/}
-
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 70,
-                                                width: 110,
+                                                height: 65,
+                                                width: 100,
                                                 marginTop: 15,
-                                                marginLeft: 50,
-                                                marginRight: 15,
+                                                marginLeft: 35,
                                             }}>
 
-                                                <Image source={require('../img/changedate/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 21,
-                                                           height: 14,
-                                                           marginLeft: 45,
-                                                           marginTop: 20,
+                                                           width: 18,
+                                                           height: 12,
+                                                           marginLeft: 43,
+                                                           marginTop: 18,
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
                                                     width: 75,
                                                     height: 18,
-                                                    marginLeft: 20,
-                                                    marginTop: 45,
+                                                    marginLeft: 24,
+                                                    marginTop: 41,
                                                     position: 'absolute',
-                                                    fontSize: 10,
+                                                    fontSize: 8,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄行驶证正本
@@ -202,31 +200,33 @@ export default class ChangeDate extends Component<Props> {
 
 
                                     {/*拍摄行驶证副本*/}
+
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 70,
-                                                width: 110,
+                                                height: 65,
+                                                width: 100,
                                                 marginTop: 15,
+                                                marginLeft: 20,
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../img/changedate/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 21,
-                                                           height: 14,
-                                                           marginLeft: 45,
-                                                           marginTop: 20,
+                                                           width: 18,
+                                                           height: 12,
+                                                           marginLeft: 43,
+                                                           marginTop: 18,
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
                                                     width: 75,
                                                     height: 18,
-                                                    marginLeft: 20,
-                                                    marginTop: 45,
+                                                    marginLeft: 24,
+                                                    marginTop: 41,
                                                     position: 'absolute',
-                                                    fontSize: 10,
+                                                    fontSize: 8,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄行驶证副本
@@ -259,8 +259,8 @@ export default class ChangeDate extends Component<Props> {
                         <View>
                             <ImageRadioGroup
                                 style={{flexDirection: 'row'}}
-                                conTainStyle={{height: 44, width: 60}}
-                                imageStyle={{width: 25, height: 25}}
+                                conTainStyle={{height: 20, width: 20}}
+                                imageStyle={{width: 10, height: 10}}
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
@@ -271,18 +271,17 @@ export default class ChangeDate extends Component<Props> {
                         </View>
 
                         {/*身份证*/}
-                        <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
+                        <View style={{flexDirection: 'row', width: width}}>
                             <View>
-                                <View
-                                    style={{flexDirection: 'row', width: Dimensions.get('window').width, marginTop: 5}}>
-                                    < Image source={require('../img/changedate/IDcard.png')}
+                                <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
+                                    < Image source={require('../img/imgaskprice/idCard.png')}
                                             style={[styles.imgStyle = {
-                                                width: 25,
-                                                height: 25,
+                                                width: 20,
+                                                height: 20,
                                                 marginLeft: 15,
-                                                marginTop: 10
+                                                marginTop: 14
                                             }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 16}}>
+                                    <Text style={{marginLeft: 5, marginTop: 14, fontSize: 15}}>
                                         身份证
                                     </Text>
 
@@ -305,33 +304,31 @@ export default class ChangeDate extends Component<Props> {
                                         }}/>
 
                                     {/*拍摄身份证正面*/}
-
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 70,
-                                                width: 110,
+                                                height: 65,
+                                                width: 100,
                                                 marginTop: 15,
-                                                marginLeft: 50,
-                                                marginRight: 15,
+                                                marginLeft: 35,
                                             }}>
 
-                                                <Image source={require('../img/changedate/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 21,
-                                                           height: 14,
-                                                           marginLeft: 45,
-                                                           marginTop: 20,
+                                                           width: 18,
+                                                           height: 12,
+                                                           marginLeft: 43,
+                                                           marginTop: 18,
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
                                                     width: 75,
                                                     height: 18,
-                                                    marginLeft: 20,
-                                                    marginTop: 45,
+                                                    marginLeft: 24,
+                                                    marginTop: 41,
                                                     position: 'absolute',
-                                                    fontSize: 10,
+                                                    fontSize: 8,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证正面
@@ -342,31 +339,33 @@ export default class ChangeDate extends Component<Props> {
 
 
                                     {/*拍摄身份证背面*/}
+
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 70,
-                                                width: 110,
+                                                height: 65,
+                                                width: 100,
                                                 marginTop: 15,
+                                                marginLeft: 20,
                                                 marginRight: 15,
                                             }}>
 
-                                                <Image source={require('../img/changedate/camera.png')}
+                                                <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 21,
-                                                           height: 14,
-                                                           marginLeft: 45,
-                                                           marginTop: 20,
+                                                           width: 18,
+                                                           height: 12,
+                                                           marginLeft: 43,
+                                                           marginTop: 18,
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
                                                     width: 75,
                                                     height: 18,
-                                                    marginLeft: 20,
-                                                    marginTop: 45,
+                                                    marginLeft: 24,
+                                                    marginTop: 41,
                                                     position: 'absolute',
-                                                    fontSize: 10,
+                                                    fontSize: 8,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证背面
@@ -377,40 +376,45 @@ export default class ChangeDate extends Component<Props> {
                                 </View>
                             </View>
                         </View>
+
                         {/*分界线*/}
                         <View style={{
                             marginTop: 15,
                             width: Dimensions.get('window').width * 13 / 14,
                             marginLeft: 15,
                             marginRight: 15,
-                            height: 1,
+                            height: 0.5,
                             backgroundColor: '#7b7b7b'
                         }}>
                         </View>
+
                         {/*险选种类*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
                             <View>
                                 <View
                                     style={{flexDirection: 'row', width: Dimensions.get('window').width, marginTop: 5}}>
-                                    < Image source={require('../img/changedate/list.png')}
+                                    < Image source={require('../img/imgaskprice/list.png')}
                                             style={[styles.imgStyle = {
-                                                width: 25,
-                                                height: 25,
+                                                width: 21,
+                                                height: 21,
                                                 marginLeft: 15,
-                                                marginTop: 10
+                                                marginTop: 12
                                             }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 16, color: '#c0c2c5'}}>
+                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 14, color: '#c0c2c5'}}>
                                         险选种类(建议填写)
                                     </Text>
-                                    <TouchableOpacity>
-                                        < Image source={require('../img/changedate/pull-down.png')}
-                                                style={[styles.imgStyle = {
-                                                    width: 18,
-                                                    height: 18,
-                                                    marginLeft: 180,
-                                                    marginTop: 15
-                                                }]}/>
-                                    </TouchableOpacity>
+                                    <View style={{flex: 1}}>
+                                        <TouchableOpacity>
+                                            < Image source={require('../img/imgaskprice/pull-down.png')}
+                                                    style={[styles.imgStyle = {
+                                                        width: 17,
+                                                        height: 17,
+                                                        alignSelf: 'flex-end',
+                                                        marginTop: 15,
+                                                        marginRight: 20
+                                                    }]}/>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
                             </View>
                         </View>
@@ -418,10 +422,10 @@ export default class ChangeDate extends Component<Props> {
                         {/*分界线*/}
                         <View style={{
                             marginTop: 15,
-                            width: width * 13 / 14,
+                            width: Dimensions.get('window').width * 13 / 14,
                             marginLeft: 15,
                             marginRight: 15,
-                            height: 1,
+                            height: 0.5,
                             backgroundColor: '#7b7b7b'
                         }}>
                         </View>
@@ -466,13 +470,12 @@ export default class ChangeDate extends Component<Props> {
                                 height: 55,
                                 backgroundColor: '#000',
                                 marginLeft: 15,
-                                marginRight: 15,
                                 marginBottom: 5,
                                 marginTop: 15
                             }}>
                                 <Text style={{
-                                    marginLeft: 170,
-                                    marginTop: 15, fontSize: 18, color: 'white'
+                                    alignSelf: 'center',
+                                    marginTop: 15, fontSize: 16, color: 'white'
                                 }}>提交</Text>
                             </View>
                         </TouchableOpacity>

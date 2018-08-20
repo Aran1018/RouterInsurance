@@ -218,7 +218,6 @@ let styles = StyleSheet.create({
     },
     textInputStyle: {
         width: 260,
-        backgroundColor: '#f4f4f4',
         textAlign: 'right',
         fontSize: 13,
     },
