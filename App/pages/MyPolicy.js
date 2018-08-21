@@ -37,7 +37,6 @@ export default class MyPolicy extends Component{
     }
     render(){
 
-
         return(
 
             <View>

@@ -11,6 +11,8 @@ import {
 import {Dimensions} from 'react-native';
 import MyDocItem from "../modules/MyDocItem";
 
+var {height, width} = Dimensions.get('window');
+
 let {screenHeight, screenWidth} = Dimensions.get('window');
 let chuanwidth = 325;
 let chuanheight = 220;
@@ -33,6 +35,8 @@ export default class MyDocuments extends Component {
             }}>
                 <MyDocItem/>
                     {/*ButtonTabBar*/}
+
+
                     <View style={{
                         flexDirection: 'row',
                         width: screenWidth,
@@ -40,38 +44,49 @@ export default class MyDocuments extends Component {
                         justifyContent: 'space-between',
 
                     }}>
-                        <View style={{width: screenWidth * 0.67, flexDirection: 'row'}}>
-                            <View style={{
-                                width: 73,
-                                height: 40,
-                                margin: 5,
-                                marginTop: 11,
-                                marginLeft: 18
-                            }}>
-                                <Text style={{marginTop: 8, fontSize: 16, color: 'black'}}>保费合计:</Text>
+
+
+                        <View style={{
+                            flexDirection: 'row',
+                            height: height / 17,
+                            flex: 1,
+                            alignSelf: 'center',
+                            marginLeft: 20
+                        }}>
+                            <View style={{alignSelf: 'center'}}>
+                                <Text style={{alignSelf: 'flex-end', fontSize: 16, color: 'black',}}>
+                                    保费合计：
+                                </Text>
                             </View>
-                            <View style={{
-                                width: 160,
-                                height: 50,
-                                marginTop: 4,
-                                marginBottom: 9
-                            }}>
-                                <Text style={{marginTop: 7, fontSize: 25, color: 'black'}}>￥4940.00</Text>
+                            <View style={{marginRight: 10, alignSelf: 'center'}}>
+                                <Text style={{
+                                    fontSize: 21,
+                                    color: 'black',
+                                    alignSelf: 'flex-end',
+                                }}>
+                                    ￥4940.00
+                                </Text>
                             </View>
                         </View>
                         <TouchableOpacity onPress={()=>{
                             this.props.navigation.navigate('ChangeInformation')
                         }}>
-                            <View style={{width: screenWidth * 0.33, height: 40, backgroundColor: '#fe2b00', flex: 1}}>
+                            <View style={{
+                                flex: 1,
+                                backgroundColor: '#fe2b00',
+                                width: width / 3.5,
+                                alignItems:'center',
+                                justifyContent: 'center',
+                            }}>
                                 <Text style={{
-                                    alignSelf: 'center',
-                                    marginTop: 16,
-                                    fontSize: 21,
-                                    color: 'white',
-                                    marginLeft: 2
-                                }}>立即购买</Text>
+                                    fontSize: 19,
+                                    color:'white'
+                                }}>
+                                    立即购买
+                                </Text>
                             </View>
                         </TouchableOpacity>
+
                     </View>
             </View>
 
