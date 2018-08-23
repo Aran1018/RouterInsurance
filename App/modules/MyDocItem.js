@@ -227,7 +227,6 @@ export default class MyDocItem extends Component {
                                                 flexDirection: 'row',
                                                 marginTop: 2,
                                                 alignSelf: 'flex-end',
-                                                backgroundColor: 'green'
                                             }}>
 
                                             <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
