@@ -23,14 +23,14 @@ export default Stack = StackNavigator({
             },
             headerLeft: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>
             ),
             headerRight: (
                 <TouchableOpacity>
                     <Text style={{
-                        fontSize:14 ,
+                        fontSize:14,
                         margin:10
                     }}>历史保单</Text>
                 </TouchableOpacity>
@@ -47,14 +47,18 @@ export default Stack = StackNavigator({
             },
             headerLeft: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
-                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
+                    <Image style={{
+                        width:40,
+                        height:40,
+                        margin:10,
+                        resizeMode: "contain"
+                    }} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )
         }
@@ -69,13 +73,13 @@ export default Stack = StackNavigator({
             },
             headerLeft: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )
@@ -91,13 +95,13 @@ export default Stack = StackNavigator({
             },
             headerLeft: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )
@@ -113,13 +117,13 @@ export default Stack = StackNavigator({
             },
             headerLeft: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:50,height:50,margin:10,
+                    <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )

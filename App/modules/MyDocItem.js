@@ -29,7 +29,7 @@ export default class MyDocItem extends Component {
                         <ScrollView>
                             {/*大图片*/}
                             <View style={{marginTop: 10, alignItems: 'center'}}>
-                                <Image source={require('./App/img/imgMyDocuments/qqq.png')}
+                                <Image source={require('../img/imgMyDocuments/qqq.png')}
                                        style={[styles.imageStyle = {
                                            width: width / 1.17,
                                            height: height / 3.3,
@@ -197,7 +197,7 @@ export default class MyDocItem extends Component {
                                     marginTop: 15, flex: 1, flexDirection: 'row', alignSelf: 'center',
                                     width: width - 40,
                                 }}>
-                                    <Image source={require('./App/img/imgMyDocuments/aaa.png')}
+                                    <Image source={require('../img/imgMyDocuments/aaa.png')}
                                            style={[styles.imageStyle = {
                                                width: (width - 40) / 2,
                                                height: height / 8,

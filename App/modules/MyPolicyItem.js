@@ -105,6 +105,9 @@ export default class MyPolicyItem extends Component{
                 {/*导航栏*/}
                 {this.setTheStateItem(json)}
 
+                <View style={{height:Dimensions.get('window').height/6}}>
+
+                </View>
             </ScrollView>
         )
     }

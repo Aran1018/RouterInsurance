@@ -11,6 +11,7 @@ import MyPolicyItem from "../modules/MyPolicyItem";
 import AskPrice from "./AskPrice";
 
 let widthOfWindow = Dimensions.get('window').width;
+let heightOfWindow = Dimensions.get('window').height;
 
 export default class MyPolicy extends Component{
     jump(){
