@@ -11,7 +11,7 @@ import {
 import {Dimensions} from 'react-native';
 import MyDocItem from "../modules/MyDocItem";
 
-var {height, width} = Dimensions.get('window');
+let {height, width} = Dimensions.get('window');
 
 let {screenHeight, screenWidth} = Dimensions.get('window');
 let chuanwidth = 325;

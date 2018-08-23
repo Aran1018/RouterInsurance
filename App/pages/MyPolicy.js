@@ -7,7 +7,6 @@
  */
 import React,{Component} from "react";
 import {Image, TouchableHighlight, View, StyleSheet, Text, Dimensions} from "react-native";
-import Test from "../Test";
 import MyPolicyItem from "../modules/MyPolicyItem";
 import AskPrice from "./AskPrice";
 
