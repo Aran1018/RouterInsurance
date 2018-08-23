@@ -20,11 +20,6 @@ let {height, width} = Dimensions.get('window');
 
 type Props = {};
 
-
-
-
-
-
 /**
  * 设置text为sp
  * @param size sp

@@ -68,9 +68,7 @@ export default class ChangeInformation extends Component<Props> {
                             height: height / 6.3
                         }}>
                             <View style={{
-                                width: 100,
-                                height: 40,
-                                //backgroundColor: 'green',
+
                                 marginTop: 40,
                                 marginLeft: 16,
 
@@ -78,9 +76,6 @@ export default class ChangeInformation extends Component<Props> {
                                 <Text style={{marginTop: 15, fontSize: 18, color: 'white'}}>保费合计:￥</Text>
                             </View>
                             <View style={{
-                                width: 165,
-                                height: 50,
-                                //backgroundColor: 'yellow',
                                 marginTop: 28,
                                 marginBottom: 9
                             }}>
