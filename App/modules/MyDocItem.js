@@ -28,11 +28,11 @@ export default class MyDocItem extends Component {
                     <View style={{flexDirection: 'column', backgroundColor: '#e9ebee', width: width}}>
                         <ScrollView>
                             {/*大图片*/}
-                            <View style={{marginTop: 10, alignItems: 'center', flex: 1}}>
-                                <Image source={require('../img/imgMyDocuments/qqq.png')}
+                            <View style={{marginTop: 10, alignItems: 'center'}}>
+                                <Image source={require('./App/img/imgMyDocuments/qqq.png')}
                                        style={[styles.imageStyle = {
-                                           width: width - 60,
-                                           height: height / 3,
+                                           width: width / 1.17,
+                                           height: height / 3.3,
                                        }]}/>
                             </View>
 
@@ -118,9 +118,9 @@ export default class MyDocItem extends Component {
                                 flex: 1,
                                 alignSelf: 'center'
                             }}>
-                                <View style={{alignSelf: 'flex-end', marginBottom: 8}}>
+                                <View style={{alignSelf: 'center', marginRight: 10}}>
                                     <Text style={{alignSelf: 'flex-end', fontSize: 13, color: 'white',}}>
-                                        保费合计：
+                                        保费合计:
                                     </Text>
                                 </View>
                                 <View style={{marginRight: 10, alignSelf: 'center'}}>
@@ -175,9 +175,9 @@ export default class MyDocItem extends Component {
                                 flex: 1,
                                 alignSelf: 'center'
                             }}>
-                                <View style={{alignSelf: 'flex-end', marginBottom: 8}}>
+                                <View style={{alignSelf: 'center', marginRight: 10}}>
                                     <Text style={{alignSelf: 'flex-end', fontSize: 13, color: 'white',}}>
-                                        保费合计：
+                                        保费合计:
                                     </Text>
                                 </View>
                                 <View style={{marginRight: 10, alignSelf: 'center'}}>
@@ -195,9 +195,9 @@ export default class MyDocItem extends Component {
                             <TouchableOpacity>
                                 <View style={{
                                     marginTop: 15, flex: 1, flexDirection: 'row', alignSelf: 'center',
-                                    width: width - 40,marginBottom:15
+                                    width: width - 40,
                                 }}>
-                                    <Image source={require('../img/imgMyDocuments/aaa.png')}
+                                    <Image source={require('./App/img/imgMyDocuments/aaa.png')}
                                            style={[styles.imageStyle = {
                                                width: (width - 40) / 2,
                                                height: height / 8,
@@ -218,62 +218,63 @@ export default class MyDocItem extends Component {
                                                 flexWrap: 'nowrap',
                                                 color: '#414141',
                                                 fontWeight: 'bold',
-                                                marginRight: 10
+                                                marginRight: 15
                                             }}>了解详情</Text>
                                         </View>
 
                                         <View
                                             style={{
-                                                width: 20,
-                                                height: 50,
                                                 flexDirection: 'row',
                                                 marginTop: 2,
-
+                                                alignSelf: 'flex-end',
+                                                backgroundColor: 'green'
                                             }}>
-                                            <Text style={{
-                                                fontSize: 37,
-                                                color: '#fe2b00',
-                                                width: 75,
-                                                height: 50,
-                                                marginLeft: 18,
-                                                marginBottom: 10,
-                                                fontWeight: 'bold',
-                                            }}>获得</Text>
 
-                                            <View>
-                                                {/*竖线*/}
-                                                <View style={{
-                                                    marginTop: 10,
-                                                    height: 33,
-                                                    marginLeft: 4,
-                                                    width: 0.5,
-                                                    backgroundColor: '#1d0075',
-                                                    position: 'absolute',
-                                                }}>
-                                                </View>
-                                                {/*垂直布局*/}
-                                                <View
-                                                    style={{flexDirection: 'column', marginTop: 5, marginLeft: 1}}>
-                                                    <View>
-                                                        <Text style={{
-                                                            fontSize: 13,
-                                                            color: '#fe2b00',
-                                                            width: 90,
-                                                            height: 20,
-                                                            marginLeft: 6,
-                                                            fontWeight: 'bold',
-                                                        }}>￥860.00</Text>
+                                            <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+                                                <Text style={{
+                                                    fontSize: 37,
+                                                    color: '#fe2b00',
+                                                    width: 75,
+                                                    height: 50,
+                                                    marginBottom: 10,
+                                                    fontWeight: 'bold',
+                                                }}>获得</Text>
+
+                                                <View>
+                                                    {/*竖线*/}
+                                                    <View style={{
+                                                        marginTop: 10,
+                                                        height: 33,
+                                                        marginLeft: 4,
+                                                        width: 0.5,
+                                                        backgroundColor: '#1d0075',
+                                                        position: 'absolute',
+                                                    }}>
                                                     </View>
+                                                    {/*垂直布局*/}
+                                                    <View
+                                                        style={{flexDirection: 'column', marginTop: 5, marginLeft: 1}}>
+                                                        <View>
+                                                            <Text style={{
+                                                                fontSize: 13,
+                                                                color: '#fe2b00',
+                                                                width: 90,
+                                                                height: 20,
+                                                                marginLeft: 6,
+                                                                fontWeight: 'bold',
+                                                            }}>￥860.00</Text>
+                                                        </View>
 
-                                                    <View style={{marginBottom: 15}}>
-                                                        <Text style={{
-                                                            fontSize: 13,
-                                                            color: '#fe2b00',
-                                                            width: 90,
-                                                            marginLeft: 7,
-                                                            height: 30,
-                                                            fontWeight: 'bold',
-                                                        }}>维修基金</Text>
+                                                        <View style={{marginBottom: 15}}>
+                                                            <Text style={{
+                                                                fontSize: 13,
+                                                                color: '#fe2b00',
+                                                                width: 90,
+                                                                marginLeft: 7,
+                                                                height: 30,
+                                                                fontWeight: 'bold',
+                                                            }}>维修基金</Text>
+                                                        </View>
                                                     </View>
                                                 </View>
                                             </View>
