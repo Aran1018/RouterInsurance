@@ -60,6 +60,7 @@ export default class ChangeInformation extends Component<Props> {
                 <View style={{flexDirection: 'column'}}>
                     <ScrollView>
 
+
                         {/*保费合计*/}
                         <View style={{
                             backgroundColor: 'black',
@@ -68,10 +69,8 @@ export default class ChangeInformation extends Component<Props> {
                             height: height / 6.3
                         }}>
                             <View style={{
-
                                 marginTop: 40,
                                 marginLeft: 16,
-
                             }}>
                                 <Text style={{marginTop: 15, fontSize: 18, color: 'white'}}>保费合计:￥</Text>
                             </View>
