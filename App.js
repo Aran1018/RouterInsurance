@@ -11,8 +11,12 @@ import ChangeDate from "./App/pages/ChangeDate";
 import MyDocuments from "./App/pages/MyDocuments";
 import {Image, Text, TouchableOpacity} from "react-native";
 import ChangeInformation from "./App/pages/ChangeInformation";
+import AransModules from "./App/utils/AransModules";
 
 export default Stack = StackNavigator({
+
+
+
     MyPolicy:{
         screen:MyPolicy,
         navigationOptions: {
@@ -46,7 +50,7 @@ export default Stack = StackNavigator({
                 flex: 1, textAlign: 'center'
             },
             headerLeft: (
-                <TouchableOpacity>
+                <TouchableOpacity onPress={AransModules.TheBack}>
                     <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>

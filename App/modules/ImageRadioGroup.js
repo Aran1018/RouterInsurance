@@ -4,6 +4,9 @@
  *Creat by Aran  at  2018/7/28
  *除过自己心中笃信的那一点不灭的光亮
  *我觉得这世间再没有别的东西比它值得被如此依靠。
+ *
+ * ?????????
+ *
  */
 import React, {Component} from "react";
 import {Button, StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
@@ -51,18 +54,17 @@ export default class RadioGroup extends Component {
         }
     };
 
-    renderRadioButton(array, item, onPress, index, sexIndex) {
+    renderRadioButton(array, item, onPress, index, Index) {
 
-        let image = item.image;
-        let imgBrand = item.imgBrand;
+        let image = require('../img/ImageRadios/noselected.png');
         if (item.select === true) {
-            image = item.image2;
+            image = require('../img/ImageRadios/selected.png');
         } else {
-            image = item.image;
+            image = require('../img/ImageRadios/noselected.png');
         }
 
-        if (sexIndex === index && sexIndex !== '') {
-            image = item.image2;
+        if (Index === index && Index !== '') {
+            image = require('../img/ImageRadios/selected.png');
         }
 
 
@@ -70,11 +72,13 @@ export default class RadioGroup extends Component {
             <TouchableOpacity key={index} onPress={()=> {
                 onPress(index, item)}} style={{height: 60, margin: 10}}>
                 <Image
-                    style={{
-                        width: 100, height: 50, resizeMode: 'contain',
-                        alignItems: 'flex-end',
-                    }}
-                    source={imgBrand}/>
+                    style={
+                        {
+                            width: 100, height: 50, resizeMode: 'contain',
+                            alignItems: 'flex-end',
+                        }
+                    }
+                    source={item.fileName}/>
                 <Image style={{
                     justifyContent: "flex-end",
                     width: 18,

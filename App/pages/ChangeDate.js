@@ -2,6 +2,9 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
+ *
+ *
+ * ?????????
  * @format
  * @flow
  */
@@ -12,9 +15,9 @@ import {
     Dimensions,
     PixelRatio, View
 } from 'react-native';
+import ImageRadioGroup from "./ImageRadioGroup";
 
 let content = '';
-import ImageRadioGroup from "../modules/ImageRadioGroup";
 
 let {height, width} = Dimensions.get('window');
 
@@ -34,27 +37,21 @@ export default class ChangeDate extends Component<Props> {
             animationType: 'none',
             modalVisible: false,
             transparent: true,
-            sexArray: [
-
+            sexArray: [{
+                "id": 1,
+                "name": "中国人民保险公司",
+                "fileName":require('../img/ImageRadios/brand.png'),
+            },
                 {
-                    title: '中国平安',
-                    imgBrand: require("../img/ImageRadios/brand.png"),
-                    image: require('../img/ImageRadios/noselected.png'),
-                    image2: require('../img/ImageRadios/selected.png'),
-                },
-
-                {
-                    title: '中国人寿',
-                    imgBrand: require("../img/ImageRadios/pingan.png"),
-                    image: require('../img/ImageRadios/noselected.png'),
-                    image2: require('../img/ImageRadios/selected.png'),
+                    "id": 2,
+                    "name": "中国平安",
+                    "fileName":require('../img/ImageRadios/brand.png'),
                 },
                 {
-                    title: '太平洋保险',
-                    imgBrand: require("../img/ImageRadios/PICC.png"),
-                    image: require('../img/ImageRadios/noselected.png'),
-                    image2: require('../img/ImageRadios/selected.png'),
-                },
+                    "id": 3,
+                    "name": "中国大地保险",
+                    "fileName":require('../img/ImageRadios/brand.png'),
+                }
 
             ],
         };
@@ -259,7 +256,7 @@ export default class ChangeDate extends Component<Props> {
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
-                                    console.warn(item.title);
+                                    console.warn(item.name);
                                     console.warn(index)
                                 }}
                             />
