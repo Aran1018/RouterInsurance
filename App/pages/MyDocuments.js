@@ -16,13 +16,18 @@ let {height, width} = Dimensions.get('window');
 let {screenHeight, screenWidth} = Dimensions.get('window');
 let chuanwidth = 325;
 let chuanheight = 220;
+
 export default class MyDocuments extends Component {
 
     constructor(props) {
         super(props);
         // 初始状态
-        
+
     }
+    SimulateNativeBack=()=>{
+        // this.props.navigation.navigate('MyPolicy')
+        alert(" ")
+    };
 
     render() {
         return (
@@ -93,6 +98,7 @@ export default class MyDocuments extends Component {
         )
     }
 }
+
 let styles = StyleSheet.create({
     item_layout: {
         backgroundColor: 'white',

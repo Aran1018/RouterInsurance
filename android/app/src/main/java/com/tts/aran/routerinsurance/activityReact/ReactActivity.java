@@ -12,7 +12,7 @@ import com.facebook.react.common.LifecycleState;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
 import com.tts.aran.routerinsurance.BuildConfig;
-import com.tts.aran.routerinsurance.utilsReact.AransPackage;
+import com.tts.aran.routerinsurance.utilsReact.RouterInsurancePackage;
 
 /**
  * Created by Aran on 2018/7/16.
@@ -43,7 +43,7 @@ public class ReactActivity extends Activity implements DefaultHardwareBackBtnHan
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
                 .addPackage(new MainReactPackage())
-                .addPackage(new AransPackage())
+                .addPackage(new RouterInsurancePackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();

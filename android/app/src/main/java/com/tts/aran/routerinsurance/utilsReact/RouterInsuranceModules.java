@@ -18,12 +18,12 @@ import com.facebook.react.bridge.ReactMethod;
  * 除过自己心中笃信的那一点不灭的光亮
  * 我觉得这世间再没有别的东西比它值得被如此依靠。
  */
-public class AransModules extends ReactContextBaseJavaModule {
+public class RouterInsuranceModules extends ReactContextBaseJavaModule {
 
     private Context mContext;
 
 
-    public AransModules(ReactApplicationContext reactContext) {
+    public RouterInsuranceModules(ReactApplicationContext reactContext) {
         super(reactContext);
         mContext=reactContext;
 
@@ -31,7 +31,7 @@ public class AransModules extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "AransModules";
+        return "RouterInsuranceModules";
     }
 
 

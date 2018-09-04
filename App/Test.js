@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {NativeModules,Platform, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
-import AransModules from "./utils/AransModules";
+import AransModules from "./utils/RouterInsuranceModules";
 
 export default class Test extends Component{
 

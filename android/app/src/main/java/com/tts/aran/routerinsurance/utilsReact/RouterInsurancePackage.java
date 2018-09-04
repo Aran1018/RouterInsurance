@@ -17,9 +17,9 @@ import java.util.List;
  * 除过自己心中笃信的那一点不灭的光亮
  * 我觉得这世间再没有别的东西比它值得被如此依靠。
  */
-public class AransPackage implements ReactPackage {
+public class RouterInsurancePackage implements ReactPackage {
 
-    private AransModules mModule;
+    private RouterInsuranceModules mModule;
 
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
@@ -30,7 +30,7 @@ public class AransPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
 
         List<NativeModule> modules = new ArrayList<>();
-        mModule = new AransModules(reactContext);
+        mModule = new RouterInsuranceModules(reactContext);
         modules.add(mModule);
         return modules;
     }

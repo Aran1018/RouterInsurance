@@ -14,27 +14,10 @@ let widthOfWindow = Dimensions.get('window').width;
 let heightOfWindow = Dimensions.get('window').height;
 
 export default class MyPolicy extends Component{
-    jump(){
 
-        const{navigator} = this.props;
-        /*that存储了上一个this*/
-        let that = this;
-        if(navigator){
-            navigator.push({
-                name : "AskPrice",
-                component : AskPrice,
-                /*params :{
-                    title:this.state.title,
-                    id:123,
-                    getUser:function(user){
-                        that.setState({
-                            user:user
-                        })
-                    }
-                }*/
-            })
-        }
-    }
+
+
+
     render(){
 
         return(
@@ -42,17 +25,20 @@ export default class MyPolicy extends Component{
             <View>
                 <MyPolicyItem routeName={this.props}/>
 
-                <View style={{position: "absolute",
-                    margin:20,
-                    marginTop:Dimensions.get('window').height*0.75,
+                <View style={{
+                    flex:1,
+                    position: "absolute",
+                    height:Dimensions.get('window').height,
+                    paddingBottom:45,
+                    // marginTop:Dimensions.get('window').height*0.85,
                     flexDirection:"column",
-                    alignItems:"flex-end",
-                    justifyContent:"center"}}>
+                    alignItems:"center",
+                    justifyContent:"flex-end"}}>
                     <TouchableHighlight
                         onPress={()=>{this.props.navigation.navigate('Inquiry')
                         }}
                     >
-                        <View style={{backgroundColor:"#000",width:Dimensions.get('window').width-40,height:50,
+                        <View style={{backgroundColor:"#000",width:Dimensions.get('window').width,height:Dimensions.get('window').height*0.08,
                             alignItems:"center",
                             justifyContent:"center"}}>
                             <Text style={{fontSize:15,color:"#fff"}}>一键询价</Text>

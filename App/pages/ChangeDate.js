@@ -15,7 +15,7 @@ import {
     Dimensions,
     PixelRatio, View
 } from 'react-native';
-import ImageRadioGroup from "./ImageRadioGroup";
+import ImageRadioGroup from "../modules/ImageRadioGroup";
 
 let content = '';
 
@@ -37,11 +37,12 @@ export default class ChangeDate extends Component<Props> {
             animationType: 'none',
             modalVisible: false,
             transparent: true,
-            sexArray: [{
+            sexArray: [
+                {
                 "id": 1,
                 "name": "中国人民保险公司",
                 "fileName":require('../img/ImageRadios/brand.png'),
-            },
+                },
                 {
                     "id": 2,
                     "name": "中国平安",
@@ -52,7 +53,6 @@ export default class ChangeDate extends Component<Props> {
                     "name": "中国大地保险",
                     "fileName":require('../img/ImageRadios/brand.png'),
                 }
-
             ],
         };
     }
@@ -78,7 +78,7 @@ export default class ChangeDate extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/imgaskprice/mobilephone.png')}
+                                    <Image source={require('../img/imgaskprice/mobilephone.png')}
                                             style={[styles.imgStyle = {
                                                 width: 19,
                                                 height: 19,

@@ -8,10 +8,9 @@ import {
 import MyPolicy from "./App/pages/MyPolicy";
 import AskPrice from "./App/pages/AskPrice";
 import ChangeDate from "./App/pages/ChangeDate";
-import MyDocuments from "./App/pages/MyDocuments";
+import MyDocuments, {SimulateNativeBack} from "./App/pages/MyDocuments";
 import {Image, Text, TouchableOpacity} from "react-native";
 import ChangeInformation from "./App/pages/ChangeInformation";
-import AransModules from "./App/utils/AransModules";
 
 export default Stack = StackNavigator({
 
@@ -23,7 +22,7 @@ export default Stack = StackNavigator({
             headerTitle: '我的保险',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center'
+                flex: 1, textAlign: 'center',color:"#4d4d4d"
             },
             headerLeft: (
                 <TouchableOpacity>
@@ -50,7 +49,7 @@ export default Stack = StackNavigator({
                 flex: 1, textAlign: 'center'
             },
             headerLeft: (
-                <TouchableOpacity onPress={AransModules.TheBack}>
+                <TouchableOpacity>
                     <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>
@@ -76,7 +75,11 @@ export default Stack = StackNavigator({
                 flex: 1, textAlign: 'center'
             },
             headerLeft: (
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+
+                        const aaa=new MyDocuments;
+                    aaa.SimulateNativeBack()
+                }}>
                     <Image style={{width:40,height:40,margin:10,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
                 </TouchableOpacity>
@@ -97,12 +100,12 @@ export default Stack = StackNavigator({
             headerTitleStyle: {
                 flex: 1, textAlign: 'center'
             },
-            headerLeft: (
-                <TouchableOpacity>
-                    <Image style={{width:40,height:40,margin:10,
-                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-                </TouchableOpacity>
-            ),
+            // headerLeft: (
+            //     <TouchableOpacity>
+            //         <Image style={{width:40,height:40,margin:10,
+            //             resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
+            //     </TouchableOpacity>
+            // ),
             headerRight: (
                 <TouchableOpacity>
                     <Image style={{width:40,height:40,margin:10,
@@ -119,12 +122,12 @@ export default Stack = StackNavigator({
             headerTitleStyle: {
                 flex: 1, textAlign: 'center'
             },
-            headerLeft: (
-                <TouchableOpacity>
-                    <Image style={{width:40,height:40,margin:10,
-                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-                </TouchableOpacity>
-            ),
+            // headerLeft: (
+            //     <TouchableOpacity>
+            //         <Image style={{width:40,height:40,margin:10,
+            //             resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
+            //     </TouchableOpacity>
+            // ),
             headerRight: (
                 <TouchableOpacity>
                     <Image style={{width:40,height:40,margin:10,

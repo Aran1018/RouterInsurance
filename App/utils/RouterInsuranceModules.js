@@ -6,4 +6,4 @@
  *我觉得这世间再没有别的东西比它值得被如此依靠。
  */
 import { NativeModules } from 'react-native';
-export default NativeModules.AransModules;
+export default NativeModules.RouterInsuranceModules;
