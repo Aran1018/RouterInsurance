@@ -23,6 +23,7 @@ import {
 } from 'react-native';
 import MyPolicy from "./MyPolicy";
 import ImageRadioGroup from "../modules/ImageRadioGroup";
+import TitleBarBackButton from "../modules/TitleBarBackButton";
 import Dividing from "../modules/Dividing";
 import px2dp from "../utils/px2dpUtils";
 
@@ -35,6 +36,7 @@ let widthOfWindow = Dimensions.get('window').width;
 
 let {height, width} = Dimensions.get('window');
 export default class AskPrice extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -67,6 +69,32 @@ export default class AskPrice extends Component {
             ],
         };
     }
+
+
+
+    static navigationOptions={
+
+        headerTitle: '一键询价',
+
+        headerTitleStyle: {
+            flex: 1, textAlign: 'center'
+        },
+        headerLeft: (
+            <TitleBarBackButton/>
+        ),
+        headerRight: (
+            <TouchableOpacity>
+                <Image style={{
+                    width:40,
+                    height:40,
+                    margin:10,
+                    resizeMode: "contain"
+                }} source={require('../img/titlebar/phone.png')}/>
+            </TouchableOpacity>
+        )
+    };
+
+
 
     jump() {
         const {navigator} = this.props;
@@ -626,6 +654,10 @@ let styles = StyleSheet.create({
         marginTop: 0,
         flexDirection: 'row',
     },
+    container: {
+        height: Dimensions.get('window').height,
+        backgroundColor: '#f4f4f4',
+    },
     textInputStyle: {
 
         marginLeft: 50,
@@ -642,4 +674,5 @@ let styles = StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 15
     },
+
 });

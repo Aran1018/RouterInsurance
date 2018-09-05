@@ -11,6 +11,7 @@ import ChangeDate from "./App/pages/ChangeDate";
 import MyDocuments, {SimulateNativeBack} from "./App/pages/MyDocuments";
 import {Image, Text, TouchableOpacity} from "react-native";
 import ChangeInformation from "./App/pages/ChangeInformation";
+import TitleBarBackButton from "./App/modules/TitleBarBackButton";
 
 export default Stack = StackNavigator({
 
@@ -25,10 +26,8 @@ export default Stack = StackNavigator({
                 flex: 1, textAlign: 'center',color:"#4d4d4d"
             },
             headerLeft: (
-                <TouchableOpacity>
-                    <Image style={{width:40,height:40,margin:10,
-                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-                </TouchableOpacity>
+                <TitleBarBackButton/>
+
             ),
             headerRight: (
                 <TouchableOpacity>
@@ -42,29 +41,29 @@ export default Stack = StackNavigator({
     },
     Inquiry:{
         screen:AskPrice,
-        navigationOptions: {
-            headerTitle: '一键询价',
-
-            headerTitleStyle: {
-                flex: 1, textAlign: 'center'
-            },
-            headerLeft: (
-                <TouchableOpacity>
-                    <Image style={{width:40,height:40,margin:10,
-                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-                </TouchableOpacity>
-            ),
-            headerRight: (
-                <TouchableOpacity>
-                    <Image style={{
-                        width:40,
-                        height:40,
-                        margin:10,
-                        resizeMode: "contain"
-                    }} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
-                </TouchableOpacity>
-            )
-        }
+        // navigationOptions: {
+        //     headerTitle: '一键询价',
+        //
+        //     headerTitleStyle: {
+        //         flex: 1, textAlign: 'center'
+        //     },
+        //     headerLeft: (
+        //         <TouchableOpacity>
+        //             <Image style={{width:40,height:40,margin:10,
+        //                 resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
+        //         </TouchableOpacity>
+        //     ),
+        //     headerRight: (
+        //         <TouchableOpacity>
+        //             <Image style={{
+        //                 width:40,
+        //                 height:40,
+        //                 margin:10,
+        //                 resizeMode: "contain"
+        //             }} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
+        //         </TouchableOpacity>
+        //     )
+        // }
     },
     MyDoc:{
         screen:MyDocuments,
@@ -75,14 +74,8 @@ export default Stack = StackNavigator({
                 flex: 1, textAlign: 'center'
             },
             headerLeft: (
-                <TouchableOpacity onPress={()=>{
+                <TitleBarBackButton/>
 
-                        const aaa=new MyDocuments;
-                    aaa.SimulateNativeBack()
-                }}>
-                    <Image style={{width:40,height:40,margin:10,
-                        resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-                </TouchableOpacity>
             ),
             headerRight: (
                 <TouchableOpacity>
@@ -100,12 +93,9 @@ export default Stack = StackNavigator({
             headerTitleStyle: {
                 flex: 1, textAlign: 'center'
             },
-            // headerLeft: (
-            //     <TouchableOpacity>
-            //         <Image style={{width:40,height:40,margin:10,
-            //             resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-            //     </TouchableOpacity>
-            // ),
+            headerLeft: (
+                <TitleBarBackButton/>
+            ),
             headerRight: (
                 <TouchableOpacity>
                     <Image style={{width:40,height:40,margin:10,
@@ -122,12 +112,10 @@ export default Stack = StackNavigator({
             headerTitleStyle: {
                 flex: 1, textAlign: 'center'
             },
-            // headerLeft: (
-            //     <TouchableOpacity>
-            //         <Image style={{width:40,height:40,margin:10,
-            //             resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-            //     </TouchableOpacity>
-            // ),
+            headerLeft: (
+                <TitleBarBackButton/>
+
+            ),
             headerRight: (
                 <TouchableOpacity>
                     <Image style={{width:40,height:40,margin:10,

@@ -8,9 +8,12 @@
  * 底部一件询价
  */
 import React,{Component} from "react";
-import {Image, TouchableHighlight, View, StyleSheet, Text, Dimensions} from "react-native";
+import {Image, TouchableHighlight, View, StyleSheet, Text, Dimensions, TouchableOpacity} from "react-native";
 import MyPolicyItem from "../modules/MyPolicyItem";
 import AskPrice from "./AskPrice";
+import {StackNavigator,
+    createStackNavigator} from "react-navigation";
+import px2dp from "../utils/px2dpUtils";
 
 let widthOfWindow = Dimensions.get('window').width;
 let heightOfWindow = Dimensions.get('window').height;
@@ -31,16 +34,17 @@ export default class MyPolicy extends Component{
                     flex:1,
                     position: "absolute",
                     height:Dimensions.get('window').height,
-                    paddingBottom:45,
+                    paddingBottom:px2dp(80),
                     // marginTop:Dimensions.get('window').height*0.85,
                     flexDirection:"column",
                     alignItems:"center",
                     justifyContent:"flex-end"}}>
                     <TouchableHighlight
-                        onPress={()=>{this.props.navigation.navigate('Inquiry')
+                        onPress={()=>{
+                            this.props.navigation.navigate('Inquiry')
                         }}
                     >
-                        <View style={{backgroundColor:"#000",width:Dimensions.get('window').width,height:Dimensions.get('window').height*0.08,
+                        <View style={{backgroundColor:"#4d4d4d",width:Dimensions.get('window').width,height:Dimensions.get('window').height*0.08,
                             alignItems:"center",
                             justifyContent:"center"}}>
                             <Text style={{fontSize:15,color:"#fff"}}>一键询价</Text>
