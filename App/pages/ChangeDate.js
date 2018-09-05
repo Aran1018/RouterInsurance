@@ -7,6 +7,8 @@
  * ?????????
  * @format
  * @flow
+ *
+ * 修改资料
  */
 
 import React, {Component} from 'react';
@@ -16,6 +18,7 @@ import {
     PixelRatio, View
 } from 'react-native';
 import ImageRadioGroup from "../modules/ImageRadioGroup";
+import Dividing from "../modules/Dividing";
 
 let content = '';
 
@@ -59,7 +62,7 @@ export default class ChangeDate extends Component<Props> {
 
     render() {
         return (
-            <View style={{backgroundColor: 'white'}}>
+            <View style={{}}>
                 <View style={{flexDirection: 'column'}}>
 
                     <ScrollView>
@@ -113,16 +116,8 @@ export default class ChangeDate extends Component<Props> {
                         </View>
 
                         {/*分界线*/}
-                        <View style={{
-                            marginTop: 3,
-                            width: width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 1,
-                            backgroundColor: '#7b7b7b'
-                        }}>
+                        <Dividing/>
 
-                        </View>
                         {/*行驶证*/}
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
@@ -230,15 +225,7 @@ export default class ChangeDate extends Component<Props> {
                             </View>
                         </View>
                         {/*分界线*/}
-                        <View style={{
-                            marginTop: 15,
-                            width: width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 1,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
                             <Text style={{color: '#c0c2c5', fontSize: 16, marginTop: 10, marginLeft: 15}}>
@@ -370,15 +357,7 @@ export default class ChangeDate extends Component<Props> {
                         </View>
 
                         {/*分界线*/}
-                        <View style={{
-                            marginTop: 15,
-                            width: Dimensions.get('window').width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 0.5,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/*险选种类*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
@@ -412,15 +391,7 @@ export default class ChangeDate extends Component<Props> {
                         </View>
 
                         {/*分界线*/}
-                        <View style={{
-                            marginTop: 15,
-                            width: Dimensions.get('window').width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 0.5,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/*补充资料*/}
                         <View style={{flexDirection: 'column'}}>

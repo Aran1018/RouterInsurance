@@ -4,6 +4,8 @@
  *
  *除过自己心中笃信的那一点不灭的光亮
  *我觉得这世间再没有别的东西比它值得被如此依靠。
+ *
+ * 底部一件询价
  */
 import React,{Component} from "react";
 import {Image, TouchableHighlight, View, StyleSheet, Text, Dimensions} from "react-native";

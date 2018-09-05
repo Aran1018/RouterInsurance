@@ -1,3 +1,13 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ *
+ * 我的报价单底部
+ */
+
 import React, {Component} from 'react';
 import {
     View,

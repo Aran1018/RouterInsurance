@@ -4,6 +4,7 @@
  *
  * @format
  * @flow
+ * 资料填写
  */
 
 import React, {Component} from 'react';
@@ -13,6 +14,8 @@ import {Dimensions} from 'react-native';
 let {height, width} = Dimensions.get('window');
 
 import ImageRadioGroup from "../modules/ImageRadioInformation";
+import Dividing from "../modules/Dividing";
+import px2dp from "../utils/px2dpUtils";
 
 type Props = {};
 
@@ -56,10 +59,9 @@ export default class ChangeInformation extends Component<Props> {
 
     render() {
         return (
-            <View style={{backgroundColor: 'white'}}>
+            <View style={{}}>
                 <View style={{flexDirection: 'column'}}>
                     <ScrollView>
-
 
                         {/*保费合计*/}
                         <View style={{
@@ -69,7 +71,7 @@ export default class ChangeInformation extends Component<Props> {
                             height: height / 6.3
                         }}>
                             <View style={{
-                                marginTop: 40,
+                                marginTop: px2dp(40),
                                 marginLeft: 16,
                             }}>
                                 <Text style={{marginTop: 15, fontSize: 18, color: 'white'}}>保费合计:￥</Text>
@@ -82,53 +84,42 @@ export default class ChangeInformation extends Component<Props> {
                             </View>
                         </View>
 
-                        {/*Name*/}
-                        <View style={{flexDirection: 'row', width: width}}>
-                            <View>
-                                <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/changeInformation/name.png')}
-                                            style={[styles.imgStyle = {
-                                                width: 25,
-                                                height: 25,
-                                                marginLeft: 15,
-                                                marginTop: 10
-                                            }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 16}}>
-                                        姓名
-                                    </Text>
-
-                                    <TextInput
-                                        style={{
-                                            marginLeft: 5,
-                                            marginRight: 5,
-                                            fontSize: 16,
-                                            textAlign: 'right',
-                                            flex: 1,
-                                            color: '#fe2b00',
-                                        }}
-                                        placeholder="请输入您的姓名"
-
-                                        numberOfLines={1}
-                                        ref={'content'}
-                                        underlineColorAndroid='transparent'
-                                        multiline={true}
-                                        autoFocus={true}
-                                        onChangeText={(text) => {
-                                            content = text;
-                                        }}/>
-                                </View>
+                        {/*姓名*/}
+                        <View style={{flexDirection: 'row'}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                                < Image source={require('../img/changeInformation/name.png')}
+                                        style={[styles.imgStyle = {
+                                            width: 25,
+                                            height: 25,
+                                            marginLeft: 15,
+                                            marginTop: 10
+                                        }]}/>
+                                <Text style={{marginLeft: 5, marginTop: 12, fontSize: 16}}>
+                                    姓名
+                                </Text>
                             </View>
+                            <TextInput
+                                style={{
+                                    marginTop: px2dp(14),
+                                    fontSize: px2dp(14),
+                                    textAlign: 'right',
+                                    flex: 1,
+                                    color: '#d5cdd1',
+                                }}
+                                placeholder="请输入您的姓名"
+                                placeholderTextColor="#fe2b00"
+                                numberOfLines={1}
+                                ref={'content'}
+                                underlineColorAndroid='transparent'
+                                multiline={true}
+                                autoFocus={true}
+                                onChangeText={(text) => {
+                                    content = text;
+                                }}/>
                         </View>
+
                         {/*分割线*/}
-                        <View style={{
-                            marginTop: 3,
-                            width: width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 1,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/*邮寄地址*/}
                         <View style={{flexDirection: 'row', width: width}}>
@@ -168,15 +159,7 @@ export default class ChangeInformation extends Component<Props> {
                             </View>
                         </View>
                         {/*分割线*/}
-                        <View style={{
-                            marginTop: 3,
-                            width: width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 1,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/*身份证*/}
                         <View style={{flexDirection: 'row', width: width}}>
@@ -285,15 +268,7 @@ export default class ChangeInformation extends Component<Props> {
                             </View>
                         </View>
                         {/*分割线*/}
-                        <View style={{
-                            marginTop: 14,
-                            width: width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 1,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/* 请选择支付方式*/}
                         <View>
@@ -333,7 +308,6 @@ export default class ChangeInformation extends Component<Props> {
                                 <Text style={{  alignSelf: 'center', marginTop: 15, fontSize: 18, color: 'white'}}>确定购买</Text>
                             </View>
                         </TouchableOpacity>
-
                     </ScrollView>
                 </View>
             </View>

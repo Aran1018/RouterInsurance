@@ -4,6 +4,8 @@
  *Creat by Aran  at  2018/7/17
  *除过自己心中笃信的那一点不灭的光亮
  *我觉得这世间再没有别的东西比它值得被如此依靠。
+ *
+ * 一件询价
  */
 import React, {Component} from 'react';
 import {
@@ -21,6 +23,12 @@ import {
 } from 'react-native';
 import MyPolicy from "./MyPolicy";
 import ImageRadioGroup from "../modules/ImageRadioGroup";
+import Dividing from "../modules/Dividing";
+import px2dp from "../utils/px2dpUtils";
+
+let AboutSpacing = 15;
+let FontSize = 15;
+let MarginTop = 10;
 
 let MARGIN_TWO_SIDES = 13;
 let widthOfWindow = Dimensions.get('window').width;
@@ -54,7 +62,7 @@ export default class AskPrice extends Component {
                     imgBrand: require("../img/ImageRadios/PICC.png"),
                     image: require('../img/ImageRadios/noselected.png'),
                     image2: require('../img/ImageRadios/selected.png'),
-                },3
+                },
 
             ],
         };
@@ -100,7 +108,7 @@ export default class AskPrice extends Component {
         };
         let innerContainerTransparentStyle = this.state.transparent
             ? {
-                backgroundColor: '#fff',
+
                 justifyContent: "flex-end",
             }
             : null;
@@ -120,14 +128,23 @@ export default class AskPrice extends Component {
                             <View style={[styles.aacontainer, modalBackgroundStyle]}>
                                 <View style={[styles.innerContainer, innerContainerTransparentStyle]}>
                                     <View style={{
-                                        width: 500, height: 240, backgroundColor: "#ffffff",
+                                        width: px2dp(400), height: px2dp(240), backgroundColor: "#ffffff",
                                         alignItems: "center",
                                         justifyContent: "flex-end",
                                     }}>
-                                        <Image style={{resizeMode: 'stretch', marginTop: 20, width: 100, height: 100}}
+                                        <Image style={{
+                                            resizeMode: 'stretch',
+                                            marginTop: px2dp(20),
+                                            width: px2dp(100),
+                                            height: px2dp(100)
+                                        }}
                                                source={require('../img/imgaskprice/dialogimg.png')}/>
-                                        <Text style={{marginTop: 10, fontSize: 20, fontWeight: "bold"}}>提交成功</Text>
-                                        <Text style={{marginTop: 10, fontSize: 15}}>保险专员会尽快与您联系</Text>
+                                        <Text style={{
+                                            marginTop: MarginTop,
+                                            fontSize: FontSize,
+                                            fontWeight: "bold"
+                                        }}>提交成功</Text>
+                                        <Text style={{marginTop: MarginTop, fontSize: FontSize}}>保险专员会尽快与您联系</Text>
 
                                         <View>
                                             <TouchableHighlight onPress={
@@ -136,12 +153,12 @@ export default class AskPrice extends Component {
                                                 }
                                             }
                                                                 style={{
-                                                                    width: 300,
-                                                                    height: 40,
+                                                                    width: px2dp(300),
+                                                                    height: px2dp(40),
                                                                     backgroundColor: "#000",
                                                                     alignItems: "center",
                                                                     justifyContent: "center",
-                                                                    marginTop: 10
+                                                                    marginTop: MarginTop
                                                                 }}>
                                                 <Text style={{color: "#fff"}}>OK</Text>
                                             </TouchableHighlight>
@@ -163,77 +180,71 @@ export default class AskPrice extends Component {
                                        }]}/>
                             </TouchableOpacity>
                         </View>
-                        {/*电话*/}
-                        <View style={{flexDirection: 'row', width: width}}>
-                            <View>
-                                <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/imgaskprice/mobilephone.png')}
-                                            style={[styles.imgStyle = {
-                                                width: 19,
-                                                height: 19,
-                                                marginLeft: 15,
-                                                marginTop: 14
-                                            }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 13, fontSize: 15}}>
-                                        电话
-                                    </Text>
 
-                                    <TextInput
-                                        style={{
-                                            marginLeft: 2,
-                                            fontSize: 14,
-                                            textAlign: 'right',
-                                            flex: 1,
-                                            color: '#fe2b00',
-                                        }}
-                                        placeholder="12345678912  (请重新编写)"
-                                        placeholderTextColor="#fe2b00"
-                                        numberOfLines={1}
-                                        ref={'content'}
-                                        underlineColorAndroid='transparent'
-                                        multiline={true}
-                                        autoFocus={true}
-                                        onChangeText={(text) => {
-                                            content = text;
-                                        }}/>
-                                </View>
+                        {/*电话*/}
+                        <View style={{flexDirection: 'row'}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                                < Image source={require('../img/imgaskprice/mobilephone.png')}
+                                        style={[styles.imgStyle = {
+                                            width: px2dp(19),
+                                            height: px2dp(19),
+                                            marginLeft: px2dp(15),
+                                            marginTop: px2dp(14)
+                                        }]}/>
+                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(14), fontSize: px2dp(15)}}>
+                                    电话
+                                </Text>
                             </View>
+                            <TextInput
+                                style={{
+                                    marginTop: px2dp(14),
+                                    fontSize: px2dp(14),
+                                    textAlign: 'right',
+                                    flex: 1,
+                                    color: '#fe2b00',
+                                }}
+                                placeholder="12345678912  (请重新编写)"
+                                placeholderTextColor="#fe2b00"
+                                numberOfLines={1}
+                                ref={'content'}
+                                underlineColorAndroid='transparent'
+                                multiline={true}
+                                autoFocus={true}
+                                onChangeText={(text) => {
+                                    content = text;
+                                }}/>
                         </View>
 
                         {/*分界线*/}
-                        <View style={{
-                            marginTop: 3,
-                            width: width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 1,
-                            backgroundColor: '#7b7b7b'
-                        }}>
+                        <Dividing/>
 
-                        </View>
                         {/*行驶证*/}
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
-                                <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/imgaskprice/idCard.png')}
-                                            style={[styles.imgStyle = {
-                                                width: 20,
-                                                height: 20,
-                                                marginLeft: 15,
-                                                marginTop: 14
-                                            }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 14, fontSize: 15}}>
-                                        行驶证
-                                    </Text>
+                                <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
+
+                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
+                                        < Image source={require('../img/imgaskprice/idCard.png')}
+                                                style={[styles.imgStyle = {
+                                                    width: px2dp(20),
+                                                    height: px2dp(20),
+                                                    marginLeft: px2dp(15),
+                                                    marginTop: px2dp(14)
+                                                }]}/>
+                                        <Text style={{marginLeft: px2dp(5), marginTop: px2dp(15), fontSize: px2dp(15)}}>
+                                            行驶证
+                                        </Text>
+                                    </View>
 
                                     <Text
                                         style={{
-                                            marginLeft: 5,
-                                            marginRight: 5,
-                                            fontSize: 16,
+                                            marginLeft: px2dp(5),
+                                            marginRight: px2dp(5),
+                                            fontSize: px2dp(16),
                                             textAlign: 'right',
                                             flex: 1,
                                             color: '#fe2b00',
+
                                         }}
                                         underlineColorAndroid='transparent'
                                         numberOfLines={1}
@@ -249,27 +260,27 @@ export default class AskPrice extends Component {
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 65,
-                                                width: 100,
-                                                marginTop: 15,
-                                                marginLeft: 35,
+                                                height: px2dp(65),
+                                                width: px2dp(100),
+                                                marginTop: px2dp(15),
+                                                marginLeft: px2dp(35),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 18,
-                                                           height: 12,
-                                                           marginLeft: 43,
-                                                           marginTop: 18,
+                                                           width: px2dp(18),
+                                                           height: px2dp(12),
+                                                           marginLeft: px2dp(43),
+                                                           marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
-                                                    width: 75,
-                                                    height: 18,
-                                                    marginLeft: 24,
-                                                    marginTop: 41,
+                                                    width: px2dp(75),
+                                                    height: px2dp(18),
+                                                    marginLeft: px2dp(24),
+                                                    marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize: 8,
+                                                    fontSize: px2dp(8),
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄行驶证正本
@@ -285,28 +296,28 @@ export default class AskPrice extends Component {
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 65,
-                                                width: 100,
-                                                marginTop: 15,
-                                                marginLeft: 20,
-                                                marginRight: 15,
+                                                height: px2dp(65),
+                                                width: px2dp(100),
+                                                marginTop: px2dp(15),
+                                                marginLeft: px2dp(20),
+                                                marginRight: px2dp(15),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 18,
-                                                           height: 12,
-                                                           marginLeft: 43,
-                                                           marginTop: 18,
+                                                           width: px2dp(18),
+                                                           height: px2dp(12),
+                                                           marginLeft: px2dp(43),
+                                                           marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
-                                                    width: 75,
-                                                    height: 18,
-                                                    marginLeft: 24,
-                                                    marginTop: 41,
+                                                    width: px2dp(75),
+                                                    height: px2dp(18),
+                                                    marginLeft: px2dp(24),
+                                                    marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize: 8,
+                                                    fontSize: px2dp(8),
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄行驶证副本
@@ -317,16 +328,10 @@ export default class AskPrice extends Component {
                                 </View>
                             </View>
                         </View>
-                        {/*分界线*/}
-                        <View style={{
-                            marginTop: 15,
-                            width: width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 1,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+
+
+                        <Dividing/>
+
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
                             <Text style={{color: '#c0c2c5', fontSize: 16, marginTop: 10, marginLeft: 15}}>
@@ -353,23 +358,25 @@ export default class AskPrice extends Component {
                         {/*身份证*/}
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
-                                <View style={{flexDirection: 'row', width: width, marginTop: 5}}>
-                                    < Image source={require('../img/imgaskprice/idCard.png')}
-                                            style={[styles.imgStyle = {
-                                                width: 20,
-                                                height: 20,
-                                                marginLeft: 15,
-                                                marginTop: 14
-                                            }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 14, fontSize: 15}}>
-                                        身份证
-                                    </Text>
+                                <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
+                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
+                                        < Image source={require('../img/imgaskprice/idCard.png')}
+                                                style={[styles.imgStyle = {
+                                                    width: px2dp(20),
+                                                    height: px2dp(20),
+                                                    marginLeft: px2dp(15),
+                                                    marginTop: px2dp(14)
+                                                }]}/>
+                                        <Text style={{marginLeft: px2dp(5), marginTop: px2dp(15), fontSize: px2dp(15)}}>
+                                            身份证
+                                        </Text>
+                                    </View>
 
                                     <Text
                                         style={{
-                                            marginLeft: 5,
-                                            marginRight: 5,
-                                            fontSize: 16,
+                                            marginLeft: px2dp(5),
+                                            marginRight: px2dp(5),
+                                            fontSize: px2dp(16),
                                             textAlign: 'right',
                                             flex: 1,
                                             color: '#fe2b00',
@@ -383,32 +390,32 @@ export default class AskPrice extends Component {
                                             content = text;
                                         }}/>
 
-                                    {/*拍摄身份证正面*/}
+                                    {/*拍摄行驶证正本*/}
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 65,
-                                                width: 100,
-                                                marginTop: 15,
-                                                marginLeft: 35,
+                                                height: px2dp(65),
+                                                width: px2dp(100),
+                                                marginTop: px2dp(15),
+                                                marginLeft: px2dp(35),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 18,
-                                                           height: 12,
-                                                           marginLeft: 43,
-                                                           marginTop: 18,
+                                                           width: px2dp(18),
+                                                           height: px2dp(12),
+                                                           marginLeft: px2dp(43),
+                                                           marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
-                                                    width: 75,
-                                                    height: 18,
-                                                    marginLeft: 24,
-                                                    marginTop: 41,
+                                                    width: px2dp(75),
+                                                    height: px2dp(18),
+                                                    marginLeft: px2dp(24),
+                                                    marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize: 8,
+                                                    fontSize: px2dp(8),
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证正面
@@ -418,34 +425,34 @@ export default class AskPrice extends Component {
                                     </View>
 
 
-                                    {/*拍摄身份证背面*/}
+                                    {/*拍摄行驶证副本*/}
 
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
-                                                height: 65,
-                                                width: 100,
-                                                marginTop: 15,
-                                                marginLeft: 20,
-                                                marginRight: 15,
+                                                height: px2dp(65),
+                                                width: px2dp(100),
+                                                marginTop: px2dp(15),
+                                                marginLeft: px2dp(20),
+                                                marginRight: px2dp(15),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: 18,
-                                                           height: 12,
-                                                           marginLeft: 43,
-                                                           marginTop: 18,
+                                                           width: px2dp(18),
+                                                           height: px2dp(12),
+                                                           marginLeft: px2dp(43),
+                                                           marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
                                                 <Text style={[styles.imgStyle = {
-                                                    width: 75,
-                                                    height: 18,
-                                                    marginLeft: 24,
-                                                    marginTop: 41,
+                                                    width: px2dp(75),
+                                                    height: px2dp(18),
+                                                    marginLeft: px2dp(24),
+                                                    marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize: 8,
+                                                    fontSize: px2dp(8),
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证背面
@@ -456,77 +463,65 @@ export default class AskPrice extends Component {
                                 </View>
                             </View>
                         </View>
+
+
                         {/*分界线*/}
-                        <View style={{
-                            marginTop: 15,
-                            width: Dimensions.get('window').width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 0.5,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/*险选种类*/}
-                        <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
-                            <View>
-                                <View
-                                    style={{flexDirection: 'row', width: Dimensions.get('window').width, marginTop: 5}}>
-                                    < Image source={require('../img/imgaskprice/list.png')}
+                        <View style={{flexDirection: 'row',}}>
+                            <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
+                                < Image source={require('../img/imgaskprice/list.png')}
+                                        style={[styles.imgStyle = {
+                                            width: px2dp(20),
+                                            height: px2dp(20),
+                                            marginLeft: px2dp(15),
+                                            marginTop: px2dp(14)
+                                        }]}/>
+                                <Text style={{
+                                    marginLeft: px2dp(5),
+                                    marginTop: px2dp(15),
+                                    fontSize: px2dp(15),
+                                    color: '#bdbdbd'
+                                }}>
+                                    险种选择(建议填写)
+                                </Text>
+                                <TouchableOpacity>
+                                    < Image source={require('../img/imgaskprice/pull-down.png')}
                                             style={[styles.imgStyle = {
-                                                width: 21,
-                                                height: 21,
-                                                marginLeft: 15,
-                                                marginTop: 12
+                                                width: px2dp(17),
+                                                height: px2dp(17),
+                                                marginTop: px2dp(15),
+                                                flex:1,
+                                                justifyContent:'flex-end'
                                             }]}/>
-                                    <Text style={{marginLeft: 5, marginTop: 12, fontSize: 14, color: '#c0c2c5'}}>
-                                        险选种类(建议填写)
-                                    </Text>
-                                    <View style={{flex: 1}}>
-                                        <TouchableOpacity>
-                                            < Image source={require('../img/imgaskprice/pull-down.png')}
-                                                    style={[styles.imgStyle = {
-                                                        width: 17,
-                                                        height: 17,
-                                                        alignSelf: 'flex-end',
-                                                        marginTop: 15,
-                                                        marginRight: 20
-                                                    }]}/>
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
+                                </TouchableOpacity>
                             </View>
+
                         </View>
 
                         {/*分界线*/}
-                        <View style={{
-                            marginTop: 15,
-                            width: Dimensions.get('window').width * 13 / 14,
-                            marginLeft: 15,
-                            marginRight: 15,
-                            height: 0.5,
-                            backgroundColor: '#7b7b7b'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/*===跳转按钮===*/}
 
                         <TouchableHighlight onPress={this._setModalVisible.bind(this, true)}>
                             <View style={{
-                                width: Dimensions.get('window').width - 25,
-                                height: 55,
-                                backgroundColor: '#000',
-                                marginLeft: 15,
-                                marginRight: 15,
-                                marginBottom: 5,
-                                marginTop: 15
+                                height: px2dp(50),
+                                width: width * 13 / 14,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                backgroundColor: 'black',
+                                margin: px2dp(5),
+                                marginTop: px2dp(15),
+                                marginLeft: px2dp(12),
                             }}>
-
                                 <Text style={{
-                                    alignSelf: 'center',
-                                    marginTop: 15, fontSize: 16, color: 'white'
-                                }}>提交</Text>
-
+                                    fontSize: 15,
+                                    color: '#FFFFFF'
+                                }}>
+                                    一键询价
+                                </Text>
                             </View>
                         </TouchableHighlight>
                     </ScrollView>
@@ -631,10 +626,6 @@ let styles = StyleSheet.create({
         marginTop: 0,
         flexDirection: 'row',
     },
-    container: {
-        height: Dimensions.get('window').height,
-        backgroundColor: '#f4f4f4',
-    },
     textInputStyle: {
 
         marginLeft: 50,
@@ -651,5 +642,4 @@ let styles = StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 15
     },
-
 });

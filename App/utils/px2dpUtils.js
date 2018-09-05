@@ -7,7 +7,7 @@
  */
 'use strict';
 
-import {Dimensions} from 'react-native'
+import {Dimensions}  from 'react-native'
 
 const deviceH = Dimensions.get('window').height;
 const deviceW = Dimensions.get('window').width;

@@ -4,6 +4,7 @@
  *Creat by Aran  at  2018/7/19
  *除过自己心中笃信的那一点不灭的光亮
  *我觉得这世间再没有别的东西比它值得被如此依靠。
+ *
  */
 
 import React, {Component} from 'react';
@@ -41,7 +42,6 @@ export default class TheSingleStateItem extends Component{
     selectableJump() {
         // alert(this.state.theJumpState.toString())
         if (this.state.theJumpState === null) {
-
 
 
         }else {
