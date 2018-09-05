@@ -13,7 +13,7 @@ export default class App extends Component<Props> {
                     marginLeft: 15,
                     marginRight: 15,
                     height: 0.5,
-                    marginTop:15,
+                    marginTop:10,
                     backgroundColor: '#aca8a9'
                 }}>
                 </View>

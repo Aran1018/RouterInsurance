@@ -71,8 +71,7 @@ export default class AskPrice extends Component {
     }
 
 
-
-    static navigationOptions={
+    static navigationOptions = {
 
         headerTitle: '一键询价',
 
@@ -85,15 +84,14 @@ export default class AskPrice extends Component {
         headerRight: (
             <TouchableOpacity>
                 <Image style={{
-                    width:40,
-                    height:40,
-                    margin:10,
+                    width: 40,
+                    height: 40,
+                    margin: 10,
                     resizeMode: "contain"
                 }} source={require('../img/titlebar/phone.png')}/>
             </TouchableOpacity>
         )
     };
-
 
 
     jump() {
@@ -175,7 +173,7 @@ export default class AskPrice extends Component {
                                         <Text style={{marginTop: MarginTop, fontSize: FontSize}}>保险专员会尽快与您联系</Text>
 
                                         <View>
-                                            <TouchableHighlight onPress={
+                                            <TouchableOpacity onPress={
                                                 () => {
                                                     this.finalSubmit()
                                                 }
@@ -189,7 +187,7 @@ export default class AskPrice extends Component {
                                                                     marginTop: MarginTop
                                                                 }}>
                                                 <Text style={{color: "#fff"}}>OK</Text>
-                                            </TouchableHighlight>
+                                            </TouchableOpacity>
                                         </View>
                                     </View>
 
@@ -214,18 +212,16 @@ export default class AskPrice extends Component {
                             <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/mobilephone.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(19),
-                                            height: px2dp(19),
+                                            width: px2dp(17),
+                                            height: px2dp(17),
                                             marginLeft: px2dp(15),
-                                            marginTop: px2dp(14)
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(14), fontSize: px2dp(15)}}>
+                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13)}}>
                                     电话
                                 </Text>
                             </View>
                             <TextInput
                                 style={{
-                                    marginTop: px2dp(14),
                                     fontSize: px2dp(14),
                                     textAlign: 'right',
                                     flex: 1,
@@ -251,24 +247,31 @@ export default class AskPrice extends Component {
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
 
-                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
-                                        < Image source={require('../img/imgaskprice/idCard.png')}
-                                                style={[styles.imgStyle = {
-                                                    width: px2dp(20),
-                                                    height: px2dp(20),
-                                                    marginLeft: px2dp(15),
-                                                    marginTop: px2dp(14)
-                                                }]}/>
-                                        <Text style={{marginLeft: px2dp(5), marginTop: px2dp(15), fontSize: px2dp(15)}}>
-                                            行驶证
-                                        </Text>
+
+                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'flex-start',}]}>
+                                        <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                                            <Image source={require('../img/imgaskprice/idCard.png')}
+                                                   style={[styles.imgStyle = {
+                                                       width: px2dp(17),
+                                                       height: px2dp(17),
+                                                       marginLeft: px2dp(15),
+                                                       marginTop: px2dp(10)
+                                                   }]}/>
+                                            <Text style={{
+                                                marginLeft: px2dp(5),
+                                                marginTop: px2dp(10),
+                                                fontSize: px2dp(13)
+                                            }}>
+                                                行驶证
+                                            </Text>
+                                        </View>
                                     </View>
 
                                     <Text
                                         style={{
                                             marginLeft: px2dp(5),
                                             marginRight: px2dp(5),
-                                            fontSize: px2dp(16),
+                                            fontSize: px2dp(13),
                                             textAlign: 'right',
                                             flex: 1,
                                             color: '#fe2b00',
@@ -290,7 +293,7 @@ export default class AskPrice extends Component {
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
                                                 width: px2dp(100),
-                                                marginTop: px2dp(15),
+                                                marginTop: px2dp(10),
                                                 marginLeft: px2dp(35),
                                             }}>
 
@@ -326,7 +329,7 @@ export default class AskPrice extends Component {
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
                                                 width: px2dp(100),
-                                                marginTop: px2dp(15),
+                                                marginTop: px2dp(10),
                                                 marginLeft: px2dp(20),
                                                 marginRight: px2dp(15),
                                             }}>
@@ -362,7 +365,7 @@ export default class AskPrice extends Component {
 
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
-                            <Text style={{color: '#c0c2c5', fontSize: 16, marginTop: 10, marginLeft: 15}}>
+                            <Text style={{color: '#c0c2c5', fontSize: 13, marginTop: 10, marginLeft: 15}}>
                                 请选择投保公司
                             </Text>
                         </View>
@@ -387,17 +390,23 @@ export default class AskPrice extends Component {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
-                                        < Image source={require('../img/imgaskprice/idCard.png')}
-                                                style={[styles.imgStyle = {
-                                                    width: px2dp(20),
-                                                    height: px2dp(20),
-                                                    marginLeft: px2dp(15),
-                                                    marginTop: px2dp(14)
-                                                }]}/>
-                                        <Text style={{marginLeft: px2dp(5), marginTop: px2dp(15), fontSize: px2dp(15)}}>
-                                            身份证
-                                        </Text>
+                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'flex-start',}]}>
+                                        <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                                            < Image source={require('../img/imgaskprice/idCard.png')}
+                                                    style={[styles.imgStyle = {
+                                                        width: px2dp(17),
+                                                        height: px2dp(17),
+                                                        marginLeft: px2dp(15),
+                                                        marginTop: px2dp(10)
+                                                    }]}/>
+                                            <Text style={{
+                                                marginLeft: px2dp(5),
+                                                marginTop: px2dp(10),
+                                                fontSize: px2dp(13)
+                                            }}>
+                                                身份证
+                                            </Text>
+                                        </View>
                                     </View>
 
                                     <Text
@@ -418,14 +427,14 @@ export default class AskPrice extends Component {
                                             content = text;
                                         }}/>
 
-                                    {/*拍摄行驶证正本*/}
+                                    {/*拍摄身份证正面*/}
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
                                                 width: px2dp(100),
-                                                marginTop: px2dp(15),
+                                                marginTop: px2dp(10),
                                                 marginLeft: px2dp(35),
                                             }}>
 
@@ -453,7 +462,7 @@ export default class AskPrice extends Component {
                                     </View>
 
 
-                                    {/*拍摄行驶证副本*/}
+                                    {/*拍摄身份证背面*/}
 
                                     <View>
                                         <TouchableOpacity>
@@ -461,7 +470,7 @@ export default class AskPrice extends Component {
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
                                                 width: px2dp(100),
-                                                marginTop: px2dp(15),
+                                                marginTop: px2dp(10),
                                                 marginLeft: px2dp(20),
                                                 marginRight: px2dp(15),
                                             }}>
@@ -501,15 +510,15 @@ export default class AskPrice extends Component {
                             <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(20),
-                                            height: px2dp(20),
+                                            width: px2dp(17),
+                                            height: px2dp(17),
                                             marginLeft: px2dp(15),
-                                            marginTop: px2dp(14)
+                                            marginTop: px2dp(10)
                                         }]}/>
                                 <Text style={{
                                     marginLeft: px2dp(5),
-                                    marginTop: px2dp(15),
-                                    fontSize: px2dp(15),
+                                    marginTop: px2dp(10),
+                                    fontSize: px2dp(13),
                                     color: '#bdbdbd'
                                 }}>
                                     险种选择(建议填写)
@@ -517,11 +526,11 @@ export default class AskPrice extends Component {
                                 <TouchableOpacity>
                                     < Image source={require('../img/imgaskprice/pull-down.png')}
                                             style={[styles.imgStyle = {
-                                                width: px2dp(17),
-                                                height: px2dp(17),
-                                                marginTop: px2dp(15),
-                                                flex:1,
-                                                justifyContent:'flex-end'
+                                                width: px2dp(15),
+                                                height: px2dp(15),
+                                                marginTop: px2dp(10),
+                                                flex: 1,
+                                                justifyContent: 'flex-end'
                                             }]}/>
                                 </TouchableOpacity>
                             </View>
@@ -533,7 +542,7 @@ export default class AskPrice extends Component {
 
                         {/*===跳转按钮===*/}
 
-                        <TouchableHighlight onPress={this._setModalVisible.bind(this, true)}>
+                        <TouchableOpacity onPress={this._setModalVisible.bind(this, true)}>
                             <View style={{
                                 height: px2dp(50),
                                 width: width * 13 / 14,
@@ -551,7 +560,7 @@ export default class AskPrice extends Component {
                                     一键询价
                                 </Text>
                             </View>
-                        </TouchableHighlight>
+                        </TouchableOpacity>
                     </ScrollView>
                 </View>
             </View>
