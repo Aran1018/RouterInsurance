@@ -19,13 +19,12 @@ import {
 } from 'react-native';
 
 import {Dimensions} from 'react-native';
-import MyDocItem from "../modules/MyDocItem";
+import MyDocItem from "./MyDocItem";
+import px2dp from "../utils/px2dpUtils";
 
 let {height, width} = Dimensions.get('window');
 
 let {screenHeight, screenWidth} = Dimensions.get('window');
-let chuanwidth = 325;
-let chuanheight = 220;
 
 export default class MyDocuments extends Component {
 
@@ -46,36 +45,32 @@ export default class MyDocuments extends Component {
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
                 alignItems:'flex-end',
-                height: Dimensions.get('window').height-60
+                height: Dimensions.get('window').height-px2dp(60)
             }}>
                 <MyDocItem/>
                     {/*ButtonTabBar*/}
-
-
                     <View style={{
                         flexDirection: 'row',
                         width: screenWidth,
-                        height: 60,
+                        height: px2dp(60),
                         justifyContent: 'space-between',
 
                     }}>
-
-
                         <View style={{
                             flexDirection: 'row',
                             height: height / 17,
                             flex: 1,
                             alignSelf: 'center',
-                            marginLeft: 20
+                            marginLeft: px2dp(20)
                         }}>
                             <View style={{alignSelf: 'center'}}>
-                                <Text style={{alignSelf: 'flex-end', fontSize: 16, color: 'black',}}>
+                                <Text style={{alignSelf: 'flex-end', fontSize: px2dp(16), color: 'black',}}>
                                     保费合计：
                                 </Text>
                             </View>
-                            <View style={{marginRight: 10, alignSelf: 'center'}}>
+                            <View style={{marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize: 21,
+                                    fontSize: px2dp(21),
                                     color: 'black',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -94,7 +89,7 @@ export default class MyDocuments extends Component {
                                 justifyContent: 'center',
                             }}>
                                 <Text style={{
-                                    fontSize: 19,
+                                    fontSize: px2dp(19),
                                     color:'white'
                                 }}>
                                     立即购买
@@ -112,12 +107,12 @@ export default class MyDocuments extends Component {
 let styles = StyleSheet.create({
     item_layout: {
         backgroundColor: 'white',
-        height: 45,
+        height: px2dp(45),
         alignItems: 'center',
         justifyContent: 'center'
     },
     item_view_icon: {
-        width: 10,
-        height: 15,
+        width: px2dp(10),
+        height: px2dp(15),
     },
 });

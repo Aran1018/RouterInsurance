@@ -27,11 +27,11 @@ import TitleBarBackButton from "../modules/TitleBarBackButton";
 import Dividing from "../modules/Dividing";
 import px2dp from "../utils/px2dpUtils";
 
-let AboutSpacing = 15;
-let FontSize = 15;
-let MarginTop = 10;
+let AboutSpacing = px2dp(15);
+let FontSize = px2dp(15);
+let MarginTop = px2dp(10);
 
-let MARGIN_TWO_SIDES = 13;
+let MARGIN_TWO_SIDES = px2dp(13);
 let widthOfWindow = Dimensions.get('window').width;
 
 let {height, width} = Dimensions.get('window');
@@ -84,9 +84,9 @@ export default class AskPrice extends Component {
         headerRight: (
             <TouchableOpacity>
                 <Image style={{
-                    width: 40,
-                    height: 40,
-                    margin: 10,
+                    width: px2dp(40),
+                    height: px2dp(40),
+                    margin: px2dp(10),
                     resizeMode: "contain"
                 }} source={require('../img/titlebar/phone.png')}/>
             </TouchableOpacity>
@@ -178,14 +178,14 @@ export default class AskPrice extends Component {
                                                     this.finalSubmit()
                                                 }
                                             }
-                                                                style={{
-                                                                    width: px2dp(300),
-                                                                    height: px2dp(40),
-                                                                    backgroundColor: "#000",
-                                                                    alignItems: "center",
-                                                                    justifyContent: "center",
-                                                                    marginTop: MarginTop
-                                                                }}>
+                                                              style={{
+                                                                  width: px2dp(300),
+                                                                  height: px2dp(40),
+                                                                  backgroundColor: "#000",
+                                                                  alignItems: "center",
+                                                                  justifyContent: "center",
+                                                                  marginTop: MarginTop
+                                                              }}>
                                                 <Text style={{color: "#fff"}}>OK</Text>
                                             </TouchableOpacity>
                                         </View>
@@ -248,7 +248,7 @@ export default class AskPrice extends Component {
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
 
 
-                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'flex-start',}]}>
+                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             <Image source={require('../img/imgaskprice/idCard.png')}
                                                    style={[styles.imgStyle = {
@@ -365,7 +365,7 @@ export default class AskPrice extends Component {
 
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
-                            <Text style={{color: '#c0c2c5', fontSize: 13, marginTop: 10, marginLeft: 15}}>
+                            <Text style={{color: '#c0c2c5', fontSize: px2dp(13), marginTop: px2dp(10), marginLeft: px2dp(15)}}>
                                 请选择投保公司
                             </Text>
                         </View>
@@ -375,8 +375,8 @@ export default class AskPrice extends Component {
                         <View>
                             <ImageRadioGroup
                                 style={{flexDirection: 'row'}}
-                                conTainStyle={{height: 20, width: 20}}
-                                imageStyle={{width: 10, height: 10}}
+                                conTainStyle={{height: px2dp(20), width: px2dp(20)}}
+                                imageStyle={{width: px2dp(10), height: px2dp(10)}}
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
@@ -390,7 +390,7 @@ export default class AskPrice extends Component {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'flex-start',}]}>
+                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
@@ -506,8 +506,8 @@ export default class AskPrice extends Component {
                         <Dividing/>
 
                         {/*险选种类*/}
-                        <View style={{flexDirection: 'row',}}>
-                            <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
+                        <View style={{flexDirection: 'row', flex: 1}}>
+                            <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
                                             width: px2dp(17),
@@ -524,17 +524,17 @@ export default class AskPrice extends Component {
                                     险种选择(建议填写)
                                 </Text>
                                 <TouchableOpacity>
-                                    < Image source={require('../img/imgaskprice/pull-down.png')}
-                                            style={[styles.imgStyle = {
-                                                width: px2dp(15),
-                                                height: px2dp(15),
-                                                marginTop: px2dp(10),
-                                                flex: 1,
-                                                justifyContent: 'flex-end'
-                                            }]}/>
+                                    <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
+                                        < Image source={require('../img/imgaskprice/pull-down.png')}
+                                                style={[styles.imgStyle = {
+                                                    width: px2dp(15),
+                                                    height: px2dp(15),
+                                                    marginTop: px2dp(10),
+                                                    alignSelf: 'flex-end'
+                                                }]}/>
+                                    </View>
                                 </TouchableOpacity>
                             </View>
-
                         </View>
 
                         {/*分界线*/}
@@ -554,7 +554,7 @@ export default class AskPrice extends Component {
                                 marginLeft: px2dp(12),
                             }}>
                                 <Text style={{
-                                    fontSize: 15,
+                                    fontSize: px2dp(15),
                                     color: '#FFFFFF'
                                 }}>
                                     一键询价

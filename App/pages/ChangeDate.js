@@ -120,7 +120,7 @@ export default class ChangeDate extends Component<Props> {
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
 
 
-                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'flex-start',}]}>
+                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             <Image source={require('../img/imgaskprice/idCard.png')}
                                                    style={[styles.imgStyle = {
@@ -237,7 +237,7 @@ export default class ChangeDate extends Component<Props> {
 
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
-                            <Text style={{color: '#c0c2c5', fontSize: 13, marginTop: 10, marginLeft: 15}}>
+                            <Text style={{color: '#c0c2c5', fontSize: px2dp(13), marginTop: px2dp(10), marginLeft: px2dp(15)}}>
                                 请选择投保公司
                             </Text>
                         </View>
@@ -247,8 +247,8 @@ export default class ChangeDate extends Component<Props> {
                         <View>
                             <ImageRadioGroup
                                 style={{flexDirection: 'row'}}
-                                conTainStyle={{height: 20, width: 20}}
-                                imageStyle={{width: 10, height: 10}}
+                                conTainStyle={{height: px2dp(20), width: px2dp(20)}}
+                                imageStyle={{width: px2dp(10), height: px2dp(10)}}
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
@@ -262,7 +262,7 @@ export default class ChangeDate extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'flex-start',}]}>
+                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
@@ -379,7 +379,7 @@ export default class ChangeDate extends Component<Props> {
 
                         {/*险选种类*/}
                         <View style={{flexDirection: 'row',}}>
-                            <View style={[{flexDirection: 'row', height: 50, alignItems: 'center',}]}>
+                            <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
                                             width: px2dp(17),
@@ -415,9 +415,9 @@ export default class ChangeDate extends Component<Props> {
                         {/*补充资料*/}
                         <View style={{flexDirection: 'column'}}>
                             <Text style={{
-                                marginLeft: 15,
-                                marginTop: 12,
-                                fontSize: 16,
+                                marginLeft: px2dp(15),
+                                marginTop: px2dp(12),
+                                fontSize: px2dp(16),
                                 color: '#fe2b00'
                             }}>
                                 补充资料
@@ -426,19 +426,19 @@ export default class ChangeDate extends Component<Props> {
                                 <TouchableOpacity>
                                     <View style={{
                                         backgroundColor: '#babfc4',
-                                        height: 70,
-                                        width: 110,
-                                        marginTop: 15,
-                                        marginLeft: 15
+                                        height: px2dp(70),
+                                        width: px2dp(110),
+                                        marginTop: px2dp(15),
+                                        marginLeft: px2dp(15)
                                     }}>
                                     </View>
 
                                     <Image source={require('../img/changedate/add.png')}
                                            style={[styles.imgStyle = {
-                                               width: 18,
-                                               height: 18,
-                                               marginLeft: 60,
-                                               marginTop: 42,
+                                               width: px2dp(18),
+                                               height: px2dp(18),
+                                               marginLeft: px2dp(60),
+                                               marginTop: px2dp(42),
                                                position: 'absolute'
                                            }]}/>
 
@@ -458,7 +458,7 @@ export default class ChangeDate extends Component<Props> {
                                 marginLeft: px2dp(12),
                             }}>
                                 <Text style={{
-                                    fontSize: 15,
+                                    fontSize: px2dp(15),
                                     color: '#FFFFFF'
                                 }}>
                                     提交
@@ -476,13 +476,13 @@ export default class ChangeDate extends Component<Props> {
 let styles = StyleSheet.create({
     item_layout: {
         backgroundColor: 'white',
-        height: 45,
+        height: px2dp(45),
         alignItems: 'center',
         justifyContent: 'center'
     },
     item_view_icon: {
-        width: 10,
-        height: 15,
+        width: px2dp(10),
+        height: px2dp(15),
     },
     contentContainer: {},
 });

@@ -7,7 +7,7 @@
  */
 import React, {Component} from "react";
 import {Button, StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
-
+import px2dp from "../utils/px2dpUtils";
 
 export default class RadioGroup extends Component {
 
@@ -68,18 +68,18 @@ export default class RadioGroup extends Component {
 
         return (
             <TouchableOpacity key={index} onPress={()=> {
-                onPress(index, item)}} style={{height: 80, width:140,margin: 20}}>
+                onPress(index, item)}} style={{height: px2dp(80), width:px2dp(140),margin: px2dp(20)}}>
                 <Image
                     style={{
-                        width: 120, height: 80, resizeMode: 'contain',
+                        width: px2dp(120), height: px2dp(80), resizeMode: 'contain',
                         alignItems: 'flex-end',
                     }}
                     source={imgBrand}/>
                 <Image style={{
                     justifyContent: "flex-end",
-                    width: 18,
-                    marginTop: 50,
-                    marginLeft: 107,
+                    width: px2dp(18),
+                    marginTop: px2dp(50),
+                    marginLeft: px2dp(107),
                     resizeMode: 'contain',
                     position: 'absolute'
                 }} source={image}/>
@@ -88,9 +88,5 @@ export default class RadioGroup extends Component {
     }
 }
 const styles = StyleSheet.create({
-
-
-
-
 
 });

@@ -11,6 +11,7 @@ import React, {Component} from 'react';
 import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MyDocuments from "../pages/MyDocuments";
 import ChangeDate from "../pages/ChangeDate";
+import px2dp from "../utils/px2dpUtils";
 export default class TheSingleStateItem extends Component{
 
 
@@ -64,26 +65,26 @@ export default class TheSingleStateItem extends Component{
         return(
             <View style={styles.theBigView}>
                 <View >
-                    <Image style={{height:25,width:120}} source={require('../img/imgMypolicy/number.png')}/>
-                    <Text  style={{fontSize:10,margin:3,marginLeft:10,color:"#FFF",position: "absolute"}} >{this.props.carId}</Text>
+                    <Image style={{height:px2dp(25),width:px2dp(120)}} source={require('../img/imgMypolicy/number.png')}/>
+                    <Text  style={{fontSize:px2dp(10),margin:px2dp(3),marginLeft:px2dp(10),color:"#FFF",position: "absolute"}} >{this.props.carId}</Text>
                 </View>
                 <View style={styles.singleStateItem}>
                     <View style={styles.brandAndDataView}>
-                        <Image style={{resizeMode:'stretch',width:100,height:50}} source={require('../img/imgMypolicy/brand.png')}/>
+                        <Image style={{resizeMode:'stretch',width:px2dp(100),height:px2dp(50)}} source={require('../img/imgMypolicy/brand.png')}/>
                         <TouchableOpacity onPress={this.selectableJump.bind(this)}>
                         <View style={{flexDirection:"column",
                             alignItems:"center",
-                            marginTop:10,
+                            marginTop:px2dp(10),
                             justifyContent:"center",}}>
-                            <Image style={{resizeMode:'stretch',width:80,height:25}} source={this.props.name.imgUrl}/>
-                            <Text style={{color:"#fff",position: "absolute",fontSize:10}}>{this.props.name.text}</Text>
+                            <Image style={{resizeMode:'stretch',width:px2dp(80),height:px2dp(25)}} source={this.props.name.imgUrl}/>
+                            <Text style={{color:"#fff",position: "absolute",fontSize:px2dp(10)}}>{this.props.name.text}</Text>
                         </View>
                         </TouchableOpacity>
                     </View>
                     <View  style={styles.buttonAndCallUsView}>
 
                         <TouchableOpacity onPress={this.cancelDoc.bind(this)}>
-                        <Text style={{marginTop:10,fontSize:10}}>撤销保单</Text>
+                        <Text style={{marginTop:px2dp(10),fontSize:px2dp(10)}}>撤销保单</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -95,36 +96,35 @@ export default class TheSingleStateItem extends Component{
 const styles = StyleSheet.create({
 
     theBigView:{
-        marginTop:10,
-        marginLeft:20,
-        marginRight:20,
-        marginBottom:10
+        marginTop:px2dp(10),
+        marginLeft:px2dp(20),
+        marginRight:px2dp(20),
+        marginBottom:px2dp(10)
     },
     singleStateItem:{
-        width:Dimensions.get('window').width-40,
+        width:Dimensions.get('window').width-px2dp(40),
         height:(Dimensions.get('window').width)/3.5,
         backgroundColor:"#ffffff",
         flexDirection:"row",
         alignItems:"center",
         justifyContent:"center",
-        shadowColor:"#000",elevation:3,
+        shadowColor:"#000",elevation:px2dp(3),
 
     },
     brandAndDataView:{
-        width:(Dimensions.get('window').width-20)/2,
+        width:(Dimensions.get('window').width-px2dp(20))/2,
         flexDirection:"column",
         alignItems:"center",
         justifyContent:"center",
 
-        marginLeft:0
     },
     buttonAndCallUsView:{
-        width:(Dimensions.get('window').width-20)/2,
+        width:(Dimensions.get('window').width-px2dp(20))/2,
         flexDirection:"column",
         alignItems:"center",
         justifyContent:"center",
-        marginRight:0,
-        marginLeft:50
+        marginRight:px2dp(0),
+        marginLeft:px2dp(50)
 
     },
 });

@@ -73,9 +73,9 @@ export default class ChangeInformation extends Component<Props> {
                                 height: height / 6.3,
 
                             }]}>
-                                <Text style={{color:'#FFFFFF',fontSize:20,marginLeft: 15,}}>保费合计：</Text>
-                                <Text style={{color:'#FFFFFF',fontSize:23}}>￥</Text>
-                                <Text style={{color:'#FFFFFF',fontSize:40}}>5940.00</Text>
+                                <Text style={{color:'#FFFFFF',fontSize:px2dp(20),marginLeft: px2dp(15),}}>保费合计：</Text>
+                                <Text style={{color:'#FFFFFF',fontSize:px2dp(23)}}>￥</Text>
+                                <Text style={{color:'#FFFFFF',fontSize:px2dp(40)}}>5940.00</Text>
                             </View>
 
 
@@ -84,12 +84,12 @@ export default class ChangeInformation extends Component<Props> {
                             <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                 < Image source={require('../img/changeInformation/name.png')}
                                         style={[styles.imgStyle = {
-                                            width: 23,
-                                            height: 23,
-                                            marginLeft: 16,
-                                            marginTop: 10
+                                            width: px2dp(23),
+                                            height: px2dp(23),
+                                            marginLeft: px2dp(16),
+                                            marginTop: px2dp(10)
                                         }]}/>
-                                <Text style={{marginLeft: 5, marginTop: 10, fontSize: 14}}>
+                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(14)}}>
                                     姓名
                                 </Text>
                             </View>
@@ -121,12 +121,12 @@ export default class ChangeInformation extends Component<Props> {
                             <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                 < Image source={require('../img/changeInformation/address.png')}
                                         style={[styles.imgStyle = {
-                                            width: 25,
-                                            height: 25,
-                                            marginLeft: 15,
-                                            marginTop: 10
+                                            width: px2dp(25),
+                                            height: px2dp(25),
+                                            marginLeft: px2dp(15),
+                                            marginTop: px2dp(10)
                                         }]}/>
-                                <Text style={{marginLeft: 3, marginTop: 10, fontSize: 14}}>
+                                <Text style={{marginLeft: px2dp(3), marginTop: px2dp(10), fontSize: px2dp(14)}}>
                                     保单邮寄地址
                                 </Text>
                             </View>
@@ -156,7 +156,7 @@ export default class ChangeInformation extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-                                    <View style={[{flexDirection: 'row', height: 50, alignItems: 'flex-start',}]}>
+                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
@@ -272,7 +272,7 @@ export default class ChangeInformation extends Component<Props> {
 
                         {/* 请选择支付方式*/}
                         <View>
-                            <Text style={{marginLeft: 15, fontSize: 14, marginTop: 13,color:'#c7c7c7'}}>
+                            <Text style={{marginLeft: px2dp(15), fontSize: px2dp(14), marginTop: px2dp(13),color:'#c7c7c7'}}>
                                 请选择支付方式
                             </Text>
                         </View>
@@ -282,8 +282,8 @@ export default class ChangeInformation extends Component<Props> {
                         <View>
                             <ImageRadioGroup
                                 style={{flexDirection: 'row'}}
-                                conTainStyle={{height: 44, width: 60}}
-                                imageStyle={{width: 25, height: 25}}
+                                conTainStyle={{height: px2dp(44), width: px2dp(60)}}
+                                imageStyle={{width: px2dp(25), height: px2dp(25)}}
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
@@ -331,13 +331,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     welcome: {
-        fontSize: 20,
+        fontSize: px2dp(20),
         textAlign: 'center',
-        margin: 10,
+        margin: px2dp(10),
     },
     instructions: {
         textAlign: 'center',
         color: '#333333',
-        marginBottom: 5,
+        marginBottom: px2dp(5),
     },
 });

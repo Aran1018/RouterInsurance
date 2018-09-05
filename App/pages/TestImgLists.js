@@ -8,6 +8,7 @@
 import React,{PureComponent} from "react"
 import {Text, View} from "react-native";
 import ImageRadioGroup from "../modules/ImageRadioGroup";
+import px2dp from "../utils/px2dpUtils";
 export default class TestImgLists extends PureComponent{
 
     constructor(props) {
@@ -45,8 +46,8 @@ export default class TestImgLists extends PureComponent{
             <View>
                 <ImageRadioGroup
                     style={{flexDirection: 'row'}}//整个组件的样式----这样可以垂直和水平
-                    conTainStyle={{height: 44, width: 60}}//图片和文字的容器样式
-                    imageStyle={{width: 25, height: 25}}//图片样式
+                    conTainStyle={{height: px2dp(44), width: px2dp(60)}}//图片和文字的容器样式
+                    imageStyle={{width: px2dp(25), height: px2dp(25)}}//图片样式
                     selectIndex={''}//空字符串,表示不选中,数组索引表示默认选中
                     data={this.state.sexArray}//数据源
                     onPress={(index, item)=> {

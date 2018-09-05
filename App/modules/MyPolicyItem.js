@@ -18,6 +18,7 @@ import {
     View
 } from 'react-native';
 import TheSingleStateItem from "./TheSingleStateItem";
+import px2dp from "../utils/px2dpUtils";
 let json=require('../data/mypolicy');
 export default class MyPolicyItem extends Component{
 
@@ -53,25 +54,25 @@ export default class MyPolicyItem extends Component{
 
                         <View key={i} style={styles.theBigView}>
                             <View>
-                                <Image style={{height:20,width:100}} source={require('../img/imgMypolicy/number.png')}/>
-                                <Text  style={{fontSize:10,margin:2,marginLeft:10,color:"#FFF",position: "absolute"}} >{json[i].CarId}</Text>
+                                <Image style={{height:px2dp(20),width:px2dp(100)}} source={require('../img/imgMypolicy/number.png')}/>
+                                <Text  style={{fontSize:px2dp(10),margin:px2dp(2),marginLeft:px2dp(10),color:"#FFF",position: "absolute"}} >{json[i].CarId}</Text>
                             </View>
                             <View style={styles.singleStateItem}>
                                 <View style={styles.brandAndDataView}>
-                                    <Image style={{resizeMode:'stretch',width:100,height:50}} source={require('../img/imgMypolicy/brand.png')}/>
-                                    <Text style={{marginLeft:30,fontSize:10}}>保险到期日期：{json[i].Data}</Text>
+                                    <Image style={{resizeMode:'stretch',width:px2dp(100),height:px2dp(50)}} source={require('../img/imgMypolicy/brand.png')}/>
+                                    <Text style={{marginLeft:px2dp(30),fontSize:px2dp(10)}}>保险到期日期：{json[i].Data}</Text>
                                 </View>
                                 <View  style={styles.buttonAndCallUsView}>
                                     <TouchableOpacity onPress={this.continueDoc.bind(this)}>
                                         <View style={{flexDirection:"column",
                                             alignItems:"center",
-                                            marginTop:10,
+                                            marginTop:px2dp(10),
                                             justifyContent:"center",}}>
-                                            <Image style={{resizeMode:'stretch',width:80,height:25}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
-                                            <Text style={{color:"#fff",position: "absolute",fontSize:10}}>续保</Text>
+                                            <Image style={{resizeMode:'stretch',width:px2dp(80),height:px2dp(25)}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
+                                            <Text style={{color:"#fff",position: "absolute",fontSize:px2dp(10)}}>续保</Text>
                                         </View>
                                     </TouchableOpacity>
-                                    <Text style={{marginTop:10,fontSize:10}}>联系我们</Text>
+                                    <Text style={{marginTop:px2dp(10),fontSize:px2dp(10)}}>联系我们</Text>
                                 </View>
                             </View>
                         </View>
@@ -115,13 +116,13 @@ export default class MyPolicyItem extends Component{
 const styles = StyleSheet.create({
 
     theBigView:{
-        marginTop:10,
-        marginLeft:20,
-        marginRight:20,
-        marginBottom:10
+        marginTop:px2dp(10),
+        marginLeft:px2dp(20),
+        marginRight:px2dp(20),
+        marginBottom:px2dp(10)
     },
     singleStateItem:{
-        width:Dimensions.get('window').width-40,
+        width:Dimensions.get('window').width-px2dp(40),
         height:(Dimensions.get('window').width)/3.5,
         backgroundColor:"#ffffff",
         flexDirection:"row",
@@ -131,7 +132,7 @@ const styles = StyleSheet.create({
 
     },
     brandAndDataView:{
-        width:(Dimensions.get('window').width-20)/2,
+        width:(Dimensions.get('window').width-px2dp(20))/2,
         flexDirection:"column",
         alignItems:"center",
         justifyContent:"center",
@@ -139,12 +140,12 @@ const styles = StyleSheet.create({
         marginLeft:0
     },
     buttonAndCallUsView:{
-        width:(Dimensions.get('window').width-20)/2,
+        width:(Dimensions.get('window').width-px2dp(50))/2,
         flexDirection:"column",
         alignItems:"center",
         justifyContent:"center",
         marginRight:0,
-        marginLeft:50
+        marginLeft:px2dp(50)
 
     },
 });

@@ -20,13 +20,9 @@ let heightOfWindow = Dimensions.get('window').height;
 
 export default class MyPolicy extends Component{
 
-
-
-
     render(){
 
         return(
-
             <View>
                 <MyPolicyItem routeName={this.props}/>
 
@@ -47,7 +43,7 @@ export default class MyPolicy extends Component{
                         <View style={{backgroundColor:"#4d4d4d",width:Dimensions.get('window').width,height:Dimensions.get('window').height*0.08,
                             alignItems:"center",
                             justifyContent:"center"}}>
-                            <Text style={{fontSize:15,color:"#fff"}}>一键询价</Text>
+                            <Text style={{fontSize:px2dp(15),color:"#fff"}}>一键询价</Text>
                         </View>
                     </TouchableHighlight>
 
@@ -63,28 +59,28 @@ let styles = StyleSheet.create({
     imgCss:{
         resizeMode: 'contain',
         width:widthOfWindow,
-        height:135
+        height:px2dp(135)
     },
     Underline: {
-        marginTop: 5,
-        marginBottom:5,
-        height: 1.5,
+        marginTop: px2dp(5),
+        marginBottom:px2dp(5),
+        height: px2dp(1.5),
         backgroundColor: '#bebebe'
     },
     JumpOutButton:{
         resizeMode: 'contain',
         position: "absolute",
         textAlignVertical: 'center',
-        height:50,
-        marginTop:20,
-        marginLeft:30,
-        marginRight:30,
+        height:px2dp(50),
+        marginTop:px2dp(20),
+        marginLeft:px2dp(30),
+        marginRight:px2dp(30),
         backgroundColor:'#000000',
     },
     TextJumpOutButton:{
         marginLeft:widthOfWindow/3,
-        marginTop:15,
+        marginTop:px2dp(15),
         color:'#FFFFFF',
-        fontSize:15
+        fontSize:px2dp(15)
     },
 });

@@ -7,14 +7,12 @@
  */
 import React, {Component} from 'react';
 import {Dimensions, Image, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
+import px2dp from "../utils/px2dpUtils";
 
-
-
-let MARGIN_TWO_SIDES = 13;
+let MARGIN_TWO_SIDES = px2dp(13);
 let widthOfWindow = Dimensions.get('window').width;
 
 export default class ImageRadio extends Component{
-
 
     show(text) {
         alert(text);
@@ -136,98 +134,97 @@ let styles = StyleSheet.create({
     PictureDescription: {
         backgroundColor: '#f4f4f4',
         textAlign: 'left',
-        fontSize: 13,
+        fontSize: px2dp(13),
 
     },
     JumpOutButton:{
 
         resizeMode: 'contain',
         textAlignVertical: 'center',
-        height:50,
-        marginTop:20,
-        marginLeft:30,
-        marginRight:30,
+        height:px2dp(50),
+        marginTop:px2dp(20),
+        marginLeft:px2dp(30),
+        marginRight:px2dp(30),
         backgroundColor:'#000000',
 
     },
 
     TakePhoto: {
-        marginTop: 5,
-        marginLeft: 190,
+        marginTop: px2dp(5),
+        marginLeft: px2dp(190),
         resizeMode: 'contain',
-        width: 70,
-        height: 30
+        width: px2dp(70),
+        height: px2dp(30)
     },
     ButtonTextInputStyle: {
-        width: 150,
+        width: px2dp(150),
         backgroundColor: '#bebebe',
         textAlign: 'right',
-        fontSize: 15,
+        fontSize: px2dp(15),
     },
     Underline: {
-        marginTop: 5,
-        marginBottom:5,
+        marginTop: px2dp(5),
+        marginBottom:px2dp(5),
         marginLeft: MARGIN_TWO_SIDES,
         marginRight: MARGIN_TWO_SIDES,
-        height: 1.5,
+        height:px2dp(1.5),
         backgroundColor: '#bebebe'
     },
 
     TitleImg: {
         width: widthOfWindow,
-        marginBottom:5,
+        marginBottom:px2dp(5),
         resizeMode: 'contain',
-        height: 127,
+        height: px2dp(127),
     },
 
     InputImageStyle: {
         textAlignVertical: 'center',
-        marginTop: 9,
+        marginTop: px2dp(9),
         textAlign: 'center',
-        width: 20,
-        height: 20,
+        width: px2dp(20),
+        height: px2dp(20),
 
     },
     XianZhongXuanZe:{
-        marginLeft: 5,
+        marginLeft: px2dp(5),
         color: '#b6b6b6',
-        width: 130,
-        height:40,
+        width: px2dp(130),
+        height:px2dp(40),
         textAlignVertical: 'center',
         alignItems: 'center',
-        fontSize: 13
+        fontSize: px2dp(13)
 
     },
     IconText: {
-        marginLeft: 5,
+        marginLeft: px2dp(5),
         color: '#5d5d5d',
-        width: 40,
-        height:40,
+        width: px2dp(40),
+        height:px2dp(40),
         textAlignVertical: 'center',
         alignItems: 'center',
-        fontSize: 13
+        fontSize: px2dp(13)
     },
 
     InputViewStyle: {
         marginLeft: MARGIN_TWO_SIDES,
-        marginTop: 0,
         flexDirection: 'row'
     },
     container: {
         backgroundColor: '#f4f4f4',
     },
     textInputStyle: {
-        width: 260,
+        width: px2dp(260),
         textAlign: 'right',
-        fontSize: 13,
+        fontSize: px2dp(13),
     },
     TextJumpOutButton:{
 
         /*不规范*/
         marginLeft:widthOfWindow/3,
-        marginTop:15,
+        marginTop:px2dp(15),
         color:'#FFFFFF',
-        fontSize:15
+        fontSize:px2dp(15)
     },
 
 });

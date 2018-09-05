@@ -1,6 +1,6 @@
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,Dimensions} from 'react-native';
+import px2dp from "../utils/px2dpUtils";
 
 let {height, width} = Dimensions.get('window');
 type Props = {};
@@ -10,10 +10,10 @@ export default class App extends Component<Props> {
             <View style={styles.container}>
                 <View style={{
                     width: width * 13 / 14,
-                    marginLeft: 15,
-                    marginRight: 15,
-                    height: 0.5,
-                    marginTop:10,
+                    marginLeft: px2dp(15),
+                    marginRight: px2dp(15),
+                    height: px2dp(0.5),
+                    marginTop:px2dp(10),
                     backgroundColor: '#aca8a9'
                 }}>
                 </View>
