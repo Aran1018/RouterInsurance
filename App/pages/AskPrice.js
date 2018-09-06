@@ -248,7 +248,8 @@ export default class AskPrice extends Component {
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
 
 
-                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
+                                    <View
+                                        style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             <Image source={require('../img/imgaskprice/idCard.png')}
                                                    style={[styles.imgStyle = {
@@ -365,7 +366,12 @@ export default class AskPrice extends Component {
 
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
-                            <Text style={{color: '#c0c2c5', fontSize: px2dp(13), marginTop: px2dp(10), marginLeft: px2dp(15)}}>
+                            <Text style={{
+                                color: '#c0c2c5',
+                                fontSize: px2dp(13),
+                                marginTop: px2dp(10),
+                                marginLeft: px2dp(15)
+                            }}>
                                 请选择投保公司
                             </Text>
                         </View>
@@ -390,7 +396,8 @@ export default class AskPrice extends Component {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
+                                    <View
+                                        style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
@@ -506,34 +513,39 @@ export default class AskPrice extends Component {
                         <Dividing/>
 
                         {/*险选种类*/}
-                        <View style={{flexDirection: 'row', flex: 1}}>
+                        <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
                             <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
                                             width: px2dp(17),
                                             height: px2dp(17),
                                             marginLeft: px2dp(15),
+                                            alignSelf: 'center',
                                             marginTop: px2dp(10)
                                         }]}/>
                                 <Text style={{
                                     marginLeft: px2dp(5),
                                     marginTop: px2dp(10),
                                     fontSize: px2dp(13),
-                                    color: '#bdbdbd'
+                                    alignSelf: 'center',
+                                    color: '#969696'
                                 }}>
                                     险种选择(建议填写)
                                 </Text>
+                            </View>
+                            <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <TouchableOpacity>
-                                    <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
-                                        < Image source={require('../img/imgaskprice/pull-down.png')}
-                                                style={[styles.imgStyle = {
-                                                    width: px2dp(15),
-                                                    height: px2dp(15),
-                                                    marginTop: px2dp(10),
-                                                    alignSelf: 'flex-end'
-                                                }]}/>
-                                    </View>
+                                    < Image source={require('../img/imgaskprice/pull-down.png')}
+                                            style={[styles.imgStyle = {
+                                                width: px2dp(16),
+                                                height: px2dp(16),
+                                                marginLeft: px2dp(15),
+                                                marginTop: px2dp(10),
+                                                alignSelf: 'flex-end',
+                                                marginRight: px2dp(10),
+                                            }]}/>
                                 </TouchableOpacity>
+
                             </View>
                         </View>
 

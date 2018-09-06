@@ -378,33 +378,40 @@ export default class ChangeDate extends Component<Props> {
                         <Dividing/>
 
                         {/*险选种类*/}
-                        <View style={{flexDirection: 'row',}}>
+                        <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
                             <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
                                             width: px2dp(17),
                                             height: px2dp(17),
                                             marginLeft: px2dp(15),
+                                            alignSelf: 'center',
                                             marginTop: px2dp(10)
                                         }]}/>
                                 <Text style={{
                                     marginLeft: px2dp(5),
                                     marginTop: px2dp(10),
                                     fontSize: px2dp(13),
-                                    color: '#bdbdbd'
+                                    alignSelf: 'center',
+                                    color: '#969696'
                                 }}>
                                     险种选择(建议填写)
                                 </Text>
+                            </View>
+
+                            <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <TouchableOpacity>
-                                    < Image source={require('../img/imgaskprice/pull-down.png')}
-                                            style={[styles.imgStyle = {
-                                                width: px2dp(15),
-                                                height: px2dp(15),
-                                                marginTop: px2dp(10),
-                                                flex: 1,
-                                                justifyContent: 'flex-end'
-                                            }]}/>
+                                < Image source={require('../img/imgaskprice/pull-down.png')}
+                                        style={[styles.imgStyle = {
+                                            width: px2dp(16),
+                                            height: px2dp(16),
+                                            marginLeft: px2dp(15),
+                                            marginTop: px2dp(10),
+                                            alignSelf: 'flex-end',
+                                            marginRight: px2dp(10),
+                                        }]}/>
                                 </TouchableOpacity>
+
                             </View>
 
                         </View>

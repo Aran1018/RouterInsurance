@@ -84,25 +84,26 @@ export default class ChangeInformation extends Component<Props> {
                             <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                 < Image source={require('../img/changeInformation/name.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(23),
-                                            height: px2dp(23),
+                                            width: px2dp(17),
+                                            height: px2dp(17),
                                             marginLeft: px2dp(16),
                                             marginTop: px2dp(10)
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(14)}}>
+                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(13)}}>
                                     姓名
                                 </Text>
                             </View>
                             <TextInput
                                 style={{
-                                    marginTop: px2dp(14),
-                                    fontSize: px2dp(14),
+                                    marginTop: px2dp(10),
+                                    fontSize: px2dp(13),
                                     textAlign: 'right',
                                     flex: 1,
                                     color: '#d5cdd1',
                                 }}
                                 placeholder="请输入您的姓名"
                                 placeholderTextColor="#A19D9E"
+
                                 numberOfLines={1}
                                 ref={'content'}
                                 underlineColorAndroid='transparent'
@@ -119,20 +120,22 @@ export default class ChangeInformation extends Component<Props> {
                         {/*邮寄地址*/}
                         <View style={{flexDirection: 'row'}}>
                             <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
-                                < Image source={require('../img/changeInformation/address.png')}
-                                        style={[styles.imgStyle = {
-                                            width: px2dp(25),
-                                            height: px2dp(25),
-                                            marginLeft: px2dp(15),
-                                            marginTop: px2dp(10)
-                                        }]}/>
-                                <Text style={{marginLeft: px2dp(3), marginTop: px2dp(10), fontSize: px2dp(14)}}>
-                                    保单邮寄地址
-                                </Text>
+                                <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                                    < Image source={require('../img/changeInformation/address.png')}
+                                            style={[styles.imgStyle = {
+                                                width: px2dp(17),
+                                                height: px2dp(17),
+                                                marginLeft: px2dp(16),
+                                                marginTop: px2dp(10)
+                                            }]}/>
+                                    <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(13)}}>
+                                        保单邮寄地址
+                                    </Text>
+                                </View>
                             </View>
                             <TextInput
                                 style={{
-                                    marginTop: px2dp(14),
+                                    marginTop: px2dp(10),
                                     fontSize: px2dp(14),
                                     textAlign: 'right',
                                     flex: 1,
@@ -158,18 +161,14 @@ export default class ChangeInformation extends Component<Props> {
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
                                     <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
-                                            < Image source={require('../img/imgaskprice/idCard.png')}
+                                            < Image source={require('../img/changeInformation/idcard.png')}
                                                     style={[styles.imgStyle = {
-                                                        width: px2dp(18),
-                                                        height: px2dp(18),
-                                                        marginLeft: px2dp(15),
+                                                        width: px2dp(17),
+                                                        height: px2dp(17),
+                                                        marginLeft: px2dp(16),
                                                         marginTop: px2dp(10)
                                                     }]}/>
-                                            <Text style={{
-                                                marginLeft: px2dp(5),
-                                                marginTop: px2dp(10),
-                                                fontSize: px2dp(14)
-                                            }}>
+                                            <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(13)}}>
                                                 身份证
                                             </Text>
                                         </View>
@@ -179,7 +178,7 @@ export default class ChangeInformation extends Component<Props> {
                                         style={{
                                             marginLeft: px2dp(5),
                                             marginRight: px2dp(5),
-                                            fontSize: px2dp(16),
+                                            fontSize: px2dp(13),
                                             textAlign: 'right',
                                             flex: 1,
                                             color: '#fe2b00',
@@ -272,13 +271,12 @@ export default class ChangeInformation extends Component<Props> {
 
                         {/* 请选择支付方式*/}
                         <View>
-                            <Text style={{marginLeft: px2dp(15), fontSize: px2dp(14), marginTop: px2dp(13),color:'#c7c7c7'}}>
+                            <Text style={{marginLeft: px2dp(15), fontSize: px2dp(14), marginTop: px2dp(13),color:'#858585'}}>
                                 请选择支付方式
                             </Text>
                         </View>
 
                         {/*支付方式*/}
-
                         <View>
                             <ImageRadioGroup
                                 style={{flexDirection: 'row'}}

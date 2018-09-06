@@ -66,27 +66,27 @@ export default class MyDocItem extends Component {
 
                         {/*税费*/}
                         <View style={{
-                            flexDirection: 'row',
-                            width: width - px2dp(40),
-                            height: height / 17,
-                            backgroundColor: 'white',
-                            marginTop: 2,
-                            flex: 1,
-                            alignSelf: 'center'
-                        }}>
-                            <Text style={{alignSelf: 'center', marginLeft: px2dp(10), fontSize: px2dp(13), color: 'black',}}>
-                                税费
+                        flexDirection: 'row',
+                        width: width - px2dp(40),
+                        height: height / 17,
+                        backgroundColor: 'white',
+                        marginTop: 2,
+                        flex: 1,
+                        alignSelf: 'center'
+                    }}>
+                        <Text style={{alignSelf: 'center', marginLeft: px2dp(10), fontSize: px2dp(13), color: 'black',}}>
+                            税费
+                        </Text>
+                        <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
+                            <Text style={{
+                                fontSize: px2dp(13),
+                                color: 'black',
+                                alignSelf: 'flex-end',
+                            }}>
+                                ￥980.00
                             </Text>
-                            <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
-                                <Text style={{
-                                    fontSize: px2dp(13),
-                                    color: 'black',
-                                    alignSelf: 'flex-end',
-                                }}>
-                                    ￥980.00
-                                </Text>
-                            </View>
                         </View>
+                    </View>
 
                         {/*商业险*/}
                         <View style={{
@@ -145,7 +145,6 @@ export default class MyDocItem extends Component {
                             backgroundColor: 'white',
                             marginTop: px2dp(15),
                             flex: 1,
-
                             alignSelf: 'center'
                         }}>
                             <Text style={{
@@ -167,7 +166,6 @@ export default class MyDocItem extends Component {
                                 </Text>
                             </View>
                         </View>
-
 
                         {/*保费合计*/}
                         <View style={{
