@@ -19,15 +19,14 @@ import {
 
 import {Dimensions} from 'react-native';
 import px2dp from "../utils/px2dpUtils";
+import MyDocItemDividing from "../modules/MyDocItemDividing";
 
 let {height, width} = Dimensions.get('window');
 
 export default class MyDocItem extends Component {
     render() {
         return (
-
             <ScrollView contentContainerStyle={styles.contentContainer}>
-
                 <View style={{flexDirection: 'column', backgroundColor: '#e9ebee', width: width}}>
                     <ScrollView>
                         {/*大图片*/}
@@ -43,14 +42,19 @@ export default class MyDocItem extends Component {
                         {/*交强险*/}
                         <View style={{
                             flexDirection: 'row',
-                            width: width - 40,
+                            width: width - px2dp(40),
                             height: height / 17,
                             backgroundColor: 'white',
                             marginTop: px2dp(15),
                             flex: 1,
                             alignSelf: 'center'
                         }}>
-                            <Text style={{alignSelf: 'center', marginLeft: px2dp(10), color: 'black', fontSize: px2dp(13),}}>
+                            <Text style={{
+                                alignSelf: 'center',
+                                marginLeft: px2dp(10),
+                                color: 'black',
+                                fontSize: px2dp(13),
+                            }}>
                                 交强险
                             </Text>
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
@@ -64,30 +68,37 @@ export default class MyDocItem extends Component {
                             </View>
                         </View>
 
+                        <MyDocItemDividing/>
 
                         {/*税费*/}
                         <View style={{
-                        flexDirection: 'row',
-                        width: width - px2dp(40),
-                        height: height / 17,
-                        backgroundColor: 'white',
-                        marginTop: 2,
-                        flex: 1,
-                        alignSelf: 'center'
-                    }}>
-                        <Text style={{alignSelf: 'center', marginLeft: px2dp(10), fontSize: px2dp(13), color: 'black',}}>
-                            税费
-                        </Text>
-                        <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
+                            flexDirection: 'row',
+                            width: width - px2dp(40),
+                            height: height / 17,
+                            backgroundColor: 'white',
+                            flex: 1,
+                            alignSelf: 'center'
+                        }}>
                             <Text style={{
+                                alignSelf: 'center',
+                                marginLeft: px2dp(10),
                                 fontSize: px2dp(13),
                                 color: 'black',
-                                alignSelf: 'flex-end',
                             }}>
-                                ￥980.00
+                                税费
                             </Text>
+                            <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
+                                <Text style={{
+                                    fontSize: px2dp(13),
+                                    color: 'black',
+                                    alignSelf: 'flex-end',
+                                }}>
+                                    ￥980.00
+                                </Text>
+                            </View>
                         </View>
-                    </View>
+
+                        <MyDocItemDividing/>
 
                         {/*商业险*/}
                         <View style={{
@@ -95,11 +106,15 @@ export default class MyDocItem extends Component {
                             width: width - px2dp(40),
                             height: height / 17,
                             backgroundColor: 'white',
-                            marginTop: px2dp(2),
                             flex: 1,
                             alignSelf: 'center'
                         }}>
-                            <Text style={{alignSelf: 'center', marginLeft: px2dp(10), fontSize: px2dp(13), color: 'black',}}>
+                            <Text style={{
+                                alignSelf: 'center',
+                                marginLeft: px2dp(10),
+                                fontSize: px2dp(13),
+                                color: 'black',
+                            }}>
                                 商业险
                             </Text>
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
@@ -204,72 +219,72 @@ export default class MyDocItem extends Component {
                                            height: height / 8,
                                        }]}/>
 
+                                <View style={[{
+                                    flexDirection: 'column',
+                                    alignItems: 'flex-end',
+                                    backgroundColor: '#dadada',
+                                    height: height / 8,
+                                    width: (width - px2dp(40)) / 2,
+                                    alignSelf: 'center',
+                                    justifyContent: 'center'
+                                }]}>
+                                    <View>
+                                        <Text style={{
+                                            fontSize: px2dp(9),
+                                            alignSelf: 'flex-end',
+                                            flexWrap: 'nowrap',
+                                            color: '#414141',
+                                            fontWeight: 'bold',
+                                            marginRight: px2dp(15)
+                                        }}>了解详情</Text>
+                                    </View>
                                     <View style={[{
-                                        flexDirection: 'column',
-                                        alignItems: 'flex-end',
-                                        backgroundColor: '#dadada',
-                                        height: height / 8,
-                                        width: (width - px2dp(40)) / 2,
-                                        alignSelf: 'center',
-                                        justifyContent: 'center'
+                                        flexDirection: 'row',
+                                        justifyContent: 'flex-end',
+                                        marginRight: px2dp(15)
                                     }]}>
+                                        {/*获得*/}
                                         <View>
                                             <Text style={{
-                                                fontSize: px2dp(9),
-                                                alignSelf: 'flex-end',
-                                                flexWrap: 'nowrap',
-                                                color: '#414141',
+                                                color: '#fe2b00',
+                                                fontSize: px2dp(33),
                                                 fontWeight: 'bold',
-                                                marginRight: px2dp(15)
-                                            }}>了解详情</Text>
+                                            }}>获得</Text>
+                                        </View>
+                                        {/*竖线*/}
+                                        <View style={{
+                                            height: px2dp(33),
+                                            marginLeft: px2dp(4),
+                                            width: px2dp(0.5),
+                                            backgroundColor: '#7a7a7a',
+                                            marginTop: px2dp(5)
+                                        }}>
                                         </View>
                                         <View style={[{
-                                            flexDirection: 'row',
-                                            justifyContent: 'flex-end',
-                                            marginRight: px2dp(15)
+                                            flexDirection: 'column',
+                                            alignItems: 'flex-end',
+                                            marginLeft: px2dp(4),
+                                            marginTop: px2dp(3)
                                         }]}>
-                                            {/*获得*/}
+                                            {/*￥860.00*/}
                                             <View>
                                                 <Text style={{
                                                     color: '#fe2b00',
-                                                    fontSize: px2dp(33),
                                                     fontWeight: 'bold',
-                                                }}>获得</Text>
+                                                    fontSize: px2dp(13),
+                                                }}>￥860.00</Text>
                                             </View>
-                                            {/*竖线*/}
-                                            <View style={{
-                                                height: px2dp(33),
-                                                marginLeft: px2dp(4),
-                                                width: px2dp(0.5),
-                                                backgroundColor: '#7a7a7a',
-                                                marginTop: px2dp(5)
-                                            }}>
-                                            </View>
-                                            <View style={[{
-                                                flexDirection: 'column',
-                                                alignItems: 'flex-end',
-                                                marginLeft: px2dp(4),
-                                                marginTop: px2dp(3)
-                                            }]}>
-                                                {/*￥860.00*/}
-                                                <View>
-                                                    <Text style={{
-                                                        color: '#fe2b00',
-                                                        fontWeight: 'bold',
-                                                        fontSize: px2dp(13),
-                                                    }}>￥860.00</Text>
-                                                </View>
-                                                {/*维修基金*/}
-                                                <View>
-                                                    <Text style={{
-                                                        color: '#fe2b00',
-                                                        fontWeight: 'bold',
-                                                        fontSize: px2dp(13),
-                                                    }}>维修基金</Text>
-                                                </View>
+                                            {/*维修基金*/}
+                                            <View>
+                                                <Text style={{
+                                                    color: '#fe2b00',
+                                                    fontWeight: 'bold',
+                                                    fontSize: px2dp(13),
+                                                }}>维修基金</Text>
                                             </View>
                                         </View>
                                     </View>
+                                </View>
                             </View>
                         </TouchableOpacity>
 
