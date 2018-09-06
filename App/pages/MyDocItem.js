@@ -36,6 +36,7 @@ export default class MyDocItem extends Component {
                                    style={[styles.imageStyle = {
                                        width: width / 1.17,
                                        height: height / 3.3,
+                                       resizeMode: Image.resizeMode.stretch,
                                    }]}/>
                         </View>
 
