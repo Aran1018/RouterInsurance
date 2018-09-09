@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import ImageRadioGroup from "../modules/ImageRadioGroup";
 import Dividing from "../modules/Dividing";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 
 let content = '';
 

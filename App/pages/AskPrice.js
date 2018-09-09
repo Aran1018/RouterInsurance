@@ -25,7 +25,7 @@ import MyPolicy from "./MyPolicy";
 import ImageRadioGroup from "../modules/ImageRadioGroup";
 import TitleBarBackButton from "../modules/TitleBarBackButton";
 import Dividing from "../modules/Dividing";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 
 let AboutSpacing = px2dp(15);
 let FontSize = px2dp(15);
@@ -76,7 +76,7 @@ export default class AskPrice extends Component {
         headerTitle: '一键询价',
 
         headerTitleStyle: {
-            flex: 1, textAlign: 'center'
+            flex: 1, textAlign: 'center',fontSize:setSpText(20)
         },
         headerLeft: (
             <TitleBarBackButton/>
@@ -233,7 +233,7 @@ export default class AskPrice extends Component {
                                 ref={'content'}
                                 underlineColorAndroid='transparent'
                                 multiline={true}
-                                autoFocus={true}
+                                autoFocus={false}
                                 onChangeText={(text) => {
                                     content = text;
                                 }}/>

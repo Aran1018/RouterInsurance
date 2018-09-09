@@ -7,7 +7,7 @@
  */
 import React, {Component} from "react";
 import {Button, StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 
 export default class RadioGroup extends Component {
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,Dimensions} from 'react-native';
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 
 let {height, width} = Dimensions.get('window');
 type Props = {};

@@ -18,7 +18,7 @@ import {
     View
 } from 'react-native';
 import TheSingleStateItem from "./TheSingleStateItem";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 let json=require('../data/mypolicy');
 export default class MyPolicyItem extends Component{
 

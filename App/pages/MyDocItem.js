@@ -18,7 +18,7 @@ import {
 } from 'react-native';
 
 import {Dimensions} from 'react-native';
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 import MyDocItemDividing from "../modules/MyDocItemDividing";
 
 let {height, width} = Dimensions.get('window');

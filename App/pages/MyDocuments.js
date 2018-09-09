@@ -20,9 +20,7 @@ import {
 
 import {Dimensions} from 'react-native';
 import MyDocItem from "./MyDocItem";
-import px2dp from "../utils/px2dpUtils";
-
-let {height, width} = Dimensions.get('window');
+import {px2dp} from "../utils/px2dpUtils";
 
 let {screenHeight, screenWidth} = Dimensions.get('window');
 
@@ -33,7 +31,8 @@ export default class MyDocuments extends Component {
         // 初始状态
 
     }
-    SimulateNativeBack=()=>{
+
+    SimulateNativeBack = () => {
         // this.props.navigation.navigate('MyPolicy')
         alert(" ")
     };
@@ -41,24 +40,31 @@ export default class MyDocuments extends Component {
     render() {
         return (
             <View style={{
-                backgroundColor:"#ffffff",
+                backgroundColor: "#ffffff",
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
-                alignItems:'flex-end',
-                height: Dimensions.get('window').height-px2dp(60)
+                alignItems: 'flex-end',
+                // height: Dimensions.get('window').height
             }}>
                 <MyDocItem/>
+                <View style={{
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "flex-end"
+                }}
+                >
+
                     {/*ButtonTabBar*/}
                     <View style={{
                         flexDirection: 'row',
                         width: screenWidth,
                         height: px2dp(60),
                         justifyContent: 'space-between',
-
+                        backgroundColor:'#FFF'
                     }}>
                         <View style={{
                             flexDirection: 'row',
-                            height: height / 17,
+                            height: screenHeight / 17,
                             flex: 1,
                             alignSelf: 'center',
                             marginLeft: px2dp(20)
@@ -78,19 +84,19 @@ export default class MyDocuments extends Component {
                                 </Text>
                             </View>
                         </View>
-                        <TouchableOpacity onPress={()=>{
+                        <TouchableOpacity onPress={() => {
                             this.props.navigation.navigate('ChangeInformation')
                         }}>
                             <View style={{
                                 flex: 1,
                                 backgroundColor: '#fe2b00',
-                                width: width / 3.5,
-                                alignItems:'center',
+                                width: screenWidth / 3.5,
+                                alignItems: 'center',
                                 justifyContent: 'center',
                             }}>
                                 <Text style={{
                                     fontSize: px2dp(19),
-                                    color:'white'
+                                    color: 'white'
                                 }}>
                                     立即购买
                                 </Text>
@@ -98,6 +104,8 @@ export default class MyDocuments extends Component {
                         </TouchableOpacity>
 
                     </View>
+                </View>
+
             </View>
 
         )

@@ -15,7 +15,7 @@ let {height, width} = Dimensions.get('window');
 
 import ImageRadioGroup from "../modules/ImageRadioInformation";
 import Dividing from "../modules/Dividing";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 
 type Props = {};
 

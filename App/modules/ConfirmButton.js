@@ -9,7 +9,7 @@
  */
 import React,{Component} from 'react'
 import {Text,Dimensions, TouchableOpacity, View} from "react-native";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 export default class ConfirmButton extends Component{
 
 

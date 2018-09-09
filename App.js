@@ -1,8 +1,11 @@
 import React,{Component} from "react"
 
+import {Dimensions} from 'react-native'
 import {
     TabNavigator,
     StackNavigator,
+
+
     DrawerNavigator,
 } from 'react-navigation';
 import MyPolicy from "./App/pages/MyPolicy";
@@ -12,6 +15,7 @@ import MyDocuments, {SimulateNativeBack} from "./App/pages/MyDocuments";
 import {Image, Text, TouchableOpacity} from "react-native";
 import ChangeInformation from "./App/pages/ChangeInformation";
 import TitleBarBackButton from "./App/modules/TitleBarBackButton";
+import  {px2dp, setSpText} from "./App/utils/px2dpUtils";
 
 export default Stack = StackNavigator({
 
@@ -23,7 +27,7 @@ export default Stack = StackNavigator({
             headerTitle: '我的保险',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center',color:"#4d4d4d"
+                flex: 1, textAlign: 'center',color:"#4d4d4d",fontSize:px2dp(20)
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -32,8 +36,9 @@ export default Stack = StackNavigator({
             headerRight: (
                 <TouchableOpacity>
                     <Text style={{
-                        fontSize:14,
-                        margin:10
+                        // fontSize:px2dp(),
+                        fontSize: setSpText(15),
+                        margin:10,color:"#4d4d4d"
                     }}>历史保单</Text>
                 </TouchableOpacity>
             )
@@ -71,7 +76,7 @@ export default Stack = StackNavigator({
             headerTitle: '我的报价单',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center'
+                flex: 1, textAlign: 'center',fontSize:px2dp(20)
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -91,7 +96,7 @@ export default Stack = StackNavigator({
             headerTitle: '修改资料',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center'
+                flex: 1, textAlign: 'center',fontSize:px2dp(20)
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -110,7 +115,7 @@ export default Stack = StackNavigator({
             headerTitle: '资料填写',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center'
+                flex: 1, textAlign: 'center',fontSize:px2dp(20)
             },
             headerLeft: (
                 <TitleBarBackButton/>

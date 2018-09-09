@@ -10,12 +10,8 @@
 import React, {Component} from "react";
 import {Image, TouchableHighlight, View, StyleSheet, Text, Dimensions, TouchableOpacity} from "react-native";
 import MyPolicyItem from "../modules/MyPolicyItem";
-import AskPrice from "./AskPrice";
-import {
-    StackNavigator,
-    createStackNavigator
-} from "react-navigation";
-import px2dp from "../utils/px2dpUtils";
+
+import {px2dp} from "../utils/px2dpUtils";
 import ConfirmButton from "../modules/ConfirmButton";
 
 let widthOfWindow = Dimensions.get('window').width;

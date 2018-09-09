@@ -8,7 +8,7 @@
 import React from 'react';
 import {Button, Image, TouchableOpacity} from 'react-native';
 import { withNavigation } from 'react-navigation';
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 
 class TitleBarBackButton extends React.Component {
     render() {

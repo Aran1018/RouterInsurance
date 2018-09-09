@@ -11,7 +11,7 @@ import React, {Component} from 'react';
 import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MyDocuments from "../pages/MyDocuments";
 import ChangeDate from "../pages/ChangeDate";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 export default class TheSingleStateItem extends Component{
 
 

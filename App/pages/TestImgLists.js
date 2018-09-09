@@ -8,7 +8,7 @@
 import React,{PureComponent} from "react"
 import {Text, View} from "react-native";
 import ImageRadioGroup from "../modules/ImageRadioGroup";
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 export default class TestImgLists extends PureComponent{
 
     constructor(props) {

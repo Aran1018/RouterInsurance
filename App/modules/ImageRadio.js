@@ -7,7 +7,7 @@
  */
 import React, {Component} from 'react';
 import {Dimensions, Image, StyleSheet, Text, TextInput, TouchableHighlight, View} from 'react-native';
-import px2dp from "../utils/px2dpUtils";
+import {px2dp} from "../utils/px2dpUtils";
 
 let MARGIN_TWO_SIDES = px2dp(13);
 let widthOfWindow = Dimensions.get('window').width;
