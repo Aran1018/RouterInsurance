@@ -70,29 +70,28 @@ export default class AskPrice extends Component {
         };
     }
 
-
-    static navigationOptions = {
-
-        headerTitle: '一键询价',
-
-        headerTitleStyle: {
-            flex: 1, textAlign: 'center',fontSize:setSpText(20)
-        },
-        headerLeft: (
-            <TitleBarBackButton/>
-        ),
-        headerRight: (
-            <TouchableOpacity>
-                <Image style={{
-                    width: px2dp(40),
-                    height: px2dp(40),
-                    margin: px2dp(10),
-                    resizeMode: "contain"
-                }} source={require('../img/titlebar/phone.png')}/>
-            </TouchableOpacity>
-        )
-    };
-
+    // static navigationOptions = {
+    //
+    //     headerTitle: '一键询价',
+    //
+    //     headerTitleStyle: {
+    //         flex: 1, textAlign: 'center',fontSize:setSpText(18)
+    //     },
+    //     headerLeft: (
+    //         <TitleBarBackButton/>
+    //     ),
+    //     headerRight: (
+    //         <TouchableOpacity>
+    //             <Image style={{
+    //                 width: px2dp(30),
+    //                 height: px2dp(30),
+    //                 margin: px2dp(8),
+    //                 resizeMode: "contain"
+    //             }} source={require('../img/titlebar/phone.png')}/>
+    //         </TouchableOpacity>
+    //     )
+    // };
+    //
 
     jump() {
         const {navigator} = this.props;

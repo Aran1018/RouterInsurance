@@ -65,18 +65,18 @@ export default class ChangeInformation extends Component<Props> {
 
                         {/*保费合计*/}
 
-                            <View style={[{
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                backgroundColor: 'black',
-                                width: width,
-                                height: height / 6.3,
+                        <View style={[{
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            backgroundColor: 'black',
+                            width: width,
+                            height: height / 6.3,
 
-                            }]}>
-                                <Text style={{color:'#FFFFFF',fontSize:px2dp(20),marginLeft: px2dp(15),}}>保费合计：</Text>
-                                <Text style={{color:'#FFFFFF',fontSize:px2dp(23)}}>￥</Text>
-                                <Text style={{color:'#FFFFFF',fontSize:px2dp(40)}}>5940.00</Text>
-                            </View>
+                        }]}>
+                            <Text style={{color: '#FFFFFF', fontSize: px2dp(20), marginLeft: px2dp(15),}}>保费合计：</Text>
+                            <Text style={{color: '#FFFFFF', fontSize: px2dp(23)}}>￥</Text>
+                            <Text style={{color: '#FFFFFF', fontSize: px2dp(40)}}>5940.00</Text>
+                        </View>
 
 
                         {/*姓名*/}
@@ -103,12 +103,11 @@ export default class ChangeInformation extends Component<Props> {
                                 }}
                                 placeholder="请输入您的姓名"
                                 placeholderTextColor="#A19D9E"
-
                                 numberOfLines={1}
                                 ref={'content'}
                                 underlineColorAndroid='transparent'
                                 multiline={true}
-                                autoFocus={true}
+                                autoFocus={false}
                                 onChangeText={(text) => {
                                     content = text;
                                 }}/>
@@ -147,7 +146,7 @@ export default class ChangeInformation extends Component<Props> {
                                 ref={'content'}
                                 underlineColorAndroid='transparent'
                                 multiline={true}
-                                autoFocus={true}
+                                autoFocus={false}
                                 onChangeText={(text) => {
                                     content = text;
                                 }}/>
@@ -159,7 +158,8 @@ export default class ChangeInformation extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
+                                    <View
+                                        style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/changeInformation/idcard.png')}
                                                     style={[styles.imgStyle = {
@@ -168,7 +168,11 @@ export default class ChangeInformation extends Component<Props> {
                                                         marginLeft: px2dp(16),
                                                         marginTop: px2dp(10)
                                                     }]}/>
-                                            <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(13)}}>
+                                            <Text style={{
+                                                marginLeft: px2dp(5),
+                                                marginTop: px2dp(10),
+                                                fontSize: px2dp(13)
+                                            }}>
                                                 身份证
                                             </Text>
                                         </View>
@@ -271,7 +275,12 @@ export default class ChangeInformation extends Component<Props> {
 
                         {/* 请选择支付方式*/}
                         <View>
-                            <Text style={{marginLeft: px2dp(15), fontSize: px2dp(14), marginTop: px2dp(13),color:'#858585'}}>
+                            <Text style={{
+                                marginLeft: px2dp(15),
+                                fontSize: px2dp(14),
+                                marginTop: px2dp(13),
+                                color: '#858585'
+                            }}>
                                 请选择支付方式
                             </Text>
                         </View>

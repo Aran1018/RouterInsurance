@@ -51,58 +51,36 @@ export default class MyDocuments extends Component {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "flex-end"
-                }}
-                >
+                }}>
 
                     {/*ButtonTabBar*/}
-                    <View style={{
-                        flexDirection: 'row',
-                        width: screenWidth,
-                        height: px2dp(60),
-                        justifyContent: 'space-between',
-                        backgroundColor:'#FFF'
-                    }}>
-                        <View style={{
-                            flexDirection: 'row',
-                            height: screenHeight / 17,
-                            flex: 1,
-                            alignSelf: 'center',
-                            marginLeft: px2dp(20)
-                        }}>
-                            <View style={{alignSelf: 'center'}}>
-                                <Text style={{alignSelf: 'flex-end', fontSize: px2dp(16), color: 'black',}}>
-                                    保费合计：
+                    <View style={{height: 70, flexDirection: 'row'}}>
+                        <View style={{height: 70, flex: 1, backgroundColor: 'white'}}>
+                            <View style={[{flexDirection: 'row', height: 70, alignItems: 'center',}]}>
+                                <Text style={{fontSize: 13, color: 'black', marginLeft:20}}>
+                                    保费合计:
                                 </Text>
-                            </View>
-                            <View style={{marginRight: px2dp(10), alignSelf: 'center'}}>
-                                <Text style={{
-                                    fontSize: px2dp(21),
-                                    color: 'black',
-                                    alignSelf: 'flex-end',
-                                }}>
+                                <Text style={{fontSize: 25, color: 'black'}}>
                                     ￥4940.00
                                 </Text>
                             </View>
                         </View>
+
                         <TouchableOpacity onPress={() => {
                             this.props.navigation.navigate('ChangeInformation')
                         }}>
                             <View style={{
-                                flex: 1,
-                                backgroundColor: '#fe2b00',
-                                width: screenWidth / 3.5,
-                                alignItems: 'center',
+                                height: 70, width: 120, backgroundColor: '#fe2b00', alignItems: 'center',
                                 justifyContent: 'center',
                             }}>
                                 <Text style={{
-                                    fontSize: px2dp(19),
-                                    color: 'white'
+                                    fontSize: px2dp(17),
+                                    color: '#FFFFFF'
                                 }}>
                                     立即购买
                                 </Text>
                             </View>
                         </TouchableOpacity>
-
                     </View>
                 </View>
 

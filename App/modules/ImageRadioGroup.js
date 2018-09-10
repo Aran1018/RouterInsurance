@@ -14,7 +14,6 @@ import {px2dp} from "../utils/px2dpUtils";
 
 export default class RadioGroup extends Component {
 
-
     constructor(props) {
         super(props);
 
@@ -24,21 +23,18 @@ export default class RadioGroup extends Component {
         };
     }
 
-
     render() {
         let newArray = this.state.data;
         return (
             <View style={[this.props.style]}>
                 {
                     newArray.map((item, index) =>
-
                         this.renderRadioButton(newArray, item, this.onPress, index, this.state.selectIndex)
                     )
                 }
             </View>
         )
     }
-
 
     onPress = (index, item)=> {
         let array = this.state.data;
@@ -66,7 +62,6 @@ export default class RadioGroup extends Component {
         if (Index === index && Index !== '') {
             image = require('../img/ImageRadios/selected.png');
         }
-
 
         return (
             <TouchableOpacity key={index} onPress={()=> {

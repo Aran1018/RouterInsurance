@@ -19,9 +19,6 @@ export default class ConfirmButton extends Component{
 
     }
 
-
-
-
     _onPress(){
         const clickTime = Date.now();
         if (!this.lastClickTime || Math.abs(this.lastClickTime - clickTime) > 350) {  //350的时间可以延长，根据需要改变
@@ -38,16 +35,13 @@ export default class ConfirmButton extends Component{
         return this.props.text
     }
 
-
     render(){
         return(
             <TouchableOpacity style={{
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-            }} onPress={()=>{this._onPress()}}
-            
-            >
+            }} onPress={()=>{this._onPress()}}>
                 <View style={{
                     width:this.props.style.width?this.props.style.width:Dimensions.get('window').width-px2dp(25),
                     height: px2dp(55),

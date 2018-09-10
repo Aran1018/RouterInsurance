@@ -6,7 +6,7 @@ import {
     StackNavigator,
 
 
-    DrawerNavigator,
+    DrawerNavigator, withNavigation,
 } from 'react-navigation';
 import MyPolicy from "./App/pages/MyPolicy";
 import AskPrice from "./App/pages/AskPrice";
@@ -17,9 +17,8 @@ import ChangeInformation from "./App/pages/ChangeInformation";
 import TitleBarBackButton from "./App/modules/TitleBarBackButton";
 import  {px2dp, setSpText} from "./App/utils/px2dpUtils";
 
+
 export default Stack = StackNavigator({
-
-
 
     MyPolicy:{
         screen:MyPolicy,
@@ -27,7 +26,7 @@ export default Stack = StackNavigator({
             headerTitle: '我的保险',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center',color:"#4d4d4d",fontSize:px2dp(20)
+                flex: 1, textAlign: 'center',color:"#4d4d4d",fontSize:px2dp(18)
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -37,8 +36,8 @@ export default Stack = StackNavigator({
                 <TouchableOpacity>
                     <Text style={{
                         // fontSize:px2dp(),
-                        fontSize: setSpText(15),
-                        margin:10,color:"#4d4d4d"
+                        fontSize: setSpText(9),
+                        margin:4,color:"#4d4d4d"
                     }}>历史保单</Text>
                 </TouchableOpacity>
             )
@@ -46,29 +45,26 @@ export default Stack = StackNavigator({
     },
     Inquiry:{
         screen:AskPrice,
-        // navigationOptions: {
-        //     headerTitle: '一键询价',
-        //
-        //     headerTitleStyle: {
-        //         flex: 1, textAlign: 'center'
-        //     },
-        //     headerLeft: (
-        //         <TouchableOpacity>
-        //             <Image style={{width:40,height:40,margin:10,
-        //                 resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/back.png')}/>
-        //         </TouchableOpacity>
-        //     ),
-        //     headerRight: (
-        //         <TouchableOpacity>
-        //             <Image style={{
-        //                 width:40,
-        //                 height:40,
-        //                 margin:10,
-        //                 resizeMode: "contain"
-        //             }} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
-        //         </TouchableOpacity>
-        //     )
-        // }
+        navigationOptions: {
+            headerTitle: '一键询价',
+
+            headerTitleStyle: {
+                flex: 1, textAlign: 'center',fontSize:px2dp(18)
+            },
+            headerLeft: (
+                <TitleBarBackButton/>
+            ),
+            headerRight: (
+                <TouchableOpacity>
+                    <Image style={{
+                        width:30,
+                        height:30,
+                        margin:8,
+                        resizeMode: "contain"
+                    }} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
+                </TouchableOpacity>
+            )
+        }
     },
     MyDoc:{
         screen:MyDocuments,
@@ -76,15 +72,21 @@ export default Stack = StackNavigator({
             headerTitle: '我的报价单',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center',fontSize:px2dp(20)
+                flex: 1, textAlign: 'center',fontSize:px2dp(18)
             },
             headerLeft: (
-                <TitleBarBackButton/>
+                <TouchableOpacity>
+                    <Text style={{
+                        // fontSize:px2dp(),
+                        fontSize: setSpText(9),
+                        margin:4,color:"#4d4d4d"
+                    }}>撤销保单</Text>
+                </TouchableOpacity>
 
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:40,height:40,margin:10,
+                    <Image style={{width:30,height:30,margin:8,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )
@@ -96,14 +98,14 @@ export default Stack = StackNavigator({
             headerTitle: '修改资料',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center',fontSize:px2dp(20)
+                flex: 1, textAlign: 'center',fontSize:px2dp(18)
             },
             headerLeft: (
                 <TitleBarBackButton/>
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:40,height:40,margin:10,
+                    <Image style={{width:30,height:30,margin:8,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )
@@ -115,7 +117,7 @@ export default Stack = StackNavigator({
             headerTitle: '资料填写',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center',fontSize:px2dp(20)
+                flex: 1, textAlign: 'center',fontSize:px2dp(18)
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -123,7 +125,7 @@ export default Stack = StackNavigator({
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:40,height:40,margin:10,
+                    <Image style={{width:30,height:30,margin:8,
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )

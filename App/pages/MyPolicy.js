@@ -20,7 +20,6 @@ let heightOfWindow = Dimensions.get('window').height;
 export default class MyPolicy extends Component {
 
     render() {
-
         return (
             <View>
                 <MyPolicyItem routeName={this.props}/>

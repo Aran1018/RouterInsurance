@@ -1,16 +1,12 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- *
- *
- *
  * ?????????
  * @format
  * @flow
  *
  * 修改资料
  */
-
 import React, {Component} from 'react';
 import {
     Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity,
@@ -20,7 +16,7 @@ import {
 import ImageRadioGroup from "../modules/ImageRadioGroup";
 import Dividing from "../modules/Dividing";
 import {px2dp} from "../utils/px2dpUtils";
-
+import ImagePicker from 'react-native-image-picker';
 let content = '';
 
 let {height, width} = Dimensions.get('window');
@@ -33,7 +29,202 @@ type Props = {};
  * return number dp
  */
 
-export default class ChangeDate extends Component<Props> {
+export default class ChangeDate extends Component {
+    state = {
+        avatarSource1: null,
+        avatarSource2: null,
+        avatarSource3: null,
+        avatarSource4: null,
+        videoSource: null
+    };
+
+    //拍摄行驶证正本
+    selectPhotoTapped1() {
+        const options = {
+            title: '选择图片',
+            cancelButtonTitle: '取消',
+            takePhotoButtonTitle: '拍照',
+            chooseFromLibraryButtonTitle: '选择照片',
+            cameraType: 'back',
+            mediaType: 'photo',
+            videoQuality: 'high',
+            durationLimit: 10,
+            maxWidth: 300,
+            maxHeight: 300,
+            quality: 0.8,
+            angle: 0,
+            allowsEditing: false,
+            noData: false,
+            storageOptions: {
+                skipBackup: true
+            }
+        };
+
+        ImagePicker.showImagePicker(options, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled photo picker');
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = {uri: response.uri};
+
+                // You can also display the image using data:
+                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+                this.setState({
+                    avatarSource1: source
+                });
+            }
+        });
+    }
+
+    //拍摄行驶证副本
+    selectPhotoTapped2() {
+        const options = {
+            title: '选择图片',
+            cancelButtonTitle: '取消',
+            takePhotoButtonTitle: '拍照',
+            chooseFromLibraryButtonTitle: '选择照片',
+            cameraType: 'back',
+            mediaType: 'photo',
+            videoQuality: 'high',
+            durationLimit: 10,
+            maxWidth: 300,
+            maxHeight: 300,
+            quality: 0.8,
+            angle: 0,
+            allowsEditing: false,
+            noData: false,
+            storageOptions: {
+                skipBackup: true
+            }
+        };
+
+        ImagePicker.showImagePicker(options, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled photo picker');
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = {uri: response.uri};
+
+                // You can also display the image using data:
+                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+                this.setState({
+                    avatarSource2: source
+                });
+            }
+        });
+    }
+
+    //拍摄身份证正面
+    selectPhotoTapped3() {
+        const options = {
+            title: '选择图片',
+            cancelButtonTitle: '取消',
+            takePhotoButtonTitle: '拍照',
+            chooseFromLibraryButtonTitle: '选择照片',
+            cameraType: 'back',
+            mediaType: 'photo',
+            videoQuality: 'high',
+            durationLimit: 10,
+            maxWidth: 300,
+            maxHeight: 300,
+            quality: 0.8,
+            angle: 0,
+            allowsEditing: false,
+            noData: false,
+            storageOptions: {
+                skipBackup: true
+            }
+        };
+
+        ImagePicker.showImagePicker(options, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled photo picker');
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = {uri: response.uri};
+
+                // You can also display the image using data:
+                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+                this.setState({
+                    avatarSource3: source
+                });
+            }
+        });
+    }
+
+    //拍摄身份证背面
+    selectPhotoTapped4() {
+        const options = {
+            title: '选择图片',
+            cancelButtonTitle: '取消',
+            takePhotoButtonTitle: '拍照',
+            chooseFromLibraryButtonTitle: '选择照片',
+            cameraType: 'back',
+            mediaType: 'photo',
+            videoQuality: 'high',
+            durationLimit: 10,
+            maxWidth: 300,
+            maxHeight: 300,
+            quality: 0.8,
+            angle: 0,
+            allowsEditing: false,
+            noData: false,
+            storageOptions: {
+                skipBackup: true
+            }
+        };
+
+        ImagePicker.showImagePicker(options, (response) => {
+            console.log('Response = ', response);
+
+            if (response.didCancel) {
+                console.log('User cancelled photo picker');
+            }
+            else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            }
+            else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            }
+            else {
+                let source = {uri: response.uri};
+
+                // You can also display the image using data:
+                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
+
+                this.setState({
+                    avatarSource4: source
+                });
+            }
+        });
+    }
 
     constructor(props) {
         super(props);
@@ -43,19 +234,19 @@ export default class ChangeDate extends Component<Props> {
             transparent: true,
             sexArray: [
                 {
-                "id": 1,
-                "name": "中国人民保险公司",
-                "fileName":require('../img/ImageRadios/brand.png'),
+                    "id": 1,
+                    "name": "中国人民保险公司",
+                    "fileName": require('../img/ImageRadios/brand.png'),
                 },
                 {
                     "id": 2,
                     "name": "中国平安",
-                    "fileName":require('../img/ImageRadios/brand.png'),
+                    "fileName": require('../img/ImageRadios/brand.png'),
                 },
                 {
                     "id": 3,
                     "name": "中国大地保险",
-                    "fileName":require('../img/ImageRadios/brand.png'),
+                    "fileName": require('../img/ImageRadios/brand.png'),
                 }
             ],
         };
@@ -105,7 +296,7 @@ export default class ChangeDate extends Component<Props> {
                                 ref={'content'}
                                 underlineColorAndroid='transparent'
                                 multiline={true}
-                                autoFocus={true}
+                                autoFocus={false}
                                 onChangeText={(text) => {
                                     content = text;
                                 }}/>
@@ -119,8 +310,8 @@ export default class ChangeDate extends Component<Props> {
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
 
-
-                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
+                                    <View
+                                        style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             <Image source={require('../img/imgaskprice/idCard.png')}
                                                    style={[styles.imgStyle = {
@@ -177,24 +368,23 @@ export default class ChangeDate extends Component<Props> {
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
-                                                    marginTop: px2dp(41),
-                                                    position: 'absolute',
-                                                    fontSize: px2dp(8),
-                                                    color: '#fff'
-                                                }]}>
-                                                    拍摄行驶证正本
-                                                </Text>
+
+                                                    <Text style={[styles.imgStyle = {
+                                                        width: px2dp(75),
+                                                        height: px2dp(18),
+                                                        marginLeft: px2dp(24),
+                                                        marginTop: px2dp(41),
+                                                        position: 'absolute',
+                                                        fontSize: px2dp(8),
+                                                        color: '#fff'
+                                                    }]}>
+                                                        拍摄行驶证正本
+                                                    </Text>
                                             </View>
                                         </TouchableOpacity>
                                     </View>
 
-
                                     {/*拍摄行驶证副本*/}
-
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
@@ -214,17 +404,17 @@ export default class ChangeDate extends Component<Props> {
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
-                                                    marginTop: px2dp(41),
-                                                    position: 'absolute',
-                                                    fontSize: px2dp(8),
-                                                    color: '#fff'
-                                                }]}>
-                                                    拍摄行驶证副本
-                                                </Text>
+                                                    <Text style={[styles.imgStyle = {
+                                                        width: px2dp(75),
+                                                        height: px2dp(18),
+                                                        marginLeft: px2dp(24),
+                                                        marginTop: px2dp(41),
+                                                        position: 'absolute',
+                                                        fontSize: px2dp(8),
+                                                        color: '#fff'
+                                                    }]}>
+                                                        拍摄行驶证副本
+                                                    </Text>
                                             </View>
                                         </TouchableOpacity>
                                     </View>
@@ -232,12 +422,16 @@ export default class ChangeDate extends Component<Props> {
                             </View>
                         </View>
 
-
                         <Dividing/>
 
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
-                            <Text style={{color: '#c0c2c5', fontSize: px2dp(13), marginTop: px2dp(10), marginLeft: px2dp(15)}}>
+                            <Text style={{
+                                color: '#c0c2c5',
+                                fontSize: px2dp(13),
+                                marginTop: px2dp(10),
+                                marginLeft: px2dp(15)
+                            }}>
                                 请选择投保公司
                             </Text>
                         </View>
@@ -262,7 +456,8 @@ export default class ChangeDate extends Component<Props> {
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-                                    <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
+                                    <View
+                                        style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
@@ -318,24 +513,22 @@ export default class ChangeDate extends Component<Props> {
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
-                                                    marginTop: px2dp(41),
-                                                    position: 'absolute',
-                                                    fontSize: px2dp(8),
-                                                    color: '#fff'
-                                                }]}>
-                                                    拍摄身份证正面
-                                                </Text>
+                                                    <Text style={[styles.imgStyle = {
+                                                        width: px2dp(75),
+                                                        height: px2dp(18),
+                                                        marginLeft: px2dp(24),
+                                                        marginTop: px2dp(41),
+                                                        position: 'absolute',
+                                                        fontSize: px2dp(8),
+                                                        color: '#fff'
+                                                    }]}>
+                                                        拍摄身份证正面
+                                                    </Text>
                                             </View>
                                         </TouchableOpacity>
                                     </View>
 
-
                                     {/*拍摄身份证背面*/}
-
                                     <View>
                                         <TouchableOpacity>
                                             <View style={{
@@ -355,24 +548,23 @@ export default class ChangeDate extends Component<Props> {
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
                                                        }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
-                                                    marginTop: px2dp(41),
-                                                    position: 'absolute',
-                                                    fontSize: px2dp(8),
-                                                    color: '#fff'
-                                                }]}>
-                                                    拍摄身份证背面
-                                                </Text>
+                                                    <Text style={[styles.imgStyle = {
+                                                        width: px2dp(75),
+                                                        height: px2dp(18),
+                                                        marginLeft: px2dp(24),
+                                                        marginTop: px2dp(41),
+                                                        position: 'absolute',
+                                                        fontSize: px2dp(8),
+                                                        color: '#fff'
+                                                    }]}>
+                                                        拍摄身份证背面
+                                                    </Text>
                                             </View>
                                         </TouchableOpacity>
                                     </View>
                                 </View>
                             </View>
                         </View>
-
 
                         {/*分界线*/}
                         <Dividing/>
@@ -401,15 +593,15 @@ export default class ChangeDate extends Component<Props> {
 
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <TouchableOpacity>
-                                < Image source={require('../img/imgaskprice/pull-down.png')}
-                                        style={[styles.imgStyle = {
-                                            width: px2dp(16),
-                                            height: px2dp(16),
-                                            marginLeft: px2dp(15),
-                                            marginTop: px2dp(10),
-                                            alignSelf: 'flex-end',
-                                            marginRight: px2dp(10),
-                                        }]}/>
+                                    < Image source={require('../img/imgaskprice/pull-down.png')}
+                                            style={[styles.imgStyle = {
+                                                width: px2dp(16),
+                                                height: px2dp(16),
+                                                marginLeft: px2dp(15),
+                                                marginTop: px2dp(10),
+                                                alignSelf: 'flex-end',
+                                                marginRight: px2dp(10),
+                                            }]}/>
                                 </TouchableOpacity>
 
                             </View>
@@ -472,7 +664,6 @@ export default class ChangeDate extends Component<Props> {
                                 </Text>
                             </View>
                         </TouchableOpacity>
-
                     </ScrollView>
                 </View>
             </View>
@@ -492,4 +683,24 @@ let styles = StyleSheet.create({
         height: px2dp(15),
     },
     contentContainer: {},
+    avatar1: {
+
+        width: 150,
+        height: 100
+    },
+    avatar2: {
+
+        width: 150,
+        height: 100
+    },
+    avatar3: {
+
+        width: 150,
+        height: 100
+    },
+    avatar4: {
+
+        width: 150,
+        height: 100
+    }
 });
