@@ -21,18 +21,16 @@ export default class MyPolicy extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{
+                height: Dimensions.get('window').height,
+                flex: 1,
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "flex-end"}}>
                 <MyPolicyItem routeName={this.props}/>
 
                 <View style={{
-                    flex: 1,
                     position: "absolute",
-                    height: Dimensions.get('window').height,
-                    paddingBottom: px2dp(80),
-                    // marginTop:Dimensions.get('window').height*0.85,
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "flex-end"
                 }}>
 
                     <ConfirmButton onPress={() => {
@@ -41,18 +39,6 @@ export default class MyPolicy extends Component {
                         backgroundColor: "#343434",
                         width:Dimensions.get("window").width
                     }} text={"一键询价"}/>
-
-                    {/*<TouchableHighlight*/}
-                    {/*onPress={()=>{*/}
-                    {/*this.props.navigation.navigate('Inquiry')*/}
-                    {/*}}*/}
-                    {/*>*/}
-                    {/*<View style={{backgroundColor:"#4d4d4d",width:Dimensions.get('window').width,height:Dimensions.get('window').height*0.08,*/}
-                    {/*alignItems:"center",*/}
-                    {/*justifyContent:"center"}}>*/}
-                    {/*<Text style={{fontSize:px2dp(15),color:"#fff"}}>一键询价</Text>*/}
-                    {/*</View>*/}
-                    {/*</TouchableHighlight>*/}
 
                 </View>
 

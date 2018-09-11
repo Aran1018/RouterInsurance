@@ -45,76 +45,25 @@ export default class AskPrice extends Component {
             modalVisible: false,
             transparent: true,
             sexArray: [
-
                 {
-                    title: '中国平安',
-                    imgBrand: require("../img/ImageRadios/brand.png"),
-                    image: require('../img/ImageRadios/noselected.png'),
-                    image2: require('../img/ImageRadios/selected.png'),
-                },
-
-                {
-                    title: '中国人寿',
-                    imgBrand: require("../img/ImageRadios/pingan.png"),
-
-                    image: require('../img/ImageRadios/noselected.png'),
-                    image2: require('../img/ImageRadios/selected.png'),
+                    "id": 1,
+                    "name": "中国人民保险公司",
+                    "fileName": require('../img/ImageRadios/brand.png'),
                 },
                 {
-                    title: '太平洋保险',
-                    imgBrand: require("../img/ImageRadios/PICC.png"),
-                    image: require('../img/ImageRadios/noselected.png'),
-                    image2: require('../img/ImageRadios/selected.png'),
+                    "id": 2,
+                    "name": "中国平安",
+                    "fileName": require('../img/ImageRadios/brand.png'),
                 },
-
+                {
+                    "id": 3,
+                    "name": "中国大地保险",
+                    "fileName": require('../img/ImageRadios/brand.png'),
+                }
             ],
         };
     }
 
-    // static navigationOptions = {
-    //
-    //     headerTitle: '一键询价',
-    //
-    //     headerTitleStyle: {
-    //         flex: 1, textAlign: 'center',fontSize:setSpText(18)
-    //     },
-    //     headerLeft: (
-    //         <TitleBarBackButton/>
-    //     ),
-    //     headerRight: (
-    //         <TouchableOpacity>
-    //             <Image style={{
-    //                 width: px2dp(30),
-    //                 height: px2dp(30),
-    //                 margin: px2dp(8),
-    //                 resizeMode: "contain"
-    //             }} source={require('../img/titlebar/phone.png')}/>
-    //         </TouchableOpacity>
-    //     )
-    // };
-    //
-
-    jump() {
-        const {navigator} = this.props;
-        /*that存储了上一个this*/
-        let that = this;
-        if (navigator) {
-            navigator.push({
-                name: "MyPolicy",
-                component: MyPolicy,
-                /*params :{
-                    title:this.state.title,
-                    id:123,
-                    getUser:function(user){
-                        that.setState({
-                            user:user
-                        })
-
-                    }
-                }*/
-            })
-        }
-    }
 
 
     static showAlter(text) {
@@ -179,7 +128,7 @@ export default class AskPrice extends Component {
                                                 }
                                             }
                                                               style={{
-                                                                  width: px2dp(300),
+                                                                  width: px2dp(400),
                                                                   height: px2dp(40),
                                                                   backgroundColor: "#000",
                                                                   alignItems: "center",
