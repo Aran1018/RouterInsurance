@@ -20,6 +20,7 @@ import {
 import {Dimensions} from 'react-native';
 import {px2dp} from "../utils/px2dpUtils";
 import MyDocItemDividing from "../modules/MyDocItemDividing";
+import ZoomImage from "../modules/ZoomImage";
 
 let {height, width} = Dimensions.get('window');
 
@@ -30,22 +31,28 @@ export default class MyDocItem extends Component {
                 <View style={{flexDirection: 'column', backgroundColor: '#e9ebee', width: width}}>
                     <ScrollView>
                         {/*大图片*/}
-                        <View style={{marginTop: 10, alignItems: 'center'}}>
-                            <Image source={require('../img/imgMyDocuments/quotation.png')}
-                                   style={[styles.imageStyle = {
-                                       width: width / 1.17,
-                                       height: height / 3.3,
-                                       resizeMode: Image.resizeMode.stretch,
-                                   }]}/>
-                        </View>
-
+                        <TouchableOpacity>
+                            <View style={{marginTop: px2dp(10), alignItems: 'center'}}>
+                                <View style={styles.imgItem}>
+                                    <ZoomImage
+                                        source={require('../img/imgMyDocuments/quotation.png')}
+                                        imgStyle={{
+                                            width: width / 1.17,
+                                            height: height / 3.3,
+                                            resizeMode: Image.resizeMode.stretch,
+                                        }}
+                                        style={styles.img}
+                                    />
+                                </View>
+                            </View>
+                        </TouchableOpacity>
                         {/*交强险*/}
                         <View style={{
                             flexDirection: 'row',
                             width: width - px2dp(40),
                             height: height / 17,
                             backgroundColor: 'white',
-                            marginTop: px2dp(15),
+                            marginTop: px2dp(10),
                             flex: 1,
                             alignSelf: 'center'
                         }}>
@@ -132,7 +139,7 @@ export default class MyDocItem extends Component {
                         {/*保费合计*/}
                         <View style={{
                             flexDirection: 'row', justifyContent: 'flex-end', width: width - px2dp(40),
-                            height: height / 19,
+                            height: height / px2dp(19),
                             backgroundColor: 'black',
                             flex: 1,
                             alignSelf: 'center'
@@ -287,7 +294,6 @@ export default class MyDocItem extends Component {
                                 </View>
                             </View>
                         </TouchableOpacity>
-
                     </ScrollView>
                 </View>
             </ScrollView>
@@ -306,4 +312,12 @@ let styles = StyleSheet.create({
         width: px2dp(10),
         height: px2dp(15),
     },
+    imgItem: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    btnText: {
+        fontSize: px2dp(14),
+        color: '#f0f0f0'
+    }
 });

@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 import {NativeModules,Platform, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import AransModules from "./utils/RouterInsuranceModules";
-import px2dp from "./utils/px2dpUtils";
+import {px2dp} from "./utils/px2dpUtils";
 
 export default class Test extends Component{
 

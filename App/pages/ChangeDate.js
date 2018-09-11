@@ -241,12 +241,12 @@ export default class ChangeDate extends Component {
                 {
                     "id": 2,
                     "name": "中国平安",
-                    "fileName": require('../img/ImageRadios/brand.png'),
+                    "fileName": require('../img/ImageRadios/pingan.png'),
                 },
                 {
                     "id": 3,
                     "name": "中国大地保险",
-                    "fileName": require('../img/ImageRadios/brand.png'),
+                    "fileName": require('../img/ImageRadios/dadi.png'),
                 }
             ],
         };
@@ -278,9 +278,9 @@ export default class ChangeDate extends Component {
                                             width: iconSize,
                                             height: iconSize,
                                             marginLeft: px2dp(15),
-                                            marginTop:8
+                                            marginTop:px2dp(8)
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13),marginTop:8}}>
+                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13),marginTop:px2dp(8)}}>
                                     电话
                                 </Text>
                             </View>
@@ -429,8 +429,8 @@ export default class ChangeDate extends Component {
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
                             <Text style={{
-                                color: '#c0c2c5',
-                                fontSize: px2dp(13),
+                                color: '#a3a5a8',
+                                fontSize: px2dp(12),
                                 marginTop: px2dp(10),
                                 marginLeft: px2dp(15)
                             }}>

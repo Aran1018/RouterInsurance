@@ -14,7 +14,6 @@ import ChangeDate from "../pages/ChangeDate";
 import {px2dp} from "../utils/px2dpUtils";
 export default class TheSingleStateItem extends Component{
 
-
     constructor() {
         super();
         this.state={

@@ -5,12 +5,12 @@
  *除过自己心中笃信的那一点不灭的光亮
  *我觉得这世间再没有别的东西比它值得被如此依靠。
  */
+
 import React, {Component} from "react";
 import {Button, StyleSheet, Text, View, Image, TouchableOpacity} from "react-native";
 import {px2dp} from "../utils/px2dpUtils";
 
 export default class RadioGroup extends Component {
-
 
     constructor(props) {
         super(props);
@@ -20,7 +20,6 @@ export default class RadioGroup extends Component {
             data: this.props.data ? this.props.data : [{title: '男',}, {title: '女'}],
         };
     }
-
 
     render() {
         let newArray = this.state.data;
@@ -35,7 +34,6 @@ export default class RadioGroup extends Component {
             </View>
         )
     }
-
 
     onPress = (index, item)=> {
         let array = this.state.data;
@@ -64,7 +62,6 @@ export default class RadioGroup extends Component {
         if (sexIndex === index && sexIndex !== '') {
             image = item.image2;
         }
-
 
         return (
             <TouchableOpacity key={index} onPress={()=> {

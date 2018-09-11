@@ -27,7 +27,7 @@ import TitleBarBackButton from "../modules/TitleBarBackButton";
 import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 
-let iconSize =  px2dp(19);
+let iconSize = px2dp(19);
 let AboutSpacing = px2dp(15);
 let FontSize = px2dp(15);
 let MarginTop = px2dp(10);
@@ -53,18 +53,16 @@ export default class AskPrice extends Component {
                 {
                     "id": 2,
                     "name": "中国平安",
-                    "fileName": require('../img/ImageRadios/brand.png'),
+                    "fileName": require('../img/ImageRadios/pingan.png'),
                 },
                 {
                     "id": 3,
                     "name": "中国大地保险",
-                    "fileName": require('../img/ImageRadios/brand.png'),
+                    "fileName": require('../img/ImageRadios/dadi.png'),
                 }
             ],
         };
     }
-
-
 
     static showAlter(text) {
         alert(text);
@@ -74,7 +72,6 @@ export default class AskPrice extends Component {
 
         this._setModalVisible(!this.state.modalVisible);
         this.props.navigation.navigate('MyPolicy')
-
     }
 
     render() {
@@ -157,16 +154,16 @@ export default class AskPrice extends Component {
                         </View>
 
                         {/*电话*/}
-                        <View style={{flexDirection: 'row' ,height: px2dp(40),}}>
+                        <View style={{flexDirection: 'row', height: px2dp(40),}}>
                             <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(40),}]}>
                                 < Image source={require('../img/imgaskprice/mobilephone.png')}
                                         style={[styles.imgStyle = {
-                                            width:iconSize,
+                                            width: iconSize,
                                             height: iconSize,
                                             marginLeft: px2dp(15),
-                                            marginTop:8
+                                            marginTop: px2dp(8)
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13),  marginTop:8}}>
+                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13), marginTop: px2dp(8)}}>
                                     电话
                                 </Text>
                             </View>
@@ -176,7 +173,7 @@ export default class AskPrice extends Component {
                                     textAlign: 'right',
                                     flex: 1,
                                     color: '#fe2b00',
-                                    marginTop:8
+                                    marginTop: px2dp(8)
                                 }}
                                 placeholder="12345678912  (请重新编写)"
                                 placeholderTextColor="#fe2b00"
@@ -191,15 +188,7 @@ export default class AskPrice extends Component {
                         </View>
 
                         {/*分界线*/}
-                        <View style={{
-                            width: width-30,
-                            marginLeft: px2dp(15),
-                            marginRight: px2dp(15),
-                            height: px2dp(0.5),
-                            marginTop:px2dp(5),
-                            backgroundColor: '#aca8a9'
-                        }}>
-                        </View>
+                        <Dividing/>
 
                         {/*行驶证*/}
                         <View style={{flexDirection: 'row', width: width}}>
@@ -211,7 +200,7 @@ export default class AskPrice extends Component {
                                             <Image source={require('../img/imgaskprice/idCard.png')}
                                                    style={[styles.imgStyle = {
                                                        width: iconSize,
-                                                       height:iconSize,
+                                                       height: iconSize,
                                                        marginLeft: px2dp(15),
                                                        marginTop: px2dp(10)
                                                    }]}/>
@@ -291,7 +280,6 @@ export default class AskPrice extends Component {
                                                 marginLeft: px2dp(20),
                                                 marginRight: px2dp(15),
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: px2dp(18),
@@ -318,14 +306,14 @@ export default class AskPrice extends Component {
                             </View>
                         </View>
 
-
+                        {/*分界线*/}
                         <Dividing/>
 
                         {/*投保公司*/}
                         <View style={{flexDirection: 'row', width: Dimensions.get('window').width}}>
                             <Text style={{
-                                color: '#c0c2c5',
-                                fontSize: px2dp(13),
+                                color: '#a3a5a8',
+                                fontSize: px2dp(12),
                                 marginTop: px2dp(10),
                                 marginLeft: px2dp(15)
                             }}>
@@ -339,7 +327,7 @@ export default class AskPrice extends Component {
                             <ImageRadioGroup
                                 style={{flexDirection: 'row'}}
                                 conTainStyle={{height: px2dp(20), width: px2dp(20)}}
-                                imageStyle={{width: px2dp(10), height: px2dp(10)}}
+                                imageStyle={{width: px2dp(8), height: px2dp(8)}}
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
@@ -358,8 +346,8 @@ export default class AskPrice extends Component {
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
-                                                        width:iconSize,
-                                                        height:iconSize,
+                                                        width: iconSize,
+                                                        height: iconSize,
                                                         marginLeft: px2dp(15),
                                                         marginTop: px2dp(10)
                                                     }]}/>
@@ -438,7 +426,6 @@ export default class AskPrice extends Component {
                                                 marginLeft: px2dp(20),
                                                 marginRight: px2dp(15),
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: px2dp(18),
@@ -474,7 +461,7 @@ export default class AskPrice extends Component {
                             <View style={[{flexDirection: 'row', height: px2dp(40), alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
-                                            width:iconSize,
+                                            width: iconSize,
                                             height: iconSize,
                                             marginLeft: px2dp(15),
                                             alignSelf: 'center',
@@ -546,10 +533,10 @@ let styles = StyleSheet.create({
     aacontainer: {
         flex: 1,
         justifyContent: 'center',
-        padding: 40,
+        padding: px2dp(40),
     },
     innerContainer: {
-        borderRadius: 10,
+        borderRadius: px2dp(10),
         alignItems: 'center',
     },
 
@@ -560,71 +547,71 @@ let styles = StyleSheet.create({
 
     PictureDescription: {
         textAlign: 'left',
-        fontSize: 13,
+        fontSize: px2dp(13),
 
     },
     JumpOutButton: {
-        marginBottom: 20,
-        height: 50,
-        marginTop: 20,
-        marginLeft: 30,
-        marginRight: 30,
+        marginBottom: px2dp(20),
+        height: px2dp(50),
+        marginTop: px2dp(20),
+        marginLeft: px2dp(30),
+        marginRight: px2dp(30),
         backgroundColor: '#000000',
 
     },
 
     TakePhoto: {
-        marginTop: 5,
-        marginLeft: 190,
+        marginTop: px2dp(5),
+        marginLeft: px2dp(190),
         resizeMode: 'contain',
-        width: 70,
-        height: 30
+        width: px2dp(70),
+        height: px2dp(30)
     },
     ButtonTextInputStyle: {
-        width: 150,
+        width: px2dp(150),
         backgroundColor: '#bebebe',
         textAlign: 'right',
-        fontSize: 15,
+        fontSize: px2dp(15),
     },
     Underline: {
-        marginTop: 5,
-        marginBottom: 5,
+        marginTop: px2dp(5),
+        marginBottom: px2dp(5),
         marginLeft: MARGIN_TWO_SIDES,
         marginRight: MARGIN_TWO_SIDES,
-        height: 1.5,
+        height: px2dp(1.5),
         backgroundColor: '#bebebe'
     },
 
     TitleImg: {
         width: widthOfWindow,
-        marginBottom: 5,
+        marginBottom: px2dp(5),
         resizeMode: 'contain',
-        height: 127,
+        height: px2dp(127),
     },
 
     InputImageStyle: {
-        marginTop: 9,
-        width: 20,
-        height: 20,
+        marginTop: px2dp(9),
+        width: px2dp(20),
+        height: px2dp(20),
 
     },
     XianZhongXuanZe: {
-        marginLeft: 5,
+        marginLeft: px2dp(5),
         color: '#b6b6b6',
-        width: 130,
-        height: 40,
+        width: px2dp(130),
+        height: px2dp(40),
         alignItems: 'center',
-        fontSize: 13
+        fontSize: px2dp(13)
 
     },
     IconText: {
-        marginLeft: 5,
+        marginLeft: px2dp(5),
         color: '#5d5d5d',
-        width: 40,
-        height: 40,
+        width: px2dp(40),
+        height: px2dp(40),
         textAlignVertical: 'center',
         alignItems: 'center',
-        fontSize: 13
+        fontSize: px2dp(13)
     },
 
     InputViewStyle: {
@@ -638,19 +625,19 @@ let styles = StyleSheet.create({
     },
     textInputStyle: {
 
-        marginLeft: 50,
-        width: 260,
+        marginLeft: px2dp(50),
+        width: px2dp(260),
         backgroundColor: '#f4f4f4',
         textAlign: 'right',
-        fontSize: 13,
+        fontSize: px2dp(13),
     },
     TextJumpOutButton: {
 
         /*不规范*/
         marginLeft: widthOfWindow / 3,
-        marginTop: 15,
+        marginTop: px2dp(15),
         color: '#FFFFFF',
-        fontSize: 15
+        fontSize: px2dp(15)
     },
 
 });

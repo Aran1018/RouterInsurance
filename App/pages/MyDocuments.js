@@ -54,13 +54,13 @@ export default class MyDocuments extends Component {
                 }}>
 
                     {/*ButtonTabBar*/}
-                    <View style={{height: 70, flexDirection: 'row'}}>
-                        <View style={{height: 70, flex: 1, backgroundColor: 'white'}}>
-                            <View style={[{flexDirection: 'row', height: 70, alignItems: 'center',}]}>
-                                <Text style={{fontSize: 13, color: 'black', marginLeft:20}}>
+                    <View style={{height: px2dp(60), flexDirection: 'row'}}>
+                        <View style={{height: px2dp(60), flex: 1, backgroundColor: 'white'}}>
+                            <View style={[{flexDirection: 'row', height: px2dp(60), alignItems: 'center',}]}>
+                                <Text style={{fontSize: px2dp(13), color: 'black', marginLeft:px2dp(20)}}>
                                     保费合计:
                                 </Text>
-                                <Text style={{fontSize: 25, color: 'black'}}>
+                                <Text style={{fontSize: px2dp(25), color: 'black',marginBottom:px2dp(8)}}>
                                     ￥4940.00
                                 </Text>
                             </View>
@@ -70,7 +70,7 @@ export default class MyDocuments extends Component {
                             this.props.navigation.navigate('ChangeInformation')
                         }}>
                             <View style={{
-                                height: 70, width: 120, backgroundColor: '#fe2b00', alignItems: 'center',
+                                height: px2dp(60), width: px2dp(120), backgroundColor: '#fe2b00', alignItems: 'center',
                                 justifyContent: 'center',
                             }}>
                                 <Text style={{

@@ -17,7 +17,7 @@ import ChangeInformation from "./App/pages/ChangeInformation";
 import TitleBarBackButton from "./App/modules/TitleBarBackButton";
 import  {px2dp, setSpText} from "./App/utils/px2dpUtils";
 
-let NavIconSize = 30;
+let NavIconSize = px2dp(32);
 
 export default Stack = StackNavigator({
 
@@ -37,9 +37,9 @@ export default Stack = StackNavigator({
                 <TouchableOpacity>
                     <Text style={{
                         // fontSize:px2dp(),
-                        fontSize: setSpText(6),
-                        margin:4,color:"#4d4d4d",
-                        marginRight:10
+                        fontSize: setSpText(8),
+                        margin:px2dp(4),color:"#4d4d4d",
+                        marginRight:px2dp(10)
                     }}>历史保单</Text>
                 </TouchableOpacity>
             )
@@ -61,7 +61,7 @@ export default Stack = StackNavigator({
                     <Image style={{
                         width:NavIconSize,
                         height:NavIconSize,
-                        margin:8,
+                        margin:px2dp(8),
                         resizeMode: "contain"
                     }} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
@@ -80,16 +80,16 @@ export default Stack = StackNavigator({
                 <TouchableOpacity>
                     <Text style={{
                         // fontSize:px2dp(),
-                        fontSize: setSpText(6),
-                        margin:4,color:"#4d4d4d",
-                        marginLeft:10,
+                        fontSize: setSpText(8),
+                        margin:px2dp(4),color:"#4d4d4d",
+                        marginLeft:px2dp(10),
                     }}>撤销保单</Text>
                 </TouchableOpacity>
 
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:NavIconSize,height:NavIconSize,margin:8,
+                    <Image style={{width:NavIconSize,height:NavIconSize,margin:px2dp(8),
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )
@@ -108,7 +108,7 @@ export default Stack = StackNavigator({
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:NavIconSize,height:NavIconSize,margin:8,
+                    <Image style={{width:NavIconSize,height:NavIconSize,margin:px2dp(8),
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )
@@ -127,7 +127,7 @@ export default Stack = StackNavigator({
             ),
             headerRight: (
                 <TouchableOpacity>
-                    <Image style={{width:NavIconSize,height:NavIconSize,margin:8,
+                    <Image style={{width:NavIconSize,height:NavIconSize,margin:px2dp(8),
                         resizeMode: "contain"}} source={require('../RouterInsurance/App/img/titlebar/phone.png')}/>
                 </TouchableOpacity>
             )

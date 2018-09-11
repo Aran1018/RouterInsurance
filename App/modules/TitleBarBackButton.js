@@ -14,7 +14,7 @@ class TitleBarBackButton extends React.Component {
     render() {
         return(
             <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
-                <Image style={{width:px2dp(25),height:px2dp(25),margin:px2dp(8),
+                <Image style={{width:px2dp(20),height:px2dp(20),margin:px2dp(8),
                     resizeMode: "contain"}} source={require('../img/titlebar/back.png')}/>
 
             </TouchableOpacity>

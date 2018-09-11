@@ -16,7 +16,8 @@ let {height, width} = Dimensions.get('window');
 import ImageRadioGroup from "../modules/ImageRadioInformation";
 import Dividing from "../modules/Dividing";
 import {px2dp} from "../utils/px2dpUtils";
-let iconSize =  px2dp(19);
+
+let iconSize = px2dp(19);
 type Props = {};
 
 export default class ChangeInformation extends Component<Props> {
@@ -30,16 +31,16 @@ export default class ChangeInformation extends Component<Props> {
             sexArray: [
 
                 {
-                    title: '微信支付',
-                    imgBrand: require("../img/changeInformation/wechatpay.png"),
+                    title: '支付宝支付',
+                    imgBrand: require("../img/changeInformation/alipay.png"),
+
                     image: require('../img/ImageRadios/noselected.png'),
                     image2: require('../img/ImageRadios/selected.png'),
                 },
 
                 {
-                    title: '支付宝支付',
-                    imgBrand: require("../img/changeInformation/alipay.png"),
-
+                    title: '微信支付',
+                    imgBrand: require("../img/changeInformation/wechatpay.png"),
                     image: require('../img/ImageRadios/noselected.png'),
                     image2: require('../img/ImageRadios/selected.png'),
                 },
@@ -70,18 +71,17 @@ export default class ChangeInformation extends Component<Props> {
                             alignItems: 'center',
                             backgroundColor: 'black',
                             width: width,
-                            height: height / 6.3,
+                            height: height / 6,
 
                         }]}>
-                            <Text style={{color: '#FFFFFF', fontSize: px2dp(20), marginLeft: px2dp(15),}}>保费合计：</Text>
-                            <Text style={{color: '#FFFFFF', fontSize: px2dp(23)}}>￥</Text>
-                            <Text style={{color: '#FFFFFF', fontSize: px2dp(40)}}>5940.00</Text>
+                            <Text style={{color: '#FFFFFF', fontSize: px2dp(15),marginLeft: px2dp(15)}}>保费合计：</Text>
+                            <Text style={{color: '#FFFFFF', fontSize: px2dp(20)}}>￥</Text>
+                            <Text style={{color: '#FFFFFF', fontSize: px2dp(50)}}>5940.00</Text>
                         </View>
 
-
                         {/*姓名*/}
-                        <View style={{flexDirection: 'row',height:50}}>
-                            <View style={[{flexDirection: 'row', alignItems: 'center',height:50}]}>
+                        <View style={{flexDirection: 'row', height: px2dp(50)}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center', height: 50}]}>
                                 < Image source={require('../img/changeInformation/name.png')}
                                         style={[styles.imgStyle = {
                                             width: iconSize,
@@ -117,9 +117,9 @@ export default class ChangeInformation extends Component<Props> {
                         <Dividing/>
 
                         {/*邮寄地址*/}
-                        <View style={{flexDirection: 'row',height:50}}>
-                            <View style={[{flexDirection: 'row', alignItems: 'center',height:50}]}>
-                                <View style={[{flexDirection: 'row', alignItems: 'center',height:50}]}>
+                        <View style={{flexDirection: 'row', height: px2dp(50)}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(50)}]}>
+                                <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(50)}]}>
                                     < Image source={require('../img/changeInformation/address.png')}
                                             style={[styles.imgStyle = {
                                                 width: iconSize,
@@ -277,9 +277,9 @@ export default class ChangeInformation extends Component<Props> {
                         <View>
                             <Text style={{
                                 marginLeft: px2dp(15),
-                                fontSize: px2dp(14),
+                                fontSize: px2dp(12),
                                 marginTop: px2dp(13),
-                                color: '#858585'
+                                color: '#595959'
                             }}>
                                 请选择支付方式
                             </Text>
@@ -314,7 +314,7 @@ export default class ChangeInformation extends Component<Props> {
                                 marginLeft: px2dp(15),
                             }}>
                                 <Text style={{
-                                    fontSize: 17,
+                                    fontSize: px2dp(15),
                                     color: '#FFFFFF'
                                 }}>
                                     确定购买
