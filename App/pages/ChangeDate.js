@@ -18,7 +18,7 @@ import Dividing from "../modules/Dividing";
 import {px2dp} from "../utils/px2dpUtils";
 import ImagePicker from 'react-native-image-picker';
 let content = '';
-
+let iconSize =  px2dp(19);
 let {height, width} = Dimensions.get('window');
 
 type Props = {};
@@ -271,15 +271,16 @@ export default class ChangeDate extends Component {
                         </View>
 
                         {/*电话*/}
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                        <View style={{flexDirection: 'row',height: px2dp(40),}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center',height: px2dp(40),}]}>
                                 < Image source={require('../img/imgaskprice/mobilephone.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(17),
-                                            height: px2dp(17),
+                                            width: iconSize,
+                                            height: iconSize,
                                             marginLeft: px2dp(15),
+                                            marginTop:8
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13)}}>
+                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13),marginTop:8}}>
                                     电话
                                 </Text>
                             </View>
@@ -289,6 +290,7 @@ export default class ChangeDate extends Component {
                                     textAlign: 'right',
                                     flex: 1,
                                     color: '#fe2b00',
+                                    marginTop:8
                                 }}
                                 placeholder="12345678912  (请重新编写)"
                                 placeholderTextColor="#fe2b00"
@@ -315,8 +317,8 @@ export default class ChangeDate extends Component {
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             <Image source={require('../img/imgaskprice/idCard.png')}
                                                    style={[styles.imgStyle = {
-                                                       width: px2dp(17),
-                                                       height: px2dp(17),
+                                                       width: iconSize,
+                                                       height: iconSize,
                                                        marginLeft: px2dp(15),
                                                        marginTop: px2dp(10)
                                                    }]}/>
@@ -461,8 +463,8 @@ export default class ChangeDate extends Component {
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
-                                                        width: px2dp(17),
-                                                        height: px2dp(17),
+                                                        width:iconSize,
+                                                        height:iconSize,
                                                         marginLeft: px2dp(15),
                                                         marginTop: px2dp(10)
                                                     }]}/>
@@ -570,12 +572,12 @@ export default class ChangeDate extends Component {
                         <Dividing/>
 
                         {/*险选种类*/}
-                        <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
-                            <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
+                        <View style={[{flexDirection: 'row', height: px2dp(40), alignItems: 'center',}]}>
+                            <View style={[{flexDirection: 'row', height: px2dp(40), alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(17),
-                                            height: px2dp(17),
+                                            width: iconSize,
+                                            height: iconSize,
                                             marginLeft: px2dp(15),
                                             alignSelf: 'center',
                                             marginTop: px2dp(10)
@@ -616,7 +618,7 @@ export default class ChangeDate extends Component {
                             <Text style={{
                                 marginLeft: px2dp(15),
                                 marginTop: px2dp(12),
-                                fontSize: px2dp(16),
+                                fontSize: px2dp(14),
                                 color: '#fe2b00'
                             }}>
                                 补充资料

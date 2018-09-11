@@ -5,7 +5,7 @@
  *除过自己心中笃信的那一点不灭的光亮
  *我觉得这世间再没有别的东西比它值得被如此依靠。
  *
- * 一件询价
+ * 一键询价
  */
 import React, {Component} from 'react';
 import {
@@ -27,6 +27,7 @@ import TitleBarBackButton from "../modules/TitleBarBackButton";
 import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 
+let iconSize =  px2dp(19);
 let AboutSpacing = px2dp(15);
 let FontSize = px2dp(15);
 let MarginTop = px2dp(10);
@@ -207,15 +208,16 @@ export default class AskPrice extends Component {
                         </View>
 
                         {/*电话*/}
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                        <View style={{flexDirection: 'row' ,height: px2dp(40),}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(40),}]}>
                                 < Image source={require('../img/imgaskprice/mobilephone.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(17),
-                                            height: px2dp(17),
+                                            width:iconSize,
+                                            height: iconSize,
                                             marginLeft: px2dp(15),
+                                            marginTop:8
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13)}}>
+                                <Text style={{marginLeft: px2dp(5), fontSize: px2dp(13),  marginTop:8}}>
                                     电话
                                 </Text>
                             </View>
@@ -225,6 +227,7 @@ export default class AskPrice extends Component {
                                     textAlign: 'right',
                                     flex: 1,
                                     color: '#fe2b00',
+                                    marginTop:8
                                 }}
                                 placeholder="12345678912  (请重新编写)"
                                 placeholderTextColor="#fe2b00"
@@ -239,21 +242,27 @@ export default class AskPrice extends Component {
                         </View>
 
                         {/*分界线*/}
-                        <Dividing/>
+                        <View style={{
+                            width: width-30,
+                            marginLeft: px2dp(15),
+                            marginRight: px2dp(15),
+                            height: px2dp(0.5),
+                            marginTop:px2dp(5),
+                            backgroundColor: '#aca8a9'
+                        }}>
+                        </View>
 
                         {/*行驶证*/}
                         <View style={{flexDirection: 'row', width: width}}>
                             <View>
                                 <View style={{flexDirection: 'row', width: width, marginTop: px2dp(5)}}>
-
-
                                     <View
                                         style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             <Image source={require('../img/imgaskprice/idCard.png')}
                                                    style={[styles.imgStyle = {
-                                                       width: px2dp(17),
-                                                       height: px2dp(17),
+                                                       width: iconSize,
+                                                       height:iconSize,
                                                        marginLeft: px2dp(15),
                                                        marginTop: px2dp(10)
                                                    }]}/>
@@ -400,8 +409,8 @@ export default class AskPrice extends Component {
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/imgaskprice/idCard.png')}
                                                     style={[styles.imgStyle = {
-                                                        width: px2dp(17),
-                                                        height: px2dp(17),
+                                                        width:iconSize,
+                                                        height:iconSize,
                                                         marginLeft: px2dp(15),
                                                         marginTop: px2dp(10)
                                                     }]}/>
@@ -512,12 +521,12 @@ export default class AskPrice extends Component {
                         <Dividing/>
 
                         {/*险选种类*/}
-                        <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
-                            <View style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'center',}]}>
+                        <View style={[{flexDirection: 'row', height: px2dp(40), alignItems: 'center',}]}>
+                            <View style={[{flexDirection: 'row', height: px2dp(40), alignItems: 'center',}]}>
                                 < Image source={require('../img/imgaskprice/list.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(17),
-                                            height: px2dp(17),
+                                            width:iconSize,
+                                            height: iconSize,
                                             marginLeft: px2dp(15),
                                             alignSelf: 'center',
                                             marginTop: px2dp(10)

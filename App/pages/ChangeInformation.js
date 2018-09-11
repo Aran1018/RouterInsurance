@@ -16,7 +16,7 @@ let {height, width} = Dimensions.get('window');
 import ImageRadioGroup from "../modules/ImageRadioInformation";
 import Dividing from "../modules/Dividing";
 import {px2dp} from "../utils/px2dpUtils";
-
+let iconSize =  px2dp(19);
 type Props = {};
 
 export default class ChangeInformation extends Component<Props> {
@@ -80,12 +80,12 @@ export default class ChangeInformation extends Component<Props> {
 
 
                         {/*姓名*/}
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                        <View style={{flexDirection: 'row',height:50}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center',height:50}]}>
                                 < Image source={require('../img/changeInformation/name.png')}
                                         style={[styles.imgStyle = {
-                                            width: px2dp(17),
-                                            height: px2dp(17),
+                                            width: iconSize,
+                                            height: iconSize,
                                             marginLeft: px2dp(16),
                                             marginTop: px2dp(10)
                                         }]}/>
@@ -117,13 +117,13 @@ export default class ChangeInformation extends Component<Props> {
                         <Dividing/>
 
                         {/*邮寄地址*/}
-                        <View style={{flexDirection: 'row'}}>
-                            <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
-                                <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
+                        <View style={{flexDirection: 'row',height:50}}>
+                            <View style={[{flexDirection: 'row', alignItems: 'center',height:50}]}>
+                                <View style={[{flexDirection: 'row', alignItems: 'center',height:50}]}>
                                     < Image source={require('../img/changeInformation/address.png')}
                                             style={[styles.imgStyle = {
-                                                width: px2dp(17),
-                                                height: px2dp(17),
+                                                width: iconSize,
+                                                height: iconSize,
                                                 marginLeft: px2dp(16),
                                                 marginTop: px2dp(10)
                                             }]}/>
@@ -163,8 +163,8 @@ export default class ChangeInformation extends Component<Props> {
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/changeInformation/idcard.png')}
                                                     style={[styles.imgStyle = {
-                                                        width: px2dp(17),
-                                                        height: px2dp(17),
+                                                        width: iconSize,
+                                                        height: iconSize,
                                                         marginLeft: px2dp(16),
                                                         marginTop: px2dp(10)
                                                     }]}/>

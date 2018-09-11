@@ -22,8 +22,6 @@ import {px2dp} from "../utils/px2dpUtils";
 let json=require('../data/mypolicy');
 export default class MyPolicyItem extends Component{
 
-
-
     continueDoc(){
         alert("续保")
     }
@@ -44,7 +42,6 @@ export default class MyPolicyItem extends Component{
                 text:"修改资料"
             },
         };
-
 
         let arr=[];
         for (let i=0;i<json.length;i++){
@@ -136,7 +133,6 @@ const styles = StyleSheet.create({
         flexDirection:"column",
         alignItems:"center",
         justifyContent:"center",
-
         marginLeft:0
     },
     buttonAndCallUsView:{
