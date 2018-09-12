@@ -20,16 +20,19 @@ import {
 
 import {Dimensions} from 'react-native';
 import MyDocItem from "./MyDocItem";
-import {px2dp} from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 
 let {screenHeight, screenWidth} = Dimensions.get('window');
+
+let AllFontSize = setSpText(9);
+let WholeHeight = px2dp(63);
+let Orange =   '#fe2b00';
 
 export default class MyDocuments extends Component {
 
     constructor(props) {
         super(props);
         // 初始状态
-
     }
 
     SimulateNativeBack = () => {
@@ -54,13 +57,13 @@ export default class MyDocuments extends Component {
                 }}>
 
                     {/*ButtonTabBar*/}
-                    <View style={{height: px2dp(60), flexDirection: 'row'}}>
-                        <View style={{height: px2dp(60), flex: 1, backgroundColor: 'white'}}>
-                            <View style={[{flexDirection: 'row', height: px2dp(60), alignItems: 'center',}]}>
-                                <Text style={{fontSize: px2dp(13), color: 'black', marginLeft:px2dp(20)}}>
+                    <View style={{height: WholeHeight, flexDirection: 'row'}}>
+                        <View style={{height:WholeHeight, flex: 1, backgroundColor: 'white'}}>
+                            <View style={[{flexDirection: 'row', height: WholeHeight, alignItems: 'center',}]}>
+                                <Text style={{fontSize:AllFontSize, color: 'black', marginLeft:px2dp(20)}}>
                                     保费合计:
                                 </Text>
-                                <Text style={{fontSize: px2dp(25), color: 'black',marginBottom:px2dp(8)}}>
+                                <Text style={{fontSize: setSpText(15), color: 'black',marginLeft:px2dp(7)}}>
                                     ￥4940.00
                                 </Text>
                             </View>
@@ -70,11 +73,11 @@ export default class MyDocuments extends Component {
                             this.props.navigation.navigate('ChangeInformation')
                         }}>
                             <View style={{
-                                height: px2dp(60), width: px2dp(120), backgroundColor: '#fe2b00', alignItems: 'center',
+                                height: WholeHeight, width: px2dp(120), backgroundColor:Orange, alignItems: 'center',
                                 justifyContent: 'center',
                             }}>
                                 <Text style={{
-                                    fontSize: px2dp(17),
+                                    fontSize: setSpText(11),
                                     color: '#FFFFFF'
                                 }}>
                                     立即购买

@@ -17,6 +17,7 @@ import java.util.List;
  * 除过自己心中笃信的那一点不灭的光亮
  * 我觉得这世间再没有别的东西比它值得被如此依靠。
  */
+
 public class RouterInsurancePackage implements ReactPackage {
 
     private RouterInsuranceModules mModule;

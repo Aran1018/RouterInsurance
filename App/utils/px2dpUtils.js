@@ -9,8 +9,6 @@
 
 // import {Dimensions,PixelRatio}  from 'react-native'
 
-
-
 /**
  * Created by zhuoy on 2017/6/27.
  * 屏幕工具类
@@ -31,8 +29,6 @@ import {
     Dimensions,
     PixelRatio,
 } from 'react-native';
-
-
 
 const deviceH = Dimensions.get('window').height;
 const deviceW = Dimensions.get('window').width;
@@ -66,7 +62,7 @@ export function setSpText(size: number) {
 // }
 
 export function px2dp(px) {
-    return px *  deviceW / basePx
+    return px * deviceW / basePx
 }
 
 

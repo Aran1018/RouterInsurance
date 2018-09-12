@@ -11,7 +11,7 @@ import React, {Component} from "react";
 import {Image, TouchableHighlight, View, StyleSheet, Text, Dimensions, TouchableOpacity} from "react-native";
 import MyPolicyItem from "../modules/MyPolicyItem";
 
-import {px2dp} from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 import ConfirmButton from "../modules/ConfirmButton";
 
 let widthOfWindow = Dimensions.get('window').width;
@@ -25,23 +25,24 @@ export default class MyPolicy extends Component {
                 height: Dimensions.get('window').height,
                 flex: 1,
                 flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "flex-end"}}>
+                justifyContent: "flex-end"
+            }}>
                 <MyPolicyItem routeName={this.props}/>
 
                 <View style={{
-                    position: "absolute",
+                position: "absolute",
                 }}>
 
-                    <ConfirmButton onPress={() => {
-                        this.props.navigation.navigate('Inquiry')
-                    }} style={{
-                        backgroundColor: "#343434",
-                        width:Dimensions.get("window").width
-                    }} text={"一键询价"}/>
+                <ConfirmButton onPress={() => {
+                    this.props.navigation.navigate('Inquiry')
+                }} style={{
+                    flex:1,
+                    backgroundColor: "#000000",
+                    alignItems: 'center',
+                    width: Dimensions.get("window").width,
+                }} text={"一键询价"}/>
 
                 </View>
-
             </View>
         )
 
@@ -74,6 +75,6 @@ let styles = StyleSheet.create({
         marginLeft: widthOfWindow / 3,
         marginTop: px2dp(15),
         color: '#FFFFFF',
-        fontSize: px2dp(15)
+        fontSize: setSpText(7.5)
     },
 });

@@ -15,9 +15,16 @@ let {height, width} = Dimensions.get('window');
 
 import ImageRadioGroup from "../modules/ImageRadioInformation";
 import Dividing from "../modules/Dividing";
-import {px2dp} from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 
-let iconSize = px2dp(19);
+let AllIconSize = px2dp(19);
+
+let CameraHeight = px2dp(12);
+let CameraWidth = px2dp(18);
+let AllFontSize = setSpText(8);
+let CameraFontSize = setSpText(5.5);
+let Orange =   '#fe2b00';
+
 type Props = {};
 
 export default class ChangeInformation extends Component<Props> {
@@ -74,9 +81,9 @@ export default class ChangeInformation extends Component<Props> {
                             height: height / 6,
 
                         }]}>
-                            <Text style={{color: '#FFFFFF', fontSize: px2dp(15),marginLeft: px2dp(15)}}>保费合计：</Text>
-                            <Text style={{color: '#FFFFFF', fontSize: px2dp(20)}}>￥</Text>
-                            <Text style={{color: '#FFFFFF', fontSize: px2dp(50)}}>5940.00</Text>
+                            <Text style={{color: '#FFFFFF', fontSize:setSpText(9),marginLeft: px2dp(15)}}>保费合计：</Text>
+                            <Text style={{color: '#FFFFFF', fontSize:setSpText(12)}}>￥</Text>
+                            <Text style={{color: '#FFFFFF', fontSize:setSpText(30)}}>5940.00</Text>
                         </View>
 
                         {/*姓名*/}
@@ -84,19 +91,19 @@ export default class ChangeInformation extends Component<Props> {
                             <View style={[{flexDirection: 'row', alignItems: 'center', height: 50}]}>
                                 < Image source={require('../img/changeInformation/name.png')}
                                         style={[styles.imgStyle = {
-                                            width: iconSize,
-                                            height: iconSize,
+                                            width: AllIconSize,
+                                            height: AllIconSize,
                                             marginLeft: px2dp(16),
                                             marginTop: px2dp(10)
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(13)}}>
+                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize:AllFontSize}}>
                                     姓名
                                 </Text>
                             </View>
                             <TextInput
                                 style={{
                                     marginTop: px2dp(10),
-                                    fontSize: px2dp(13),
+                                    fontSize: AllFontSize,
                                     textAlign: 'right',
                                     flex: 1,
                                     color: '#d5cdd1',
@@ -122,12 +129,12 @@ export default class ChangeInformation extends Component<Props> {
                                 <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(50)}]}>
                                     < Image source={require('../img/changeInformation/address.png')}
                                             style={[styles.imgStyle = {
-                                                width: iconSize,
-                                                height: iconSize,
+                                                width: AllIconSize,
+                                                height: AllIconSize,
                                                 marginLeft: px2dp(16),
                                                 marginTop: px2dp(10)
                                             }]}/>
-                                    <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: px2dp(13)}}>
+                                    <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: AllFontSize}}>
                                         保单邮寄地址
                                     </Text>
                                 </View>
@@ -135,7 +142,7 @@ export default class ChangeInformation extends Component<Props> {
                             <TextInput
                                 style={{
                                     marginTop: px2dp(10),
-                                    fontSize: px2dp(14),
+                                    fontSize:AllFontSize,
                                     textAlign: 'right',
                                     flex: 1,
                                     color: '#d5cdd1',
@@ -163,15 +170,15 @@ export default class ChangeInformation extends Component<Props> {
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
                                             < Image source={require('../img/changeInformation/idcard.png')}
                                                     style={[styles.imgStyle = {
-                                                        width: iconSize,
-                                                        height: iconSize,
+                                                        width: AllIconSize,
+                                                        height: AllIconSize,
                                                         marginLeft: px2dp(16),
                                                         marginTop: px2dp(10)
                                                     }]}/>
                                             <Text style={{
                                                 marginLeft: px2dp(5),
                                                 marginTop: px2dp(10),
-                                                fontSize: px2dp(13)
+                                                fontSize: AllFontSize
                                             }}>
                                                 身份证
                                             </Text>
@@ -182,10 +189,10 @@ export default class ChangeInformation extends Component<Props> {
                                         style={{
                                             marginLeft: px2dp(5),
                                             marginRight: px2dp(5),
-                                            fontSize: px2dp(13),
+                                            fontSize: setSpText(6.5),
                                             textAlign: 'right',
                                             flex: 1,
-                                            color: '#fe2b00',
+                                            color: Orange,
                                         }}
                                         underlineColorAndroid='transparent'
                                         numberOfLines={1}
@@ -209,8 +216,8 @@ export default class ChangeInformation extends Component<Props> {
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: px2dp(18),
-                                                           height: px2dp(12),
+                                                           width: CameraWidth,
+                                                           height: CameraHeight,
                                                            marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
@@ -221,7 +228,7 @@ export default class ChangeInformation extends Component<Props> {
                                                     marginLeft: px2dp(24),
                                                     marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize: px2dp(8),
+                                                    fontSize:CameraFontSize,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证正面
@@ -246,8 +253,8 @@ export default class ChangeInformation extends Component<Props> {
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width: px2dp(18),
-                                                           height: px2dp(12),
+                                                           width: CameraWidth,
+                                                           height: CameraHeight,
                                                            marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
@@ -258,7 +265,7 @@ export default class ChangeInformation extends Component<Props> {
                                                     marginLeft: px2dp(24),
                                                     marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize: px2dp(8),
+                                                    fontSize: CameraFontSize,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证背面
@@ -277,7 +284,7 @@ export default class ChangeInformation extends Component<Props> {
                         <View>
                             <Text style={{
                                 marginLeft: px2dp(15),
-                                fontSize: px2dp(12),
+                                fontSize:AllFontSize,
                                 marginTop: px2dp(13),
                                 color: '#595959'
                             }}>
@@ -308,13 +315,13 @@ export default class ChangeInformation extends Component<Props> {
                                 width: width * 13 / 14,
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                backgroundColor: '#fe2b00',
+                                backgroundColor:Orange,
                                 margin: px2dp(5),
                                 marginTop: px2dp(15),
                                 marginLeft: px2dp(15),
                             }}>
                                 <Text style={{
-                                    fontSize: px2dp(15),
+                                    fontSize:setSpText(12),
                                     color: '#FFFFFF'
                                 }}>
                                     确定购买
@@ -338,7 +345,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     welcome: {
-        fontSize: px2dp(20),
+        fontSize: setSpText(10),
         textAlign: 'center',
         margin: px2dp(10),
     },

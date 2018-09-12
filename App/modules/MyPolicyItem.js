@@ -19,8 +19,11 @@ import {
     View
 } from 'react-native';
 import TheSingleStateItem from "./TheSingleStateItem";
-import {px2dp} from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 let json=require('../data/mypolicy');
+
+let AllFontSize = setSpText(8);
+
 export default class MyPolicyItem extends Component{
 
     continueDoc(){
@@ -49,28 +52,36 @@ export default class MyPolicyItem extends Component{
             switch (json[i].state) {
                 case 101:
                     arr.push(
-
                         <View key={i} style={styles.theBigView}>
                             <View>
                                 <Image style={{height:px2dp(20),width:px2dp(100)}} source={require('../img/imgMypolicy/number.png')}/>
-                                <Text  style={{fontSize:px2dp(10),margin:px2dp(2),marginLeft:px2dp(10),color:"#FFF",position: "absolute"}} >{json[i].CarId}</Text>
+                                <Text  style={{fontSize:AllFontSize,margin:px2dp(2),marginLeft:px2dp(12),color:"#FFF",position: "absolute"}} >{json[i].CarId}</Text>
                             </View>
                             <View style={styles.singleStateItem}>
                                 <View style={styles.brandAndDataView}>
                                     <Image style={{resizeMode:'stretch',width:px2dp(100),height:px2dp(50)}} source={require('../img/imgMypolicy/brand.png')}/>
-                                    <Text style={{marginLeft:px2dp(30),fontSize:px2dp(10)}}>保险到期日期：{json[i].Data}</Text>
+                                    <Text style={{marginLeft:px2dp(41),fontSize:AllFontSize}}>保险到期日期：{json[i].Data}</Text>
                                 </View>
                                 <View  style={styles.buttonAndCallUsView}>
-                                    <TouchableOpacity onPress={this.continueDoc.bind(this)}>
-                                        <View style={{flexDirection:"column",
-                                            alignItems:"center",
-                                            marginTop:px2dp(10),
-                                            justifyContent:"center",}}>
-                                            <Image style={{resizeMode:'stretch',width:px2dp(80),height:px2dp(25)}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
-                                            <Text style={{color:"#fff",position: "absolute",fontSize:px2dp(10)}}>续保</Text>
+                                    <View style={[{flexDirection: 'column', alignItems: 'flex-end',}, styles.container]}>
+                                        <View
+                                            style={[{
+                                                flexDirection: 'column',
+                                                height: 100,
+                                                justifyContent: 'space-around',
+                                            }, styles.container]}>
+                                            <TouchableOpacity onPress={this.continueDoc.bind(this)}>
+                                                <View style={{flexDirection:"column",
+                                                    alignItems:"center",
+                                                    marginTop:px2dp(10),
+                                                    justifyContent:"center",}}>
+                                                    <Image style={{resizeMode:'stretch',width:px2dp(80),height:px2dp(25)}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
+                                                    <Text style={{color:"#fff",position: "absolute",fontSize:AllFontSize}}>续保</Text>
+                                                </View>
+                                            </TouchableOpacity>
+                                            <Text style={{marginTop:px2dp(10),fontSize:AllFontSize,marginLeft:px2dp(18),marginBottom:px2dp(9.5)}}>联系我们</Text>
                                         </View>
-                                    </TouchableOpacity>
-                                    <Text style={{marginTop:px2dp(10),fontSize:px2dp(10)}}>联系我们</Text>
+                                    </View>
                                 </View>
                             </View>
                         </View>

@@ -8,15 +8,13 @@
  * Created by Aran on 2018/9/7.
  */
 import React,{Component} from 'react'
-import {Text,Dimensions, TouchableOpacity, View} from "react-native";
-import {px2dp} from "../utils/px2dpUtils";
+import {Text,TouchableHighlight,Dimensions, View} from "react-native";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 export default class ConfirmButton extends Component{
-
 
     constructor() {
         super();
         this._onPress=this._onPress.bind(this)
-
     }
 
     _onPress(){
@@ -28,7 +26,6 @@ export default class ConfirmButton extends Component{
             }else{
                 return ''
             }
-
         }
     }
     _setButtonText(){
@@ -37,25 +34,34 @@ export default class ConfirmButton extends Component{
 
     render(){
         return(
-            <TouchableOpacity style={{
+            <TouchableHighlight style={{
+                height: px2dp(55),
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                backgroundColor:"#000000"
             }} onPress={()=>{this._onPress()}}>
+
                 <View style={{
                     width:this.props.style.width?this.props.style.width:Dimensions.get('window').width-px2dp(25),
                     height: px2dp(55),
                     backgroundColor: this.props.style.backgroundColor,
+                    position:this.props.style.position?this.props.style.position:"relative",
                     // marginLeft: px2dp(15),
                     marginBottom: this.props.style.marginBottom?this.props.style.marginBottom:0,
-                    marginTop: px2dp(15)
+                    marginTop: px2dp(10),
+                    elevation: 20,
+                    shadowOffset: {width: 0, height: 0},
+                    shadowColor: 'black',
+                    shadowOpacity: 1,
+                    shadowRadius: 5
                 }}>
                     <Text style={{
                         alignSelf: 'center',
-                        marginTop: px2dp(15), fontSize: px2dp(16), color: 'white'
+                        marginTop: px2dp(15), fontSize: setSpText(12), color: 'white'
                     }}>{this._setButtonText()}</Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableHighlight>
         )
 
     }

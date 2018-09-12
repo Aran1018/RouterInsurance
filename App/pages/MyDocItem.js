@@ -18,9 +18,12 @@ import {
 } from 'react-native';
 
 import {Dimensions} from 'react-native';
-import {px2dp} from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 import MyDocItemDividing from "../modules/MyDocItemDividing";
 import ZoomImage from "../modules/ZoomImage";
+let Orange =   '#fe2b00';
+
+let AllFontSize = setSpText(9);
 
 let {height, width} = Dimensions.get('window');
 
@@ -60,13 +63,13 @@ export default class MyDocItem extends Component {
                                 alignSelf: 'center',
                                 marginLeft: px2dp(10),
                                 color: 'black',
-                                fontSize: px2dp(13),
+                                fontSize:AllFontSize
                             }}>
                                 交强险
                             </Text>
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize: px2dp(13),
+                                    fontSize:AllFontSize,
                                     color: 'black',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -89,14 +92,14 @@ export default class MyDocItem extends Component {
                             <Text style={{
                                 alignSelf: 'center',
                                 marginLeft: px2dp(10),
-                                fontSize: px2dp(13),
+                                fontSize:AllFontSize,
                                 color: 'black',
                             }}>
                                 税费
                             </Text>
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize: px2dp(13),
+                                    fontSize:AllFontSize,
                                     color: 'black',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -119,14 +122,14 @@ export default class MyDocItem extends Component {
                             <Text style={{
                                 alignSelf: 'center',
                                 marginLeft: px2dp(10),
-                                fontSize: px2dp(13),
+                                fontSize:AllFontSize,
                                 color: 'black',
                             }}>
                                 商业险
                             </Text>
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize: px2dp(13),
+                                    fontSize:AllFontSize,
                                     color: 'black',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -134,7 +137,6 @@ export default class MyDocItem extends Component {
                                 </Text>
                             </View>
                         </View>
-
 
                         {/*保费合计*/}
                         <View style={{
@@ -145,13 +147,13 @@ export default class MyDocItem extends Component {
                             alignSelf: 'center'
                         }}>
                             <View style={{alignSelf: 'center', marginRight: px2dp(10)}}>
-                                <Text style={{alignSelf: 'flex-end', fontSize: px2dp(13), color: 'white',}}>
+                                <Text style={{alignSelf: 'flex-end', fontSize:AllFontSize, color: 'white',}}>
                                     保费合计:
                                 </Text>
                             </View>
                             <View style={{marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize: px2dp(18),
+                                    fontSize:setSpText(11),
                                     color: 'white',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -173,16 +175,16 @@ export default class MyDocItem extends Component {
                             <Text style={{
                                 alignSelf: 'center',
                                 marginLeft: px2dp(10),
-                                fontSize: px2dp(15),
-                                color: '#fe2b00',
+                                fontSize: setSpText(11),
+                                color: Orange,
                                 fontWeight: 'bold',
                             }}>
                                 油卡 / 路游侠补贴
                             </Text>
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize: px2dp(15),
-                                    color: '#fe2b00',
+                                    fontSize: setSpText(11),
+                                    color:Orange,
                                     alignSelf: 'flex-end',
                                 }}>
                                     ￥1000.00
@@ -194,18 +196,18 @@ export default class MyDocItem extends Component {
                         <View style={{
                             flexDirection: 'row', justifyContent: 'flex-end', width: width - px2dp(40),
                             height: height / 19,
-                            backgroundColor: '#fe2b00',
+                            backgroundColor: Orange,
                             flex: 1,
                             alignSelf: 'center'
                         }}>
                             <View style={{alignSelf: 'center', marginRight: px2dp(10)}}>
-                                <Text style={{alignSelf: 'flex-end', fontSize: px2dp(13), color: 'white',}}>
+                                <Text style={{alignSelf: 'flex-end', fontSize: AllFontSize, color: 'white',}}>
                                     保费合计:
                                 </Text>
                             </View>
                             <View style={{marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize: px2dp(18),
+                                    fontSize:setSpText(11),
                                     color: 'white',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -221,23 +223,22 @@ export default class MyDocItem extends Component {
                                 width: width - px2dp(40), marginBottom: px2dp(15)
                             }}>
                                 <Image source={require('../img/imgMyDocuments/discountsAD.png')}
-                                       style={[styles.imageStyle = {
-                                           width: (width - px2dp(40)) / 2,
-                                           height: height / 8,
+                                       style={[styles.imageStyle = {width: (width - px2dp(40)) / 2,
+                                           height: height / 9,
                                        }]}/>
 
                                 <View style={[{
                                     flexDirection: 'column',
                                     alignItems: 'flex-end',
                                     backgroundColor: '#dadada',
-                                    height: height / 8,
+                                    height: height / 9,
                                     width: (width - px2dp(40)) / 2,
                                     alignSelf: 'center',
                                     justifyContent: 'center'
                                 }]}>
                                     <View>
                                         <Text style={{
-                                            fontSize: px2dp(9),
+                                            fontSize: setSpText(7),
                                             alignSelf: 'flex-end',
                                             flexWrap: 'nowrap',
                                             color: '#414141',
@@ -253,14 +254,14 @@ export default class MyDocItem extends Component {
                                         {/*获得*/}
                                         <View>
                                             <Text style={{
-                                                color: '#fe2b00',
-                                                fontSize: px2dp(33),
+                                                color: Orange,
+                                                fontSize:setSpText(21),
                                                 fontWeight: 'bold',
                                             }}>获得</Text>
                                         </View>
                                         {/*竖线*/}
                                         <View style={{
-                                            height: px2dp(33),
+                                            height: px2dp(31),
                                             marginLeft: px2dp(4),
                                             width: px2dp(0.5),
                                             backgroundColor: '#7a7a7a',
@@ -276,17 +277,17 @@ export default class MyDocItem extends Component {
                                             {/*￥860.00*/}
                                             <View>
                                                 <Text style={{
-                                                    color: '#fe2b00',
+                                                    color: Orange,
                                                     fontWeight: 'bold',
-                                                    fontSize: px2dp(13),
+                                                    fontSize:setSpText(8.5),
                                                 }}>￥860.00</Text>
                                             </View>
                                             {/*维修基金*/}
                                             <View>
                                                 <Text style={{
-                                                    color: '#fe2b00',
+                                                    color: Orange,
                                                     fontWeight: 'bold',
-                                                    fontSize: px2dp(13),
+                                                    fontSize:setSpText(8.5),
                                                 }}>维修基金</Text>
                                             </View>
                                         </View>
@@ -317,7 +318,7 @@ let styles = StyleSheet.create({
         alignItems: 'center',
     },
     btnText: {
-        fontSize: px2dp(14),
+        fontSize:setSpText(7),
         color: '#f0f0f0'
     }
 });

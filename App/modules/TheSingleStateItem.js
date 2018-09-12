@@ -11,7 +11,10 @@ import React, {Component} from 'react';
 import {Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import MyDocuments from "../pages/MyDocuments";
 import ChangeDate from "../pages/ChangeDate";
-import {px2dp} from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
+
+let AllFontSize = setSpText(8);
+
 export default class TheSingleStateItem extends Component{
 
     constructor() {
@@ -43,7 +46,6 @@ export default class TheSingleStateItem extends Component{
         // alert(this.state.theJumpState.toString())
         if (this.state.theJumpState === null) {
 
-
         }else {
             // const{navigator} = this.props.routeName;
             // if(navigator){
@@ -57,15 +59,12 @@ export default class TheSingleStateItem extends Component{
 
     }
 
-
-
-
     render(){
         return(
             <View style={styles.theBigView}>
                 <View >
-                    <Image style={{height:px2dp(25),width:px2dp(120)}} source={require('../img/imgMypolicy/number.png')}/>
-                    <Text  style={{fontSize:px2dp(10),margin:px2dp(3),marginLeft:px2dp(10),color:"#FFF",position: "absolute"}} >{this.props.carId}</Text>
+                    <Image style={{height:px2dp(20),width:px2dp(100)}} source={require('../img/imgMypolicy/number.png')}/>
+                    <Text  style={{fontSize:AllFontSize,margin:px2dp(3),marginLeft:px2dp(12),color:"#FFF",position: "absolute"}} >{this.props.carId}</Text>
                 </View>
                 <View style={styles.singleStateItem}>
                     <View style={styles.brandAndDataView}>
@@ -76,14 +75,14 @@ export default class TheSingleStateItem extends Component{
                             marginTop:px2dp(10),
                             justifyContent:"center",}}>
                             <Image style={{resizeMode:'stretch',width:px2dp(80),height:px2dp(25)}} source={this.props.name.imgUrl}/>
-                            <Text style={{color:"#fff",position: "absolute",fontSize:px2dp(10)}}>{this.props.name.text}</Text>
+                            <Text style={{color:"#fff",position: "absolute",fontSize:AllFontSize}}>{this.props.name.text}</Text>
                         </View>
                         </TouchableOpacity>
                     </View>
                     <View  style={styles.buttonAndCallUsView}>
 
                         <TouchableOpacity onPress={this.cancelDoc.bind(this)}>
-                        <Text style={{marginTop:px2dp(10),fontSize:px2dp(10)}}>撤销保单</Text>
+                        <Text style={{marginTop:px2dp(10),fontSize:AllFontSize}}>撤销保单</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
