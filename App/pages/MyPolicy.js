@@ -37,6 +37,7 @@ export default class MyPolicy extends Component {
                     this.props.navigation.navigate('Inquiry')
                 }} style={{
                     flex:1,
+                    justifyContent: 'center',
                     backgroundColor: "#000000",
                     alignItems: 'center',
                     width: Dimensions.get("window").width,

@@ -20,50 +20,73 @@ import {
 } from 'react-native';
 import TheSingleStateItem from "./TheSingleStateItem";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
-let json=require('../data/mypolicy');
+
+let json = require('../data/mypolicy');
 
 let AllFontSize = setSpText(8);
 
-export default class MyPolicyItem extends Component{
+export default class MyPolicyItem extends Component {
 
-    continueDoc(){
+    continueDoc() {
         alert("续保")
     }
 
-    setTheStateItem(json){
+    alterDoc() {
+        alert("联系我们")
+    }
 
-        let map={
-            606:{
-                imgUrl:require('../img/imgMypolicy/colorbutton606.png'),
-                text:"请等候"
+    setTheStateItem(json) {
+
+        let map = {
+            606: {
+                imgUrl: require('../img/imgMypolicy/colorbutton606.png'),
+                text: "请等候"
             },
-            707:{
-                imgUrl:require('../img/imgMypolicy/colorbutton707.png'),
-                text:"马上购买"
+            707: {
+                imgUrl: require('../img/imgMypolicy/colorbutton707.png'),
+                text: "马上购买"
             },
-            808:{
-                imgUrl:require('../img/imgMypolicy/colorbutton707.png'),
-                text:"修改资料"
+            808: {
+                imgUrl: require('../img/imgMypolicy/colorbutton707.png'),
+                text: "修改资料"
             },
         };
 
-        let arr=[];
-        for (let i=0;i<json.length;i++){
+        let arr = [];
+        for (let i = 0; i < json.length; i++) {
             switch (json[i].state) {
                 case 101:
                     arr.push(
                         <View key={i} style={styles.theBigView}>
                             <View>
-                                <Image style={{height:px2dp(20),width:px2dp(100)}} source={require('../img/imgMypolicy/number.png')}/>
-                                <Text  style={{fontSize:AllFontSize,margin:px2dp(2),marginLeft:px2dp(12),color:"#FFF",position: "absolute"}} >{json[i].CarId}</Text>
+                                <Image style={{height: px2dp(20), width: px2dp(100)}}
+                                       source={require('../img/imgMypolicy/number.png')}/>
+                                <Text style={{
+                                    fontSize: AllFontSize,
+                                    margin: px2dp(2),
+                                    marginLeft: px2dp(12),
+                                    color: "#FFF",
+                                    position: "absolute",
+                                    marginTop:px2dp(1)
+                                }}>{json[i].CarId}</Text>
                             </View>
                             <View style={styles.singleStateItem}>
                                 <View style={styles.brandAndDataView}>
-                                    <Image style={{resizeMode:'stretch',width:px2dp(100),height:px2dp(50)}} source={require('../img/imgMypolicy/brand.png')}/>
-                                    <Text style={{marginLeft:px2dp(41),fontSize:AllFontSize}}>保险到期日期：{json[i].Data}</Text>
+                                    <Image style={{
+                                        resizeMode: 'stretch',
+                                        width: px2dp(100),
+                                        height: px2dp(50),
+                                        marginBottom: px2dp(5)
+                                    }} source={require('../img/imgMypolicy/brand.png')}/>
+                                    <Text style={{
+                                        marginLeft: px2dp(41),
+                                        fontSize: AllFontSize,
+                                        marginBottom: px2dp(8)
+                                    }}>保险到期日期：{json[i].Data}</Text>
                                 </View>
-                                <View  style={styles.buttonAndCallUsView}>
-                                    <View style={[{flexDirection: 'column', alignItems: 'flex-end',}, styles.container]}>
+                                <View style={styles.buttonAndCallUsView}>
+                                    <View
+                                        style={[{flexDirection: 'column', alignItems: 'flex-end',}, styles.container]}>
                                         <View
                                             style={[{
                                                 flexDirection: 'column',
@@ -71,15 +94,33 @@ export default class MyPolicyItem extends Component{
                                                 justifyContent: 'space-around',
                                             }, styles.container]}>
                                             <TouchableOpacity onPress={this.continueDoc.bind(this)}>
-                                                <View style={{flexDirection:"column",
-                                                    alignItems:"center",
-                                                    marginTop:px2dp(10),
-                                                    justifyContent:"center",}}>
-                                                    <Image style={{resizeMode:'stretch',width:px2dp(80),height:px2dp(25)}} source={require('../img/imgMypolicy/colorbutton101.png')}/>
-                                                    <Text style={{color:"#fff",position: "absolute",fontSize:AllFontSize}}>续保</Text>
+                                                <View style={{
+                                                    flexDirection: "column",
+                                                    alignItems: "center",
+                                                    marginTop: px2dp(10),
+                                                    justifyContent: "center",
+                                                }}>
+                                                    <Image style={{
+                                                        resizeMode: 'stretch',
+                                                        width: px2dp(80),
+                                                        height: px2dp(25)
+                                                    }} source={require('../img/imgMypolicy/colorbutton101.png')}/>
+                                                    <Text style={{
+                                                        color: "#fff",
+                                                        position: "absolute",
+                                                        fontSize: AllFontSize
+                                                    }}>续保</Text>
                                                 </View>
                                             </TouchableOpacity>
-                                            <Text style={{marginTop:px2dp(10),fontSize:AllFontSize,marginLeft:px2dp(18),marginBottom:px2dp(9.5)}}>联系我们</Text>
+
+                                            <TouchableOpacity onPress={this.alterDoc.bind(this)}>
+                                                <Text style={{
+                                                    marginTop: px2dp(10),
+                                                    fontSize: AllFontSize,
+                                                    marginLeft: px2dp(18),
+                                                    marginBottom: px2dp(9.5)
+                                                }}>联系我们</Text>
+                                            </TouchableOpacity>
                                         </View>
                                     </View>
                                 </View>
@@ -89,17 +130,20 @@ export default class MyPolicyItem extends Component{
                     break;
                 case 606:
                     arr.push(
-                        <TheSingleStateItem routeName={this.props.routeName} jumpState={606} key={i} carId={json[i].CarId} name={map["606"]}/>
+                        <TheSingleStateItem routeName={this.props.routeName} jumpState={606} key={i}
+                                            carId={json[i].CarId} name={map["606"]}/>
                     );
                     break;
                 case 707:
                     arr.push(
-                        <TheSingleStateItem routeName={this.props.routeName} jumpState={707} key={i} carId={json[i].CarId} name={map["707"]}/>
+                        <TheSingleStateItem routeName={this.props.routeName} jumpState={707} key={i}
+                                            carId={json[i].CarId} name={map["707"]}/>
                     );
                     break;
                 case 808:
                     arr.push(
-                        <TheSingleStateItem routeName={this.props.routeName} jumpState={808} key={i} carId={json[i].CarId} name={map["808"]}/>
+                        <TheSingleStateItem routeName={this.props.routeName} jumpState={808} key={i}
+                                            carId={json[i].CarId} name={map["808"]}/>
                     );
                     break;
             }
@@ -108,14 +152,14 @@ export default class MyPolicyItem extends Component{
     }
 
 
-    render(){
-        return(
-            <ScrollView>
+    render() {
+        return (
+            <ScrollView overScrollMode="never">
 
                 {/*导航栏*/}
                 {this.setTheStateItem(json)}
 
-                <View style={{height:Dimensions.get('window').height/7}}>
+                <View style={{height: Dimensions.get('window').height / 7}}>
 
                 </View>
             </ScrollView>
@@ -124,36 +168,36 @@ export default class MyPolicyItem extends Component{
 }
 const styles = StyleSheet.create({
 
-    theBigView:{
-        marginTop:px2dp(10),
-        marginLeft:px2dp(20),
-        marginRight:px2dp(20),
-        marginBottom:px2dp(10)
+    theBigView: {
+        marginTop: px2dp(10),
+        marginLeft: px2dp(20),
+        marginRight: px2dp(20),
+        marginBottom: px2dp(10)
     },
-    singleStateItem:{
-        width:Dimensions.get('window').width-px2dp(40),
-        height:(Dimensions.get('window').width)/3.5,
-        backgroundColor:"#ffffff",
-        flexDirection:"row",
-        alignItems:"center",
-        justifyContent:"center",
-        shadowColor:"#000",elevation:3,
+    singleStateItem: {
+        width: Dimensions.get('window').width - px2dp(40),
+        height: (Dimensions.get('window').width) / 3.5,
+        backgroundColor: "#ffffff",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        shadowColor: "#000", elevation: 3,
 
     },
-    brandAndDataView:{
-        width:(Dimensions.get('window').width-px2dp(20))/2,
-        flexDirection:"column",
-        alignItems:"center",
-        justifyContent:"center",
-        marginLeft:0
+    brandAndDataView: {
+        width: (Dimensions.get('window').width - px2dp(20)) / 2,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        marginLeft: 0
     },
-    buttonAndCallUsView:{
-        width:(Dimensions.get('window').width-px2dp(50))/2,
-        flexDirection:"column",
-        alignItems:"center",
-        justifyContent:"center",
-        marginRight:0,
-        marginLeft:px2dp(50)
+    buttonAndCallUsView: {
+        width: (Dimensions.get('window').width - px2dp(50)) / 2,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        marginRight: 0,
+        marginLeft: px2dp(50)
 
     },
 });

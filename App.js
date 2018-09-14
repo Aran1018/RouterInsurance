@@ -1,18 +1,20 @@
 import React, {Component} from "react"
 
 import {
-    StackNavigator,
+    StackNavigator, withNavigation,
 } from 'react-navigation';
 import MyPolicy from "./App/pages/MyPolicy";
 import AskPrice from "./App/pages/AskPrice";
 import ChangeDate from "./App/pages/ChangeDate";
 import MyDocuments, {SimulateNativeBack} from "./App/pages/MyDocuments";
-import {Image, Text, TouchableOpacity} from "react-native";
+import {Image, StatusBarAnimation as none, Text, TouchableOpacity} from "react-native";
 import ChangeInformation from "./App/pages/ChangeInformation";
 import TitleBarBackButton from "./App/modules/TitleBarBackButton";
 import {px2dp, setSpText} from "./App/utils/px2dpUtils";
+import TitleBarBackText from "./App/modules/TitleBarBackText";
+import CheckDocument from "./App/pages/CheckDocument";
 
-let NavIconSize = px2dp(32);
+let NavIconSize = px2dp(29);
 let HeaderTitlefontSize = setSpText(13);
 
 export default Stack = StackNavigator({
@@ -23,7 +25,7 @@ export default Stack = StackNavigator({
             headerTitle: '我的保险',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', color: "#4d4d4d", fontSize: HeaderTitlefontSize
+                flex: 1, textAlign: 'center', color: "#4d4d4d", fontSize: HeaderTitlefontSize,fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -32,7 +34,7 @@ export default Stack = StackNavigator({
                 <TouchableOpacity>
                     <Text style={{
                         // fontSize:px2dp(),
-                        fontSize: setSpText(7),
+                        fontSize: setSpText(10),
                         margin: px2dp(4), color: "#4d4d4d",
                         marginRight: px2dp(10)
                     }}>历史保单</Text>
@@ -47,7 +49,7 @@ export default Stack = StackNavigator({
 
             headerTitleStyle: {
                 flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,
-                marginBottom: 1
+                marginBottom: px2dp(1),fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -70,17 +72,10 @@ export default Stack = StackNavigator({
             headerTitle: '我的报价单',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize
+                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,fontWeight: 'normal',
             },
             headerLeft: (
-                <TouchableOpacity>
-                    <Text style={{
-                        // fontSize:px2dp(),
-                        fontSize: setSpText(7),
-                        margin: px2dp(4), color: "#4d4d4d",
-                        marginLeft: px2dp(10),
-                    }}>撤销保单</Text>
-                </TouchableOpacity>
+               <TitleBarBackText/>
             ),
             headerRight: (
                 <TouchableOpacity>
@@ -98,7 +93,7 @@ export default Stack = StackNavigator({
             headerTitle: '修改资料',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize
+                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -119,7 +114,7 @@ export default Stack = StackNavigator({
             headerTitle: '资料填写',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize
+                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -134,5 +129,11 @@ export default Stack = StackNavigator({
             )
         }
     },
+    CheckDocument:{
+        screen:CheckDocument,
+        navigationOptions: {
+            header:null,
+        }
+    }
 
 })

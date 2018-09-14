@@ -27,7 +27,6 @@ export default class RadioGroup extends Component {
             <View style={[this.props.style]}>
                 {
                     newArray.map((item, index) =>
-
                         this.renderRadioButton(newArray, item, this.onPress, index, this.state.selectIndex)
                     )
                 }
@@ -40,6 +39,7 @@ export default class RadioGroup extends Component {
         for (let i = 0; i < array.length; i++) {
             let item = array[i];
             item.select = false;
+            i
             if (i === index) {
                 item.select = true;
             }
@@ -65,7 +65,7 @@ export default class RadioGroup extends Component {
 
         return (
             <TouchableOpacity key={index} onPress={()=> {
-                onPress(index, item)}} style={{height: px2dp(80), width:px2dp(140),margin: px2dp(20)}}>
+                onPress(index, item)}} style={{height: px2dp(80), width:px2dp(140),marginLeft:px2dp(15)}}>
                 <Image
                     style={{
                         width: px2dp(120), height: px2dp(80), resizeMode: 'contain',
@@ -74,9 +74,9 @@ export default class RadioGroup extends Component {
                     source={imgBrand}/>
                 <Image style={{
                     justifyContent: "flex-end",
-                    width: px2dp(18),
-                    marginTop: px2dp(50),
-                    marginLeft: px2dp(107),
+                    width: px2dp(13),
+                    marginTop: px2dp(53),
+                    marginLeft: px2dp(112),
                     resizeMode: 'contain',
                     position: 'absolute'
                 }} source={image}/>

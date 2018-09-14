@@ -8,7 +8,17 @@
  */
 
 import React, {Component} from 'react';
-import {Image, ScrollView, StyleSheet, Text, TextInput, TouchableHighlight, TouchableOpacity, View} from 'react-native';
+import {
+    Image,
+    Modal,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableHighlight,
+    TouchableOpacity,
+    View
+} from 'react-native';
 import {Dimensions} from 'react-native';
 
 let {height, width} = Dimensions.get('window');
@@ -16,14 +26,18 @@ let {height, width} = Dimensions.get('window');
 import ImageRadioGroup from "../modules/ImageRadioInformation";
 import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
+import DividingCamera from "../modules/DividingCamera";
+import DividingChangeInformation from "../modules/DividingChangeInformation";
 
+let DialogSize = px2dp(240);
 let AllIconSize = px2dp(19);
-
+let DialogFontSize = setSpText(8);
+let MarginTop = px2dp(10);
 let CameraHeight = px2dp(12);
 let CameraWidth = px2dp(18);
 let AllFontSize = setSpText(8);
 let CameraFontSize = setSpText(5.5);
-let Orange =   '#fe2b00';
+let Orange = '#fe2b00';
 
 type Props = {};
 
@@ -65,25 +79,99 @@ export default class ChangeInformation extends Component<Props> {
         alert(text);
     }
 
+    finalSubmit() {
+        this._setModalVisible(!this.state.modalVisible);
+        this.props.navigation.navigate('MyPolicy')
+    }
+
     render() {
+        let modalBackgroundStyle = {
+            backgroundColor: this.state.transparent ? 'rgba(0, 0, 0, 0.5)' : 'red',
+        };
         return (
             <View style={{}}>
                 <View style={{flexDirection: 'column'}}>
-                    <ScrollView>
+                    <ScrollView overScrollMode="never">
+                        <Modal
+                            animationType={this.state.animationType}
+                            transparent={this.state.transparent}
+                            visible={this.state.modalVisible}
+                            onRequestClose={() => {
+                                this._setModalVisible(false)
+                            }}
+                        >
+                            <View style={[styles.aacontainer, modalBackgroundStyle]}>
+                                <View style={[styles.innerContainer,innerContainerTransparentStyle]}>
+                                    <View style={{
+                                        width:px2dp(250), height:px2dp(250), backgroundColor: "#ffffff",
+                                        alignItems: "center",
+                                        justifyContent: "flex-end",
+                                    }}>
+                                        <Image style={{
+                                            resizeMode: 'stretch',
+                                            marginTop: px2dp(20),
+                                            width: px2dp(90),
+                                            height: px2dp(110)
+                                        }}
+                                               source={require('../img/changeInformation/DialogInformation.png')}/>
+                                        <Text style={{
+                                            marginTop: px2dp(5),
+                                            fontSize: setSpText(10),
+                                            fontWeight: "bold"
+                                        }}>感谢您的购买</Text>
+                                        <View style={{flexDirection: 'column'}}>
+                                            <Text
+                                                style={{
+                                                    marginTop:px2dp(5),
+                                                    fontSize: DialogFontSize
+                                                }}>维修基金已经发送到</Text>
+                                            <Text
+                                                style={{
+                                                    fontSize: DialogFontSize
+                                                }}>您的特权中心请查收</Text>
+                                        </View>
+
+                                        <View>
+                                            <TouchableOpacity onPress={
+                                                () => {
+                                                    this.finalSubmit()
+                                                }
+                                            }
+                                                              style={{
+                                                                  width:px2dp(250),
+                                                                  height: px2dp(40),
+                                                                  backgroundColor: "#000",
+                                                                  alignItems: "center",
+                                                                  justifyContent: "center",
+                                                                  marginTop: MarginTop
+                                                              }}>
+                                                <Text style={{color: "#fff"}}>查看维修基金</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+                        </Modal>
 
                         {/*保费合计*/}
-
                         <View style={[{
                             flexDirection: 'row',
                             alignItems: 'center',
                             backgroundColor: 'black',
                             width: width,
                             height: height / 6,
-
                         }]}>
-                            <Text style={{color: '#FFFFFF', fontSize:setSpText(9),marginLeft: px2dp(15)}}>保费合计：</Text>
-                            <Text style={{color: '#FFFFFF', fontSize:setSpText(12)}}>￥</Text>
-                            <Text style={{color: '#FFFFFF', fontSize:setSpText(30)}}>5940.00</Text>
+                            <View style={{
+                                height: height / px2dp(18),
+                                width: px2dp(240),
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                marginBottom:px2dp(0)
+                            }}>
+                                <Text style={{color: '#FFFFFF', fontSize: setSpText(9), marginLeft: px2dp(15),marginTop:px2dp(19)}}>保费合计：</Text>
+                                <Text style={{color: '#FFFFFF', fontSize: setSpText(12),marginTop:px2dp(17)}}>￥</Text>
+                                <Text style={{color: '#FFFFFF', fontSize: setSpText(30)}}>5940.00</Text>
+                            </View>
                         </View>
 
                         {/*姓名*/}
@@ -94,19 +182,19 @@ export default class ChangeInformation extends Component<Props> {
                                             width: AllIconSize,
                                             height: AllIconSize,
                                             marginLeft: px2dp(16),
-                                            marginTop: px2dp(10)
+                                            marginTop: px2dp(5)
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize:AllFontSize}}>
+                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(5), fontSize: AllFontSize}}>
                                     姓名
                                 </Text>
                             </View>
                             <TextInput
                                 style={{
-                                    marginTop: px2dp(10),
+                                    marginTop: px2dp(5),
                                     fontSize: AllFontSize,
                                     textAlign: 'right',
                                     flex: 1,
-                                    color: '#d5cdd1',
+                                    color: '#847d80',
                                 }}
                                 placeholder="请输入您的姓名"
                                 placeholderTextColor="#A19D9E"
@@ -121,31 +209,37 @@ export default class ChangeInformation extends Component<Props> {
                         </View>
 
                         {/*分割线*/}
-                        <Dividing/>
+                            <View style={{
+                                width: width -30,
+                                marginLeft: px2dp(15),
+                                marginRight: px2dp(15),
+                                height: px2dp(0.5),
+                                marginTop:px2dp(5),
+                                backgroundColor: '#aca8a9'
+                            }}>
+                            </View>
 
                         {/*邮寄地址*/}
                         <View style={{flexDirection: 'row', height: px2dp(50)}}>
-                            <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(50)}]}>
                                 <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(50)}]}>
                                     < Image source={require('../img/changeInformation/address.png')}
                                             style={[styles.imgStyle = {
                                                 width: AllIconSize,
                                                 height: AllIconSize,
                                                 marginLeft: px2dp(16),
-                                                marginTop: px2dp(10)
+                                                marginTop: px2dp(5)
                                             }]}/>
-                                    <Text style={{marginLeft: px2dp(5), marginTop: px2dp(10), fontSize: AllFontSize}}>
+                                    <Text style={{marginLeft: px2dp(5), marginTop: px2dp(5), fontSize: AllFontSize}}>
                                         保单邮寄地址
                                     </Text>
                                 </View>
-                            </View>
                             <TextInput
                                 style={{
-                                    marginTop: px2dp(10),
-                                    fontSize:AllFontSize,
+                                    marginTop: px2dp(5),
+                                    fontSize: AllFontSize,
                                     textAlign: 'right',
                                     flex: 1,
-                                    color: '#d5cdd1',
+                                    color: '#847d80',
                                 }}
                                 placeholder="请输入您的保单邮寄地址"
                                 placeholderTextColor="#A19D9E"
@@ -185,24 +279,6 @@ export default class ChangeInformation extends Component<Props> {
                                         </View>
                                     </View>
 
-                                    <Text
-                                        style={{
-                                            marginLeft: px2dp(5),
-                                            marginRight: px2dp(5),
-                                            fontSize: setSpText(6.5),
-                                            textAlign: 'right',
-                                            flex: 1,
-                                            color: Orange,
-                                        }}
-                                        underlineColorAndroid='transparent'
-                                        numberOfLines={1}
-                                        ref={'content'}
-                                        multiline={true}
-                                        autoFocus={true}
-                                        onChangeText={(text) => {
-                                            content = text;
-                                        }}/>
-
                                     {/*拍摄身份证正面*/}
                                     <View>
                                         <TouchableOpacity>
@@ -211,7 +287,7 @@ export default class ChangeInformation extends Component<Props> {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(35),
+                                                marginLeft: px2dp(70),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
@@ -228,7 +304,7 @@ export default class ChangeInformation extends Component<Props> {
                                                     marginLeft: px2dp(24),
                                                     marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize:CameraFontSize,
+                                                    fontSize: CameraFontSize,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证正面
@@ -284,9 +360,9 @@ export default class ChangeInformation extends Component<Props> {
                         <View>
                             <Text style={{
                                 marginLeft: px2dp(15),
-                                fontSize:AllFontSize,
-                                marginTop: px2dp(13),
-                                color: '#595959'
+                                fontSize: AllFontSize,
+                                color: '#595959',
+                                marginTop:20
                             }}>
                                 请选择支付方式
                             </Text>
@@ -296,8 +372,8 @@ export default class ChangeInformation extends Component<Props> {
                         <View>
                             <ImageRadioGroup
                                 style={{flexDirection: 'row'}}
-                                conTainStyle={{height: px2dp(44), width: px2dp(60)}}
-                                imageStyle={{width: px2dp(25), height: px2dp(25)}}
+                                conTainStyle={{height: px2dp(20), width: px2dp(20)}}
+                                imageStyle={{width: px2dp(8), height: px2dp(8)}}
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
@@ -307,21 +383,20 @@ export default class ChangeInformation extends Component<Props> {
                             />
                         </View>
                         {/*确定购买*/}
-                        <TouchableOpacity onPress={() => {
-                            this.props.navigation.navigate('MyPolicy')
-                        }}>
+                        <TouchableOpacity onPress={this._setModalVisible.bind(this, true)}>
                             <View style={{
                                 height: px2dp(50),
                                 width: width * 13 / 14,
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                backgroundColor:Orange,
+                                backgroundColor: Orange,
                                 margin: px2dp(5),
                                 marginTop: px2dp(15),
                                 marginLeft: px2dp(15),
+
                             }}>
                                 <Text style={{
-                                    fontSize:setSpText(12),
+                                    fontSize: setSpText(12),
                                     color: '#FFFFFF'
                                 }}>
                                     确定购买
@@ -329,15 +404,33 @@ export default class ChangeInformation extends Component<Props> {
                             </View>
                         </TouchableOpacity>
 
-
                     </ScrollView>
                 </View>
             </View>
         );
+        let innerContainerTransparentStyle = this.state.transparent
+            ? {
+                justifyContent: "flex-end",
+            }
+            : null;
     }
+
+    _setModalVisible = (visible) => {
+        this.setState({modalVisible: visible});
+    };
 }
 
 const styles = StyleSheet.create({
+    aacontainer: {
+        flex: 1,
+        justifyContent: 'center',
+        padding: px2dp(40),
+    },
+    innerContainer: {
+        borderRadius: px2dp(10),
+        alignItems: 'center',
+    },
+
     container: {
         flex: 1,
         justifyContent: 'center',

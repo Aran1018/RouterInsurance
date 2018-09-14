@@ -70,11 +70,12 @@ export default class MyDocuments extends Component {
                         </View>
 
                         <TouchableOpacity onPress={() => {
-                            this.props.navigation.navigate('ChangeInformation')
+                            this.props.navigation.navigate('CheckDocument')
                         }}>
                             <View style={{
                                 height: WholeHeight, width: px2dp(120), backgroundColor:Orange, alignItems: 'center',
                                 justifyContent: 'center',
+
                             }}>
                                 <Text style={{
                                     fontSize: setSpText(11),

@@ -6,17 +6,20 @@
  *我觉得这世间再没有别的东西比它值得被如此依靠。
  */
 import React from 'react';
-import {Button, Image, TouchableOpacity} from 'react-native';
+import {Button, Image, Text, TouchableOpacity} from 'react-native';
 import { withNavigation } from 'react-navigation';
-import {px2dp} from "../utils/px2dpUtils";
+import {px2dp, setSpText} from "../utils/px2dpUtils";
 
 class TitleBarBackButton extends React.Component {
     render() {
         return(
-            <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
-                <Image style={{width:px2dp(23),height:px2dp(23),margin:px2dp(8),
-                    resizeMode: "contain"}} source={require('../img/titlebar/back.png')}/>
-
+            <TouchableOpacity  onPress={()=>{this.props.navigation.goBack()}}>
+                <Text style={{
+                    // fontSize:px2dp(),
+                    fontSize: setSpText(9),
+                    margin: px2dp(4), color: "#4d4d4d",
+                    marginLeft: px2dp(10),
+                }}>撤销保单</Text>
             </TouchableOpacity>
 
         )

@@ -44,21 +44,22 @@ export default class ConfirmButton extends Component{
 
                 <View style={{
                     width:this.props.style.width?this.props.style.width:Dimensions.get('window').width-px2dp(25),
-                    height: px2dp(55),
+                    height: px2dp(50),
                     backgroundColor: this.props.style.backgroundColor,
                     position:this.props.style.position?this.props.style.position:"relative",
                     // marginLeft: px2dp(15),
                     marginBottom: this.props.style.marginBottom?this.props.style.marginBottom:0,
                     marginTop: px2dp(10),
-                    elevation: 20,
-                    shadowOffset: {width: 0, height: 0},
+                    elevation: px2dp(20),
+                    shadowOffset: {width: px2dp(20), height:px2dp(12)},
                     shadowColor: 'black',
-                    shadowOpacity: 1,
-                    shadowRadius: 5
+                    shadowOpacity: px2dp(20),
+                    shadowRadius: px2dp(1),
+
                 }}>
                     <Text style={{
                         alignSelf: 'center',
-                        marginTop: px2dp(15), fontSize: setSpText(12), color: 'white'
+                        marginTop: px2dp(13), fontSize: setSpText(12), color: 'white'
                     }}>{this._setButtonText()}</Text>
                 </View>
             </TouchableHighlight>
