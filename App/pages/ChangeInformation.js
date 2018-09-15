@@ -47,6 +47,8 @@ export default class ChangeInformation extends Component<Props> {
     constructor(props) {
         super(props);
         this.state = {
+            radioSelect:'',
+            confirmButton:'#fe7d6f',
             animationType: 'none',
             modalVisible: false,
             transparent: true,
@@ -83,6 +85,7 @@ export default class ChangeInformation extends Component<Props> {
 
     componentWillMount() {
         Orientation.lockToPortrait()
+
 
     }
 
@@ -153,7 +156,7 @@ export default class ChangeInformation extends Component<Props> {
                                                                   alignItems: "center",
                                                                   justifyContent: "center",
                                                                   marginTop: MarginTop,
-                                                                  fontSize:DialogFontSize
+                                                                  // fontSize:DialogFontSize
                                                               }}>
                                                 <Text style={{color: "#fff"}}>查看维修基金</Text>
                                             </TouchableOpacity>
@@ -387,32 +390,18 @@ export default class ChangeInformation extends Component<Props> {
                                 selectIndex={'1'}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
-                                    console.warn(item.title);
-                                    console.warn(index)
+                                    // console.warn(item.title);
+                                    // console.warn(index);
+                                    this.setState({
+                                        radioSelect:index,
+                                    });
+
                                 }}
                             />
                         </View>
                         {/*确定购买*/}
-                        <TouchableOpacity onPress={this._setModalVisible.bind(this, true)}>
-                            <View style={{
-                                height: px2dp(50),
-                                width: width * 13 / 14,
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: Orange,
-                                margin: px2dp(5),
-                                marginTop: px2dp(15),
-                                marginLeft: px2dp(15),
 
-                            }}>
-                                <Text style={{
-                                    fontSize: setSpText(12),
-                                    color: '#FFFFFF'
-                                }}>
-                                    确定购买
-                                </Text>
-                            </View>
-                        </TouchableOpacity>
+                        {this.renderConfirmButton()}
 
                     </ScrollView>
                 </View>
@@ -426,8 +415,62 @@ export default class ChangeInformation extends Component<Props> {
     }
 
     _setModalVisible = (visible) => {
+        if(this.state.radioSelect===''){
+
+        }
         this.setState({modalVisible: visible});
     };
+
+
+    renderConfirmButton(){
+        if(this.state.radioSelect===''){
+            return(
+                <TouchableOpacity>
+                    <View style={{
+                        height: px2dp(50),
+                        width: width * 13 / 14,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: this.state.confirmButton,
+                        margin: px2dp(5),
+                        marginTop: px2dp(15),
+                        marginLeft: px2dp(15),
+
+                    }}>
+                        <Text style={{
+                            fontSize: setSpText(12),
+                            color: '#FFFFFF'
+                        }}>
+                            确定购买
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+            )
+        }else {
+            return(
+                <TouchableOpacity onPress={this._setModalVisible.bind(this, true)}>
+                    <View style={{
+                        height: px2dp(50),
+                        width: width * 13 / 14,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: Orange,
+                        margin: px2dp(5),
+                        marginTop: px2dp(15),
+                        marginLeft: px2dp(15),
+
+                    }}>
+                        <Text style={{
+                            fontSize: setSpText(12),
+                            color: '#FFFFFF'
+                        }}>
+                            确定购买
+                        </Text>
+                    </View>
+                </TouchableOpacity>
+            )
+        }
+    }
 }
 
 const styles = StyleSheet.create({

@@ -342,7 +342,7 @@ export default class AskPrice extends Component {
                                 style={{flexDirection: 'row'}}
                                 conTainStyle={{height: px2dp(20), width: px2dp(20)}}
                                 imageStyle={{width: px2dp(8), height: px2dp(8)}}
-                                selectIndex={'1'}
+                                selectIndex={0}
                                 data={this.state.sexArray}
                                 onPress={(index, item) => {
                                     console.warn(item.title);

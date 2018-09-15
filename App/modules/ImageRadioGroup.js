@@ -20,13 +20,14 @@ export default class RadioGroup extends Component {
         super(props);
 
         this.state = {
-            selectIndex: this.props.selectIndex ? this.props.selectIndex : '',
+            selectIndex: this.props.selectIndex ? this.props.selectIndex : 0,
             data: this.props.data ? this.props.data : [{title: '男',}, {title: '女'}],
             initItem:'../img/ImageRadios/noselected.png'
         };
     }
 
     render() {
+        console.log("=========="+this.state.selectIndex);
         let newArray = this.state.data;
         return (
             <View style={[this.props.style]}>
