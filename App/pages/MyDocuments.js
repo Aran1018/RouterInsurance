@@ -21,6 +21,7 @@ import {
 import {Dimensions} from 'react-native';
 import MyDocItem from "./MyDocItem";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
+import * as Orientation from "react-native-orientation";
 
 let {screenHeight, screenWidth} = Dimensions.get('window');
 
@@ -39,6 +40,13 @@ export default class MyDocuments extends Component {
         // this.props.navigation.navigate('MyPolicy')
         alert(" ")
     };
+
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+
+    }
+
 
     render() {
         return (

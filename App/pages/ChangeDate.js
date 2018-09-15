@@ -17,6 +17,7 @@ import ImageRadioGroup from "../modules/ImageRadioGroup";
 import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import ImagePicker from 'react-native-image-picker';
+import * as Orientation from "react-native-orientation";
 
 let content = '';
 let iconSize = px2dp(19);
@@ -73,6 +74,14 @@ export default class ChangeDate extends Component {
             inputValue: "",
         }
     }
+
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+
+    }
+
+
 
     finalSubmit() {
         this._setModalVisible(!this.state.modalVisible);

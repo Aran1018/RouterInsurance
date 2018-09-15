@@ -21,6 +21,7 @@ import {Dimensions} from 'react-native';
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import MyDocItemDividing from "../modules/MyDocItemDividing";
 import ZoomImage from "../modules/ZoomImage";
+import * as Orientation from "react-native-orientation";
 
 let Orange = '#fe2b00';
 
@@ -67,6 +68,11 @@ export default class MyDocItem extends Component {
         return array;
     }
 
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+
+    }
 
 
     render() {

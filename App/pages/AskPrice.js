@@ -26,6 +26,7 @@ import ImageRadioGroup from "../modules/ImageRadioGroup";
 import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import DividingCamera from "../modules/DividingCamera";
+import * as Orientation from "react-native-orientation";
 
 let DialogSize = px2dp(240);
 let AllIconSize = px2dp(19);
@@ -72,6 +73,13 @@ export default class AskPrice extends Component {
             inputValue: "",
         }
     }
+
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+    }
+
+
 
     static showAlter(text) {
         alert(text);

@@ -28,6 +28,7 @@ import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import DividingCamera from "../modules/DividingCamera";
 import DividingChangeInformation from "../modules/DividingChangeInformation";
+import * as Orientation from "react-native-orientation";
 
 let DialogSize = px2dp(240);
 let AllIconSize = px2dp(19);
@@ -78,6 +79,13 @@ export default class ChangeInformation extends Component<Props> {
     static showAlter(text) {
         alert(text);
     }
+
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+
+    }
+
 
     finalSubmit() {
         this._setModalVisible(!this.state.modalVisible);

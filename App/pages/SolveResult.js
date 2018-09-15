@@ -16,10 +16,16 @@ import {Image,
     StatusBar,
     TouchableOpacity
 } from "react-native";
+import * as Orientation from "react-native-orientation";
 
 let TopVlaue = 20;
 export default class SolveResult extends Component {
 
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+
+    }
 
     renderTheImage(data) {
         if (data.width > data.width) {

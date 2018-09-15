@@ -13,12 +13,18 @@ import MyPolicyItem from "../modules/MyPolicyItem";
 
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import ConfirmButton from "../modules/ConfirmButton";
+import * as Orientation from "react-native-orientation";
 
 let widthOfWindow = Dimensions.get('window').width;
 let heightOfWindow = Dimensions.get('window').height;
 
 export default class MyPolicy extends Component {
 
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+
+    }
     render() {
         return (
             <View style={{

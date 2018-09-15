@@ -12,6 +12,7 @@ import {Platform, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-n
 import {Dimensions} from 'react-native';
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import {withNavigation} from "react-navigation";
+import * as Orientation from "react-native-orientation";
 
 let Blue = '#0bc2d4';
 let {height, width} = Dimensions.get('window');
@@ -19,6 +20,15 @@ let {height, width} = Dimensions.get('window');
 type Props = {};
 
 export default class App extends Component<Props> {
+
+
+    componentWillMount() {
+        Orientation.lockToPortrait()
+
+    }
+
+
+
     render() {
         return (
             <View style={styles.container}>
