@@ -238,7 +238,14 @@ export default class AskPrice extends Component {
 
                                     {/*拍摄行驶证正本*/}
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'Inquiry',
+                                                    imgSource:require("../img/cameraImg/licenseFront.png"),
+                                                    PositiveOrNegative:'正本'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
@@ -274,7 +281,14 @@ export default class AskPrice extends Component {
                                     {/*拍摄行驶证副本*/}
 
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'Inquiry',
+                                                    imgSource:require("../img/cameraImg/licenseBack.png"),
+                                                    PositiveOrNegative:'副本'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
@@ -384,7 +398,14 @@ export default class AskPrice extends Component {
 
                                     {/*拍摄身份证正面*/}
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'Inquiry',
+                                                    imgSource:require("../img/cameraImg/cardFront.png"),
+                                                    PositiveOrNegative:'正面'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
@@ -420,7 +441,14 @@ export default class AskPrice extends Component {
                                     {/*拍摄身份证背面*/}
 
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'Inquiry',
+                                                    imgSource:require("../img/cameraImg/cardBack.png"),
+                                                    PositiveOrNegative:'背面'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),

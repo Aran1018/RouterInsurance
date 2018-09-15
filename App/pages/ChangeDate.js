@@ -17,11 +17,12 @@ import ImageRadioGroup from "../modules/ImageRadioGroup";
 import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import ImagePicker from 'react-native-image-picker';
+
 let content = '';
-let iconSize =  px2dp(19);
+let iconSize = px2dp(19);
 let {height, width} = Dimensions.get('window');
 
-let Orange =   '#fe2b00';
+let Orange = '#fe2b00';
 let AllIconSize = px2dp(19);
 let CameraHeight = px2dp(12);
 let CameraWidth = px2dp(18);
@@ -40,201 +41,7 @@ type Props = {};
  */
 
 export default class ChangeDate extends Component {
-    state = {
-        avatarSource1: null,
-        avatarSource2: null,
-        avatarSource3: null,
-        avatarSource4: null,
-        videoSource: null
-    };
 
-    //拍摄行驶证正本
-    selectPhotoTapped1() {
-        const options = {
-            title: '选择图片',
-            cancelButtonTitle: '取消',
-            takePhotoButtonTitle: '拍照',
-            chooseFromLibraryButtonTitle: '选择照片',
-            cameraType: 'back',
-            mediaType: 'photo',
-            videoQuality: 'high',
-            durationLimit: 10,
-            maxWidth: 300,
-            maxHeight: 300,
-            quality: 0.8,
-            angle: 0,
-            allowsEditing: false,
-            noData: false,
-            storageOptions: {
-                skipBackup: true
-            }
-        };
-
-        ImagePicker.showImagePicker(options, (response) => {
-            console.log('Response = ', response);
-
-            if (response.didCancel) {
-                console.log('User cancelled photo picker');
-            }
-            else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            }
-            else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            }
-            else {
-                let source = {uri: response.uri};
-
-                // You can also display the image using data:
-                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-                this.setState({
-                    avatarSource1: source
-                });
-            }
-        });
-    }
-
-    //拍摄行驶证副本
-    selectPhotoTapped2() {
-        const options = {
-            title: '选择图片',
-            cancelButtonTitle: '取消',
-            takePhotoButtonTitle: '拍照',
-            chooseFromLibraryButtonTitle: '选择照片',
-            cameraType: 'back',
-            mediaType: 'photo',
-            videoQuality: 'high',
-            durationLimit: 10,
-            maxWidth: 300,
-            maxHeight: 300,
-            quality: 0.8,
-            angle: 0,
-            allowsEditing: false,
-            noData: false,
-            storageOptions: {
-                skipBackup: true
-            }
-        };
-
-        ImagePicker.showImagePicker(options, (response) => {
-            console.log('Response = ', response);
-
-            if (response.didCancel) {
-                console.log('User cancelled photo picker');
-            }
-            else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            }
-            else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            }
-            else {
-                let source = {uri: response.uri};
-
-                // You can also display the image using data:
-                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-                this.setState({
-                    avatarSource2: source
-                });
-            }
-        });
-    }
-
-    //拍摄身份证正面
-    selectPhotoTapped3() {
-        const options = {
-            title: '选择图片',
-            cancelButtonTitle: '取消',
-            takePhotoButtonTitle: '拍照',
-            chooseFromLibraryButtonTitle: '选择照片',
-            cameraType: 'back',
-            mediaType: 'photo',
-            videoQuality: 'high',
-            durationLimit: 10,
-            maxWidth: 300,
-            maxHeight: 300,
-            quality: 0.8,
-            angle: 0,
-            allowsEditing: false,
-            noData: false,
-            storageOptions: {
-                skipBackup: true
-            }
-        };
-
-        ImagePicker.showImagePicker(options, (response) => {
-            console.log('Response = ', response);
-
-            if (response.didCancel) {
-                console.log('User cancelled photo picker');
-            }
-            else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            }
-            else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            }
-            else {
-                let source = {uri: response.uri};
-
-                // You can also display the image using data:
-                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-                this.setState({
-                    avatarSource3: source
-                });
-            }
-        });
-    }
-
-    //拍摄身份证背面
-    selectPhotoTapped4() {
-        const options = {
-            title: '选择图片',
-            cancelButtonTitle: '取消',
-            takePhotoButtonTitle: '拍照',
-            chooseFromLibraryButtonTitle: '选择照片',
-            cameraType: 'back',
-            mediaType: 'photo',
-            videoQuality: 'high',
-            durationLimit: 10,
-            maxWidth: 300,
-            maxHeight: 300,
-            quality: 0.8,
-            angle: 0,
-            allowsEditing: false,
-            noData: false,
-            storageOptions: {
-                skipBackup: true
-            }
-        };
-
-        ImagePicker.showImagePicker(options, (response) => {
-            console.log('Response = ', response);
-
-            if (response.didCancel) {
-                console.log('User cancelled photo picker');
-            }
-            else if (response.error) {
-                console.log('ImagePicker Error: ', response.error);
-            }
-            else if (response.customButton) {
-                console.log('User tapped custom button: ', response.customButton);
-            }
-            else {
-                let source = {uri: response.uri};
-
-                // You can also display the image using data:
-                // let source = { uri: 'data:image/jpeg;base64,' + response.data };
-
-                this.setState({
-                    avatarSource4: source
-                });
-            }
-        });
-    }
 
     constructor(props) {
         super(props);
@@ -362,7 +169,14 @@ export default class ChangeDate extends Component {
 
                                     {/*拍摄行驶证正本*/}
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'ChangeDate',
+                                                    imgSource:require("../img/cameraImg/licenseFront.png"),
+                                                    PositiveOrNegative:'正本'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
@@ -373,8 +187,8 @@ export default class ChangeDate extends Component {
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width:CameraWidth,
-                                                           height:CameraHeight,
+                                                           width: CameraWidth,
+                                                           height: CameraHeight,
                                                            marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
@@ -385,7 +199,7 @@ export default class ChangeDate extends Component {
                                                     marginLeft: px2dp(24),
                                                     marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize:CameraFontSize,
+                                                    fontSize: CameraFontSize,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄行驶证正本
@@ -398,7 +212,14 @@ export default class ChangeDate extends Component {
                                     {/*拍摄行驶证副本*/}
 
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'ChangeDate',
+                                                    imgSource:require("../img/cameraImg/licenseBack.png"),
+                                                    PositiveOrNegative:'副本'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
@@ -409,8 +230,8 @@ export default class ChangeDate extends Component {
                                             }}>
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width:CameraWidth,
-                                                           height:CameraHeight,
+                                                           width: CameraWidth,
+                                                           height: CameraHeight,
                                                            marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
@@ -508,7 +329,14 @@ export default class ChangeDate extends Component {
 
                                     {/*拍摄身份证正面*/}
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'ChangeDate',
+                                                    imgSource:require("../img/cameraImg/cardFront.png"),
+                                                    PositiveOrNegative:'背面'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
@@ -519,8 +347,8 @@ export default class ChangeDate extends Component {
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width:CameraWidth,
-                                                           height:CameraHeight,
+                                                           width: CameraWidth,
+                                                           height: CameraHeight,
                                                            marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
@@ -531,7 +359,7 @@ export default class ChangeDate extends Component {
                                                     marginLeft: px2dp(24),
                                                     marginTop: px2dp(41),
                                                     position: 'absolute',
-                                                    fontSize:CameraFontSize,
+                                                    fontSize: CameraFontSize,
                                                     color: '#fff'
                                                 }]}>
                                                     拍摄身份证正面
@@ -544,7 +372,14 @@ export default class ChangeDate extends Component {
                                     {/*拍摄身份证背面*/}
 
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl:'ChangeDate',
+                                                    imgSource:require("../img/cameraImg/cardBack.png"),
+                                                    PositiveOrNegative:'背面'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
@@ -555,8 +390,8 @@ export default class ChangeDate extends Component {
                                             }}>
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
-                                                           width:CameraWidth,
-                                                           height:CameraHeight,
+                                                           width: CameraWidth,
+                                                           height: CameraHeight,
                                                            marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
                                                            position: 'absolute'
@@ -628,7 +463,7 @@ export default class ChangeDate extends Component {
                             <Text style={{
                                 marginLeft: px2dp(15),
                                 marginTop: px2dp(12),
-                                fontSize:AllFontSize,
+                                fontSize: AllFontSize,
                                 color: Orange
                             }}>
                                 补充资料
@@ -669,7 +504,7 @@ export default class ChangeDate extends Component {
                                 marginLeft: px2dp(12),
                             }}>
                                 <Text style={{
-                                    fontSize:setSpText(12),
+                                    fontSize: setSpText(12),
                                     color: '#FFFFFF'
                                 }}>
                                     提交

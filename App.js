@@ -11,6 +11,10 @@ import {Image, Text, TouchableOpacity} from "react-native";
 import ChangeInformation from "./App/pages/ChangeInformation";
 import TitleBarBackButton from "./App/modules/TitleBarBackButton";
 import {px2dp, setSpText} from "./App/utils/px2dpUtils";
+import SolveResult from "./App/pages/SolveResult";
+import IDcardExample from "./App/modules/IDcardExample";
+import Camera from "./App/pages/Camera";
+
 
 let NavIconSize = px2dp(32);
 let HeaderTitlefontSize = setSpText(13);
@@ -134,5 +138,29 @@ export default Stack = StackNavigator({
             )
         }
     },
+    Camera: {
+        screen: Camera,
+        navigationOptions:{
+
+            navigationBarHidden:true,
+            header:null,
+
+            head:{
+                visible:false
+            }
+        }
+    },
+    SolveResult: {
+        screen: SolveResult,
+        navigationOptions:{
+            header:null,
+        }
+    },
+    IDcardExample: {
+        screen: IDcardExample,
+        navigationOptions:{
+            header:null,
+        }
+    }
 
 })
