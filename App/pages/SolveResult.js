@@ -61,7 +61,7 @@ export default class SolveResult extends Component {
         this.props.navigation.navigate('Inquiry');
 
     }
-    // _storeData() {
+    _storeData() {
     //     let ImageData = {
     //         imageName:this.props.navigation.getParam('PositiveOrNegative'),
     //         path:'file:///data/data/com.tts.aran.routerinsurance/cache/Camera/' + this.splitString(this.props.navigation.getParam('photoUrl'))
@@ -73,7 +73,7 @@ export default class SolveResult extends Component {
     //             });
     //         });
     //     });
-    // };
+    };
 
     render() {
         return (

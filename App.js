@@ -138,7 +138,7 @@ export default Stack = StackNavigator({
         navigationOptions: {
             header:null,
         }
-    }
+    },
     Camera: {
         screen: Camera,
         navigationOptions:{
