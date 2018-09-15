@@ -67,6 +67,8 @@ export default class MyDocItem extends Component {
         return array;
     }
 
+
+
     render() {
         return (
             <ScrollView contentContainerStyle={styles.contentContainer}
