@@ -30,7 +30,8 @@ let {height, width} = Dimensions.get('window');
 export default class MyDocItem extends Component {
     render() {
         return (
-            <ScrollView contentContainerStyle={styles.contentContainer}>
+            <ScrollView contentContainerStyle={styles.contentContainer}
+                        overScrollMode="never">
                 <View style={{flexDirection: 'column', backgroundColor: '#e9ebee', width: width}}>
                     <ScrollView>
                         {/*大图片*/}

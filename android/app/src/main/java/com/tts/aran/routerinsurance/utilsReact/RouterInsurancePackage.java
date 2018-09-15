@@ -25,6 +25,7 @@ public class RouterInsurancePackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
+
     }
 
     @Override
@@ -35,4 +36,5 @@ public class RouterInsurancePackage implements ReactPackage {
         modules.add(mModule);
         return modules;
     }
+
 }

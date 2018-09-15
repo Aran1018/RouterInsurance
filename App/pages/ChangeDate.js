@@ -11,7 +11,7 @@ import React, {Component} from 'react';
 import {
     Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity,
     Dimensions,
-    PixelRatio, View, TouchableHighlight
+    PixelRatio, View, TouchableHighlight, Modal
 } from 'react-native';
 import ImageRadioGroup from "../modules/ImageRadioGroup";
 import Dividing from "../modules/Dividing";
@@ -28,6 +28,7 @@ let CameraHeight = px2dp(12);
 let CameraWidth = px2dp(18);
 let AllFontSize = setSpText(8);
 let CameraFontSize = setSpText(5.5);
+let DialogSize = px2dp(240);
 
 let MarginTop = px2dp(10);
 let MARGIN_TWO_SIDES = px2dp(13);
@@ -67,14 +68,85 @@ export default class ChangeDate extends Component {
                 }
             ],
         };
+        this.statea = {
+            inputValue: "",
+        }
+    }
+
+    finalSubmit() {
+        this._setModalVisible(!this.state.modalVisible);
+        this.props.navigation.navigate('MyPolicy')
     }
 
     render() {
+        let modalBackgroundStyle = {
+            backgroundColor: this.state.transparent ? 'rgba(0, 0, 0, 0.5)' : 'red',
+        };
+        let innerContainerTransparentStyle = this.state.transparent
+            ? {
+                justifyContent: "flex-end",
+            }
+            : null;
+
         return (
             <View style={{}}>
                 <View style={{flexDirection: 'column'}}>
 
-                    <ScrollView>
+                    <ScrollView overScrollMode="never">
+
+                        <Modal
+                            animationType={this.state.animationType}
+                            transparent={this.state.transparent}
+                            visible={this.state.modalVisible}
+                            onRequestClose={() => {
+                                this._setModalVisible(false)
+                            }}
+                        >
+                            <View style={[styles.aacontainer, modalBackgroundStyle]}>
+                                <View style={[styles.innerContainer, innerContainerTransparentStyle]}>
+                                    <View style={{
+                                        width: px2dp(250), height: px2dp(250), backgroundColor: "#ffffff",
+                                        alignItems: "center",
+                                        justifyContent: "flex-end",
+                                    }}>
+                                        <Image style={{
+                                            resizeMode: 'stretch',
+                                            marginTop: px2dp(20),
+                                            width: px2dp(100),
+                                            height: px2dp(110)
+                                        }}
+                                               source={require('../img/imgaskprice/dialogimg.png')}/>
+                                        <Text style={{
+                                            marginTop: MarginTop,
+                                            fontSize: DialogFontSize,
+                                            fontWeight: "bold"
+                                        }}>提交成功</Text>
+                                        <Text
+                                            style={{marginTop: MarginTop, fontSize: DialogFontSize}}>保险专员会尽快与您联系</Text>
+
+                                        <View>
+                                            <TouchableOpacity onPress={
+                                                () => {
+                                                    this.finalSubmit()
+                                                }
+                                            }
+                                                              style={{
+                                                                  width: px2dp(250),
+                                                                  height: px2dp(40),
+                                                                  backgroundColor: "#000",
+                                                                  alignItems: "center",
+                                                                  justifyContent: "center",
+                                                                  marginTop: MarginTop
+                                                              }}>
+                                                <Text style={{color: "#fff"}}>完成</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                    </View>
+
+                                </View>
+                            </View>
+                        </Modal>
+
                         {/*广告图*/}
                         <View style={{alignItems: 'center', flex: 1}}>
                             <TouchableOpacity>
@@ -106,19 +178,23 @@ export default class ChangeDate extends Component {
                                     fontSize: AllFontSize,
                                     textAlign: 'right',
                                     flex: 1,
-                                    color: Orange,
+                                    color: '#000',
                                     marginTop: px2dp(8)
                                 }}
                                 placeholder="12345678912  (请重新编写)"
-                                placeholderTextColor="#fe2b00"
+                                placeholderTextColor="#000"
                                 numberOfLines={1}
                                 ref={'content'}
                                 underlineColorAndroid='transparent'
-                                multiline={true}
+                                multiline={false}
                                 autoFocus={false}
                                 onChangeText={(text) => {
-                                    content = text;
-                                }}/>
+                                    const newText = text.replace(/[^\d]+/, '');
+                                    //可以打印看看是否过滤掉了非数字
+                                    console.log(newText)
+                                    this.setState({inputValue: newText})
+                                }}
+                                value={this.state.inputValue}/>
                         </View>
 
                         {/*分界线*/}
@@ -148,24 +224,6 @@ export default class ChangeDate extends Component {
                                         </View>
                                     </View>
 
-                                    <Text
-                                        style={{
-                                            marginLeft: px2dp(5),
-                                            marginRight: px2dp(5),
-                                            fontSize: setSpText(6.5),
-                                            textAlign: 'right',
-                                            flex: 1,
-                                            color: Orange,
-
-                                        }}
-                                        underlineColorAndroid='transparent'
-                                        numberOfLines={1}
-                                        ref={'content'}
-                                        multiline={true}
-                                        autoFocus={true}
-                                        onChangeText={(text) => {
-                                            content = text;
-                                        }}/>
 
                                     {/*拍摄行驶证正本*/}
                                     <View>
@@ -182,7 +240,7 @@ export default class ChangeDate extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(35),
+                                                marginLeft: px2dp(70),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
@@ -292,13 +350,13 @@ export default class ChangeDate extends Component {
                                     <View
                                         style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
-                                            < Image source={require('../img/imgaskprice/idCard.png')}
-                                                    style={[styles.imgStyle = {
-                                                        width: AllIconSize,
-                                                        height: AllIconSize,
-                                                        marginLeft: px2dp(15),
-                                                        marginTop: px2dp(10)
-                                                    }]}/>
+                                            <Image source={require('../img/imgaskprice/idCard.png')}
+                                                   style={[styles.imgStyle = {
+                                                       width: AllIconSize,
+                                                       height: AllIconSize,
+                                                       marginLeft: px2dp(15),
+                                                       marginTop: px2dp(10)
+                                                   }]}/>
                                             <Text style={{
                                                 marginLeft: px2dp(5),
                                                 marginTop: px2dp(10),
@@ -308,24 +366,6 @@ export default class ChangeDate extends Component {
                                             </Text>
                                         </View>
                                     </View>
-
-                                    <Text
-                                        style={{
-                                            marginLeft: px2dp(5),
-                                            marginRight: px2dp(5),
-                                            fontSize: setSpText(8),
-                                            textAlign: 'right',
-                                            flex: 1,
-                                            color: Orange,
-                                        }}
-                                        underlineColorAndroid='transparent'
-                                        numberOfLines={1}
-                                        ref={'content'}
-                                        multiline={true}
-                                        autoFocus={true}
-                                        onChangeText={(text) => {
-                                            content = text;
-                                        }}/>
 
                                     {/*拍摄身份证正面*/}
                                     <View>
@@ -342,7 +382,7 @@ export default class ChangeDate extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(35),
+                                                marginLeft: px2dp(70),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
@@ -463,7 +503,7 @@ export default class ChangeDate extends Component {
                             <Text style={{
                                 marginLeft: px2dp(15),
                                 marginTop: px2dp(12),
-                                fontSize: AllFontSize,
+                                fontSize:AllFontSize,
                                 color: Orange
                             }}>
                                 补充资料
@@ -492,7 +532,7 @@ export default class ChangeDate extends Component {
                             </View>
                         </View>
                         {/*提交按钮*/}
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={this._setModalVisible.bind(this, true)}>
                             <View style={{
                                 height: px2dp(50),
                                 width: width * 13 / 14,
@@ -504,7 +544,7 @@ export default class ChangeDate extends Component {
                                 marginLeft: px2dp(12),
                             }}>
                                 <Text style={{
-                                    fontSize: setSpText(12),
+                                    fontSize:setSpText(12),
                                     color: '#FFFFFF'
                                 }}>
                                     提交
@@ -517,8 +557,21 @@ export default class ChangeDate extends Component {
         );
 
     }
+
+    _setModalVisible = (visible) => {
+        this.setState({modalVisible: visible});
+    };
 }
 let styles = StyleSheet.create({
+    aacontainer: {
+        flex: 1,
+        justifyContent: 'center',
+        padding: px2dp(40),
+    },
+    innerContainer: {
+        borderRadius: px2dp(10),
+        alignItems: 'center',
+    },
     item_layout: {
         backgroundColor: 'white',
         height: px2dp(45),
