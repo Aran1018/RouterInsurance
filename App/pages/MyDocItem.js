@@ -21,28 +21,69 @@ import {Dimensions} from 'react-native';
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 import MyDocItemDividing from "../modules/MyDocItemDividing";
 import ZoomImage from "../modules/ZoomImage";
-let Orange =   '#fe2b00';
+
+let Orange = '#fe2b00';
 
 let AllFontSize = setSpText(9);
 
 let {height, width} = Dimensions.get('window');
 
+let json = require('../data/mydocument');
+
 export default class MyDocItem extends Component {
+
+
+    setTheState(json) {
+
+        let array = [];
+        for (let m = 0; m < json.length; m++) {
+            switch (json[m].state) {
+                case 101:
+                    array.push(
+                        <View key={m}>
+                            <View style={styles.theWhiteView}>
+                                <Text style={{
+                                    alignSelf: 'center',
+                                    marginLeft: px2dp(10),
+                                    color: 'black',
+                                    fontSize: AllFontSize
+                                }}>
+                                    {json[m].Insurance}
+                                </Text>
+                                <Text style={{
+                                    fontSize: AllFontSize,
+                                    color: 'black',
+                                    alignSelf: 'center',
+                                    marginRight: px2dp(10)
+                                }}>
+                                    ￥{json[m].Money}
+                                </Text>
+                            </View>
+                        </View>
+                    );
+                    break;
+            }
+        }
+        return array;
+    }
+
     render() {
         return (
             <ScrollView contentContainerStyle={styles.contentContainer}
-                        overScrollMode="never">
+                    overScrollMode="never" bounces={true} showsVerticalScrollIndicator={false}>
                 <View style={{flexDirection: 'column', backgroundColor: '#e9ebee', width: width}}>
-                    <ScrollView>
+                    <ScrollView showsVerticalScrollIndicator={false} overScrollMode="never">
                         {/*大图片*/}
                         <TouchableOpacity>
                             <View style={{marginTop: px2dp(10), alignItems: 'center'}}>
                                 <View style={styles.imgItem}>
                                     <ZoomImage
                                         source={require('../img/imgMyDocuments/quotation.png')}
+                                        //source={{url: 'http://120.25.96.141/guest/quotation.png'}}
                                         imgStyle={{
                                             width: width / 1.17,
                                             height: height / 3.3,
+                                            marginBottom: px2dp(10),
                                             resizeMode: Image.resizeMode.stretch,
                                         }}
                                         style={styles.img}
@@ -50,94 +91,9 @@ export default class MyDocItem extends Component {
                                 </View>
                             </View>
                         </TouchableOpacity>
-                        {/*交强险*/}
-                        <View style={{
-                            flexDirection: 'row',
-                            width: width - px2dp(40),
-                            height: height / 17,
-                            backgroundColor: 'white',
-                            marginTop: px2dp(10),
-                            flex: 1,
-                            alignSelf: 'center'
-                        }}>
-                            <Text style={{
-                                alignSelf: 'center',
-                                marginLeft: px2dp(10),
-                                color: 'black',
-                                fontSize:AllFontSize
-                            }}>
-                                交强险
-                            </Text>
-                            <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
-                                <Text style={{
-                                    fontSize:AllFontSize,
-                                    color: 'black',
-                                    alignSelf: 'flex-end',
-                                }}>
-                                    ￥980.00
-                                </Text>
-                            </View>
-                        </View>
 
-                        <MyDocItemDividing/>
-
-                        {/*税费*/}
-                        <View style={{
-                            flexDirection: 'row',
-                            width: width - px2dp(40),
-                            height: height / 17,
-                            backgroundColor: 'white',
-                            flex: 1,
-                            alignSelf: 'center'
-                        }}>
-                            <Text style={{
-                                alignSelf: 'center',
-                                marginLeft: px2dp(10),
-                                fontSize:AllFontSize,
-                                color: 'black',
-                            }}>
-                                税费
-                            </Text>
-                            <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
-                                <Text style={{
-                                    fontSize:AllFontSize,
-                                    color: 'black',
-                                    alignSelf: 'flex-end',
-                                }}>
-                                    ￥980.00
-                                </Text>
-                            </View>
-                        </View>
-
-                        <MyDocItemDividing/>
-
-                        {/*商业险*/}
-                        <View style={{
-                            flexDirection: 'row',
-                            width: width - px2dp(40),
-                            height: height / 17,
-                            backgroundColor: 'white',
-                            flex: 1,
-                            alignSelf: 'center'
-                        }}>
-                            <Text style={{
-                                alignSelf: 'center',
-                                marginLeft: px2dp(10),
-                                fontSize:AllFontSize,
-                                color: 'black',
-                            }}>
-                                商业险
-                            </Text>
-                            <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
-                                <Text style={{
-                                    fontSize:AllFontSize,
-                                    color: 'black',
-                                    alignSelf: 'flex-end',
-                                }}>
-                                    ￥3980.00
-                                </Text>
-                            </View>
-                        </View>
+                        {/*保险*/}
+                        {this.setTheState(json)}
 
                         {/*保费合计*/}
                         <View style={{
@@ -148,13 +104,13 @@ export default class MyDocItem extends Component {
                             alignSelf: 'center'
                         }}>
                             <View style={{alignSelf: 'center', marginRight: px2dp(10)}}>
-                                <Text style={{alignSelf: 'flex-end', fontSize:AllFontSize, color: 'white',}}>
+                                <Text style={{alignSelf: 'flex-end', fontSize: AllFontSize, color: 'white',}}>
                                     保费合计:
                                 </Text>
                             </View>
                             <View style={{marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize:setSpText(11),
+                                    fontSize: setSpText(11),
                                     color: 'white',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -185,7 +141,7 @@ export default class MyDocItem extends Component {
                             <View style={{flex: 1, marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
                                     fontSize: setSpText(11),
-                                    color:Orange,
+                                    color: Orange,
                                     alignSelf: 'flex-end',
                                 }}>
                                     ￥1000.00
@@ -208,7 +164,7 @@ export default class MyDocItem extends Component {
                             </View>
                             <View style={{marginRight: px2dp(10), alignSelf: 'center'}}>
                                 <Text style={{
-                                    fontSize:setSpText(11),
+                                    fontSize: setSpText(11),
                                     color: 'white',
                                     alignSelf: 'flex-end',
                                 }}>
@@ -224,7 +180,8 @@ export default class MyDocItem extends Component {
                                 width: width - px2dp(40), marginBottom: px2dp(15)
                             }}>
                                 <Image source={require('../img/imgMyDocuments/discountsAD.png')}
-                                       style={[styles.imageStyle = {width: (width - px2dp(40)) / 2,
+                                       style={[styles.imageStyle = {
+                                           width: (width - px2dp(40)) / 2,
                                            height: height / 9,
                                        }]}/>
 
@@ -256,7 +213,7 @@ export default class MyDocItem extends Component {
                                         <View>
                                             <Text style={{
                                                 color: Orange,
-                                                fontSize:setSpText(21),
+                                                fontSize: setSpText(21),
                                                 fontWeight: 'bold',
                                             }}>获得</Text>
                                         </View>
@@ -280,7 +237,7 @@ export default class MyDocItem extends Component {
                                                 <Text style={{
                                                     color: Orange,
                                                     fontWeight: 'bold',
-                                                    fontSize:setSpText(8.5),
+                                                    fontSize: setSpText(8.5),
                                                 }}>￥860.00</Text>
                                             </View>
                                             {/*维修基金*/}
@@ -288,7 +245,7 @@ export default class MyDocItem extends Component {
                                                 <Text style={{
                                                     color: Orange,
                                                     fontWeight: 'bold',
-                                                    fontSize:setSpText(8.5),
+                                                    fontSize: setSpText(8.5),
                                                 }}>维修基金</Text>
                                             </View>
                                         </View>
@@ -319,7 +276,17 @@ let styles = StyleSheet.create({
         alignItems: 'center',
     },
     btnText: {
-        fontSize:setSpText(7),
+        fontSize: setSpText(7),
         color: '#f0f0f0'
-    }
+    },
+    theWhiteView: {
+        flexDirection: 'row',
+        width: width - px2dp(40),
+        height: height / 17,
+        backgroundColor: 'white',
+        marginTop: px2dp(0.5),
+        //flex: 1,
+        alignSelf: 'center',
+        justifyContent: 'space-between'
+    },
 });

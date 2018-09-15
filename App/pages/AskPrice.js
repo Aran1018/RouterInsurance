@@ -95,7 +95,7 @@ export default class AskPrice extends Component {
         return (
             <View>
                 <View style={{flexDirection: 'column'}}>
-                    <ScrollView overScrollMode="never" bounces={true}>
+                    <ScrollView overScrollMode="never" bounces={true} showsVerticalScrollIndicator={false}>
 
                         <Modal
                             animationType={this.state.animationType}
@@ -141,7 +141,7 @@ export default class AskPrice extends Component {
                                                                   justifyContent: "center",
                                                                   marginTop: MarginTop
                                                               }}>
-                                                <Text style={{color: "#fff"}}>完成</Text>
+                                                <Text style={{color: "#fff",fontSize:DialogFontSize}}>完成</Text>
                                             </TouchableOpacity>
                                         </View>
                                     </View>
@@ -240,7 +240,7 @@ export default class AskPrice extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(70),
+                                                marginLeft: px2dp(62),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
@@ -383,7 +383,7 @@ export default class AskPrice extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(70),
+                                                marginLeft: px2dp(62),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}

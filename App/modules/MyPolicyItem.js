@@ -58,7 +58,7 @@ export default class MyPolicyItem extends Component {
                 case 101:
                     arr.push(
                         <View key={i} style={styles.theBigView}>
-                            <View>
+                            <View showsVerticalScrollIndicator={false}>
                                 <Image style={{height: px2dp(20), width: px2dp(100)}}
                                        source={require('../img/imgMypolicy/number.png')}/>
                                 <Text style={{
@@ -151,7 +151,6 @@ export default class MyPolicyItem extends Component {
         return arr;
     }
 
-
     render() {
         return (
             <ScrollView overScrollMode="never">
@@ -182,7 +181,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         shadowColor: "#000", elevation: 3,
-
     },
     brandAndDataView: {
         width: (Dimensions.get('window').width - px2dp(20)) / 2,
@@ -198,6 +196,5 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginRight: 0,
         marginLeft: px2dp(50)
-
     },
 });

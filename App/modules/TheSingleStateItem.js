@@ -61,7 +61,7 @@ export default class TheSingleStateItem extends Component {
 
     render() {
         return (
-            <View style={styles.theBigView}>
+            <View style={styles.theBigView} showsVerticalScrollIndicator={false} overScrollMode="never">
                 <View>
                     <Image style={{height: px2dp(20), width: px2dp(100)}}
                            source={require('../img/imgMypolicy/number.png')}/>
@@ -127,7 +127,8 @@ const styles = StyleSheet.create({
         marginTop: px2dp(10),
         marginLeft: px2dp(20),
         marginRight: px2dp(20),
-        marginBottom: px2dp(10)
+        marginBottom: px2dp(10),
+
     },
     singleStateItem: {
         width: Dimensions.get('window').width - px2dp(40),

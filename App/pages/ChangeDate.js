@@ -22,6 +22,7 @@ let content = '';
 let iconSize = px2dp(19);
 let {height, width} = Dimensions.get('window');
 
+let DialogFontSize = setSpText(8);
 let Orange = '#fe2b00';
 let AllIconSize = px2dp(19);
 let CameraHeight = px2dp(12);
@@ -92,7 +93,7 @@ export default class ChangeDate extends Component {
             <View style={{}}>
                 <View style={{flexDirection: 'column'}}>
 
-                    <ScrollView overScrollMode="never">
+                    <ScrollView overScrollMode="never" showsVerticalScrollIndicator={false}>
 
                         <Modal
                             animationType={this.state.animationType}
@@ -240,7 +241,7 @@ export default class ChangeDate extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(70),
+                                                marginLeft: px2dp(62),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}
@@ -382,7 +383,7 @@ export default class ChangeDate extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(70),
+                                                marginLeft: px2dp(62),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}

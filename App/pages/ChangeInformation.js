@@ -91,7 +91,7 @@ export default class ChangeInformation extends Component<Props> {
         return (
             <View style={{}}>
                 <View style={{flexDirection: 'column'}}>
-                    <ScrollView overScrollMode="never">
+                    <ScrollView overScrollMode="never" showsVerticalScrollIndicator={false} overScrollMode="never">
                         <Modal
                             animationType={this.state.animationType}
                             transparent={this.state.transparent}
@@ -117,7 +117,8 @@ export default class ChangeInformation extends Component<Props> {
                                         <Text style={{
                                             marginTop: px2dp(5),
                                             fontSize: setSpText(10),
-                                            fontWeight: "bold"
+                                            fontWeight: "bold",
+
                                         }}>感谢您的购买</Text>
                                         <View style={{flexDirection: 'column'}}>
                                             <Text
@@ -143,7 +144,8 @@ export default class ChangeInformation extends Component<Props> {
                                                                   backgroundColor: "#000",
                                                                   alignItems: "center",
                                                                   justifyContent: "center",
-                                                                  marginTop: MarginTop
+                                                                  marginTop: MarginTop,
+                                                                  fontSize:DialogFontSize
                                                               }}>
                                                 <Text style={{color: "#fff"}}>查看维修基金</Text>
                                             </TouchableOpacity>
@@ -287,7 +289,7 @@ export default class ChangeInformation extends Component<Props> {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(70),
+                                                marginLeft: px2dp(62),
                                             }}>
 
                                                 <Image source={require('../img/imgaskprice/camera.png')}

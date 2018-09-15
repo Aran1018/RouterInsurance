@@ -6,8 +6,6 @@
     android:orientation="vertical"
     tools:context="com.tts.aran.routerinsurance.activity.MainActivity">
 
-
-
     <Button
         android:id="@+id/jump_to_RN"
         android:text="我的保险"
@@ -19,7 +17,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="相机" />
-
-
 
 </LinearLayout>

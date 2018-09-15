@@ -1,0 +1,17 @@
+[
+  {
+    "Insurance": "交强险",
+    "state": 101,
+    "Money": 980.00
+  },
+  {
+    "Insurance": "税费",
+    "state": 101,
+    "Money": 980.00
+  },
+  {
+    "Insurance": "商业险",
+    "state": 101,
+    "Money": 3980.00
+  }
+]

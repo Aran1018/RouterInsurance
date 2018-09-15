@@ -1,38 +1,44 @@
-
-[{
-  "photo": "http://thethreestooges.cn/img/1.jpg",
-  "state": 101,
-  "orderID": "00000001",
-  "CarId":"辽A11111",
-  "Data": "2018/7/18"
-}, {
-  "photo": "http://thethreestooges.cn/img/1.jpg",
-  "state": 606,
-  "orderID": "00000002",
-  "CarId":"辽A66666",
-  "Data": null
-}, {
-  "photo": "http://thethreestooges.cn/img/1.jpg",
-  "state": 707,
-  "orderID": "00000003",
-  "CarId":"辽A77777",
-  "Data": null
-}, {
-  "photo": "http://thethreestooges.cn/img/1.jpg",
-  "state": 808,
-  "orderID": "00000004",
-  "CarId":"辽A88888",
-  "Data": null
-}, {
-  "photo": "http://thethreestooges.cn/img/1.jpg",
-  "state": 707,
-  "orderID": "00000003",
-  "CarId":"辽A77777",
-  "Data": null
-},{
-  "photo": "http://thethreestooges.cn/img/1.jpg",
-  "state": 101,
-  "orderID": "00000001",
-  "CarId":"辽A11111",
-  "Data": "2018/7/18"
-}]
+[
+  {
+    "photo": "http://thethreestooges.cn/img/1.jpg",
+    "state": 101,
+    "orderID": "00000001",
+    "CarId": "辽A11111",
+    "Data": "2018/7/18"
+  },
+  {
+    "photo": "http://thethreestooges.cn/img/1.jpg",
+    "state": 606,
+    "orderID": "00000002",
+    "CarId": "辽A66666",
+    "Data": null
+  },
+  {
+    "photo": "http://thethreestooges.cn/img/1.jpg",
+    "state": 707,
+    "orderID": "00000003",
+    "CarId": "辽A77777",
+    "Data": null
+  },
+  {
+    "photo": "http://thethreestooges.cn/img/1.jpg",
+    "state": 808,
+    "orderID": "00000004",
+    "CarId": "辽A88888",
+    "Data": null
+  },
+  {
+    "photo": "http://thethreestooges.cn/img/1.jpg",
+    "state": 707,
+    "orderID": "00000003",
+    "CarId": "辽A77777",
+    "Data": null
+  },
+  {
+    "photo": "http://thethreestooges.cn/img/1.jpg",
+    "state": 101,
+    "orderID": "00000001",
+    "CarId": "辽A11111",
+    "Data": "2018/7/18"
+  }
+]
