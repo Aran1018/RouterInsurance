@@ -92,7 +92,7 @@ export default class MyDocItem extends Component {
                                             width: width / 1.17,
                                             height: height / 3.3,
                                             marginBottom: px2dp(10),
-                                            resizeMode: Image.resizeMode.stretch,
+                                            resizeMode: 'stretch',
                                         }}
                                         style={styles.img}
                                     />

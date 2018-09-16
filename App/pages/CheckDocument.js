@@ -40,7 +40,7 @@ export default class App extends Component<Props> {
                                 style={[styles.imgStyle = {
                                       width: height - px2dp(150),
                                     height: width - px2dp(20),
-                                    resizeMode: Image.resizeMode.stretch,
+                                    resizeMode: 'stretch',
                                 }]}
                             />
                         </View>

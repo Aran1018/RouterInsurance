@@ -164,7 +164,7 @@ export default class ChangeDate extends Component {
                                        style={[styles.imageStyle = {
                                            width: width,
                                            height: (height + 22) / 5,
-                                           resizeMode: Image.resizeMode.stretch,
+                                           resizeMode: 'stretch',
                                        }]}/>
                             </TouchableOpacity>
                         </View>

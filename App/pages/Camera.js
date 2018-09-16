@@ -33,6 +33,7 @@ export default class Camera extends Component {
     }
     render() {
 
+
         return (
             <View style={{
                 flex: 1,
