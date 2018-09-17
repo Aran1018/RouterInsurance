@@ -59,40 +59,52 @@ export default class MyPolicyItem extends Component {
                     arr.push(
                         <View key={i} style={styles.theBigView}>
                             <View showsVerticalScrollIndicator={false}>
-                                <Image style={{height: px2dp(20), width: px2dp(100)}}
-                                       source={require('../img/imgMypolicy/number.png')}/>
-                                <Text style={{
-                                    fontSize: AllFontSize,
-                                    margin: px2dp(2),
-                                    marginLeft: px2dp(12),
-                                    color: "#FFF",
-                                    position: "absolute",
-                                    marginTop:px2dp(1)
-                                }}>{json[i].CarId}</Text>
-                            </View>
-                            <View style={styles.singleStateItem}>
-                                <View style={styles.brandAndDataView}>
-                                    <Image style={{
-                                        resizeMode: 'stretch',
-                                        width: px2dp(100),
-                                        height: px2dp(50),
-                                        marginBottom: px2dp(5)
-                                    }} source={require('../img/imgMypolicy/brand.png')}/>
+                                <View>
+                                    <Image style={{height: px2dp(20), width: px2dp(100)}}
+                                           source={require('../img/imgMypolicy/number.png')}/>
                                     <Text style={{
-                                        marginLeft: px2dp(41),
                                         fontSize: AllFontSize,
-                                        marginBottom: px2dp(8)
-                                    }}>保险到期日期：{json[i].Data}</Text>
+                                        margin: px2dp(2),
+                                        marginLeft: px2dp(12),
+                                        color: "#fff",
+                                        position: "absolute",
+                                        marginTop: px2dp(1)
+                                    }}>{json[i].CarId}</Text>
                                 </View>
+                            </View>
+                            {/*大部分*/}
+                            <View style={styles.singleStateItem}>
+                                {/*小部分布局*/}
+                                <View style={{
+                                    width: (Dimensions.get('window').width - px2dp(20)) / 2,
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    marginLeft: px2dp(20),
+                                }}>
+                                    {/*小部分简单*/}
+                                    <View style={[{justifyContent: 'space-around', flexDirection: 'column',}]}>
+                                            <Image style={{
+                                                resizeMode: 'stretch',
+                                                width: px2dp(100),
+                                                height: px2dp(50),
+                                            }}
+                                                   source={require('../img/imgMypolicy/brand.png')}/>
+                                            <Text style={{
+                                                fontSize: AllFontSize,
+                                                marginBottom: px2dp(9.5)
+                                            }}>保险到期日期:{json[i].Data}</Text>
+                                    </View>
+                                </View>
+
                                 <View style={styles.buttonAndCallUsView}>
                                     <View
-                                        style={[{flexDirection: 'column', alignItems: 'flex-end',}, styles.container]}>
+                                        style={[{alignItems: 'flex-end',}]}>
                                         <View
-                                            style={[{
+                                            style={{
                                                 flexDirection: 'column',
-                                                height: 100,
                                                 justifyContent: 'space-around',
-                                            }, styles.container]}>
+                                            }}>
                                             <TouchableOpacity onPress={this.continueDoc.bind(this)}>
                                                 <View style={{
                                                     flexDirection: "column",
@@ -114,12 +126,17 @@ export default class MyPolicyItem extends Component {
                                             </TouchableOpacity>
 
                                             <TouchableOpacity onPress={this.alterDoc.bind(this)}>
-                                                <Text style={{
-                                                    marginTop: px2dp(10),
-                                                    fontSize: AllFontSize,
-                                                    marginLeft: px2dp(18),
-                                                    marginBottom: px2dp(9.5)
-                                                }}>联系我们</Text>
+                                                <View style={{
+                                                    flexDirection: "column",
+                                                    alignItems: "center",
+                                                    justifyContent: "center",
+                                                }}>
+                                                    <Text style={{
+                                                        marginTop: px2dp(10),
+                                                        fontSize: AllFontSize,
+                                                        marginBottom: px2dp(9.5)
+                                                    }}>联系我们</Text>
+                                                </View>
                                             </TouchableOpacity>
                                         </View>
                                     </View>

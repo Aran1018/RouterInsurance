@@ -193,8 +193,10 @@ export default class AskPrice extends Component {
                                     marginTop: px2dp(8)
                                 }}
                                 placeholder="12345678912  (请输入您的电话号)"
-                                placeholderTextColor="#000"
+                                placeholderTextColor="#bbbbbb"
                                 numberOfLines={1}
+                                maxLength={11}
+                                keyboardType={'numeric'}
                                 underlineColorAndroid='transparent'
                                 selectTextOnFocus={true}
                                 clearTextOnFocus={true}
@@ -202,6 +204,7 @@ export default class AskPrice extends Component {
                                     const newText = text.replace(/[^\d]+/, '');
                                     console.log(newText)
                                     this.setState({inputValue: newText})
+
                                 }}
                                 value={this.state.inputValue}/>
                         </View>
@@ -249,25 +252,22 @@ export default class AskPrice extends Component {
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
                                                 marginLeft: px2dp(62),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄行驶证正本
                                                 </Text>
                                             </View>
@@ -291,26 +291,23 @@ export default class AskPrice extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(20),
-                                                marginRight: px2dp(15),
+                                                marginLeft: px2dp(26),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄行驶证副本
                                                 </Text>
                                             </View>
@@ -392,25 +389,22 @@ export default class AskPrice extends Component {
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
                                                 marginLeft: px2dp(62),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄身份证正面
                                                 </Text>
                                             </View>
@@ -434,26 +428,23 @@ export default class AskPrice extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(20),
-                                                marginRight: px2dp(15),
+                                                marginLeft: px2dp(26),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄身份证背面
                                                 </Text>
                                             </View>

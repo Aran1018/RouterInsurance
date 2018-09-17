@@ -29,7 +29,7 @@ export default Stack = StackNavigator({
             headerTitle: '我的保险',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', color: "#4d4d4d", fontSize: HeaderTitlefontSize,fontWeight: 'normal',
+                flex: 1, textAlign: 'center', color: "#4d4d4d", fontSize: HeaderTitlefontSize, fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -53,7 +53,7 @@ export default Stack = StackNavigator({
 
             headerTitleStyle: {
                 flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,
-                marginBottom: px2dp(1),fontWeight: 'normal',
+                marginBottom: px2dp(1), fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -76,10 +76,10 @@ export default Stack = StackNavigator({
             headerTitle: '我的报价单',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,fontWeight: 'normal',
+                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize, fontWeight: 'normal',
             },
             headerLeft: (
-               <TitleBarBackText/>
+                <TitleBarBackText/>
             ),
             headerRight: (
                 <TouchableOpacity>
@@ -97,7 +97,7 @@ export default Stack = StackNavigator({
             headerTitle: '修改资料',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,fontWeight: 'normal',
+                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize, fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -118,7 +118,7 @@ export default Stack = StackNavigator({
             headerTitle: '资料填写',
 
             headerTitleStyle: {
-                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize,fontWeight: 'normal',
+                flex: 1, textAlign: 'center', fontSize: HeaderTitlefontSize, fontWeight: 'normal',
             },
             headerLeft: (
                 <TitleBarBackButton/>
@@ -133,34 +133,34 @@ export default Stack = StackNavigator({
             )
         }
     },
-    CheckDocument:{
-        screen:CheckDocument,
+    CheckDocument: {
+        screen: CheckDocument,
         navigationOptions: {
-            header:null,
+            header: null,
         }
     },
     Camera: {
         screen: Camera,
-        navigationOptions:{
+        navigationOptions: {
 
-            navigationBarHidden:true,
-            header:null,
+            navigationBarHidden: true,
+            header: null,
 
-            head:{
-                visible:false
+            head: {
+                visible: false
             }
         }
     },
     SolveResult: {
         screen: SolveResult,
-        navigationOptions:{
-            header:null,
+        navigationOptions: {
+            header: null,
         }
     },
     IDcardExample: {
         screen: IDcardExample,
-        navigationOptions:{
-            header:null,
+        navigationOptions: {
+            header: null,
         }
     }
 

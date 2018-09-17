@@ -191,10 +191,12 @@ export default class ChangeDate extends Component {
                                     color: '#000',
                                     marginTop: px2dp(8)
                                 }}
-                                placeholder="12345678912  (请重新编写)"
-                                placeholderTextColor="#000"
+                                placeholder="请重新编写您的电话号"
+                                placeholderTextColor="#bbbbbb"
                                 numberOfLines={1}
                                 ref={'content'}
+                                maxLength={11}
+                                keyboardType={'numeric'}
                                 underlineColorAndroid='transparent'
                                 multiline={false}
                                 autoFocus={false}
@@ -234,13 +236,12 @@ export default class ChangeDate extends Component {
                                         </View>
                                     </View>
 
-
                                     {/*拍摄行驶证正本*/}
                                     <View>
                                         <TouchableOpacity onPress={() => {
                                             this.props.navigation.navigate(
                                                 'IDcardExample', {
-                                                    backUrl:'ChangeDate',
+                                                    backUrl:'Inquiry',
                                                     imgSource:require("../img/cameraImg/licenseFront.png"),
                                                     PositiveOrNegative:'正本'
                                                 })
@@ -251,25 +252,22 @@ export default class ChangeDate extends Component {
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
                                                 marginLeft: px2dp(62),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄行驶证正本
                                                 </Text>
                                             </View>
@@ -283,7 +281,7 @@ export default class ChangeDate extends Component {
                                         <TouchableOpacity onPress={() => {
                                             this.props.navigation.navigate(
                                                 'IDcardExample', {
-                                                    backUrl:'ChangeDate',
+                                                    backUrl:'Inquiry',
                                                     imgSource:require("../img/cameraImg/licenseBack.png"),
                                                     PositiveOrNegative:'副本'
                                                 })
@@ -293,26 +291,23 @@ export default class ChangeDate extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(20),
-                                                marginRight: px2dp(15),
+                                                marginLeft: px2dp(26),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄行驶证副本
                                                 </Text>
                                             </View>
@@ -321,6 +316,7 @@ export default class ChangeDate extends Component {
                                 </View>
                             </View>
                         </View>
+
 
                         {/*分界线*/}
                         <Dividing/>
@@ -382,9 +378,9 @@ export default class ChangeDate extends Component {
                                         <TouchableOpacity onPress={() => {
                                             this.props.navigation.navigate(
                                                 'IDcardExample', {
-                                                    backUrl:'ChangeDate',
+                                                    backUrl:'Inquiry',
                                                     imgSource:require("../img/cameraImg/cardFront.png"),
-                                                    PositiveOrNegative:'背面'
+                                                    PositiveOrNegative:'正面'
                                                 })
                                         }}>
                                             <View style={{
@@ -393,25 +389,22 @@ export default class ChangeDate extends Component {
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
                                                 marginLeft: px2dp(62),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄身份证正面
                                                 </Text>
                                             </View>
@@ -425,7 +418,7 @@ export default class ChangeDate extends Component {
                                         <TouchableOpacity onPress={() => {
                                             this.props.navigation.navigate(
                                                 'IDcardExample', {
-                                                    backUrl:'ChangeDate',
+                                                    backUrl:'Inquiry',
                                                     imgSource:require("../img/cameraImg/cardBack.png"),
                                                     PositiveOrNegative:'背面'
                                                 })
@@ -435,26 +428,23 @@ export default class ChangeDate extends Component {
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(20),
-                                                marginRight: px2dp(15),
+                                                marginLeft: px2dp(26),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position:'absolute'
+                                                }}>
                                                     拍摄身份证背面
                                                 </Text>
                                             </View>
@@ -464,9 +454,9 @@ export default class ChangeDate extends Component {
                             </View>
                         </View>
 
-
                         {/*分界线*/}
                         <Dividing/>
+
 
                         {/*险选种类*/}
                         <View style={[{flexDirection: 'row', height: px2dp(40), alignItems: 'center',}]}>

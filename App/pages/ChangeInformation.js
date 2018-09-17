@@ -26,9 +26,8 @@ let {height, width} = Dimensions.get('window');
 import ImageRadioGroup from "../modules/ImageRadioInformation";
 import Dividing from "../modules/Dividing";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
-import DividingCamera from "../modules/DividingCamera";
-import DividingChangeInformation from "../modules/DividingChangeInformation";
 import * as Orientation from "react-native-orientation";
+import ToastAndroid from "../modules/ToastAndroid";
 
 let DialogSize = px2dp(240);
 let AllIconSize = px2dp(19);
@@ -47,8 +46,8 @@ export default class ChangeInformation extends Component<Props> {
     constructor(props) {
         super(props);
         this.state = {
-            radioSelect:'',
-            confirmButton:'#fe7d6f',
+            radioSelect: '',
+            confirmButton: '#8a8a8a',
             animationType: 'none',
             modalVisible: false,
             transparent: true,
@@ -82,13 +81,9 @@ export default class ChangeInformation extends Component<Props> {
         alert(text);
     }
 
-
     componentWillMount() {
         Orientation.lockToPortrait()
-
-
     }
-
 
     finalSubmit() {
         this._setModalVisible(!this.state.modalVisible);
@@ -112,9 +107,9 @@ export default class ChangeInformation extends Component<Props> {
                             }}
                         >
                             <View style={[styles.aacontainer, modalBackgroundStyle]}>
-                                <View style={[styles.innerContainer,innerContainerTransparentStyle]}>
+                                <View style={[styles.innerContainer, innerContainerTransparentStyle]}>
                                     <View style={{
-                                        width:px2dp(250), height:px2dp(250), backgroundColor: "#ffffff",
+                                        width: px2dp(250), height: px2dp(250), backgroundColor: "#ffffff",
                                         alignItems: "center",
                                         justifyContent: "flex-end",
                                     }}>
@@ -134,7 +129,7 @@ export default class ChangeInformation extends Component<Props> {
                                         <View style={{flexDirection: 'column'}}>
                                             <Text
                                                 style={{
-                                                    marginTop:px2dp(5),
+                                                    marginTop: px2dp(5),
                                                     fontSize: DialogFontSize
                                                 }}>维修基金已经发送到</Text>
                                             <Text
@@ -150,7 +145,7 @@ export default class ChangeInformation extends Component<Props> {
                                                 }
                                             }
                                                               style={{
-                                                                  width:px2dp(250),
+                                                                  width: px2dp(250),
                                                                   height: px2dp(40),
                                                                   backgroundColor: "#000",
                                                                   alignItems: "center",
@@ -179,10 +174,15 @@ export default class ChangeInformation extends Component<Props> {
                                 width: px2dp(240),
                                 flexDirection: 'row',
                                 alignItems: 'center',
-                                marginBottom:px2dp(0)
+                                marginBottom: px2dp(0)
                             }}>
-                                <Text style={{color: '#FFFFFF', fontSize: setSpText(9), marginLeft: px2dp(15),marginTop:px2dp(19)}}>保费合计：</Text>
-                                <Text style={{color: '#FFFFFF', fontSize: setSpText(12),marginTop:px2dp(17)}}>￥</Text>
+                                <Text style={{
+                                    color: '#FFFFFF',
+                                    fontSize: setSpText(9),
+                                    marginLeft: px2dp(15),
+                                    marginTop: px2dp(19)
+                                }}>保费合计：</Text>
+                                <Text style={{color: '#FFFFFF', fontSize: setSpText(12), marginTop: px2dp(17)}}>￥</Text>
                                 <Text style={{color: '#FFFFFF', fontSize: setSpText(30)}}>5940.00</Text>
                             </View>
                         </View>
@@ -222,30 +222,30 @@ export default class ChangeInformation extends Component<Props> {
                         </View>
 
                         {/*分割线*/}
-                            <View style={{
-                                width: width -30,
-                                marginLeft: px2dp(15),
-                                marginRight: px2dp(15),
-                                height: px2dp(0.5),
-                                marginTop:px2dp(5),
-                                backgroundColor: '#aca8a9'
-                            }}>
-                            </View>
+                        <View style={{
+                            width: width - 30,
+                            marginLeft: px2dp(15),
+                            marginRight: px2dp(15),
+                            height: px2dp(0.5),
+                            marginTop: px2dp(5),
+                            backgroundColor: '#aca8a9'
+                        }}>
+                        </View>
 
                         {/*邮寄地址*/}
                         <View style={{flexDirection: 'row', height: px2dp(50)}}>
-                                <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(50)}]}>
-                                    < Image source={require('../img/changeInformation/address.png')}
-                                            style={[styles.imgStyle = {
-                                                width: AllIconSize,
-                                                height: AllIconSize,
-                                                marginLeft: px2dp(16),
-                                                marginTop: px2dp(5)
-                                            }]}/>
-                                    <Text style={{marginLeft: px2dp(5), marginTop: px2dp(5), fontSize: AllFontSize}}>
-                                        保单邮寄地址
-                                    </Text>
-                                </View>
+                            <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(50)}]}>
+                                < Image source={require('../img/changeInformation/address.png')}
+                                        style={[styles.imgStyle = {
+                                            width: AllIconSize,
+                                            height: AllIconSize,
+                                            marginLeft: px2dp(16),
+                                            marginTop: px2dp(5)
+                                        }]}/>
+                                <Text style={{marginLeft: px2dp(5), marginTop: px2dp(5), fontSize: AllFontSize}}>
+                                    保单邮寄地址
+                                </Text>
+                            </View>
                             <TextInput
                                 style={{
                                     marginTop: px2dp(5),
@@ -275,13 +275,13 @@ export default class ChangeInformation extends Component<Props> {
                                     <View
                                         style={[{flexDirection: 'row', height: px2dp(50), alignItems: 'flex-start',}]}>
                                         <View style={[{flexDirection: 'row', alignItems: 'center',}]}>
-                                            < Image source={require('../img/changeInformation/idcard.png')}
-                                                    style={[styles.imgStyle = {
-                                                        width: AllIconSize,
-                                                        height: AllIconSize,
-                                                        marginLeft: px2dp(16),
-                                                        marginTop: px2dp(10)
-                                                    }]}/>
+                                            <Image source={require('../img/imgaskprice/idCard.png')}
+                                                   style={[styles.imgStyle = {
+                                                       width: AllIconSize,
+                                                       height: AllIconSize,
+                                                       marginLeft: px2dp(15),
+                                                       marginTop: px2dp(10)
+                                                   }]}/>
                                             <Text style={{
                                                 marginLeft: px2dp(5),
                                                 marginTop: px2dp(10),
@@ -294,32 +294,36 @@ export default class ChangeInformation extends Component<Props> {
 
                                     {/*拍摄身份证正面*/}
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl: 'Inquiry',
+                                                    imgSource: require("../img/cameraImg/cardFront.png"),
+                                                    PositiveOrNegative: '正面'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
                                                 marginLeft: px2dp(62),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position: 'absolute'
+                                                }}>
                                                     拍摄身份证正面
                                                 </Text>
                                             </View>
@@ -330,33 +334,36 @@ export default class ChangeInformation extends Component<Props> {
                                     {/*拍摄身份证背面*/}
 
                                     <View>
-                                        <TouchableOpacity>
+                                        <TouchableOpacity onPress={() => {
+                                            this.props.navigation.navigate(
+                                                'IDcardExample', {
+                                                    backUrl: 'Inquiry',
+                                                    imgSource: require("../img/cameraImg/cardBack.png"),
+                                                    PositiveOrNegative: '背面'
+                                                })
+                                        }}>
                                             <View style={{
                                                 backgroundColor: '#83878c',
                                                 height: px2dp(65),
                                                 width: px2dp(100),
                                                 marginTop: px2dp(10),
-                                                marginLeft: px2dp(20),
-                                                marginRight: px2dp(15),
+                                                marginLeft: px2dp(26),
+                                                flexDirection: 'column',
+                                                alignItems: 'center'
                                             }}>
-
                                                 <Image source={require('../img/imgaskprice/camera.png')}
                                                        style={[styles.imgStyle = {
                                                            width: CameraWidth,
                                                            height: CameraHeight,
-                                                           marginLeft: px2dp(43),
                                                            marginTop: px2dp(18),
-                                                           position: 'absolute'
-                                                       }]}/>
-                                                <Text style={[styles.imgStyle = {
-                                                    width: px2dp(75),
-                                                    height: px2dp(18),
-                                                    marginLeft: px2dp(24),
+                                                       }]}>
+                                                </Image>
+                                                <Text style={{
                                                     marginTop: px2dp(41),
-                                                    position: 'absolute',
                                                     fontSize: CameraFontSize,
-                                                    color: '#fff'
-                                                }]}>
+                                                    color: '#fff',
+                                                    position: 'absolute'
+                                                }}>
                                                     拍摄身份证背面
                                                 </Text>
                                             </View>
@@ -375,7 +382,7 @@ export default class ChangeInformation extends Component<Props> {
                                 marginLeft: px2dp(15),
                                 fontSize: AllFontSize,
                                 color: '#595959',
-                                marginTop:20
+                                marginTop: 20
                             }}>
                                 请选择支付方式
                             </Text>
@@ -393,7 +400,7 @@ export default class ChangeInformation extends Component<Props> {
                                     // console.warn(item.title);
                                     // console.warn(index);
                                     this.setState({
-                                        radioSelect:index,
+                                        radioSelect: index,
                                     });
 
                                 }}
@@ -415,17 +422,17 @@ export default class ChangeInformation extends Component<Props> {
     }
 
     _setModalVisible = (visible) => {
-        if(this.state.radioSelect===''){
+        if (this.state.radioSelect === '') {
 
         }
         this.setState({modalVisible: visible});
     };
 
+    renderConfirmButton() {
 
-    renderConfirmButton(){
-        if(this.state.radioSelect===''){
-            return(
-                <TouchableOpacity>
+        if (this.state.radioSelect === '') {
+            return (
+                <TouchableOpacity onPress={()=>{ToastAndroid.show('请选择支付方式',ToastAndroid.SHORT)}}>
                     <View style={{
                         height: px2dp(50),
                         width: width * 13 / 14,
@@ -446,8 +453,8 @@ export default class ChangeInformation extends Component<Props> {
                     </View>
                 </TouchableOpacity>
             )
-        }else {
-            return(
+        } else {
+            return (
                 <TouchableOpacity onPress={this._setModalVisible.bind(this, true)}>
                     <View style={{
                         height: px2dp(50),

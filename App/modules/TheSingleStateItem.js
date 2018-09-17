@@ -37,7 +37,6 @@ export default class TheSingleStateItem extends Component {
         }
     }
 
-
     cancelDoc() {
         alert("撤销保单")
     }
@@ -56,7 +55,6 @@ export default class TheSingleStateItem extends Component {
             // }
             this.props.routeName.navigation.navigate(this.state.theJumpState)
         }
-
     }
 
     render() {

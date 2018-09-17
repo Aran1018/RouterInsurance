@@ -8,6 +8,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.github.yamill.orientation.OrientationPackage;
 import com.tts.aran.routerinsurance.BuildConfig;
+import com.tts.aran.routerinsurance.toast.ExampleReactPackage;
 
 import org.reactnative.camera.RNCameraPackage;
 
@@ -40,7 +41,8 @@ public class MainApplication extends Application implements ReactApplication {
             return Arrays.<ReactPackage>asList(
                     new MainReactPackage(),
                     new OrientationPackage(),
-                    new RNCameraPackage()
+                    new RNCameraPackage(),
+                    new ExampleReactPackage()
             );
         }
     };
