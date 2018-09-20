@@ -21,9 +21,7 @@ public class nativeUtils {
     public nativeUtils() {
     }
 
-    public void useNativeCamera(){
-
-
+    public void useNativeGraph(){
 
     }
 

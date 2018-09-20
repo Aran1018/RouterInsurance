@@ -19,7 +19,7 @@ import {
     TextInput,
     TouchableHighlight,
     View,
-    TouchableOpacity, ScrollView
+    TouchableOpacity, ScrollView, StatusBar
 } from 'react-native';
 import MyPolicy from "./MyPolicy";
 import ImageRadioGroup from "../modules/ImageRadioGroup";
@@ -160,6 +160,8 @@ export default class AskPrice extends Component {
 
                         {/*广告图*/}
                         <View style={{alignItems: 'center', flex: 1}}>
+                            <StatusBar hidden={false}/>
+
                             <TouchableOpacity>
                                 <Image source={require('../img/imgaskprice/ad.png')}
                                        style={[styles.imageStyle = {

@@ -203,7 +203,7 @@ export default class ChangeDate extends Component {
                                 onChangeText={(text) => {
                                     const newText = text.replace(/[^\d]+/, '');
                                     //可以打印看看是否过滤掉了非数字
-                                    console.log(newText)
+                                    console.log(newText);
                                     this.setState({inputValue: newText})
                                 }}
                                 value={this.state.inputValue}/>

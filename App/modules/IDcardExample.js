@@ -31,7 +31,7 @@ export default class IDcardExample extends Component {
                     width: Dimensions.get('window').height,
                     alignItems: "center",
                     justifyContent: "center",
-                    transform: [{rotate:'90deg'}],
+                    transform: [{rotate: '90deg'}],
                 }}>
                     <View style={{
 
@@ -51,11 +51,34 @@ export default class IDcardExample extends Component {
                         <TouchableOpacity onPress={()=>{
                             this.props.navigation.navigate('Camera');
 
-                        // ,{
-                        //
-                        //         PositiveOrNegative:this.props.navigation.getParam('PositiveOrNegative')
-                        //
-                        //     }
+                            // ,{
+                            //
+                            //         PositiveOrNegative:this.props.navigation.getParam('PositiveOrNegative')
+                            //
+                            //     }
+
+                        }} style={{marginTop: TopVlaue}}>
+                            <View style={{
+                                backgroundColor: "#fe7d6f",
+                                width: 90,
+                                alignItems: "center",
+                                justifyContent: "center",
+                                borderRadius: 15,
+                                height: 30
+                            }}>
+                                <Text style={{color: "#fff"}}>
+                                    取消
+                                </Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => {
+                            this.props.navigation.navigate('Camera');
+
+                            // ,{
+                            //
+                            //         PositiveOrNegative:this.props.navigation.getParam('PositiveOrNegative')
+                            //
+                            //     }
 
                         }} style={{marginTop: TopVlaue}}>
                             <View style={{

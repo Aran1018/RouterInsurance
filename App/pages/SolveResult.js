@@ -49,17 +49,22 @@ export default class SolveResult extends Component {
                     transform: [{rotate: '-90deg'}],
 
                 }}
-                       source={{uri: 'file:///data/data/com.tts.aran.routerinsurance/cache/Camera/' + this.splitString(this.props.navigation.getParam('photoUrl'))}}
+                       source={{uri:  this.splitString(this.props.navigation.getParam('photoUrl'))}}
                 />
             )
         }
     }
 
     splitString(str) {
-        console.log("=============width" + this.props.navigation.getParam("data").width);
-        console.log("=============height" + this.props.navigation.getParam("data").height);
-        const group = str.split("/Camera/");
-        return group[1]
+        if (Platform.OS==='android'){
+
+            console.log("=============width" + this.props.navigation.getParam("data").width);
+            console.log("=============height" + this.props.navigation.getParam("data").height);
+            const group = str.split("/Camera/");
+            return 'file:///data/data/com.tts.aran.routerinsurance/cache/Camera/' + group[1]
+        }else {
+            return str
+        }
     }
 // /data/data/com.tts.aran.routerinsurance/cache/Camera/7a1fd75e-a8eb-4655-8d09-f590be77826a.jpg
     _onPressConfirm(){
