@@ -32,7 +32,7 @@ let DialogSize = px2dp(240);
 let AllIconSize = px2dp(19);
 let CameraHeight = px2dp(12);
 let CameraWidth = px2dp(18);
-let AllFontSize = setSpText(8);
+let AllFontSize = setSpText(9);
 let CameraFontSize = setSpText(5.5);
 let Orange = '#fe2b00';
 let DialogFontSize = setSpText(10);
@@ -122,18 +122,18 @@ export default class AskPrice extends Component {
                                     }}>
                                         <Image style={{
                                             resizeMode: 'stretch',
-                                            marginTop: px2dp(20),
-                                            width: px2dp(100),
-                                            height: px2dp(110)
+                                            marginTop: px2dp(10),
+                                            width: px2dp(85),
+                                            height: px2dp(90),
                                         }}
                                                source={require('../img/imgaskprice/dialogimg.png')}/>
                                         <Text style={{
-                                            marginTop: MarginTop,
+                                            marginTop: px2dp(8),
                                             fontSize: DialogFontSize,
-                                            fontWeight: "bold"
+                                            fontWeight: "bold",
                                         }}>提交成功</Text>
                                         <Text
-                                            style={{marginTop: MarginTop, fontSize: DialogFontSize}}>保险专员会尽快与您联系</Text>
+                                            style={{marginTop: MarginTop,marginBottom:px2dp(30),fontSize: setSpText(8)}}>保险专员会尽快与您联系</Text>
 
                                         <View>
                                             <TouchableOpacity onPress={
@@ -173,16 +173,16 @@ export default class AskPrice extends Component {
                         </View>
 
                         {/*电话*/}
-                        <View style={{flexDirection: 'row', height: px2dp(40),}}>
+                        <View style={{flexDirection: 'row', height: px2dp(40)}}>
                             <View style={[{flexDirection: 'row', alignItems: 'center', height: px2dp(40),}]}>
                                 < Image source={require('../img/imgaskprice/mobilephone.png')}
                                         style={[styles.imgStyle = {
                                             width: AllIconSize,
                                             height: AllIconSize,
                                             marginLeft: px2dp(15),
-                                            marginTop: px2dp(8),
+                                            marginTop: px2dp(10),
                                         }]}/>
-                                <Text style={{marginLeft: px2dp(5), fontSize: AllFontSize, marginTop: px2dp(8)}}>
+                                <Text style={{marginLeft: px2dp(5), fontSize: AllFontSize, marginTop: px2dp(10)}}>
                                     电话
                                 </Text>
                             </View>
@@ -192,10 +192,10 @@ export default class AskPrice extends Component {
                                     textAlign: 'right',
                                     flex: 1,
                                     color: '#000',
-                                    marginTop: px2dp(8)
+                                    marginTop: px2dp(10)
                                 }}
-                                placeholder="12345678912  (请输入您的电话号)"
-                                placeholderTextColor="#bbbbbb"
+                                placeholder="请输入您的电话号"
+                                placeholderTextColor="#9b9b9b"
                                 numberOfLines={1}
                                 maxLength={11}
                                 keyboardType={'numeric'}
@@ -349,7 +349,6 @@ export default class AskPrice extends Component {
                                 }}
                             />
                         </View>
-
 
                         {/*身份证*/}
                         <View style={{flexDirection: 'row', width: width}}>

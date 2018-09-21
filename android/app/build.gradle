@@ -35,6 +35,7 @@ android {
             if (abi != null) {  // null for the universal-debug, universal-release variants
                 output.versionCodeOverride =
                         versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
+
             }
         }
     }
@@ -51,6 +52,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':react-native-orientation')
 }
+
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'

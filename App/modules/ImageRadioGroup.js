@@ -69,11 +69,11 @@ export default class RadioGroup extends Component {
 
         return (
             <TouchableOpacity key={index} onPress={()=> {
-                onPress(index, item)}} style={{height: px2dp(65), margin: px2dp(9)}}>
+                onPress(index, item)}} style={{height: px2dp(65), margin: px2dp(9),width: px2dp(105),}}>
                 <Image
                     style={
                         {
-                            width: px2dp(100), height: px2dp(60), resizeMode: 'contain',marginLeft: px2dp(5),
+                            width: px2dp(99), height: px2dp(60), resizeMode: 'contain',marginLeft: px2dp(5),
                             alignItems: 'flex-end',
                         }
                     }
@@ -82,7 +82,7 @@ export default class RadioGroup extends Component {
                     justifyContent: "flex-end",
                     width: px2dp(13),
                     marginTop: px2dp(40),
-                    marginLeft: px2dp(90),
+                    marginLeft: px2dp(92),
                     resizeMode: 'contain',
                     position: 'absolute'
                 }} source={image}/>

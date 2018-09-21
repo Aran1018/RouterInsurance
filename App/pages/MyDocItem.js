@@ -94,7 +94,7 @@ export default class MyDocItem extends Component {
                                             marginBottom: px2dp(10),
                                             resizeMode: 'stretch',
                                         }}
-                                        style={styles.img}
+                                        style={styles.immg}
                                     />
                                 </View>
                             </View>
@@ -226,14 +226,7 @@ export default class MyDocItem extends Component {
                                             }}>获得</Text>
                                         </View>
                                         {/*竖线*/}
-                                        <View style={{
-                                            height: px2dp(31),
-                                            marginLeft: px2dp(4),
-                                            width: px2dp(0.5),
-                                            backgroundColor: '#7a7a7a',
-                                            marginTop: px2dp(5)
-                                        }}>
-                                        </View>
+
                                         <View style={[{
                                             flexDirection: 'column',
                                             alignItems: 'flex-end',

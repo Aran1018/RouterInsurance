@@ -23,7 +23,7 @@ import {px2dp, setSpText} from "../utils/px2dpUtils";
 
 let json = require('../data/mypolicy');
 
-let AllFontSize = setSpText(8);
+let AllFontSize = setSpText(9);
 
 export default class MyPolicyItem extends Component {
 
@@ -59,41 +59,47 @@ export default class MyPolicyItem extends Component {
                     arr.push(
                         <View key={i} style={styles.theBigView}>
                             <View showsVerticalScrollIndicator={false}>
-                                <View>
-                                    <Image style={{height: px2dp(20), width: px2dp(100)}}
-                                           source={require('../img/imgMypolicy/number.png')}/>
-                                    <Text style={{
-                                        fontSize: AllFontSize,
-                                        margin: px2dp(2),
-                                        marginLeft: px2dp(12),
-                                        color: "#fff",
-                                        position: "absolute",
-                                        marginTop: px2dp(1)
-                                    }}>{json[i].CarId}</Text>
+                                <View style={{flexDirection: 'row'}}>
+                                    <View style={{
+                                        height: px2dp(20), width: px2dp(75), backgroundColor: 'black',
+                                        justifyContent: 'center', alignItems: 'center'
+                                    }}>
+                                        <Text style={{color: 'white', position: 'absolute', fontSize: setSpText(8)}}>
+                                            {json[i].CarId}
+                                        </Text>
+                                    </View>
+                                    <View style={{
+                                        borderTopWidth: px2dp(20),
+                                        borderTopColor: 'transparent',
+                                        borderRightWidth: px2dp(0),
+                                        borderRightColor: 'transparent',
+                                        borderLeftWidth: px2dp(20),
+                                        borderLeftColor: 'balck',
+                                        borderBottomWidth: px2dp(0),
+                                        borderBottomColor: 'transparent',
+                                    }}>
+                                    </View>
                                 </View>
                             </View>
-                            {/*大部分*/}
                             <View style={styles.singleStateItem}>
-                                {/*小部分布局*/}
                                 <View style={{
                                     width: (Dimensions.get('window').width - px2dp(20)) / 2,
                                     flexDirection: "column",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    marginLeft: px2dp(20),
+                                    marginLeft: px2dp(40),
                                 }}>
-                                    {/*小部分简单*/}
                                     <View style={[{justifyContent: 'space-around', flexDirection: 'column',}]}>
-                                            <Image style={{
-                                                resizeMode: 'stretch',
-                                                width: px2dp(100),
-                                                height: px2dp(50),
-                                            }}
-                                                   source={require('../img/imgMypolicy/brand.png')}/>
-                                            <Text style={{
-                                                fontSize: AllFontSize,
-                                                marginBottom: px2dp(9.5)
-                                            }}>保险到期日期:{json[i].Data}</Text>
+                                        <Image style={{
+                                            resizeMode: 'stretch',
+                                            width: px2dp(100),
+                                            height: px2dp(50),
+                                        }}
+                                               source={require('../img/imgMypolicy/brand.png')}/>
+                                        <Text style={{
+                                            fontSize: AllFontSize,
+                                            marginBottom: px2dp(9.5)
+                                        }}>保险到期日期:{json[i].Data}</Text>
                                     </View>
                                 </View>
 
@@ -212,6 +218,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginRight: 0,
-        marginLeft: px2dp(50)
+        marginLeft: px2dp(20)
     },
 });

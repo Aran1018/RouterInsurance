@@ -13,7 +13,7 @@ import MyDocuments from "../pages/MyDocuments";
 import ChangeDate from "../pages/ChangeDate";
 import {px2dp, setSpText} from "../utils/px2dpUtils";
 
-let AllFontSize = setSpText(8);
+let AllFontSize = setSpText(9);
 
 export default class TheSingleStateItem extends Component {
 
@@ -60,20 +60,28 @@ export default class TheSingleStateItem extends Component {
     render() {
         return (
             <View style={styles.theBigView} showsVerticalScrollIndicator={false} overScrollMode="never">
-                <View>
-                    <Image style={{height: px2dp(20), width: px2dp(100)}}
-                           source={require('../img/imgMypolicy/number.png')}/>
-                    <Text style={{
-                        fontSize: AllFontSize,
-                        margin: px2dp(3),
-                        marginLeft: px2dp(12),
-                        color: "#FFF",
-                        position: "absolute",
-                        marginTop:px2dp(1)
-                    }}>{this.props.carId}</Text>
+                <View style={{flexDirection: 'row'}}>
+                    <View style={{
+                        height: px2dp(20), width: px2dp(75), backgroundColor: 'black',
+                        justifyContent: 'center', alignItems: 'center'
+                    }}>
+                        <Text style={{color: 'white', position: 'absolute', fontSize: setSpText(8)}}>
+                            {this.props.carId}
+                        </Text>
+                    </View>
+                    <View style={{
+                        borderTopWidth: px2dp(20),
+                        borderTopColor: 'transparent',
+                        borderRightWidth: px2dp(0),
+                        borderRightColor: 'transparent',
+                        borderLeftWidth: px2dp(20),
+                        borderLeftColor: 'black',
+                        borderBottomWidth: px2dp(0),
+                        borderBottomColor: 'transparent',
+                    }}>
+                    </View>
                 </View>
                 <View style={styles.singleStateItem}>
-
                     <View style={styles.brandAndDataView}>
                         <View style={{flexDirection: "row",}}>
                             <View style={{flex: 1, marginLeft: px2dp(151)}}>
@@ -106,9 +114,7 @@ export default class TheSingleStateItem extends Component {
                             </View>
                         </TouchableOpacity>
                     </View>
-
                     <View style={styles.buttonAndCallUsView}>
-
                         <TouchableOpacity onPress={this.cancelDoc.bind(this)}>
                             <Text style={{marginTop: px2dp(10), fontSize: AllFontSize}}>撤销保单</Text>
                         </TouchableOpacity>

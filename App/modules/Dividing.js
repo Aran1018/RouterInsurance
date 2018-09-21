@@ -9,9 +9,8 @@ export default class App extends Component<Props> {
         return (
             <View style={styles.container}>
                 <View style={{
-                    width: width -30,
+                    width: width- px2dp(30),
                     marginLeft: px2dp(15),
-                    marginRight: px2dp(15),
                     height: px2dp(0.5),
                     marginTop:px2dp(10),
                     backgroundColor: '#aca8a9'

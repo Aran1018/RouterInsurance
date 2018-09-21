@@ -21,13 +21,9 @@ type Props = {};
 
 export default class App extends Component<Props> {
 
-
     componentWillMount() {
         Orientation.lockToPortrait()
-
     }
-
-
 
     render() {
         return (
@@ -38,14 +34,13 @@ export default class App extends Component<Props> {
                             <Image
                                 source={require('../img/imgMyDocuments/quotation.png')}
                                 style={[styles.imgStyle = {
-                                      width: height - px2dp(150),
+                                    width: height - px2dp(150),
                                     height: width - px2dp(20),
                                     resizeMode: 'stretch',
                                 }]}
                             />
                         </View>
-
-                        <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: px2dp(270),marginLeft:px2dp(20)}}>
+                        <View style={{flexDirection: 'column', alignItems: 'flex-end', marginTop: px2dp(220),marginLeft:px2dp(20)}}>
                             <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}>
                                 <Text style={{color: '#fff', fontSize: setSpText(10)}}>取消</Text>
                             </TouchableOpacity>
@@ -53,7 +48,7 @@ export default class App extends Component<Props> {
                                 this.props.navigation.navigate('ChangeInformation')
                             }}>
                                 <View>
-                                    <Text style={{color: '#0bc2d4', fontSize: setSpText(10),marginTop:px2dp(40)}}>确定</Text>
+                                    <Text style={{color: '#0bc2d4', fontSize: setSpText(10),marginTop:px2dp(60)}}>确定</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>

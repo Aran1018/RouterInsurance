@@ -25,8 +25,8 @@ import * as Orientation from "react-native-orientation";
 
 let {screenHeight, screenWidth} = Dimensions.get('window');
 
-let AllFontSize = setSpText(9);
-let WholeHeight = px2dp(63);
+let AllFontSize = setSpText(10);
+let WholeHeight = px2dp(58);
 let Orange =   '#fe2b00';
 
 export default class MyDocuments extends Component {
@@ -41,12 +41,9 @@ export default class MyDocuments extends Component {
         alert(" ")
     };
 
-
     componentWillMount() {
         Orientation.lockToPortrait()
-
     }
-
 
     render() {
         return (
@@ -83,7 +80,6 @@ export default class MyDocuments extends Component {
                             <View style={{
                                 height: WholeHeight, width: px2dp(120), backgroundColor:Orange, alignItems: 'center',
                                 justifyContent: 'center',
-
                             }}>
                                 <Text style={{
                                     fontSize: setSpText(11),
@@ -95,9 +91,7 @@ export default class MyDocuments extends Component {
                         </TouchableOpacity>
                     </View>
                 </View>
-
             </View>
-
         )
     }
 }

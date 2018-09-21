@@ -135,7 +135,6 @@ export default class SolveResult extends Component {
                             </View>
                         </TouchableOpacity>
                     </View>
-
                 </View>
             </View>
         )

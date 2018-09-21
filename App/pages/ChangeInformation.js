@@ -35,7 +35,7 @@ let DialogFontSize = setSpText(8);
 let MarginTop = px2dp(10);
 let CameraHeight = px2dp(12);
 let CameraWidth = px2dp(18);
-let AllFontSize = setSpText(8);
+let AllFontSize = setSpText(9);
 let CameraFontSize = setSpText(5.5);
 let Orange = '#fe2b00';
 
@@ -109,34 +109,24 @@ export default class ChangeInformation extends Component<Props> {
                             <View style={[styles.aacontainer, modalBackgroundStyle]}>
                                 <View style={[styles.innerContainer, innerContainerTransparentStyle]}>
                                     <View style={{
-                                        width: px2dp(250), height: px2dp(250), backgroundColor: "#ffffff",
+                                        width:px2dp(250), height:px2dp(250), backgroundColor: "#ffffff",
                                         alignItems: "center",
                                         justifyContent: "flex-end",
                                     }}>
                                         <Image style={{
                                             resizeMode: 'stretch',
-                                            marginTop: px2dp(20),
-                                            width: px2dp(90),
-                                            height: px2dp(110)
+                                            marginTop: px2dp(10),
+                                            width: px2dp(85),
+                                            height: px2dp(90),
                                         }}
                                                source={require('../img/changeInformation/DialogInformation.png')}/>
                                         <Text style={{
-                                            marginTop: px2dp(5),
-                                            fontSize: setSpText(10),
+                                            marginTop: px2dp(8),
+                                            fontSize: DialogFontSize,
                                             fontWeight: "bold",
-
-                                        }}>感谢您的购买</Text>
-                                        <View style={{flexDirection: 'column'}}>
-                                            <Text
-                                                style={{
-                                                    marginTop: px2dp(5),
-                                                    fontSize: DialogFontSize
-                                                }}>维修基金已经发送到</Text>
-                                            <Text
-                                                style={{
-                                                    fontSize: DialogFontSize
-                                                }}>您的特权中心请查收</Text>
-                                        </View>
+                                        }}>提交成功</Text>
+                                        <Text
+                                            style={{marginTop: MarginTop,marginBottom:px2dp(30),fontSize: setSpText(8)}}>保险专员会尽快与您联系</Text>
 
                                         <View>
                                             <TouchableOpacity onPress={
@@ -145,18 +135,18 @@ export default class ChangeInformation extends Component<Props> {
                                                 }
                                             }
                                                               style={{
-                                                                  width: px2dp(250),
+                                                                  width:px2dp(250),
                                                                   height: px2dp(40),
                                                                   backgroundColor: "#000",
                                                                   alignItems: "center",
                                                                   justifyContent: "center",
-                                                                  marginTop: MarginTop,
-                                                                  // fontSize:DialogFontSize
+                                                                  marginTop: MarginTop
                                                               }}>
-                                                <Text style={{color: "#fff"}}>查看维修基金</Text>
+                                                <Text style={{color: "#fff",fontSize:DialogFontSize}}>完成</Text>
                                             </TouchableOpacity>
                                         </View>
                                     </View>
+
                                 </View>
                             </View>
                         </Modal>
@@ -170,11 +160,12 @@ export default class ChangeInformation extends Component<Props> {
                             height: height / 6,
                         }]}>
                             <View style={{
-                                height: height / px2dp(18),
-                                width: px2dp(240),
+                                height: height / px2dp(24),
+                                width:width,
                                 flexDirection: 'row',
                                 alignItems: 'center',
-                                marginBottom: px2dp(0)
+                                marginBottom: px2dp(0),
+                                backgroundColor:'black'
                             }}>
                                 <Text style={{
                                     color: '#FFFFFF',

@@ -20,10 +20,8 @@ let heightOfWindow = Dimensions.get('window').height;
 
 export default class MyPolicy extends Component {
 
-
     componentWillMount() {
         Orientation.lockToPortrait()
-
     }
     render() {
         return (
